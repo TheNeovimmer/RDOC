@@ -2268,3 +2268,216 @@ img { max-width: 100%; height: auto; display: block; }
     font-size: 14px;
     opacity: 0.6;
 }
+
+/* ============================================================
+   RESPONSIVE DESIGN & HAMBURGER MENU
+   ============================================================ */
+
+/* Hamburger Menu Icon */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger-menu span {
+    width: 30px;
+    height: 3px;
+    background: var(--text-white);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+/* Tablet Responsive (1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 40px;
+    }
+    
+    .hero-top-bar, .categorie-page .hero-top-bar, .apropos-page .hero-top-bar {
+        padding: 20px 40px;
+    }
+
+    .trust-grid, .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    
+    .cat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps-main-container {
+        gap: 30px;
+    }
+}
+
+/* Mobile Responsive (768px) */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+
+    /* Mobile Nav Overlay */
+    .nav-pill-bar, .hero-nav, .main-nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 80%;
+        background: rgba(8, 28, 33, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        gap: 25px;
+        padding: 60px 0;
+        border-left: 1px solid rgba(92, 196, 229, 0.2);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    }
+
+    .nav-pill-bar.active, .hero-nav.active, .main-nav-links.active {
+        display: flex;
+    }
+
+    .nav-pill-link, .nav-pill {
+        font-size: 20px !important;
+        padding: 10px 0;
+    }
+
+    .auth-button {
+        display: none;
+    }
+    
+    .auth-button.active {
+        display: flex;
+        position: fixed;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001;
+    }
+
+    /* Home Page Hero Mobile */
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+
+    .hero-robot-img {
+        max-width: 280px;
+    }
+
+    .hero-title {
+        font-size: 28px !important;
+        padding: 0 20px;
+    }
+
+    .hero-bottom-bar {
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    /* Grids to Single Column */
+    .cat-grid, .trust-grid, .footer-grid, .step-intro-cards, .partners-logos {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    /* Steps Section Mobile */
+    .steps-main-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .steps-main-panel {
+        padding: 30px 20px;
+    }
+
+    .step-card {
+        font-size: 16px;
+        padding: 15px 20px;
+    }
+
+    .steps-image-container {
+        margin: 30px auto 0;
+        max-width: 100%;
+    }
+
+    .robot-ready-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .step-num {
+        font-size: 60px !important;
+    }
+
+    /* Footer Mobile */
+    .site-footer {
+        padding: 60px 0 30px;
+    }
+
+    .footer-brand-newsletter {
+        gap: 30px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-newsletter-form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .footer-newsletter-form input {
+        width: 100%;
+    }
+
+    /* Partners Logo Padding */
+    .partners-bar {
+        padding: 40px 0;
+    }
+    
+    .partners-logos img {
+        height: 30px;
+    }
+
+    /* About (A propos) Mobile */
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-content {
+        text-align: center;
+        padding-bottom: 40px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
