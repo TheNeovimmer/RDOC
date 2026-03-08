@@ -1979,7 +1979,7 @@ img { max-width: 100%; height: auto; display: block; }
     font-size: 96px;
     font-weight: 700;
     line-height: 1;
-    color: #0d0d0d;
+    color: var(--text-white);
 }
 
 .step-label {
@@ -2034,7 +2034,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .step-card {
     background: var(--cyan);
-    color: var(--bg-dark);
+    color: var(--text-white);
     padding: 18px 24px;
     border-radius: 24px;
     width: 100%;
@@ -2184,8 +2184,8 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .btn-abonner-footer {
-    background: var(--text-white);
-    color: var(--bg-dark);
+    background: var(--cyan);
+    color: var(--text-white);
     border: none;
     padding: 12px 25px;
     border-radius: 40px;
