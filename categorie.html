@@ -11,28 +11,26 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body class="categorie-page">
+    <!-- NAVBAR at top level -->
+    <div class="hero-top-bar">
+      <a href="index.html" class="logo">
+        <img
+          src="assets/images/Plan de travail 1 1.png"
+          alt="RDOC"
+          class="logo-img"
+        />
+      </a>
+      <nav class="nav-pill-bar">
+        <a href="index.html" class="nav-pill-link">Accueil</a>
+        <a href="apropos.html" class="nav-pill-link">A propos</a>
+        <a href="categorie.html" class="nav-pill-link active">Catégorie</a>correct the 
+        <a href="index.html#produit" class="nav-pill-link">Produit</a>a
+        <a href="index.html#blog" class="nav-pill-link">Blog</a> 
+      <a href="#" class="auth-button">Sign up / Sign in</a>
+    </div>
+
     <!-- ====== HERO CATEGORIE ====== -->
     <section class="categorie-hero" id="accueil">
-      <!-- NAVBAR inside hero area -->
-      <div class="hero-top-bar">
-        <a href="index.html" class="logo">
-          <img
-            src="assets/images/Plan de travail 1 1.png"
-            alt="RDOC"
-            class="logo-img"
-          />
-        </a>
-        <nav class="nav-pill-bar">
-          <a href="index.html" class="nav-pill-link">Accueil</a>
-          <a href="apropos.html" class="nav-pill-link">A propos</a>
-          <a href="categorie.html" class="nav-pill-link active">Catégorie</a>
-          <a href="index.html#produit" class="nav-pill-link">Produit</a>
-          <a href="index.html#blog" class="nav-pill-link">Blog</a>
-          <a href="index.html#contact" class="nav-pill-link">Contact</a>
-        </nav>
-        <a href="#" class="auth-button">Sign up / Sign in</a>
-      </div>
-
       <!-- HERO CONTENT -->
       <div class="categorie-hero-content container">
         <div class="categorie-hero-text">
@@ -56,9 +54,6 @@
         <div class="cat-grid">
            <!-- Item 1 -->
            <div class="cat-card">
-              <div class="cat-card-img">
-                 <img src="assets/images/1 1915286622.png" alt="Éducative">
-              </div>
               <div class="cat-card-content">
                  <h2>Éducative</h2>
                  <p>Apprentissage interactif et contenu pédagogique intelligent</p>
@@ -67,9 +62,6 @@
            </div>
            <!-- Item 2 -->
            <div class="cat-card">
-              <div class="cat-card-img">
-                 <img src="assets/images/2 4.png" alt="Informative">
-              </div>
               <div class="cat-card-content">
                  <h2>Informative</h2>
                  <p>Accès rapide à des informations fiables et actualisées</p>
@@ -78,9 +70,6 @@
            </div>
            <!-- Item 3 -->
            <div class="cat-card">
-              <div class="cat-card-img">
-                 <img src="assets/images/4 39619507.png" alt="Localisative">
-              </div>
               <div class="cat-card-content">
                  <h2>Localisative</h2>
                  <p>Orientation précise et repérage intelligent en temps réel</p>
@@ -89,9 +78,6 @@
            </div>
            <!-- Item 4 -->
            <div class="cat-card">
-              <div class="cat-card-img">
-                 <img src="assets/images/5 93.png" alt="Analytique ET Gestion">
-              </div>
               <div class="cat-card-content">
                  <h2>Analytique ET Gestion</h2>
                  <p>Analyse des données et gestion optimisée des activités</p>
@@ -135,19 +121,26 @@
     <section class="steps-section">
       <div class="container">
         <h2 class="trust-title text-cyan">Votre robot en 3 étapes simples</h2>
-        <div class="steps-container">
-           <div class="steps-image">
-              <img src="assets/images/categories/delivery.png" alt="Livraison robot">
+        
+        <div class="steps-main-container">
+           <div class="steps-left">
+              <h3 class="robot-ready-title">Robot prêt <br>en quelques clics</h3>
+              <div class="steps-list">
+                 <div class="step-card">
+                    1. Sélectionnez la catégorie adaptée à vos besoins parmi nos solutions intelligentes.
+                 </div>
+                 <div class="step-card">
+                    2. Vérifiez votre sélection et confirmez les fonctionnalités souhaitées pour votre robot.
+                 </div>
+                 <div class="step-card">
+                    3. Remplissez le formulaire avec vos informations et envoyez votre commande facilement.
+                 </div>
+              </div>
            </div>
-           <div class="steps-content">
-              <div class="step-card">
-                 1. Sélectionnez la catégorie adaptée à vos besoins parmi nos solutions intelligentes.
-              </div>
-              <div class="step-card">
-                 2. Vérifiez votre sélection et confirmez les fonctionnalités souhaitées pour votre robot.
-              </div>
-              <div class="step-card">
-                 3. Remplissez le formulaire avec vos informations et envoyez votre commande facilement.
+           
+           <div class="steps-right">
+              <div class="steps-image">
+                 <img src="assets/images/categories/delivery.png" alt="Livraison robot">
               </div>
            </div>
         </div>

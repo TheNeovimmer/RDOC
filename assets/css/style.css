@@ -173,12 +173,15 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Top Bar */
 .hero-top-bar {
-    position: relative;
-    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 100px;
+    padding: 20px 100px;
 }
 
 .logo-img {
@@ -1834,7 +1837,9 @@ img { max-width: 100%; height: auto; display: block; }
 .cat-card {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
+    text-align: center;
+    align-items: center;
 }
 
 .cat-card-img img {
@@ -1848,7 +1853,7 @@ img { max-width: 100%; height: auto; display: block; }
     font-size: 40px;
     font-weight: 700;
     color: var(--cyan);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .cat-card-content p {
@@ -1866,15 +1871,17 @@ img { max-width: 100%; height: auto; display: block; }
     color: var(--cyan);
     text-decoration: none;
     background: rgba(0, 0, 0, 0.8);
-    padding: 15px 50px;
+    padding: 15px 60px;
     border-radius: 40px;
     display: inline-block;
     transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 
 .btn-acceder:hover {
     background: var(--cyan);
     color: var(--bg-dark);
+    border-color: var(--cyan);
 }
 
 /* === Trust Section === */
@@ -1932,25 +1939,37 @@ img { max-width: 100%; height: auto; display: block; }
     text-align: center;
 }
 
-.steps-container {
+.steps-main-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    gap: 80px;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 100px;
+    max-width: 1240px;
+    margin: 50px auto 0;
 }
 
-.steps-image img {
-    max-width: 500px;
-    height: auto;
-}
-
-.steps-content {
+.steps-left {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
     text-align: left;
+}
+
+.robot-ready-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-white);
+    line-height: 1.2;
+    letter-spacing: 4.68px;
+    margin-bottom: 20px;
+}
+
+.steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .step-card {
@@ -1958,11 +1977,23 @@ img { max-width: 100%; height: auto; display: block; }
     color: var(--bg-dark);
     padding: 25px 30px;
     border-radius: 24px;
-    max-width: 540px;
+    width: 100%;
+    max-width: 541px;
     font-family: 'Inter', sans-serif;
     font-size: 20px;
     font-weight: 500;
     line-height: 1.4;
+}
+
+.steps-right {
+    flex: 1;
+}
+
+.steps-image img {
+    width: 100%;
+    max-width: 634px;
+    height: auto;
+    object-fit: contain;
 }
 
 /* === Commander Section === */
