@@ -1027,12 +1027,20 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* === A Propos Details Section === */
 body.apropos-page {
-    background-image: url('../images/disto.png');
-    background-size: cover;
-    background-position: center;
+    background-image: 
+        url('../images/disto.png'), 
+        url('../images/disto.png'), 
+        url('../images/disto.png'), 
+        url('../images/disto.png');
+    background-size: 350px, 450px, 300px, 400px;
+    background-position: 
+        top 10% left -5%, 
+        top 30% right -10%, 
+        top 65% left -10%, 
+        bottom 10% right -5%;
     background-repeat: no-repeat;
     background-color: var(--bg-dark); /* fallback */
-    background-attachment: fixed;
+    background-attachment: scroll;
 }
 
 .apropos-details {
@@ -1464,10 +1472,23 @@ body.apropos-page {
     position: relative;
 }
 
-.side-img img {
+.calque-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 350px; /* roughly larger than side-img */
+    width: auto;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.robot-img {
     height: 250px;
     width: auto;
     object-fit: contain;
+    position: relative;
+    z-index: 1;
 }
 
 .produit-center {
