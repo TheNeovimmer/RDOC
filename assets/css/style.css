@@ -1020,3 +1020,554 @@ img { max-width: 100%; height: auto; display: block; }
     .faq-title { font-size: 28px; }
     .contact-title { font-size: 28px; }
 }
+
+/* =========================================
+   A PROPOS PAGE SPECIFIC STYLES
+   ========================================= */
+
+/* === A Propos Details Section === */
+.apropos-details {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.apropos-section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 10px;
+}
+
+.apropos-section-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: 50px;
+}
+
+.apropos-text-split {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.apropos-text-col {
+    flex: 1;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+.apropos-text-divider {
+    width: 2px;
+    height: 100px;
+    background-color: var(--glass-border);
+}
+
+/* === Nos Services Section === */
+.apropos-services {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    text-align: left;
+}
+
+.service-block {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(92, 196, 229, 0.1);
+}
+
+.service-number {
+    display: inline-block;
+    background: var(--text-light);
+    color: var(--bg-dark);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.service-block h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    color: var(--cyan);
+    margin-bottom: 15px;
+}
+
+.service-block p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+.services-action {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+
+.btn-choisir {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    border-radius: 40px;
+}
+
+@media (max-width: 768px) {
+    .apropos-text-split {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .apropos-text-divider {
+        width: 100px;
+        height: 2px;
+    }
+}
+
+/* === Hero A Propos === */
+.apropos-hero {
+    position: relative;
+    padding-top: 150px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.apropos-hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 60px;
+    width: 100%;
+}
+
+.apropos-hero-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.founder-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--cyan);
+    letter-spacing: -0.44px;
+    margin-bottom: 20px;
+}
+
+.founder-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    line-height: 1.5;
+    letter-spacing: -0.264px;
+    color: var(--text-light);
+    margin-bottom: 40px;
+}
+
+.btn-more {
+    display: inline-flex;
+    padding: 15px 30px;
+    border-radius: 40px;
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2.6px;
+    background: transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 1px -1px 19.7px var(--cyan);
+}
+
+.btn-more:hover {
+    background: var(--cyan);
+    color: var(--bg-dark);
+}
+
+.apropos-hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.founder-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* === Stats Bar === */
+.apropos-stats-bar {
+    position: relative;
+    margin-top: -40px; /* Overlap hero slightly if needed, or simply standard spacing */
+    z-index: 10;
+    padding-bottom: 80px;
+}
+
+.stats-card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 50px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05); /* slightly different glass background from generic glass class for accurate visual */
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--glass-blur));
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.stat-value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 3.12px;
+}
+
+.stat-value.text-cyan {
+    color: var(--cyan);
+}
+
+.stat-divider {
+    width: 2px;
+    height: 60px;
+    background-color: var(--glass-border);
+}
+
+.stat-avatars {
+    display: flex;
+    align-items: center;
+}
+
+.stat-avatars img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--bg-dark);
+    margin-left: -15px; /* Overlap effect */
+}
+
+.stat-avatars img:first-child {
+    margin-left: 0;
+}
+
+/* Responsive adjustments for A Propos */
+@media (max-width: 1024px) {
+    .apropos-hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .founder-name {
+        font-size: 32px;
+    }
+    .stats-card {
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+    }
+    .stat-divider {
+        display: none;
+    }
+}
+
+/* === Nos Produits Section === */
+.apropos-produits {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.produit-highlight-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--cyan);
+    margin: 40px 0;
+    letter-spacing: 2px;
+}
+
+.produits-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+    position: relative;
+}
+
+.produit-side {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.produit-side:hover {
+    opacity: 1;
+}
+
+.produit-nav-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--text-light);
+    text-transform: uppercase;
+}
+
+.nav-arrow {
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-arrow:hover {
+    color: var(--cyan);
+}
+
+.produit-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.side-img img {
+    height: 250px;
+    width: auto;
+    object-fit: contain;
+}
+
+.produit-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.center-img img {
+    height: 400px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(92, 196, 229, 0.2));
+}
+
+.carousel-indicators {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.indicator {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.indicator.active {
+    font-size: 24px;
+}
+
+.indicator-line {
+    width: 100px;
+    height: 2px;
+    background-color: var(--glass-border);
+}
+
+.btn-decouvrir {
+    margin-top: 20px;
+    padding: 12px 40px;
+    border-radius: 40px;
+}
+
+@media (max-width: 1024px) {
+    .produits-carousel {
+        flex-direction: column;
+        gap: 60px;
+    }
+    
+    .produit-side {
+        flex-direction: column;
+    }
+    
+    .produit-nav-label {
+        display: none;
+    }
+}
+
+/* === Pourquoi RDOC ? Section === */
+.apropos-pourquoi {
+    padding: 80px 0;
+}
+
+.pourquoi-layout {
+    display: flex;
+    gap: 60px;
+    align-items: stretch;
+}
+
+.pourquoi-text-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pourquoi-text-col p {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--text-light);
+    max-width: 500px;
+}
+
+.pourquoi-visual-col {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+    height: 350px;
+}
+
+.pourquoi-box {
+    flex: 2;
+    border: 1px solid var(--text-light);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.pourquoi-box h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    color: var(--cyan);
+    margin-bottom: 15px;
+}
+
+.pourquoi-box p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-light);
+}
+
+.pourquoi-tab {
+    flex: 1;
+    border: 1px solid var(--text-light);
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.pourquoi-tab:hover {
+    border-color: var(--cyan);
+}
+
+.pourquoi-tab span {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    color: var(--cyan);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    letter-spacing: 2px;
+}
+
+@media (max-width: 1024px) {
+    .pourquoi-layout {
+        flex-direction: column;
+    }
+    .pourquoi-visual-col {
+        height: auto;
+        flex-direction: column;
+    }
+    .pourquoi-tab {
+        padding: 20px;
+    }
+    .pourquoi-tab span {
+        writing-mode: horizontal-tb;
+        transform: rotate(0);
+    }
+}
+
+/* === Rejoignez Nous Section === */
+.apropos-rejoindre {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.apropos-rejoindre-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: var(--text-light);
+    margin-bottom: 40px;
+}
+
+.btn-contacter {
+    display: inline-flex;
+    padding: 15px 40px;
+    border-radius: 40px;
+    border: 1px solid var(--glass-border);
+    color: var(--text-light);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    background: transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 1px -1px 19.7px var(--cyan);
+}
+
+.btn-contacter:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
