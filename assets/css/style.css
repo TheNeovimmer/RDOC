@@ -1974,7 +1974,7 @@ img { max-width: 100%; height: auto; display: block; }
     gap: 10px;
 }
 
-.step-num {
+.categorie-page .step-num {
     font-family: 'Inter', sans-serif;
     font-size: 96px;
     font-weight: 700;
