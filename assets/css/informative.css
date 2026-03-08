@@ -1,0 +1,541 @@
+/* ====== Informative Page specific styles ====== */
+
+.informative-page {
+    background-color: #000000;
+}
+
+/* --- Hero --- */
+.informative-hero {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.informative-hero .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.informative-hero .hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.informative-hero .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8));
+}
+
+.informative-hero .hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.informative-hero .hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(40px, 8vw, 84px);
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.informative-hero .hero-subtitle {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.btn-primary {
+    display: inline-flex;
+    padding: 16px 50px;
+    background: #FFFFFF;
+    color: #000000;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--cyan);
+    transform: translateY(-3px);
+}
+
+/* --- Solution Section --- */
+.solution-section {
+    padding: 120px 0;
+    text-align: center;
+}
+
+.section-badge {
+    color: var(--cyan);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.section-main-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    margin-bottom: 60px;
+    color: #FFFFFF;
+}
+
+.solution-grid.informative-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.solution-card {
+    background: #0d1a1e;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.solution-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--cyan);
+}
+
+.solution-card .card-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.solution-card .card-info {
+    padding: 30px;
+}
+
+.solution-card .card-info h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    color: var(--cyan);
+}
+
+.solution-card .card-info p {
+    font-size: 14px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.btn-discover-more {
+    display: inline-block;
+    padding: 12px 40px;
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    border-radius: 30px;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.btn-discover-more:hover {
+    background: var(--cyan);
+    color: #000000;
+}
+
+/* --- Video Feature --- */
+.video-feature-section {
+    padding-bottom: 120px;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.video-preview {
+    width: 100%;
+    display: block;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #FFFFFF;
+}
+
+.play-button:hover {
+    background: #FFFFFF;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.play-button svg {
+    margin-left: 5px;
+}
+
+/* --- Sensors Section --- */
+.sensors-section {
+    padding: 120px 0;
+    background: #000000;
+    text-align: center;
+}
+
+.sensors-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    color: var(--cyan);
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+}
+
+.sensors-subtitle {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-bottom: 80px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.sensors-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.sensor-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.sensor-side.left { text-align: right; }
+.sensor-side.right { text-align: left; }
+
+.sensor-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sensor-side.left .sensor-item { flex-direction: row; justify-content: flex-end; }
+.sensor-side.right .sensor-item { flex-direction: row; justify-content: flex-start; }
+
+.sensor-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: invert(1);
+}
+
+.sensor-text h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    color: var(--cyan);
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.sensor-text p {
+    font-size: 12px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+}
+
+.sensor-center {
+    flex: 1.5;
+}
+
+.sensor-robot {
+    width: 100%;
+    max-width: 450px;
+    filter: drop-shadow(0 0 30px rgba(92, 196, 229, 0.4));
+}
+
+/* --- Pricing Section --- */
+.pricing-section {
+    padding: 120px 0;
+}
+
+.pricing-title {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    color: #FFFFFF;
+    margin-bottom: 80px;
+    letter-spacing: 4px;
+}
+
+.pricing-grid.informative-pricing {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: #0d1a1e;
+    padding: 60px 40px;
+    border-radius: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.pricing-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: var(--cyan);
+}
+
+.pricing-card .price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+}
+
+.pricing-card .features {
+    text-align: left;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pricing-card .features li {
+    font-size: 15px;
+    color: var(--text-dim);
+    padding-left: 25px;
+    position: relative;
+}
+
+.pricing-card .features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--cyan);
+}
+
+.btn-pack {
+    width: 100%;
+    padding: 15px;
+    border-radius: 40px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+}
+
+.btn-solid {
+    background: var(--cyan);
+    color: #000000;
+}
+
+/* --- Testimonials --- */
+.testimonials-section {
+    padding: 120px 0;
+}
+
+.testimonials-title {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    color: #FFFFFF;
+    margin-bottom: 80px;
+    letter-spacing: 4px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: #0d1a1e;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    border-color: var(--cyan);
+    transform: translateY(-5px);
+}
+
+.feedback-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.testimonial-card h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+}
+
+.testimonial-card p {
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.6;
+}
+
+.btn-more-feedback {
+    display: inline-block;
+    padding: 12px 60px;
+    border: 1px solid var(--text-dim);
+    border-radius: 30px;
+    font-family: 'Orbitron', sans-serif;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-more-feedback:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+
+/* --- Feedback Form --- */
+.add-feedback-section {
+    padding: 120px 0;
+}
+
+.feedback-form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.feedback-form-wrapper h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.feedback-form-wrapper p {
+    color: var(--text-dim);
+    margin-bottom: 20px;
+}
+
+.star-rating {
+    font-size: 30px;
+    color: #FFD700;
+    margin-bottom: 40px;
+}
+
+.feedback-form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: none;
+}
+
+.btn-submit {
+    width: 100%;
+    background: var(--cyan);
+    color: #000000;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #FFFFFF;
+}
+
+/* --- Layout Utils --- */
+.text-center { text-align: center; }
+.mt-50 { margin-top: 50px; }
+
+/* === Responsive Informative === */
+@media (max-width: 1024px) {
+    .sensors-layout {
+        flex-direction: column;
+    }
+    .solution-grid.informative-grid, .pricing-grid.informative-pricing {
+        grid-template-columns: 1fr;
+    }
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-card {
+        padding: 40px 20px;
+    }
+}
