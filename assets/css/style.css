@@ -203,7 +203,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Absolute Top Bar for Specific Pages */
 .categorie-page .hero-top-bar,
-.apropos-page .hero-top-bar {
+.apropos-page .hero-top-bar,
+.educative-page .hero-top-bar {
     position: absolute;
     top: 0;
     left: 0;
