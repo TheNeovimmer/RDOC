@@ -1026,6 +1026,15 @@ img { max-width: 100%; height: auto; display: block; }
    ========================================= */
 
 /* === A Propos Details Section === */
+body.apropos-page {
+    background-image: url('../images/disto.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--bg-dark); /* fallback */
+    background-attachment: fixed;
+}
+
 .apropos-details {
     padding: 80px 0;
     text-align: center;
@@ -1037,14 +1046,14 @@ img { max-width: 100%; height: auto; display: block; }
     font-weight: 700;
     text-transform: uppercase;
     color: var(--cyan);
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .apropos-section-subtitle {
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 24px;
     color: var(--text-light);
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .apropos-text-split {
@@ -1060,66 +1069,114 @@ img { max-width: 100%; height: auto; display: block; }
 .apropos-text-col {
     flex: 1;
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 24px;
+    line-height: 1.5;
     color: var(--text-light);
 }
 
 .apropos-text-divider {
     width: 2px;
-    height: 100px;
+    height: 150px;
     background-color: var(--glass-border);
 }
 
-/* === Nos Services Section === */
+/* === Nos Services Section Exact Layout === */
 .apropos-services {
     padding: 80px 0;
-    text-align: center;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
     text-align: left;
 }
 
-.service-block {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--glass-border);
-    border-radius: 10px;
-    padding: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.apropos-services .container {
+    max-width: 1240px;
 }
 
-.service-block:hover {
-    transform: translateY(-5px);
+.services-grid-exact {
+    position: relative;
+    height: 582px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.service-card {
+    position: absolute;
+    border: 2px solid #FFFFFF;
+    border-radius: 24px;
+    padding: 40px;
+    background: transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.service-card:hover {
     box-shadow: 0 10px 30px rgba(92, 196, 229, 0.1);
+    border-color: var(--cyan);
 }
 
-.service-number {
-    display: inline-block;
-    background: var(--text-light);
+/* Map coords: Left 100 -> 0. Top 1564 -> 0. */
+.service-card-1 {
+    top: 0; 
+    left: 0;
+    width: 420px; 
+    height: 343px;
+}
+
+.service-card-2 {
+    top: 0; 
+    left: 428px; /* 528 - 100 */
+    width: 816px; 
+    height: 219px;
+}
+
+.service-card-3 {
+    top: 228px; /* 1792 - 1564 */
+    left: 428px; 
+    width: 301px; 
+    height: 354px;
+}
+
+.service-card-4 {
+    top: 228px; 
+    left: 735px; /* 835 - 100 */
+    width: 505px; 
+    height: 354px;
+}
+
+.service-card-5 {
+    top: 348px; /* 1912 - 1564 */
+    left: 0;
+    width: 420px; 
+    height: 234px;
+}
+
+.service-number-circle {
+    position: absolute;
+    top: -22px;
+    left: 40px;
+    width: 45px;
+    height: 45px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--bg-dark);
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
     font-weight: 700;
-    padding: 5px 10px;
-    border-radius: 20px;
-    margin-bottom: 20px;
 }
 
-.service-block h3 {
+.service-card h3 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 20px;
+    font-size: 24px;
     color: var(--cyan);
     margin-bottom: 15px;
 }
 
-.service-block p {
+.service-card p {
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6;
     color: var(--text-light);
 }
@@ -1134,11 +1191,39 @@ img { max-width: 100%; height: auto; display: block; }
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    font-size: 16px;
+    font-size: 20px;
     letter-spacing: 1.5px;
     border-radius: 40px;
+    padding: 15px 40px;
+    background: transparent;
+    color: var(--text-light);
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
 }
 
+.btn-choisir:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+
+@media (max-width: 1240px) {
+    .services-grid-exact {
+        position: static;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+    .service-card {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+    .service-number-circle {
+        position: static;
+        margin-bottom: 20px;
+    }
+}
 @media (max-width: 768px) {
     .apropos-text-split {
         flex-direction: column;
@@ -1147,6 +1232,9 @@ img { max-width: 100%; height: auto; display: block; }
     .apropos-text-divider {
         width: 100px;
         height: 2px;
+    }
+    .services-grid-exact {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -1475,10 +1563,11 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .pourquoi-box {
-    flex: 2;
-    border: 1px solid var(--text-light);
-    border-radius: 20px;
-    padding: 30px;
+    width: 350px;
+    height: 383px;
+    border: 2px solid #FFFFFF;
+    border-radius: 35px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -1486,22 +1575,23 @@ img { max-width: 100%; height: auto; display: block; }
 
 .pourquoi-box h3 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 20px;
+    font-size: 24px;
     color: var(--cyan);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .pourquoi-box p {
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5;
     color: var(--text-light);
 }
 
 .pourquoi-tab {
-    flex: 1;
-    border: 1px solid var(--text-light);
-    border-radius: 40px;
+    width: 73px;
+    height: 383px;
+    border: 2px solid #FFFFFF;
+    border-radius: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1515,7 +1605,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 .pourquoi-tab span {
     font-family: 'Orbitron', sans-serif;
-    font-size: 16px;
+    font-size: 24px;
+    font-weight: 700;
     color: var(--cyan);
     writing-mode: vertical-rl;
     transform: rotate(180deg);
