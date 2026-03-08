@@ -2273,27 +2273,29 @@ img { max-width: 100%; height: auto; display: block; }
    RESPONSIVE DESIGN & HAMBURGER MENU (SENIOR REFINEMENT)
    ============================================================ */
 
-/* Navigation Backdrop */
+/* Navigation Backdrop - Global */
 .nav-backdrop {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(8px);
-    z-index: 1000; /* Just below the nav menu */
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 1900; /* Above regular content, below menu */
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
 }
 
 .nav-backdrop.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
-/* Hamburger Menu Icon - Sharpened */
+/* Hamburger Menu Icon - Sharpened & Reachable */
 .hamburger-menu {
     display: none;
     flex-direction: column;
@@ -2304,19 +2306,17 @@ img { max-width: 100%; height: auto; display: block; }
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1005; /* Always on top */
+    z-index: 3100; /* Highest priority for toggling */
+    position: relative;
     -webkit-font-smoothing: antialiased;
-    transform: translateZ(0);
 }
 
 .hamburger-menu span {
     width: 100%;
-    height: 3px; /* Slightly thicker for sharpness */
+    height: 3px;
     background: var(--text-white);
     border-radius: 10px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    backface-visibility: hidden;
 }
 
 .hamburger-menu.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
@@ -2351,20 +2351,21 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Mobile Responsive (768px) */
 @media (max-width: 768px) {
-    /* Sticky Header on Mobile */
+    /* Fixed Sticky Header */
     .hero-top-bar, .categorie-page .hero-top-bar, .apropos-page .hero-top-bar {
         position: fixed !important;
         top: 0;
         left: 0;
         width: 100%;
-        padding: 15px 20px !important;
+        padding: 15px 25px !important;
         background: rgba(8, 28, 33, 0.95);
-        backdrop-filter: blur(10px);
-        z-index: 1002; 
+        backdrop-filter: blur(15px);
+        z-index: 3000 !important;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         display: flex !important;
         justify-content: space-between;
         align-items: center;
+        box-sizing: border-box;
     }
 
     .hamburger-menu { display: flex; }
@@ -2372,7 +2373,7 @@ img { max-width: 100%; height: auto; display: block; }
     /* Enhanced Mobile Nav Overlay */
     .nav-pill-bar, .hero-nav, .main-nav-links {
         display: flex !important;
-        position: fixed;
+        position: fixed !important;
         top: 0;
         right: -100%; /* Start off-screen */
         height: 100vh;
@@ -2382,32 +2383,37 @@ img { max-width: 100%; height: auto; display: block; }
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        z-index: 1001; /* Between header and backdrop */
+        z-index: 2500 !important;
         gap: 20px;
-        padding: 80px 40px;
+        padding: 120px 40px 60px 40px;
         border-left: 1px solid rgba(92, 196, 229, 0.1);
-        box-shadow: -15px 0 45px rgba(0,0,0,0.6);
+        box-shadow: -15px 0 45px rgba(0,0,0,0.8);
         transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         visibility: hidden;
+        pointer-events: none;
     }
 
     .nav-pill-bar.active, .hero-nav.active, .main-nav-links.active {
         right: 0;
         visibility: visible;
+        pointer-events: auto;
     }
 
-    /* Staggered Links Animation */
+    /* Staggered Links - Clickable Fix */
     .nav-pill-link, .nav-pill {
         font-size: 20px !important;
+        color: var(--text-white) !important;
         opacity: 0;
         transform: translateX(20px);
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         width: 100%;
+        padding: 12px 0;
+        display: block !important;
+        position: relative;
+        z-index: 2501;
     }
 
-    .nav-pill-bar.active .nav-pill-link, 
-    .hero-nav.active .nav-pill,
-    .main-nav-links.active .nav-pill-link {
+    .active .nav-pill-link, .active .nav-pill {
         opacity: 1;
         transform: translateX(0);
     }
