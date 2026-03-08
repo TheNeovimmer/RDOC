@@ -24,8 +24,10 @@
         <a href="index.html" class="nav-pill-link">Accueil</a>
         <a href="apropos.html" class="nav-pill-link">A propos</a>
         <a href="categorie.html" class="nav-pill-link active">Catégorie</a>
-        <a href="index.html#produit" class="nav-pill-link">Produit</a>a
-        <a href="index.html#blog" class="nav-pill-link">Blog</a> 
+        <a href="index.html#produit" class="nav-pill-link">Produit</a>
+        <a href="index.html#blog" class="nav-pill-link">Blog</a>
+        <a href="index.html#contact" class="nav-pill-link">Contact</a>
+      </nav>
       <a href="#" class="auth-button">Sign up / Sign in</a>
     </div>
 
@@ -127,13 +129,13 @@
               <h3 class="robot-ready-title">Robot prêt <br>en quelques clics</h3>
               <div class="steps-list">
                  <div class="step-card">
-                    1. Sélectionnez la catégorie adaptée à vos besoins parmi nos solutions intelligentes.
+                    Sélectionnez la catégorie adaptée à vos besoins pour trouver le robot idéal.
                  </div>
                  <div class="step-card">
-                    2. Vérifiez votre sélection et confirmez les fonctionnalités souhaitées pour votre robot.
+                    Vérifiez votre sélection et confirmez que le robot choisi correspond à vos attentes.
                  </div>
                  <div class="step-card">
-                    3. Remplissez le formulaire avec vos informations et envoyez votre commande facilement.
+                    Remplissez le formulaire avec vos informations et envoyez votre commande facilement
                  </div>
               </div>
            </div>
@@ -153,41 +155,30 @@
           <a href="#" class="btn-commander-large">Commander</a>
        </div>
     </section>
-    <section class="newsletter-section">
-      <div class="container">
-         <div class="newsletter-box glass">
-            <div class="newsletter-content">
-               <h2>Abonnez-vous à notre newsletter</h2>
-               <p>Recevez les dernières nouvelles et offres spéciales.</p>
-            </div>
-            <form class="newsletter-form">
-               <input type="email" placeholder="Adresse e-mail" required>
-               <button type="submit" class="btn-abonner">S'abonner</button>
-            </form>
-         </div>
-      </div>
-    </section>
-
     <!-- ====== FOOTER ====== -->
     <footer class="site-footer">
       <div class="container">
         <div class="footer-grid">
-          <div class="footer-brand">
-            <img
-              src="assets/images/Plan de travail 1 1.png"
-              alt="RDOC"
-              class="footer-logo"
-            />
-            <p>
-              Notre équipe d'experts passionnés fournit des solutions robotiques
-              exceptionnelles, conçues pour répondre aux besoins variés de nos
-              clients.
-            </p>
+          <!-- Col 1: Brand & Newsletter -->
+          <div class="footer-brand-newsletter">
+            <div class="footer-brand">
+              <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="footer-logo" />
+              <p>Notre équipe d'experts passionnés fournit des solutions robotiques exceptionnelles.</p>
+            </div>
+            <div class="footer-newsletter">
+              <p class="newsletter-desc">Solutions autonomes pour l'apprentissage moderne et la gestion intelligente.</p>
+              <form class="footer-newsletter-form">
+                <input type="email" placeholder="Adresse e-mail" required>
+                <button type="submit" class="btn-abonner-footer">S'abonner</button>
+              </form>
+            </div>
           </div>
+
+          <!-- Col 2: Pages -->
           <div class="footer-col">
             <h4>Pages</h4>
             <ul>
-              <li><a href="index.html#accueil">Accueil</a></li>
+              <li><a href="index.html">Accueil</a></li>
               <li><a href="apropos.html">A propos</a></li>
               <li><a href="categorie.html" class="text-cyan">Catégorie</a></li>
               <li><a href="index.html#produit">Produit</a></li>
@@ -195,30 +186,33 @@
               <li><a href="index.html#contact">Contact</a></li>
             </ul>
           </div>
+
+          <!-- Col 3: Aide -->
           <div class="footer-col">
             <h4>Aide</h4>
             <ul>
-              <li><a href="index.html#faq">FAQ</a></li>
-              <li><a href="#">Politique de confidentialité</a></li>
-              <li><a href="#">Conditions d'utilisation</a></li>
+              <li><a href="index.html#faq">Confidentialité</a></li>
+              <li><a href="#">Support client</a></li>
+              <li><a href="#">Conditions générales</a></li>
             </ul>
           </div>
+
+          <!-- Col 4: Contact -->
           <div class="footer-col">
             <h4>Contact</h4>
-            <ul>
-              <li>+213 123 456 789</li>
-              <li><a href="mailto:contact@rdoc.com">contact@rdoc.com</a></li>
-              <li>Alger, Algérie</li>
-            </ul>
-            <div class="footer-social">
-              <a href="#">FB</a>
-              <a href="#">IG</a>
-              <a href="#">LI</a>
+            <div class="footer-contact-info">
+               <p><a href="mailto:RDOC@gmail.com">Email : RDOC@gmail.com</a></p>
+               <p>téléphone : +216 73957295</p>
+               <div class="footer-social-icons">
+                  <a href="#">f</a>
+                  <a href="#">l</a>
+                  <a href="#">m</a>
+               </div>
             </div>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>© 2026 RDOC. Tous droits réservés.</p>
+          <p>Copyright 2026 RDOC, tous droits réservés.</p>
         </div>
       </div>
     </footer>
