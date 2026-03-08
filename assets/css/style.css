@@ -177,8 +177,28 @@ img { max-width: 100%; height: auto; display: block; }
     z-index: 100;
     display: flex;
     justify-content: space-between;
+    align-items: flex-start; /* Align panels to the top */
+    padding: 0; /* REMOVE PADDING TO REACH EDGES */
+}
+
+/* Corner Panels for Index Page */
+.nav-corner-panel {
+    background: #000000;
+    padding: 15px 100px; /* Internal padding to match site margin */
+    display: flex;
     align-items: center;
-    padding: 10px 100px;
+    justify-content: center;
+    min-height: 80px;
+}
+
+.left-panel {
+    border-bottom-right-radius: 40px;
+    padding-left: 100px; /* Ensure logo stays at the previous margin */
+}
+
+.right-panel {
+    border-bottom-left-radius: 40px;
+    padding-right: 100px; /* Ensure auth stays at the previous margin */
 }
 
 /* Absolute Top Bar for Specific Pages */
@@ -188,11 +208,12 @@ img { max-width: 100%; height: auto; display: block; }
     top: 0;
     left: 0;
     right: 0;
-    padding: 20px 100px;
+    padding: 20px 100px !important;
+    align-items: center;
 }
 
 .logo-img {
-    height: 46px;
+    height: 38px; /* Slightly adjusted for the panel */
     width: auto;
 }
 
@@ -2369,6 +2390,14 @@ img { max-width: 100%; height: auto; display: block; }
     }
 
     .hamburger-menu { display: flex; }
+
+    /* Reset Corner Panels for Mobile Sticky Header */
+    .nav-corner-panel {
+        background: transparent !important;
+        padding: 0 !important;
+        min-height: auto !important;
+        border-radius: 0 !important;
+    }
 
     /* Enhanced Mobile Nav Overlay */
     .nav-pill-bar, .hero-nav, .main-nav-links {
