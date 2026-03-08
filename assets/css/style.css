@@ -2282,7 +2282,7 @@ img { max-width: 100%; height: auto; display: block; }
     height: 100vh;
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(8px);
-    z-index: 999;
+    z-index: 1000; /* Just below the nav menu */
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2293,31 +2293,34 @@ img { max-width: 100%; height: auto; display: block; }
     visibility: visible;
 }
 
-/* Hamburger Menu Icon */
+/* Hamburger Menu Icon - Sharpened */
 .hamburger-menu {
     display: none;
     flex-direction: column;
     justify-content: space-around;
-    width: 28px;
+    width: 30px;
     height: 22px;
     background: transparent;
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1001;
+    z-index: 1005; /* Always on top */
+    -webkit-font-smoothing: antialiased;
+    transform: translateZ(0);
 }
 
 .hamburger-menu span {
     width: 100%;
-    height: 2px;
+    height: 3px; /* Slightly thicker for sharpness */
     background: var(--text-white);
     border-radius: 10px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
+    backface-visibility: hidden;
 }
 
 .hamburger-menu.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.hamburger-menu.active span:nth-child(2) { opacity: 0; transform: translateX(-20px); }
+.hamburger-menu.active span:nth-child(2) { opacity: 0; transform: translateX(-10px); }
 .hamburger-menu.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -8px); }
 
 /* Global Fluid Typography & Spacing */
@@ -2326,7 +2329,7 @@ img { max-width: 100%; height: auto; display: block; }
     --h2-size: clamp(32px, 5vw, 48px);
 }
 
-/* Tablet Responsive (1024px) */
+/* Tablet Responsive (1200px - 1024px) */
 @media (max-width: 1200px) {
     .hero-top-bar, .categorie-page .hero-top-bar, .apropos-page .hero-top-bar {
         padding: 20px 60px;
@@ -2348,22 +2351,38 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Mobile Responsive (768px) */
 @media (max-width: 768px) {
+    /* Sticky Header on Mobile */
+    .hero-top-bar, .categorie-page .hero-top-bar, .apropos-page .hero-top-bar {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 20px !important;
+        background: rgba(8, 28, 33, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1002; 
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     .hamburger-menu { display: flex; }
 
     /* Enhanced Mobile Nav Overlay */
     .nav-pill-bar, .hero-nav, .main-nav-links {
-        display: flex;
+        display: flex !important;
         position: fixed;
         top: 0;
         right: -100%; /* Start off-screen */
         height: 100vh;
-        width: 85%;
-        max-width: 400px;
-        background: rgba(8, 28, 33, 0.98);
+        width: 80%;
+        max-width: 350px;
+        background: #081c21;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        z-index: 1000;
+        z-index: 1001; /* Between header and backdrop */
         gap: 20px;
         padding: 80px 40px;
         border-left: 1px solid rgba(92, 196, 229, 0.1);
@@ -2379,31 +2398,35 @@ img { max-width: 100%; height: auto; display: block; }
 
     /* Staggered Links Animation */
     .nav-pill-link, .nav-pill {
-        font-size: 22px !important;
+        font-size: 20px !important;
         opacity: 0;
-        transform: translateX(30px);
+        transform: translateX(20px);
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        width: 100%;
     }
 
-    .active .nav-pill-link, .active .nav-pill {
+    .nav-pill-bar.active .nav-pill-link, 
+    .hero-nav.active .nav-pill,
+    .main-nav-links.active .nav-pill-link {
         opacity: 1;
         transform: translateX(0);
     }
 
-    .nav-pill-bar.active .nav-pill-link:nth-child(1) { transition-delay: 0.1s; }
-    .nav-pill-bar.active .nav-pill-link:nth-child(2) { transition-delay: 0.15s; }
-    .nav-pill-bar.active .nav-pill-link:nth-child(3) { transition-delay: 0.2s; }
-    .nav-pill-bar.active .nav-pill-link:nth-child(4) { transition-delay: 0.25s; }
-    .nav-pill-bar.active .nav-pill-link:nth-child(5) { transition-delay: 0.3s; }
-    .nav-pill-bar.active .nav-pill-link:nth-child(6) { transition-delay: 0.35s; }
+    /* Staggered delays */
+    .active .nav-pill-link:nth-child(1), .active .nav-pill:nth-child(1) { transition-delay: 0.1s; }
+    .active .nav-pill-link:nth-child(2), .active .nav-pill:nth-child(2) { transition-delay: 0.15s; }
+    .active .nav-pill-link:nth-child(3), .active .nav-pill:nth-child(3) { transition-delay: 0.2s; }
+    .active .nav-pill-link:nth-child(4), .active .nav-pill:nth-child(4) { transition-delay: 0.25s; }
+    .active .nav-pill-link:nth-child(5), .active .nav-pill:nth-child(5) { transition-delay: 0.3s; }
+    .active .nav-pill-link:nth-child(6), .active .nav-pill:nth-child(6) { transition-delay: 0.35s; }
 
     .auth-button { display: none; }
     .auth-button.active {
         display: flex;
         position: fixed;
-        bottom: 40px;
+        bottom: 30px;
         left: 40px;
-        z-index: 1001;
+        z-index: 1002;
         width: calc(100% - 80px);
         justify-content: center;
         animation: fadeInUp 0.5s calc(0.4s) both;
@@ -2415,9 +2438,9 @@ img { max-width: 100%; height: auto; display: block; }
     }
 
     /* Home Hero Polish */
-    .hero { padding-top: 120px; height: auto; min-height: 100vh; }
+    .hero { padding-top: 140px; height: auto; min-height: 100vh; }
     .hero-title { font-size: clamp(24px, 8vw, 32px) !important; text-align: center; }
-    .hero-robot-img { max-width: 260px; margin: 20px auto; display: block; }
+    .hero-robot-img { max-width: 240px; margin: 20px auto; display: block; }
     
     .hero-users { justify-content: center; margin-bottom: 30px; }
     .user-avatars { width: auto; }
@@ -2427,16 +2450,12 @@ img { max-width: 100%; height: auto; display: block; }
     /* Section Spacing */
     section { padding: var(--section-padding) 0; }
 
-    /* Category Page Mobile */
-    .cat-grid, .trust-grid, .footer-grid, .step-intro-cards, .partners-logos {
+    /* Grids to Single Column */
+    .cat-grid, .trust-grid, .footer-grid, .step-intro-cards, .partners-logos, .choose-grid {
         grid-template-columns: 1fr !important;
         gap: 30px;
     }
     
-    .hero-top-bar, .categorie-page .hero-top-bar, .apropos-page .hero-top-bar {
-        padding: 20px;
-    }
-
     /* 3 Steps Section Polish */
     .steps-main-container { flex-direction: column; align-items: center; }
     .steps-main-panel { padding: 40px 20px; border-radius: 40px; }
@@ -2444,15 +2463,39 @@ img { max-width: 100%; height: auto; display: block; }
     .step-num { font-size: clamp(60px, 15vw, 80px) !important; margin-bottom: 10px; }
     .steps-image-container { margin-top: 40px; }
 
-    /* Footer Newsletter Senior Polish */
+    /* Timeline Mobile Reset */
+    .how-timeline { width: 100%; }
+    .how-step {
+        width: 100% !important;
+        align-self: center !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        height: auto !important;
+        border-radius: 30px !important;
+        padding: 30px 20px !important;
+        gap: 20px !important;
+        margin-bottom: 20px !important;
+    }
+    .step-left, .step-right { justify-content: center !important; }
+    .step-text { padding: 0 !important; text-align: center !important; font-size: 18px; }
+    .step-circle { order: -1; width: 100px; height: 100px; }
+    .step-num { font-size: 40px !important; }
+
+    /* Footer Mobile */
     .footer-brand-newsletter { flex-direction: column; align-items: center; text-align: center; gap: 40px; }
     .footer-newsletter-form { width: 100%; max-width: 400px; padding: 4px; border-radius: 50px; background: rgba(255,255,255,0.05); }
-    .footer-newsletter-form input { padding: 15px 25px; }
-    .btn-abonner-footer { width: 100%; border-radius: 50px; margin-top: 10px; padding: 15px; }
+    .footer-newsletter-form input { padding: 12px 20px; font-size: 14px; }
+    .btn-abonner-footer { margin-top: 10px; }
 }
 
 @media (max-width: 480px) {
     .container { padding: 0 20px; }
-    .hero-title { font-size: 24px !important; }
-    .nav-pill-bar { width: 100%; }
+    .hero-title { font-size: 22px !important; }
+    .nav-pill-bar, .hero-nav { width: 90%; }
 }
+
+/* ============================================================
+   FINAL SECTION-SPECIFIC RESPONSIVE OVERRIDES
+   ============================================================ */
+
+/* Handled above for better organization */
