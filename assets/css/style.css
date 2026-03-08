@@ -16,7 +16,23 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background: var(--bg-dark);
+    background-image: 
+        url('../images/disto.png'), 
+        url('../images/disto.png'), 
+        url('../images/disto.png'), 
+        url('../images/disto.png'),
+        url('../images/disto.png'),
+        url('../images/disto.png');
+    background-size: 350px, 450px, 300px, 400px, 500px, 350px;
+    background-position: 
+        top 5% left -5%, 
+        top 20% right -10%, 
+        top 40% left -10%, 
+        top 60% right -5%,
+        top 80% left -5%,
+        bottom 5% right 10%;
+    background-repeat: no-repeat;
+    background-color: var(--bg-dark);
     color: var(--text-white);
     font-family: 'Inter', sans-serif;
     line-height: 1.5;
@@ -205,10 +221,10 @@ img { max-width: 100%; height: auto; display: block; }
 .hero-robot {
     position: absolute;
     z-index: 5;
-    bottom: 15%;
+    top: 55%; /* Slightly below absolute center to account for top bar */
     left: 50%;
-    transform: translateX(-50%);
-    width: 382px;
+    transform: translate(-50%, -50%);
+    width: 600px;
 }
 
 .hero-robot-img {
@@ -1026,23 +1042,6 @@ img { max-width: 100%; height: auto; display: block; }
    ========================================= */
 
 /* === A Propos Details Section === */
-body.apropos-page {
-    background-image: 
-        url('../images/disto.png'), 
-        url('../images/disto.png'), 
-        url('../images/disto.png'), 
-        url('../images/disto.png');
-    background-size: 350px, 450px, 300px, 400px;
-    background-position: 
-        top 10% left -5%, 
-        top 30% right -10%, 
-        top 65% left -10%, 
-        bottom 10% right -5%;
-    background-repeat: no-repeat;
-    background-color: var(--bg-dark); /* fallback */
-    background-attachment: scroll;
-}
-
 .apropos-details {
     padding: 80px 0;
     text-align: center;
