@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="RDOC Localisative - Une solution localisative sans limites avec nos solutions robotiques.">
-    <title>RDOC - Localisative</title>
+    <meta name="description" content="RDOC Gestion - La puissance de la gestion intelligente avec nos solutions robotiques.">
+    <title>RDOC - Analytique & Gestion</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/localisative.css">
+    <link rel="stylesheet" href="assets/css/gestion.css">
 </head>
-<body class="localisative-page">
+<body class="gestion-page">
 
     <!-- NAVBAR -->
     <div class="hero-top-bar">
@@ -31,40 +31,52 @@
       <a href="#" class="auth-button">Sign up / Sign in</a>
     </div>
 
-    <!-- Hero -->
-    <section class="localisative-hero">
+    <!-- Hero Gestion -->
+    <section class="gestion-hero">
         <div class="hero-bg">
-            <img src="assets/images/localisative/Gemini_Generated_Image_becawgbecawgbeca 2.png" alt="Mall background" class="hero-bg-img">
+            <img src="assets/images/gestion/hero.png" alt="High-tech management background" class="hero-bg-img">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content container">
-            <h1 class="hero-title">Toujours au bon endroit</h1>
-            <p class="hero-subtitle">Le robot qui comprend l'espace et vous guide</p>
+            <h1 class="hero-title">La puissance de la gestion intelligente</h1>
+            <p class="hero-subtitle">
+                Notre robot collecte et analyse des données en temps réel, optimisant ainsi la gestion<br>
+                de vos activités tout en vous offrant un contrôle total sur votre environnement.
+            </p>
             <a href="#commander" class="btn-primary">Commander</a>
         </div>
     </section>
 
-    <!-- Solution -->
+    <!-- Solution Section -->
     <section class="solution-section">
         <div class="container">
-            <div class="section-badge">Localisative</div>
-            <h2 class="section-main-title">Une solution localisative sans limites</h2>
-            <div class="solution-grid localisative-grid">
+            <div class="section-badge">Gestion & Analytique</div>
+            <h2 class="section-main-title">Une solution de gestion sans limites</h2>
+            <div class="solution-grid">
                 <div class="solution-card">
                     <div class="card-image">
-                        <img src="assets/images/localisative/Gemini_Generated_Image_eb0tv6eb0tv6eb0t 3.png" alt="Localisation Intelligente">
+                        <img src="assets/images/informative/Gemini_Generated_Image_eb0tv6eb0tv6eb0t 3.png" alt="Gestion et Organisation">
                     </div>
                     <div class="card-info">
-                        <h3>LOCALISATION INTELLIGENTE</h3>
-                        <p>Aide de robot pour suivre un trajectoire</p>
+                        <h3>GESTION ET ORGANISATION</h3>
+                        <p>Simplification de l'organisation et de la gestion des tâches</p>
                     </div>
                 </div>
                 <div class="solution-card">
                     <div class="card-image">
-                        <img src="assets/images/localisative/Gemini_Generated_Image_pnbtp0pnbtp0pnbt 1.png" alt="Objectifs">
+                        <img src="assets/images/informative/Gemini_Generated_Image_y4jrwly4jrwly4jr 1.png" alt="Infos Utiles">
                     </div>
                     <div class="card-info">
-                        <h3>OBJECTIFS</h3>
+                        <h3>ANALYSE DES DONNÉES</h3>
+                        <p>Collecte et traitement intelligent de l'information</p>
+                    </div>
+                </div>
+                <div class="solution-card">
+                    <div class="card-image">
+                        <img src="assets/images/informative/Gemini_Generated_Image_eb0tv6eb0tv6eb0t 2.png" alt="Optimisation">
+                    </div>
+                    <div class="card-info">
+                        <h3>OPTIMISATION</h3>
                         <p>Innovation et aide aux entreprises</p>
                     </div>
                 </div>
@@ -75,11 +87,11 @@
         </div>
     </section>
 
-    <!-- Image Feature -->
+    <!-- Large Image Feature -->
     <section class="video-feature-section">
         <div class="container">
-            <div class="video-wrapper">
-                <img src="assets/images/localisative/Gemini_Generated_Image_rjfjderjfjderjfj (1) 1.png" alt="Robot Localisative Map" class="video-preview">
+            <div class="video-wrapper" id="videoTrigger">
+                <img src="assets/images/informative/Gemini_Generated_Image_fzk8v4fzk8v4fzk8 1.png" alt="Gestions Corridor" class="video-preview">
                 <div class="play-button">
                     <svg viewBox="0 0 24 24" fill="white" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
                 </div>
@@ -87,25 +99,27 @@
         </div>
     </section>
 
-    <!-- Sensors -->
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="video-player-container">
+                <!-- Using a placeholder video URL -->
+                <iframe id="videoIframe" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sensors Section (Diagram) -->
     <section class="sensors-section">
         <div class="container">
             <h2 class="sensors-title">CAPTEURS INTELLIGENTS</h2>
-            <p class="sensors-subtitle">comprendre la voix et l'environnement d'apprentissage</p>
+            <p class="sensors-subtitle">comprendre la voix et l'environnement de gestion</p>
             <div class="sensors-layout">
                 <div class="sensor-side left">
                     <div class="sensor-item">
                         <div class="sensor-icon">
-                            <img src="assets/images/icon1.png" alt="Localisation Intelligente">
-                        </div>
-                        <div class="sensor-text">
-                            <h4>LOCALISATION INTELLIGENTE</h4>
-                            <p>fournir des réponses claires et précises</p>
-                        </div>
-                    </div>
-                    <div class="sensor-item">
-                        <div class="sensor-icon">
-                            <img src="assets/images/icon2.png" alt="Capture Vocale">
+                            <img src="assets/images/icon1.png" alt="Capture Vocale">
                         </div>
                         <div class="sensor-text">
                             <h4>CAPTURE VOCALE</h4>
@@ -114,34 +128,34 @@
                     </div>
                     <div class="sensor-item">
                         <div class="sensor-icon">
-                            <img src="assets/images/icon3.png" alt="Information Intelligente">
+                            <img src="assets/images/icon2.png" alt="Reporting Intelligente">
                         </div>
                         <div class="sensor-text">
-                            <h4>INFORMATION INTELLIGENTE</h4>
+                            <h4>REPORTING INTELLIGENT</h4>
                             <p>fournir des réponses claires et précises</p>
+                        </div>
+                    </div>
+                    <div class="sensor-item">
+                        <div class="sensor-icon">
+                            <img src="assets/images/icon3.png" alt="Planification">
+                        </div>
+                        <div class="sensor-text">
+                            <h4>PLANIFICATION</h4>
+                            <p>Gérer vos emplois du temps</p>
                         </div>
                     </div>
                 </div>
                 <div class="sensor-center">
-                    <img src="assets/images/Gemini_Generated_Image_ioe7t9ioe7t9ioe7-removebg-preview (1) 1.png" alt="Localisative Robot" class="sensor-robot">
+                    <img src="assets/images/Gemini_Generated_Image_ioe7t9ioe7t9ioe7-removebg-preview (1) 1.png" alt="Gestion Robot" class="sensor-robot">
                 </div>
                 <div class="sensor-side right">
                     <div class="sensor-item">
                         <div class="sensor-text">
-                            <h4>RÉSISTANCE SUR PLACE</h4>
-                            <p>fournir des réponses claires et précises</p>
+                            <h4>SURVEILLANCE</h4>
+                            <p>Gestion de la sécurité</p>
                         </div>
                         <div class="sensor-icon">
-                            <img src="assets/images/icon1.png" alt="Résistance">
-                        </div>
-                    </div>
-                    <div class="sensor-item">
-                        <div class="sensor-text">
-                            <h4>PROJECTION</h4>
-                            <p>Projection interactive</p>
-                        </div>
-                        <div class="sensor-icon">
-                            <img src="assets/images/icon2.png" alt="Projection">
+                            <img src="assets/images/icon1.png" alt="Surveillance">
                         </div>
                     </div>
                     <div class="sensor-item">
@@ -150,7 +164,16 @@
                             <p>fournir des réponses claires et précises</p>
                         </div>
                         <div class="sensor-icon">
-                            <img src="assets/images/icon3.png" alt="Questions">
+                            <img src="assets/images/icon2.png" alt="Questions">
+                        </div>
+                    </div>
+                    <div class="sensor-item">
+                        <div class="sensor-text">
+                            <h4>ASSISTANT GESTIONNAIRE</h4>
+                            <p>toujours disponible pour vous aider</p>
+                        </div>
+                        <div class="sensor-icon">
+                            <img src="assets/images/icon3.png" alt="Assistant">
                         </div>
                     </div>
                 </div>
@@ -167,35 +190,35 @@
                     <h3>ESSAI GRATUIT</h3>
                     <p class="price">Venez tester notre robot</p>
                     <ul class="features">
-                        <li>Tester le moteur</li>
+                        <li>Vérifier le robot</li>
                         <li>Découvrir ses fonctionnalités</li>
                         <li>Expérience guidée</li>
                         <li>Poser vos questions</li>
-                        <li>Vérifier l'écran interactif</li>
+                        <li>Tester l'écran interactif</li>
                     </ul>
                     <a href="#" class="btn-pack btn-outline">Essai Gratuit</a>
                 </div>
                 <div class="pricing-card highlighted">
                     <h3>ACHAT ROBOT</h3>
-                    <p class="price">1500 TND</p>
+                    <p class="price">Obtenez un robot qui répond pour tous vos besoins</p>
                     <ul class="features">
-                        <li>Propriété totale</li>
-                        <li>Toutes les fonctionnalités débloquées</li>
-                        <li>Support premium 24/7</li>
-                        <li>24/7 maintenance</li>
-                        <li>Mises à jour logicielles sécurité</li>
+                        <li>Propriété de l'acheteur</li>
+                        <li>Tout accès à vos besoins</li>
+                        <li>24/7 de maintenance</li>
+                        <li>Soutien d'experts dédié</li>
+                        <li>Mises à jour logicielles de sécurité</li>
                     </ul>
                     <a href="#" class="btn-pack btn-solid">Achat Robot</a>
                 </div>
                 <div class="pricing-card">
                     <h3>LOCATION ROBOT</h3>
-                    <p class="price">100 TND/JOUR - DÉPÔT 1500 DT</p>
+                    <p class="price">Solution flexible pour entreprises</p>
                     <ul class="features">
-                        <li>Sans engagement</li>
-                        <li>Fonctionnalités complètes de base</li>
-                        <li>Maintenance incluse</li>
-                        <li>Mises à jour logicielles</li>
-                        <li>Aide à l'usage des équipements</li>
+                        <li>Maintenance complète</li>
+                        <li>Accès aux rapports premium</li>
+                        <li>Analytique avancée</li>
+                        <li>Support prioritaire</li>
+                        <li>Échange facile</li>
                     </ul>
                     <a href="#" class="btn-pack btn-outline">Location Robot</a>
                 </div>
@@ -203,7 +226,7 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- Feedback -->
     <section class="testimonials-section">
         <div class="container">
             <h2 class="testimonials-title">AVIS CLIENTS</h2>
@@ -222,6 +245,11 @@
                     <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Sofien Trabelsi" class="feedback-avatar">
                     <h4>Sofien Trabelsi</h4>
                     <p>SERVICE DE HAUTE QUALITÉ.</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Amine Jlassi" class="feedback-avatar">
+                    <h4>Amine Jlassi</h4>
+                    <p>Une expérience incroyable, la gestion est devenue fluide et automatisée.</p>
                 </div>
             </div>
             <div class="text-center mt-50">
@@ -285,8 +313,8 @@
                       <li><a href="categorie.html">Catégorie</a></li>
                       <li><a href="educative.html">Educative</a></li>
                       <li><a href="informative.html">Informative</a></li>
-                      <li><a href="localisative.html" class="active">Localisative</a></li>
-                      <li><a href="gestion.html">Gestion</a></li>
+                      <li><a href="localisative.html">Localisative</a></li>
+                      <li><a href="gestion.html" class="active">Gestion</a></li>
                       <li><a href="index.html#produit">Produit</a></li>
                       <li><a href="index.html#contact">Contact</a></li>
                     </ul>

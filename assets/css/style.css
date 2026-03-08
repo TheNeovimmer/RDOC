@@ -206,7 +206,8 @@ img { max-width: 100%; height: auto; display: block; }
 .apropos-page .hero-top-bar,
 .educative-page .hero-top-bar,
 .informative-page .hero-top-bar,
-.localisative-page .hero-top-bar {
+.localisative-page .hero-top-bar,
+.gestion-page .hero-top-bar {
     position: absolute;
     top: 0;
     left: 0;

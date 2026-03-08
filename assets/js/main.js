@@ -28,4 +28,32 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.forEach(link => {
         link.addEventListener('click', () => toggleMenu(true));
     });
+    // Video Modal Functionality
+    const videoTrigger = document.getElementById('videoTrigger');
+    const videoModal = document.getElementById('videoModal');
+    const closeModal = document.querySelector('.close-modal');
+    const videoIframe = document.getElementById('videoIframe');
+
+    if (videoTrigger && videoModal && closeModal) {
+        videoTrigger.addEventListener('click', () => {
+            // Using a sample video for demonstration
+            videoIframe.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
+            videoModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeModal.addEventListener('click', () => {
+            videoModal.style.display = 'none';
+            videoIframe.src = "";
+            document.body.style.overflow = '';
+        });
+
+        videoModal.addEventListener('click', (e) => {
+            if (e.target === videoModal) {
+                videoModal.style.display = 'none';
+                videoIframe.src = "";
+                document.body.style.overflow = '';
+            }
+        });
+    }
 });

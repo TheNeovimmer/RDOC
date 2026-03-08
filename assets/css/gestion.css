@@ -1,0 +1,546 @@
+/* ====== Gestion Page specific styles ====== */
+
+.gestion-page {
+    background-color: #000000;
+}
+
+/* --- Hero --- */
+.gestion-hero {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.gestion-hero .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.gestion-hero .hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gestion-hero .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8));
+}
+
+.gestion-hero .hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.gestion-hero .hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(40px, 8vw, 84px);
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.gestion-hero .hero-subtitle {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+/* --- Solution Section --- */
+.solution-section {
+    padding: 120px 0;
+    text-align: center;
+}
+
+.section-badge {
+    color: #5CC4E5;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.section-main-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    margin-bottom: 60px;
+    color: #FFFFFF;
+}
+
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin: 0 auto;
+}
+
+.solution-card {
+    background: #0d1a1e;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.solution-card:hover {
+    transform: translateY(-10px);
+    border-color: #5CC4E5;
+}
+
+.solution-card .card-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.solution-card .card-info {
+    padding: 30px;
+}
+
+.solution-card .card-info h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    color: #5CC4E5;
+}
+
+.solution-card .card-info p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.btn-discover-more {
+    display: inline-block;
+    padding: 12px 40px;
+    border: 1px solid #5CC4E5;
+    color: #5CC4E5;
+    border-radius: 30px;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-discover-more:hover {
+    background: #5CC4E5;
+    color: #000000;
+}
+
+/* --- Sensors Section --- */
+.sensors-section {
+    padding: 120px 0;
+    background: #000000;
+    text-align: center;
+}
+
+.sensors-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    color: #5CC4E5;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+}
+
+.sensors-subtitle {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-bottom: 80px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.sensors-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.sensor-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.sensor-side.left { text-align: right; }
+.sensor-side.right { text-align: left; }
+
+.sensor-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sensor-side.left .sensor-item { flex-direction: row; justify-content: flex-end; }
+.sensor-side.right .sensor-item { flex-direction: row; justify-content: flex-start; }
+
+.sensor-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: invert(1);
+}
+
+.sensor-text h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    color: #5CC4E5;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.sensor-text p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+}
+
+.sensor-center {
+    flex: 1.5;
+}
+
+.sensor-robot {
+    width: 100%;
+    max-width: 450px;
+    filter: drop-shadow(0 0 30px rgba(92, 196, 229, 0.4));
+}
+
+/* --- Pricing Section --- */
+.pricing-section {
+    padding: 120px 0;
+}
+
+.pricing-title {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    color: #FFFFFF;
+    margin-bottom: 80px;
+    letter-spacing: 4px;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: #0d1a1e;
+    padding: 60px 40px;
+    border-radius: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pricing-card.highlighted {
+    border-color: #5CC4E5;
+    background: #0a252e;
+}
+
+.pricing-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #5CC4E5;
+}
+
+.pricing-card .price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+}
+
+.pricing-card .features {
+    text-align: left;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pricing-card .features li {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.5);
+    padding-left: 25px;
+    position: relative;
+    list-style: none;
+}
+
+.pricing-card .features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #5CC4E5;
+}
+
+.btn-pack {
+    width: 100%;
+    padding: 15px;
+    border-radius: 40px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    display: block;
+}
+
+.btn-outline {
+    border: 1px solid #5CC4E5;
+    color: #5CC4E5;
+}
+
+.btn-solid {
+    background: #5CC4E5;
+    color: #000000;
+}
+
+/* --- Video Modal --- */
+.video-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    position: relative;
+    margin: 5% auto;
+    width: 80%;
+    max-width: 1000px;
+    aspect-ratio: 16/9;
+}
+
+.close-modal {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.video-player-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* --- Testimonials --- */
+.testimonials-section {
+    padding: 120px 0;
+}
+
+.testimonials-title {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    color: #FFFFFF;
+    margin-bottom: 80px;
+    letter-spacing: 4px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: #0d1a1e;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    border-color: #5CC4E5;
+    background: #112830;
+    box-shadow: 0 10px 30px rgba(92, 196, 229, 0.1);
+}
+
+.feedback-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.testimonial-card h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+}
+
+.testimonial-card p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+}
+
+.btn-more-feedback {
+    display: inline-block;
+    padding: 12px 60px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    font-family: 'Orbitron', sans-serif;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-more-feedback:hover {
+    border-color: #5CC4E5;
+    color: #5CC4E5;
+}
+
+/* --- Feedback Form --- */
+.add-feedback-section {
+    padding: 120px 0;
+}
+
+.feedback-form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.feedback-form-wrapper h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.feedback-form-wrapper p {
+    color: var(--text-dim);
+    margin-bottom: 20px;
+}
+
+.star-rating {
+    font-size: 30px;
+    color: #FFD700;
+    margin-bottom: 40px;
+}
+
+.feedback-form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: none;
+}
+
+.btn-submit {
+    width: 100%;
+    background: var(--cyan);
+    color: #000000;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #FFFFFF;
+}
+
+/* --- Layout Utils --- */
+.text-center { text-align: center; }
+.mt-50 { margin-top: 50px; }
+
+/* === Responsive Educative === */
+@media (max-width: 1024px) {
+    .sensors-layout {
+        flex-direction: column;
+    }
+    .sensor-side {
+        width: 100%;
+        text-align: center !important;
+    }
+    .sensor-item {
+        justify-content: center !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .solution-grid, .pricing-grid, .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-card {
+        padding: 40px 20px;
+    }
+}
+ 
+/* --- Layout Utils --- */
+.text-center { text-align: center; }
+.mt-50 { margin-top: 50px; }
+
+/* === Responsive Gestion === */
+@media (max-width: 1024px) {
+    .sensors-layout {
+        flex-direction: column;
+    }
+    .solution-grid.gestion-grid, .pricing-grid.gestion-pricing {
+        grid-template-columns: 1fr;
+    }
+}
