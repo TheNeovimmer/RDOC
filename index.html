@@ -224,6 +224,59 @@
             flex-direction: column;
             justify-content: flex-end;
         }
+        .featured-card-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .group:hover .featured-card-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .featured-card-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #5CC4E5;
+            margin-bottom: 15px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        .featured-card-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: #FFFFFF;
+            text-align: center;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            max-width: 280px;
+        }
+        .featured-card-link {
+            display: inline-block;
+            padding: 10px 30px;
+            background: #5CC4E5;
+            color: #000000;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(92, 196, 229, 0.4);
+        }
+        .featured-card-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(92, 196, 229, 0.6);
+        }
         .featured-card-label {
             position: relative;
             z-index: 2;
@@ -574,24 +627,41 @@
             <p class="font-inter text-xl text-white max-w-[1240px] mx-auto leading-relaxed">Découvrez notre service phare RDOC, alliant éducation, information, analyse et gestion. Profitez d'outils guidés et de fonctionnalités avancées, incluant la localisation et le suivi précis, pour répondre à tous vos besoins professionnels et pédagogiques.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-[30px] mb-[50px]">
-            <div class="featured-card">
-                <div class="absolute inset-0">
-                    <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Informative" class="w-full h-full object-cover">
+            <div class="featured-card group cursor-pointer">
+                <div class="absolute inset-0 overflow-hidden rounded-[20px]">
+                    <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Informative" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 </div>
-                <span class="featured-card-label">Informative</span>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <span class="featured-card-label group-hover:opacity-0 transition-opacity duration-300">Informative</span>
+                <div class="featured-card-overlay">
+                    <h3 class="featured-card-title">Informative</h3>
+                    <p class="featured-card-text">Accédez à des informations en temps réel et des mises à jour instantanées pour rester informé où que vous soyez.</p>
+                    <a href="informative.html" class="featured-card-link">Découvrir</a>
+                </div>
             </div>
-            <div class="featured-card justify-between">
-                <span class="featured-card-label mx-auto my-5">Education</span>
-                <div class="absolute inset-0">
-                    <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Education" class="w-full h-full object-cover">
+            <div class="featured-card group cursor-pointer">
+                <span class="featured-card-label mx-auto my-5 group-hover:opacity-0 transition-opacity duration-300">Education</span>
+                <div class="absolute inset-0 overflow-hidden rounded-[20px]">
+                    <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Education" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 </div>
-                <div class="featured-card-desc">Apprenez de façon ludique avec une technologie interactive qui guide vos pas</div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="featured-card-overlay">
+                    <h3 class="featured-card-title">Education</h3>
+                    <p class="featured-card-text">Apprenez de façon ludique avec une technologie interactive qui guide vos pas vers de nouvelles connaissances.</p>
+                    <a href="educative.html" class="featured-card-link">Découvrir</a>
+                </div>
             </div>
-            <div class="featured-card">
-                <div class="absolute inset-0">
-                    <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Analyse et gestion" class="w-full h-full object-cover">
+            <div class="featured-card group cursor-pointer">
+                <div class="absolute inset-0 overflow-hidden rounded-[20px]">
+                    <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Analyse et gestion" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 </div>
-                <span class="featured-card-label">Analyse et gestion</span>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <span class="featured-card-label group-hover:opacity-0 transition-opacity duration-300">Analyse et gestion</span>
+                <div class="featured-card-overlay">
+                    <h3 class="featured-card-title">Analyse et gestion</h3>
+                    <p class="featured-card-text">Optimisez vos opérations avec des outils d'analyse avancés et une gestion centralisée de vos ressources.</p>
+                    <a href="gestion.html" class="featured-card-link">Découvrir</a>
+                </div>
             </div>
         </div>
         <div class="text-center">
