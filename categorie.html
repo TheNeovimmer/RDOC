@@ -3,24 +3,118 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="RDOC - Solutions robotiques innovantes pour l'éducation, la gestion et l'assistance."
-    />
+    <meta name="description" content="RDOC - Solutions robotiques innovantes pour l'éducation, la gestion et l'assistance." />
     <title>RDOC - Catégorie</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#5CC4E5',
+              'bg-dark': '#000000',
+              'text-white': '#FFFFFF',
+            },
+            fontFamily: {
+              'orbitron': ['Orbitron', 'sans-serif'],
+              'inter': ['Inter', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body { background-color: #000000; }
+      .logo-img { height: 38px; width: auto; }
+      .auth-button {
+        display: inline-flex; align-items: center; justify-content: center; padding: 6px 23px;
+        height: 40px; border-radius: 18px; border: 1px solid transparent;
+        background-image: linear-gradient(#000, #000), linear-gradient(135deg, #FFFFFF, #5CC4E5);
+        background-origin: border-box; background-clip: padding-box, border-box;
+        font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 500;
+        color: #FFFFFF; transition: all 0.3s; text-decoration: none;
+      }
+      .auth-button:hover { background-image: linear-gradient(rgba(92,196,229,0.1), rgba(92,196,229,0.1)), linear-gradient(135deg, #5CC4E5, #FFFFFF); }
+      .nav-pill-bar { display: flex; align-items: center; gap: 22px; height: 55px; padding: 0 40px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 28px; backdrop-filter: blur(10px); }
+      .nav-pill-link { font-family: 'Orbitron', sans-serif; font-size: 20px; color: #FFFFFF; text-decoration: none; transition: all 0.3s; }
+      .nav-pill-link.active { font-weight: 700; color: #5CC4E5; }
+      .nav-pill-link:hover { color: #5CC4E5; }
+      .categorie-hero { position: relative; height: 760px; padding-top: 150px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; background: url('assets/images/categories/banner.png') no-repeat center center; background-size: cover; }
+      .cat-hero-title { font-family: 'Orbitron', sans-serif; font-size: 40px; font-weight: 700; color: #5CC4E5; margin-bottom: 20px; letter-spacing: -1.8px; }
+      .cat-hero-subtitle { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 500; color: #FFFFFF; line-height: 1.6; margin-bottom: 40px; }
+      .btn-black { display: inline-flex; align-items: center; justify-content: center; padding: 16px 50px; background: #000000; color: #FFFFFF; font-family: 'Orbitron', sans-serif; font-size: 18px; font-weight: 700; border-radius: 40px; border: 1px solid #000000; text-decoration: none; transition: all 0.3s; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); }
+      .btn-black:hover { background: #000000; border-color: #5CC4E5; color: #5CC4E5; transform: translateY(-2px); }
+      .btn-white { display: inline-flex; align-items: center; justify-content: center; padding: 16px 50px; background: #FFFFFF; color: #000000; font-family: 'Orbitron', sans-serif; font-size: 18px; font-weight: 700; border-radius: 40px; border: 1px solid #FFFFFF; text-decoration: none; transition: all 0.3s; box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1); }
+      .btn-white:hover { background: #5CC4E5; border-color: #5CC4E5; color: #000000; transform: translateY(-2px); }
+      .flower-container { position: relative; width: 100%; max-width: 1200px; height: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: center; }
+      .cat-grid-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; max-width: 1100px; height: auto; z-index: 1; opacity: 0.6; filter: drop-shadow(0 0 50px rgba(92, 196, 229, 0.2)); }
+      .cat-grid { position: relative; z-index: 2; width: 100%; height: 100%; }
+      .cat-card { position: absolute; width: 380px; text-align: center; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+      .cat-card:hover { transform: scale(1.05); }
+      .petal-tl { top: 10%; left: 0%; transform: rotate(-5deg); }
+      .petal-tr { top: 10%; right: 0%; transform: rotate(5deg); }
+      .petal-bl { bottom: 10%; left: 0%; transform: rotate(5deg); }
+      .petal-br { bottom: 10%; right: 0%; transform: rotate(-5deg); }
+      .cat-card h2 { font-family: 'Orbitron', sans-serif; font-size: 32px; font-weight: 700; color: #5CC4E5; margin-bottom: 20px; letter-spacing: 2px; }
+      .cat-card p { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; color: #FFFFFF; line-height: 1.6; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+      .btn-acceder { font-family: 'Orbitron', sans-serif; font-size: 16px; font-weight: 700; color: #FFFFFF; text-decoration: none; background: #000000; padding: 12px 50px; border-radius: 30px; display: inline-block; transition: all 0.3s; border: 1px solid rgba(255, 255, 255, 0.2); }
+      .btn-acceder:hover { background: #5CC4E5; color: #000000; border-color: #5CC4E5; }
+      .trust-title { text-align: center; font-family: 'Orbitron', sans-serif; font-size: 32px; font-weight: 700; color: #5CC4E5; margin-bottom: 80px; text-transform: uppercase; letter-spacing: 2px; }
+      .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+      .trust-item { text-align: center; display: flex; flex-direction: column; align-items: center; }
+      .trust-item img { height: 50px; width: auto; margin-bottom: 25px; filter: brightness(0) invert(1); }
+      .trust-item h3 { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: #FFFFFF; margin-bottom: 15px; }
+      .trust-item p { font-family: 'Inter', sans-serif; font-size: 14px; color: #FFFFFF; line-height: 1.6; max-width: 250px; }
+      .steps-title { text-align: center; font-family: 'Orbitron', sans-serif; font-size: 32px; font-weight: 700; color: #5CC4E5; margin-bottom: 60px; letter-spacing: 2px; }
+      .step-intro-cards { display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; }
+      .step-intro-card { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+      .step-intro-card .step-num { font-family: 'Orbitron', sans-serif; font-size: 48px; font-weight: 700; color: #5CC4E5; }
+      .step-intro-card .step-label { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: #FFFFFF; letter-spacing: 2px; }
+      .steps-main-panel { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 30px; padding: 40px; }
+      .steps-main-container { display: flex; gap: 60px; align-items: center; }
+      .steps-left { flex: 1; }
+      .robot-ready-title { font-family: 'Orbitron', sans-serif; font-size: 36px; font-weight: 700; color: #FFFFFF; margin-bottom: 30px; line-height: 1.3; }
+      .steps-list { display: flex; flex-direction: column; gap: 15px; }
+      .step-card { background: #000000; padding: 20px 25px; border-radius: 20px; font-family: 'Inter', sans-serif; font-size: 16px; color: #FFFFFF; line-height: 1.5; border-left: 4px solid #5CC4E5; }
+      .steps-right { flex: 1; display: flex; justify-content: center; }
+      .steps-image { max-width: 100%; height: auto; }
+      .btn-commander-large { display: inline-flex; align-items: center; justify-content: center; padding: 20px 80px; background: #5CC4E5; color: #000000; font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 700; border-radius: 50px; border: none; text-decoration: none; transition: all 0.3s; }
+      .btn-commander-large:hover { box-shadow: 0 10px 40px rgba(92, 196, 229, 0.4); transform: translateY(-2px); }
+      .hamburger-menu { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 100; }
+      .hamburger-menu span { width: 25px; height: 3px; background: #FFFFFF; transition: all 0.3s; }
+      .newsletter-desc { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 15px; }
+      .footer-newsletter-form { display: flex; gap: 10px; }
+      .footer-newsletter-form input { flex: 1; padding: 12px 16px; background: transparent; border: 1px solid rgba(255,255,255,0.3); border-radius: 25px; color: #FFFFFF; font-family: 'Inter', sans-serif; outline: none; }
+      .footer-newsletter-form input::placeholder { color: rgba(255,255,255,0.5); }
+      .btn-abonner-footer { padding: 12px 24px; background: #5CC4E5; border: none; border-radius: 25px; color: #000000; font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+      @media (max-width: 1024px) {
+        .hamburger-menu { display: flex; }
+        .nav-pill-bar { display: none; }
+        .trust-grid { grid-template-columns: repeat(2, 1fr); }
+        .flower-container { height: auto; padding: 60px 20px; }
+        .cat-grid { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .cat-card { position: static; transform: none !important; }
+        .steps-main-container { flex-direction: column; }
+      }
+      @media (max-width: 768px) {
+        .trust-grid { grid-template-columns: 1fr; }
+        .step-intro-cards { flex-direction: column; gap: 20px; }
+        .cat-grid { grid-template-columns: 1fr; }
+        .btn-black, .btn-white { padding: 14px 30px; font-size: 16px; }
+        .cat-hero-title { font-size: 28px; }
+        .cat-hero-subtitle { font-size: 18px; }
+      }
+    </style>
   </head>
   <body class="categorie-page">
     <!-- NAVBAR at top level -->
-    <div class="hero-top-bar">
+    <div class="absolute top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-16 lg:px-24 py-5">
       <a href="index.html" class="logo">
-        <img
-          src="assets/images/Plan de travail 1 1.png"
-          alt="RDOC"
-          class="logo-img"
-        />
+        <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="logo-img">
       </a>
-      <nav class="nav-pill-bar">
+      <nav class="nav-pill-bar hidden md:flex">
         <a href="index.html" class="nav-pill-link">Accueil</a>
         <a href="apropos.html" class="nav-pill-link">A propos</a>
         <a href="categorie.html" class="nav-pill-link active">Catégorie</a>
@@ -28,7 +122,7 @@
         <a href="index.html#blog" class="nav-pill-link">Blog</a>
         <a href="index.html#contact" class="nav-pill-link">Contact</a>
       </nav>
-      <div class="hamburger-menu">
+      <div class="hamburger-menu" onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
@@ -38,28 +132,25 @@
 
     <!-- ====== HERO CATEGORIE ====== -->
     <section class="categorie-hero" id="accueil">
-      <!-- HERO CONTENT -->
-      <div class="categorie-hero-content container">
-        <div class="categorie-hero-text">
+      <div class="container mx-auto px-6">
+        <div class="categorie-hero-text max-w-[900px] mx-auto">
           <h1 class="cat-hero-title">Apprenez en vous amusant à la maison</h1>
           <p class="cat-hero-subtitle">
-            Apprentissage interactif pour développer la créativité et les
-            compétences des enfants.
+            Apprentissage interactif pour développer la créativité et les compétences des enfants.
           </p>
-          <div class="cat-hero-actions">
-             <a href="#decouvrir" class="btn-black btn-decouvrir">Découvrir</a>
-             <a href="#commander" class="btn-white btn-commander">Commander</a>
+          <div class="cat-hero-actions flex gap-[30px] justify-center mt-10">
+             <a href="#decouvrir" class="btn-black">Découvrir</a>
+             <a href="#commander" class="btn-white">Commander</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ====== CATEGORY LIST (4-PETAL FLOWER) ====== -->
-    <section class="categories-grid-section" id="decouvrir">
-      <div class="flower-container">
+    <section class="py-[120px] bg-black" id="decouvrir">
+      <div class="flower-container px-6">
         <img src="assets/images/categories/Union.png" alt="" class="cat-grid-bg">
         <div class="cat-grid">
-           <!-- Petal 1 (Top Left) -->
            <div class="cat-card petal-tl">
               <div class="cat-card-content">
                  <h2>ÉDUCATIVE</h2>
@@ -67,7 +158,6 @@
                  <a href="educative.html" class="btn-acceder">Accéder</a>
               </div>
            </div>
-           <!-- Petal 2 (Top Right) -->
            <div class="cat-card petal-tr">
               <div class="cat-card-content">
                  <h2>INFORMATIVE</h2>
@@ -75,15 +165,13 @@
                  <a href="informative.html" class="btn-acceder">Accéder</a>
               </div>
            </div>
-           <!-- Petal 3 (Bottom Left) -->
            <div class="cat-card petal-bl">
               <div class="cat-card-content">
                  <h2>LOCALISATIVE</h2>
-                 <p>ORIENTATION PRÉCISE ET REPÉRAGE<br>INTELLIGENT EN TEMPS RÉEL</p>
+                 <p>ORIENTATION PRÉCISE ET REPÉRAGE<br>INTELLIGENT EN TEMS RÉEL</p>
                  <a href="localisative.html" class="btn-acceder">Accéder</a>
               </div>
            </div>
-           <!-- Petal 4 (Bottom Right) -->
            <div class="cat-card petal-br">
               <div class="cat-card-content">
                  <h2>ANALYTIQUE ET GESTION</h2>
@@ -96,9 +184,9 @@
     </section>
 
     <!-- ====== POURQUOI NOUS FAIRE CONFIANCE ====== -->
-    <section class="trust-section">
-      <div class="container">
-         <h2 class="trust-title text-cyan">Pourquoi nous faire confiance ?</h2>
+    <section class="py-[100px] bg-black">
+      <div class="container mx-auto px-6 md:px-16 lg:px-24">
+         <h2 class="trust-title">Pourquoi nous faire confiance ?</h2>
          <div class="trust-grid">
             <div class="trust-item">
                <img src="assets/images/categories/secure.png" alt="Sécurisé">
@@ -125,11 +213,10 @@
     </section>
 
     <!-- ====== 3 STEPS SECTION ====== -->
-    <section class="steps-section" id="etapes">
-       <div class="container">
+    <section class="py-[120px] bg-black" id="etapes">
+       <div class="container mx-auto px-6 md:px-16 lg:px-24">
           <h2 class="steps-title">VOTRE ROBOT EN 3 ÉTAPES SIMPLES</h2>
           
-          <!-- Intro Cards -->
           <div class="step-intro-cards">
              <div class="step-intro-card">
                 <span class="step-num">1</span>
@@ -145,10 +232,9 @@
              </div>
           </div>
 
-          <!-- Main Steps Panel -->
-          <div class="steps-main-panel">
-             <div class="steps-main-container">
-                <div class="steps-left">
+          <div class="steps-main-panel mt-10">
+             <div class="steps-main-container flex-col lg:flex-row">
+                <div class="steps-left w-full lg:w-1/2">
                    <h3 class="robot-ready-title">ROBOT PRÊT <br>EN QUELQUES CLICS</h3>
                    <div class="steps-list">
                       <div class="step-card">
@@ -162,9 +248,9 @@
                       </div>
                    </div>
                 </div>
-                <div class="steps-right">
+                <div class="steps-right w-full lg:w-1/2 flex justify-center">
                    <div class="steps-image-container">
-                      <img src="assets/images/categories/delivery.png" alt="Delivery illustration" class="steps-image">
+                      <img src="assets/images/categories/delivery.png" alt="Delivery illustration" class="steps-image max-w-full">
                    </div>
                 </div>
              </div>
@@ -173,72 +259,75 @@
     </section>
 
     <!-- ====== COMMANDER CTA ====== -->
-    <section class="commander-cta-section" id="commander">
-       <div class="container">
-          <a href="#" class="btn-commander-large">Commander</a>
+    <section class="py-[80px] bg-black text-center" id="commander">
+       <div class="container mx-auto px-6">
+          <a href="#" class="btn-commander-large inline-block">Commander</a>
        </div>
     </section>
+
     <!-- ====== FOOTER ====== -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-grid">
-          <!-- Col 1: Brand & Newsletter -->
-          <div class="footer-brand-newsletter">
-            <div class="footer-brand">
-              <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="footer-logo" />
-              <p>Notre équipe d'experts passionnés fournit des solutions robotiques exceptionnelles.</p>
+    <footer class="py-[80px] pb-10 border-t border-[rgba(255,255,255,0.1)] bg-black">
+      <div class="container mx-auto px-6 md:px-16 lg:px-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] mb-[50px]">
+          <div class="lg:col-span-2">
+            <div class="mb-8">
+              <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="h-[60px] w-auto mb-4">
+              <p class="font-inter text-sm text-[rgba(255,255,255,0.5)] leading-relaxed">Notre équipe d'experts passionnés fournit des solutions robotiques exceptionnelles.</p>
             </div>
             <div class="footer-newsletter">
               <p class="newsletter-desc">Solutions autonomes pour l'apprentissage moderne et la gestion intelligente.</p>
-              <form class="footer-newsletter-form">
-                <input type="email" placeholder="Adresse e-mail" required>
-                <button type="submit" class="btn-abonner-footer">S'abonner</button>
+              <form class="footer-newsletter-form flex-col md:flex-row">
+                <input type="email" placeholder="Adresse e-mail" required class="w-full md:flex-1">
+                <button type="submit" class="btn-abonner-footer mt-3 md:mt-0">S'abonner</button>
               </form>
             </div>
           </div>
-
-          <!-- Col 2: Pages -->
-          <div class="footer-col">
-            <h4>Pages</h4>
-            <ul>
-              <li><a href="index.html">Accueil</a></li>
-              <li><a href="apropos.html">A propos</a></li>
-              <li><a href="categorie.html" class="text-cyan">Catégorie</a></li>
-              <li><a href="index.html#produit">Produit</a></li>
-              <li><a href="index.html#blog">Blog</a></li>
-              <li><a href="index.html#contact">Contact</a></li>
+          <div>
+            <h4 class="font-orbitron text-base font-bold text-white uppercase mb-5">Pages</h4>
+            <ul class="flex flex-col gap-2.5">
+              <li><a href="index.html" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">Accueil</a></li>
+              <li><a href="apropos.html" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">A propos</a></li>
+              <li><a href="categorie.html" class="font-inter text-sm text-primary">Catégorie</a></li>
+              <li><a href="index.html#produit" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">Produit</a></li>
+              <li><a href="index.html#blog" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">Blog</a></li>
+              <li><a href="index.html#contact" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">Contact</a></li>
             </ul>
           </div>
-
-          <!-- Col 3: Aide -->
-          <div class="footer-col">
-            <h4>Aide</h4>
-            <ul>
-              <li><a href="index.html#faq">Confidentialité</a></li>
-              <li><a href="#">Support client</a></li>
-              <li><a href="#">Conditions générales</a></li>
+          <div>
+            <h4 class="font-orbitron text-base font-bold text-white uppercase mb-5">Contact</h4>
+            <ul class="flex flex-col gap-2.5">
+              <li><a href="mailto:RDOC@gmail.com" class="font-inter text-sm text-primary hover:opacity-70">Email : RDOC@gmail.com</a></li>
+              <li class="font-inter text-sm text-[rgba(255,255,255,0.5)]">téléphone : +216 73957295</li>
             </ul>
-          </div>
-
-          <!-- Col 4: Contact -->
-          <div class="footer-col">
-            <h4>Contact</h4>
-            <div class="footer-contact-info">
-               <p><a href="mailto:RDOC@gmail.com">Email : RDOC@gmail.com</a></p>
-               <p>téléphone : +216 73957295</p>
-               <div class="footer-social-icons">
-                  <a href="#">f</a>
-                  <a href="#">l</a>
-                  <a href="#">m</a>
-               </div>
+            <div class="flex gap-3 mt-4">
+               <a href="#" class="w-8 h-8 rounded-full bg-[rgba(255,255,255,0.1)] flex items-center justify-center text-white hover:bg-primary hover:text-black transition-colors">f</a>
+               <a href="#" class="w-8 h-8 rounded-full bg-[rgba(255,255,255,0.1)] flex items-center justify-center text-white hover:bg-primary hover:text-black transition-colors">l</a>
+               <a href="#" class="w-8 h-8 rounded-full bg-[rgba(255,255,255,0.1)] flex items-center justify-center text-white hover:bg-primary hover:text-black transition-colors">m</a>
             </div>
           </div>
         </div>
-        <div class="footer-bottom">
-          <p>Copyright 2026 RDOC, tous droits réservés.</p>
+        <div class="text-center pt-[30px] border-t border-[rgba(255,255,255,0.1)]">
+          <p class="font-inter text-xs text-[rgba(255,255,255,0.5)]">Copyright 2026 RDOC, tous droits réservés.</p>
         </div>
       </div>
     </footer>
     <script src="assets/js/main.js"></script>
+    <script>
+      function toggleMenu() {
+        const nav = document.querySelector('.nav-pill-bar');
+        if (nav) {
+          nav.classList.toggle('hidden');
+          nav.classList.toggle('flex');
+          nav.classList.toggle('flex-col');
+          nav.classList.toggle('absolute');
+          nav.classList.toggle('top-20');
+          nav.classList.toggle('left-0');
+          nav.classList.toggle('right-0');
+          nav.classList.toggle('bg-black');
+          nav.classList.toggle('p-5');
+          nav.classList.toggle('z-50');
+        }
+      }
+    </script>
   </body>
 </html>

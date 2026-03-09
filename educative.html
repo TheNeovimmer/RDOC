@@ -6,20 +6,119 @@
     <meta name="description" content="RDOC Educative - Apprendre en s'amusant avec nos solutions robotiques intelligentes.">
     <title>RDOC - Educative</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/educative.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: '#5CC4E5' },
+            fontFamily: { 'orbitron': ['Orbitron', 'sans-serif'], 'inter': ['Inter', 'sans-serif'] },
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body { background-color: #000000; }
+      .logo-img { height: 38px; width: auto; }
+      .auth-button { display: inline-flex; align-items: center; justify-content: center; padding: 6px 23px; height: 40px; border-radius: 18px; border: 1px solid transparent; background-image: linear-gradient(#000, #000), linear-gradient(135deg, #FFFFFF, #5CC4E5); background-origin: border-box; background-clip: padding-box, border-box; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 500; color: #FFFFFF; transition: all 0.3s; text-decoration: none; }
+      .auth-button:hover { background-image: linear-gradient(rgba(92,196,229,0.1), rgba(92,196,229,0.1)), linear-gradient(135deg, #5CC4E5, #FFFFFF); }
+      .nav-pill-bar { display: flex; align-items: center; gap: 22px; height: 55px; padding: 0 40px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 28px; backdrop-filter: blur(10px); }
+      .nav-pill-link { font-family: 'Orbitron', sans-serif; font-size: 20px; color: #FFFFFF; text-decoration: none; transition: all 0.3s; }
+      .nav-pill-link.active { font-weight: 700; color: #5CC4E5; }
+      .nav-pill-link:hover { color: #5CC4E5; }
+      .educative-hero { position: relative; height: 760px; display: flex; align-items: center; justify-content: center; }
+      .hero-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(7.6px); }
+      .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.05) 30%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0.95) 100%); }
+      .hero-title { font-family: 'Orbitron', sans-serif; font-size: 48px; font-weight: 700; color: #5CC4E5; margin-bottom: 20px; text-align: center; }
+      .hero-subtitle { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 500; color: #FFFFFF; line-height: 1.6; margin-bottom: 40px; text-align: center; }
+      .btn-primary { display: inline-flex; align-items: center; justify-content: center; padding: 16px 50px; background: #5CC4E5; color: #000000; font-family: 'Orbitron', sans-serif; font-size: 18px; font-weight: 700; border-radius: 40px; border: none; text-decoration: none; transition: all 0.3s; }
+      .btn-primary:hover { box-shadow: 0 10px 40px rgba(92, 196, 229, 0.4); transform: translateY(-2px); }
+      .section-badge { display: inline-block; padding: 8px 24px; background: rgba(92, 196, 229, 0.1); border: 1px solid #5CC4E5; border-radius: 50px; color: #5CC4E5; font-family: 'Orbitron', sans-serif; font-size: 14px; font-weight: 700; margin-bottom: 20px; }
+      .section-main-title { font-family: 'Orbitron', sans-serif; font-size: 40px; font-weight: 700; color: #FFFFFF; margin-bottom: 60px; text-align: center; }
+      .solution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 50px; }
+      .solution-card { border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; overflow: hidden; transition: all 0.3s; }
+      .solution-card:hover { border-color: #5CC4E5; transform: translateY(-5px); }
+      .card-image { height: 250px; overflow: hidden; }
+      .card-image img { width: 100%; height: 100%; object-fit: cover; }
+      .card-info { padding: 25px; text-align: center; background: rgba(255,255,255,0.02); }
+      .card-info h3 { font-family: 'Orbitron', sans-serif; font-size: 18px; color: #5CC4E5; margin-bottom: 10px; }
+      .card-info p { font-family: 'Inter', sans-serif; font-size: 14px; color: #FFFFFF; }
+      .btn-discover-more { display: inline-flex; padding: 14px 40px; background: transparent; border: 1px solid #5CC4E5; border-radius: 50px; color: #5CC4E5; font-family: 'Orbitron', sans-serif; font-size: 16px; font-weight: 700; text-decoration: none; transition: all 0.3s; }
+      .btn-discover-more:hover { background: #5CC4E5; color: #000000; }
+      .video-wrapper { position: relative; border-radius: 20px; overflow: hidden; }
+      .video-preview { width: 100%; height: auto; }
+      .play-button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(92, 196, 229, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s; }
+      .play-button:hover { transform: translate(-50%, -50%) scale(1.1); }
+      .sensors-title { font-family: 'Orbitron', sans-serif; font-size: 36px; font-weight: 700; color: #5CC4E5; margin-bottom: 10px; text-align: center; }
+      .sensors-subtitle { font-family: 'Inter', sans-serif; font-size: 20px; color: #FFFFFF; margin-bottom: 60px; text-align: center; }
+      .sensors-layout { display: flex; justify-content: space-between; align-items: center; gap: 40px; }
+      .sensor-side { flex: 1; display: flex; flex-direction: column; gap: 30px; }
+      .sensor-item { display: flex; align-items: center; gap: 20px; }
+      .sensor-side.right .sensor-item { flex-direction: row-reverse; }
+      .sensor-icon { width: 70px; height: 70px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+      .sensor-icon img { width: 40px; height: 40px; }
+      .sensor-text h4 { font-family: 'Orbitron', sans-serif; font-size: 14px; color: #5CC4E5; margin-bottom: 5px; }
+      .sensor-text p { font-family: 'Inter', sans-serif; font-size: 12px; color: #FFFFFF; }
+      .sensor-center { flex: 1; display: flex; justify-content: center; }
+      .sensor-robot { max-width: 400px; height: auto; }
+      .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+      .pricing-card { border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 40px 30px; text-align: center; transition: all 0.3s; }
+      .pricing-card.highlighted { border-color: #5CC4E5; background: rgba(92, 196, 229, 0.05); }
+      .pricing-card h3 { font-family: 'Orbitron', sans-serif; font-size: 20px; color: #FFFFFF; margin-bottom: 15px; }
+      .pricing-card .price { font-family: 'Orbitron', sans-serif; font-size: 24px; color: #5CC4E5; margin-bottom: 25px; }
+      .pricing-card .features { list-style: none; margin-bottom: 30px; }
+      .pricing-card .features li { font-family: 'Inter', sans-serif; font-size: 14px; color: #FFFFFF; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .btn-pack { display: inline-flex; padding: 14px 30px; border-radius: 50px; font-family: 'Orbitron', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s; }
+      .btn-outline { border: 1px solid #5CC4E5; color: #5CC4E5; background: transparent; }
+      .btn-outline:hover { background: #5CC4E5; color: #000000; }
+      .btn-solid { background: #5CC4E5; color: #000000; border: 1px solid #5CC4E5; }
+      .btn-solid:hover { box-shadow: 0 10px 30px rgba(92, 196, 229, 0.3); }
+      .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 50px; }
+      .testimonial-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 30px; text-align: center; }
+      .feedback-avatar { width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; object-fit: cover; }
+      .testimonial-card h4 { font-family: 'Orbitron', sans-serif; font-size: 16px; color: #FFFFFF; margin-bottom: 10px; }
+      .testimonial-card p { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255,255,255,0.7); }
+      .btn-more-feedback { display: inline-flex; padding: 14px 40px; background: transparent; border: 1px solid rgba(255,255,255,0.3); border-radius: 50px; color: #FFFFFF; font-family: 'Orbitron', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s; }
+      .btn-more-feedback:hover { border-color: #5CC4E5; color: #5CC4E5; }
+      .btn-commander-large { display: inline-flex; align-items: center; justify-content: center; padding: 20px 80px; background: #5CC4E5; color: #000000; font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 700; border-radius: 50px; border: none; text-decoration: none; transition: all 0.3s; }
+      .btn-commander-large:hover { box-shadow: 0 10px 40px rgba(92, 196, 229, 0.4); transform: translateY(-2px); }
+      .feedback-form-wrapper { max-width: 600px; margin: 0 auto; padding: 40px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; text-align: center; }
+      .feedback-form-wrapper h3 { font-family: 'Orbitron', sans-serif; font-size: 24px; color: #5CC4E5; margin-bottom: 10px; }
+      .feedback-form-wrapper p { font-family: 'Inter', sans-serif; font-size: 16px; color: #FFFFFF; margin-bottom: 20px; }
+      .star-rating { margin-bottom: 30px; }
+      .star-rating span { font-size: 32px; color: #5CC4E5; cursor: pointer; transition: all 0.2s; }
+      .star-rating span:hover { transform: scale(1.2); }
+      .feedback-form { display: flex; flex-direction: column; gap: 15px; }
+      .form-group { text-align: left; }
+      .form-group label { display: block; font-family: 'Inter', sans-serif; font-size: 14px; color: #FFFFFF; margin-bottom: 8px; }
+      .form-group input, .form-group textarea { width: 100%; padding: 14px 20px; background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; color: #FFFFFF; font-family: 'Inter', sans-serif; font-size: 14px; outline: none; }
+      .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.5); }
+      .form-group input:focus, .form-group textarea:focus { border-color: #5CC4E5; }
+      .form-group textarea { min-height: 100px; resize: vertical; }
+      .btn-submit { width: 100%; padding: 16px; background: #5CC4E5; border: none; border-radius: 30px; color: #000000; font-family: 'Orbitron', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.3s; }
+      .btn-submit:hover { box-shadow: 0 10px 30px rgba(92, 196, 229, 0.3); }
+      .hamburger-menu { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+      .hamburger-menu span { width: 25px; height: 3px; background: #FFFFFF; }
+      @media (max-width: 1024px) {
+        .hamburger-menu { display: flex; }
+        .nav-pill-bar { display: none; }
+        .solution-grid, .pricing-grid, .testimonials-grid, .sensors-layout { grid-template-columns: 1fr; flex-direction: column; }
+        .sensor-side { width: 100%; }
+        .sensor-side.right .sensor-item { flex-direction: row; }
+      }
+      @media (max-width: 768px) {
+        .hero-title { font-size: 32px; }
+        .hero-subtitle { font-size: 18px; }
+        .section-main-title { font-size: 28px; }
+      }
+    </style>
 </head>
 <body class="educative-page">
-
-    <!-- NAVBAR at top level -->
-    <div class="hero-top-bar">
-      <a href="index.html" class="logo">
-        <img
-          src="assets/images/Plan de travail 1 1.png"
-          alt="RDOC"
-          class="logo-img"
-        />
-      </a>
-      <nav class="nav-pill-bar">
+    <!-- NAVBAR -->
+    <div class="absolute top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-16 lg:px-24 py-5">
+      <a href="index.html" class="logo"><img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="logo-img"></a>
+      <nav class="nav-pill-bar hidden md:flex">
         <a href="index.html" class="nav-pill-link">Accueil</a>
         <a href="apropos.html" class="nav-pill-link">A propos</a>
         <a href="categorie.html" class="nav-pill-link active">Catégorie</a>
@@ -27,310 +126,156 @@
         <a href="index.html#blog" class="nav-pill-link">Blog</a>
         <a href="index.html#contact" class="nav-pill-link">Contact</a>
       </nav>
-      <div class="hamburger-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <div class="hamburger-menu" onclick="toggleMenu()"><span></span><span></span><span></span></div>
       <a href="#" class="auth-button">Sign up / Sign in</a>
     </div>
 
-    <!-- ====== HERO EDUCATIVE ====== -->
+    <!-- HERO -->
     <section class="educative-hero">
-        <div class="hero-bg">
-            <img src="assets/images/educative/Gemini_Generated_Image_r6hbuur6hbuur6hb 2.png" alt="Classroom background" class="hero-bg-img">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/images/educative/Gemini_Generated_Image_r6hbuur6hbuur6hb 2.png" alt="Classroom" class="hero-bg-img">
             <div class="hero-overlay"></div>
         </div>
-
-        <div class="hero-content container">
+        <div class="relative z-10 container mx-auto px-6 text-center">
             <h1 class="hero-title">Apprendre en s'amusant</h1>
-            <p class="hero-subtitle">
-                Des expériences éducatives interactives pour stimuler la créativité,<br>
-                la curiosité et l'apprentissage intelligent des enfants.
-            </p>
+            <p class="hero-subtitle">Des expériences éducatives interactives pour stimuler la créativité,<br>la curiosité et l'apprentissage intelligent des enfants.</p>
             <a href="#commander" class="btn-primary">Commander</a>
         </div>
     </section>
 
-    <!-- ====== SOLUTION SECTION ====== -->
-    <section class="solution-section">
-        <div class="container">
-            <div class="section-badge">Apprentissage</div>
-            <h2 class="section-main-title">Une solution éducative sans limites</h2>
-            
+    <!-- SOLUTION -->
+    <section class="py-[100px]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-[60px]">
+                <div class="section-badge">Apprentissage</div>
+                <h2 class="section-main-title">Une solution éducative sans limites</h2>
+            </div>
             <div class="solution-grid">
                 <div class="solution-card">
-                    <div class="card-image">
-                        <img src="assets/images/educative/Whisk_6bc2f6fe1a1c2e6800e4b1138173f821dr 2.png" alt="Enfants">
-                    </div>
-                    <div class="card-info">
-                        <h3>POUR LES ENFANTS</h3>
-                        <p>Apprentissage et support</p>
-                    </div>
+                    <div class="card-image"><img src="assets/images/educative/Whisk_6bc2f6fe1a1c2e6800e4b1138173f821dr 2.png" alt="Enfants"></div>
+                    <div class="card-info"><h3>POUR LES ENFANTS</h3><p>Apprentissage et support</p></div>
                 </div>
                 <div class="solution-card">
-                    <div class="card-image">
-                        <img src="assets/images/educative/Whisk_a07acb9841b6e05ba3340978db82c1cddr 2.png" alt="Étudiants">
-                    </div>
-                    <div class="card-info">
-                        <h3>POUR LES ÉTUDIANTS</h3>
-                        <p>Inspiration et ressources</p>
-                    </div>
+                    <div class="card-image"><img src="assets/images/educative/Whisk_a07acb9841b6e05ba3340978db82c1cddr 2.png" alt="Étudiants"></div>
+                    <div class="card-info"><h3>POUR LES ÉTUDIANTS</h3><p>Inspiration et ressources</p></div>
                 </div>
                 <div class="solution-card">
-                    <div class="card-image">
-                        <img src="assets/images/educative/Whisk_fac75cdafb6d7d888e34ecd4ca3ff8e7dr ( 3.png" alt="Professionnels">
-                    </div>
-                    <div class="card-info">
-                        <h3>POUR LES PROFESSIONNELS</h3>
-                        <p>Innovation et enseignement</p>
-                    </div>
+                    <div class="card-image"><img src="assets/images/educative/Whisk_fac75cdafb6d7d888e34ecd4ca3ff8e7dr ( 3.png" alt="Professionnels"></div>
+                    <div class="card-info"><h3>POUR LES PROFESSIONNELS</h3><p>Innovation et enseignement</p></div>
                 </div>
             </div>
+            <div class="text-center"><a href="#" class="btn-discover-more">Découvrir plus</a></div>
+        </div>
+    </section>
 
-            <div class="text-center mt-50">
-                <a href="#" class="btn-discover-more">Découvrir plus</a>
+    <!-- VIDEO -->
+    <section class="py-[60px]">
+        <div class="container mx-auto px-6 md:px-16">
+            <div class="video-wrapper relative">
+                <img src="assets/images/educative/Frame 718.png" alt="Education" class="w-full">
+                <div class="play-button"><svg viewBox="0 0 24 24" fill="white" width="48" height="48"><path d="M8 5v14l11-7z"/></svg></div>
             </div>
         </div>
     </section>
 
-    <!-- ====== VIDEO/IMAGE FEATURE ====== -->
-    <section class="video-feature-section">
-        <div class="container">
-            <div class="video-wrapper">
-                <img src="assets/images/educative/Frame 718.png" alt="Education Video" class="video-preview">
-                <div class="play-button">
-                    <svg viewBox="0 0 24 24" fill="white" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== CAPTEURS INTELLIGENTS ====== -->
-    <section class="sensors-section">
-        <div class="container">
+    <!-- CAPTEURS -->
+    <section class="py-[100px]">
+        <div class="container mx-auto px-6">
             <h2 class="sensors-title">CAPTEURS INTELLIGENTS</h2>
             <p class="sensors-subtitle">comprendre la voix et l'environnement<br>d'apprentissage</p>
-            
-            <div class="sensors-layout">
-                <div class="sensor-side left">
-                    <div class="sensor-item">
-                        <div class="sensor-icon">
-                            <img src="assets/images/icon1.png" alt="Capture Vocale">
-                        </div>
-                        <div class="sensor-text">
-                            <h4>CAPTURE VOCALE</h4>
-                            <p>Analyse des fréquences vocales</p>
-                        </div>
-                    </div>
-                    <div class="sensor-item">
-                        <div class="sensor-icon">
-                            <img src="assets/images/icon2.png" alt="Conversion">
-                        </div>
-                        <div class="sensor-text">
-                            <h4>CONVERSION</h4>
-                            <p>Traduction en temps réel</p>
-                        </div>
-                    </div>
-                    <div class="sensor-item">
-                        <div class="sensor-icon">
-                            <img src="assets/images/icon3.png" alt="Sources Fiables">
-                        </div>
-                        <div class="sensor-text">
-                            <h4>SOURCES FIABLES</h4>
-                            <p>Contenu vérifié et sécurisé</p>
-                        </div>
-                    </div>
+            <div class="sensors-layout flex-col lg:flex-row">
+                <div class="sensor-side w-full lg:w-1/4">
+                    <div class="sensor-item mb-8"><div class="sensor-icon"><img src="assets/images/icon1.png" alt="Capture"></div><div class="sensor-text"><h4>CAPTURE VOCALE</h4><p>Analyse des fréquences vocales</p></div></div>
+                    <div class="sensor-item mb-8"><div class="sensor-icon"><img src="assets/images/icon2.png" alt="Conversion"></div><div class="sensor-text"><h4>CONVERSION</h4><p>Traduction en temps réel</p></div></div>
+                    <div class="sensor-item"><div class="sensor-icon"><img src="assets/images/icon3.png" alt="Sources"></div><div class="sensor-text"><h4>SOURCES FIABLES</h4><p>Contenu vérifié et sécurisé</p></div></div>
                 </div>
-
-                <div class="sensor-center">
-                    <img src="assets/images/Gemini_Generated_Image_ioe7t9ioe7t9ioe7-removebg-preview (1) 1.png" alt="RDOC Robot" class="sensor-robot">
-                </div>
-
-                <div class="sensor-side right">
-                    <div class="sensor-item">
-                        <div class="sensor-text">
-                            <h4>PROJECTION</h4>
-                            <p>Projection interactive</p>
-                        </div>
-                        <div class="sensor-icon">
-                            <img src="assets/images/icon1.png" alt="Projection">
-                        </div>
-                    </div>
-                    <div class="sensor-item">
-                        <div class="sensor-text">
-                            <h4>COURS CLAIRS</h4>
-                            <p>Enseignement structuré</p>
-                        </div>
-                        <div class="sensor-icon">
-                            <img src="assets/images/icon2.png" alt="Cours Clairs">
-                        </div>
-                    </div>
-                    <div class="sensor-item">
-                        <div class="sensor-text">
-                            <h4>SYSTÈME PRÉVENTION</h4>
-                            <p>Contrôle parental avancé</p>
-                        </div>
-                        <div class="sensor-icon">
-                            <img src="assets/images/icon3.png" alt="Système Prévention">
-                        </div>
-                    </div>
+                <div class="sensor-center w-full lg:w-2/4 flex justify-center my-10 lg:my-0"><img src="assets/images/Gemini_Generated_Image_ioe7t9ioe7t9ioe7-removebg-preview (1) 1.png" alt="Robot" class="max-w-[400px]"></div>
+                <div class="sensor-side right w-full lg:w-1/4">
+                    <div class="sensor-item mb-8"><div class="sensor-text text-right"><h4>PROJECTION</h4><p>Projection interactive</p></div><div class="sensor-icon"><img src="assets/images/icon1.png" alt="Projection"></div></div>
+                    <div class="sensor-item mb-8"><div class="sensor-text text-right"><h4>COURS CLAIRS</h4><p>Enseignement structuré</p></div><div class="sensor-icon"><img src="assets/images/icon2.png" alt="Cours"></div></div>
+                    <div class="sensor-item"><div class="sensor-text text-right"><h4>SYSTÈME PRÉVENTION</h4><p>Contrôle parental avancé</p></div><div class="sensor-icon"><img src="assets/images/icon3.png" alt="Prévention"></div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== NOS PACKS ====== -->
-    <section class="pricing-section">
-        <div class="container">
-            <h2 class="pricing-title">NOS PACKS</h2>
-            <div class="pricing-grid">
+    <!-- PACKS -->
+    <section class="py-[100px]">
+        <div class="container mx-auto px-6">
+            <h2 class="sensors-title">NOS PACKS</h2>
+            <div class="pricing-grid mt-[60px]">
                 <div class="pricing-card">
-                    <h3>PACK GRATUIT</h3>
-                    <p class="price">ESSAI GRATUIT SEPT JOURS</p>
-                    <ul class="features">
-                        <li>Accès aux fonctions de base</li>
-                        <li>Support client standard</li>
-                        <li>Mises à jour gratuites</li>
-                        <li>Accès aux cours</li>
-                    </ul>
+                    <h3>PACK Gratuit</h3>
+                    <p class="price">ESSAI Gratuit 7 jours</p>
+                    <ul class="features text-left"><li>Accès aux fonctions de base</li><li>Support client standard</li><li>Mises à jour gratuites</li><li>Accès aux cours</li></ul>
                     <a href="#" class="btn-pack btn-outline">Essai Gratuit</a>
                 </div>
                 <div class="pricing-card highlighted">
                     <h3>ACHAT ROBOT</h3>
                     <p class="price">1500 TND</p>
-                    <ul class="features">
-                        <li>Propriété totale</li>
-                        <li>Toutes les fonctionnalités débloquées</li>
-                        <li>Support premium 24/7</li>
-                        <li>Garantie de 2 ans</li>
-                    </ul>
+                    <ul class="features text-left"><li>Propriété totale</li><li>Toutes les fonctionnalités débloquées</li><li>Support premium 24/7</li><li>Garantie de 2 ans</li></ul>
                     <a href="#" class="btn-pack btn-solid">Achat Robot</a>
                 </div>
                 <div class="pricing-card">
                     <h3>LOCATION ROBOT</h3>
-                    <p class="price">150 TND / MOIS + DÉPÔT 500 TND</p>
-                    <ul class="features">
-                        <li>Flexible et évolutif</li>
-                        <li>Maintenance complète incluse</li>
-                        <li>Accès à tout le catalogue</li>
-                        <li>Sans engagement long terme</li>
-                    </ul>
+                    <p class="price">150 TND / MOIS</p>
+                    <ul class="features text-left"><li>Flexible et évolutif</li><li>Maintenance complète incluse</li><li>Accès à tout le catalogue</li><li>Sans engagement long terme</li></ul>
                     <a href="#" class="btn-pack btn-outline">Location Robot</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== AVIS CLIENTS ====== -->
-    <section class="testimonials-section">
-        <div class="container">
-            <h2 class="testimonials-title">AVIS CLIENTS</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Amira Ben Salah" class="feedback-avatar">
-                    <h4>Amira Ben Salah</h4>
-                    <p>Un outil indispensable pour l'apprentissage de mes enfants.</p>
-                </div>
-                <div class="testimonial-card">
-                    <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Lina Mhiri" class="feedback-avatar">
-                    <h4>Lina Mhiri</h4>
-                    <p>C'est pédagogique et stimulant, les enfants adorent !</p>
-                </div>
-                <div class="testimonial-card">
-                    <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Sofien Trabelsi" class="feedback-avatar">
-                    <h4>Sofien Trabelsi</h4>
-                    <p>Une technologie facile à utiliser et très complète.</p>
-                </div>
+    <!-- AVIS -->
+    <section class="py-[100px]">
+        <div class="container mx-auto px-6">
+            <h2 class="sensors-title">AVIS CLIENTS</h2>
+            <div class="testimonials-grid mt-[60px]">
+                <div class="testimonial-card"><img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Amira" class="feedback-avatar"><h4>Amira Ben Salah</h4><p>Un outil indispensable pour l'apprentissage de mes enfants.</p></div>
+                <div class="testimonial-card"><img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Lina" class="feedback-avatar"><h4>Lina Mhiri</h4><p>C'est pédagogique et stimulant, les enfants adorent !</p></div>
+                <div class="testimonial-card"><img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Sofien" class="feedback-avatar"><h4>Sofien Trabelsi</h4><p>Une technologie facile à utiliser et très complète.</p></div>
             </div>
-            <div class="text-center mt-50">
-                <a href="#" class="btn-more-feedback">Lire plus</a>
-            </div>
+            <div class="text-center"><a href="#" class="btn-more-feedback">Lire plus</a></div>
         </div>
     </section>
 
-    <!-- Commander CTA -->
-    <section class="commander-cta-section" id="commander">
-        <div class="container">
-            <a href="#" class="btn-commander-large">Commander</a>
-        </div>
+    <!-- COMMANDER -->
+    <section class="py-[80px] text-center" id="commander">
+        <div class="container mx-auto px-6"><a href="#" class="btn-commander-large">Commander</a></div>
     </section>
 
-    <!-- ====== AJOUTER UN AVIS ====== -->
-    <section class="add-feedback-section">
-        <div class="container">
+    <!-- AJOUTER AVIS -->
+    <section class="py-[80px]">
+        <div class="container mx-auto px-6">
             <div class="feedback-form-wrapper">
                 <h3>AJOUTER UN AVIS</h3>
                 <p>Ajoutez votre note</p>
-                <div class="star-rating">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                </div>
+                <div class="star-rating"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                 <form class="feedback-form">
-                    <div class="form-group">
-                        <label>Nom</label>
-                        <input type="text" placeholder="Votre Nom">
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" placeholder="Votre email">
-                    </div>
-                    <div class="form-group">
-                        <label>Rédiger mon avis</label>
-                        <textarea placeholder="Mon avis..."></textarea>
-                    </div>
+                    <div class="form-group"><label>Nom</label><input type="text" placeholder="Votre Nom"></div>
+                    <div class="form-group"><label>Email</label><input type="email" placeholder="Votre email"></div>
+                    <div class="form-group"><label>Rédiger mon avis</label><textarea placeholder="Mon avis..."></textarea></div>
                     <button type="submit" class="btn-submit">Envoyer</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- ====== FOOTER ====== -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="footer-logo">
-                    <p>Ce robot est un compagnon pour l'apprentissage. Travaillons pour son bien-être.</p>
-                    <div class="footer-newsletter-form">
-                        <input type="email" placeholder="Adresse e-mail">
-                        <button class="btn-abonner-footer">S'abonner</button>
-                    </div>
-                </div>
-                <div class="footer-nav">
-                    <h4>Pages</h4>
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="apropos.html">A propos</a></li>
-                        <li><a href="categorie.html">Catégorie</a></li>
-                        <li><a href="educative.html" class="active">Educative</a></li>
-                        <li><a href="informative.html">Informative</a></li>
-                        <li><a href="localisative.html">Localisative</a></li>
-                        <li><a href="gestion.html">Gestion</a></li>
-                        <li><a href="index.html#produit">Produit</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-help">
-                    <h4>Aide</h4>
-                    <ul>
-                        <li><a href="#">Get Started</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Confidentialité</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <p>Email: RDOC@gmail.com</p>
-                    <p>Téléphone: (+21) 12345678</p>
-                    <p>Tunisie</p>
-                </div>
+    <!-- FOOTER -->
+    <footer class="py-[80px] pb-10 border-t border-[rgba(255,255,255,0.1)]">
+        <div class="container mx-auto px-6 md:px-16 lg:px-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px]">
+                <div><img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="h-[60px] mb-4"><p class="font-inter text-sm text-[rgba(255,255,255,0.5)] mb-4">Ce robot est un compagnon pour l'apprentissage.</p><div class="flex gap-2"><input type="email" placeholder="Email" class="flex-1 p-3 bg-transparent border border-[rgba(255,255,255,0.3)] rounded-full text-white text-sm"><button class="px-4 bg-primary text-black font-orbitron text-xs rounded-full">S'abonner</button></div></div>
+                <div><h4 class="font-orbitron text-base text-white uppercase mb-4">Pages</h4><ul class="flex flex-col gap-2 text-sm"><li><a href="index.html" class="text-[rgba(255,255,255,0.5)] hover:text-primary">Accueil</a></li><li><a href="categorie.html" class="text-[rgba(255,255,255,0.5)] hover:text-primary">Catégorie</a></li><li><a href="educative.html" class="text-primary">Educative</a></li><li><a href="informative.html" class="text-[rgba(255,255,255,0.5)] hover:text-primary">Informative</a></li><li><a href="localisative.html" class="text-[rgba(255,255,255,0.5)] hover:text-primary">Localisative</a></li><li><a href="gestion.html" class="text-[rgba(255,255,255,0.5)] hover:text-primary">Gestion</a></li></ul></div>
+                <div><h4 class="font-orbitron text-base text-white uppercase mb-4">Aide</h4><ul class="flex flex-col gap-2 text-sm"><li><a href="#" class="text-[rgba(255,255,255,0.5)] hover:text-primary">Get Started</a></li><li><a href="#" class="text-[rgba(255,255,255,0.5)] hover:text-primary">Support</a></li><li><a href="#" class="text-[rgba(255,255,255,0.5)] hover:text-primary">Confidentialité</a></li></ul></div>
+                <div><h4 class="font-orbitron text-base text-white uppercase mb-4">Contact</h4><ul class="flex flex-col gap-2 text-sm"><li class="text-[rgba(255,255,255,0.5)]">Email: RDOC@gmail.com</li><li class="text-[rgba(255,255,255,0.5)]">Téléphone: (+21) 12345678</li><li class="text-[rgba(255,255,255,0.5)]">Tunisie</li></ul></div>
             </div>
-            <div class="footer-bottom">
-                <p>Copyright 2024 © Les Astronomes.</p>
-            </div>
+            <div class="text-center mt-10 pt-5 border-t border-[rgba(255,255,255,0.1)]"><p class="text-xs text-[rgba(255,255,255,0.5)]">Copyright 2024 © Les Astronomes.</p></div>
         </div>
     </footer>
-
     <script src="assets/js/main.js"></script>
+    <script>
+      function toggleMenu() { const nav = document.querySelector('.nav-pill-bar'); if(nav){ nav.classList.toggle('hidden'); nav.classList.toggle('flex'); nav.classList.toggle('flex-col'); nav.classList.toggle('absolute'); nav.classList.toggle('top-20'); nav.classList.toggle('left-0'); nav.classList.toggle('right-0'); nav.classList.toggle('bg-black'); nav.classList.toggle('p-5'); nav.classList.toggle('z-50'); } }
+    </script>
 </body>
 </html>
