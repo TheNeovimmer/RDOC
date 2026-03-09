@@ -445,6 +445,27 @@
             }
         }
     </style>
+    <style>
+        .sponsor-marquee {
+            width: 100%;
+            overflow: hidden;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .sponsor-track {
+            display: flex;
+            gap: 60px;
+            width: max-content;
+            animation: scroll 25s linear infinite;
+        }
+        .sponsor-track img {
+            flex-shrink: 0;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
     <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
@@ -533,9 +554,13 @@
 </section>
 
 <!-- ====== PARTNERS BAR ====== -->
-<section class="py-[30px] border-b border-[rgba(255,255,255,0.1)]">
-    <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
-        <div class="flex justify-center items-center">
+<section class="py-[30px] border-b border-[rgba(255,255,255,0.1)] overflow-hidden">
+    <div class="sponsor-marquee">
+        <div class="sponsor-track">
+            <img src="assets/images/Frame 388.png" alt="University Partners" class="h-[138px] w-auto opacity-50">
+            <img src="assets/images/Frame 388.png" alt="University Partners" class="h-[138px] w-auto opacity-50">
+            <img src="assets/images/Frame 388.png" alt="University Partners" class="h-[138px] w-auto opacity-50">
+            <img src="assets/images/Frame 388.png" alt="University Partners" class="h-[138px] w-auto opacity-50">
             <img src="assets/images/Frame 388.png" alt="University Partners" class="h-[138px] w-auto opacity-50">
         </div>
     </div>
