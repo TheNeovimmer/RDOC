@@ -1,113 +1,656 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="RDOC - Connexion à votre compte">
-    <title>Connexion - RDOC</title>
-    <link rel="stylesheet" href="assets/css/auth.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#5CC4E5',
-                        'bg-dark': '#000000',
-                        'text-white': '#FFFFFF',
-                        'text-muted': 'rgba(255, 255, 255, 0.7)',
-                        'text-dim': 'rgba(255, 255, 255, 0.5)',
-                        'glass-bg': 'rgba(255, 255, 255, 0.21)',
-                        'glass-border': 'rgba(255, 255, 255, 0.1)',
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="RDOC - Connexion à votre compte" />
+        <title>Connexion - RDOC</title>
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#5CC4E5",
+                            "bg-dark": "#000000",
+                            "text-white": "#FFFFFF",
+                            "text-muted": "rgba(255, 255, 255, 0.7)",
+                            "text-dim": "rgba(255, 255, 255, 0.5)",
+                            "glass-bg": "rgba(255, 255, 255, 0.21)",
+                            "glass-border": "rgba(255, 255, 255, 0.1)",
+                        },
+                        fontFamily: {
+                            orbitron: ["Orbitron", "sans-serif"],
+                            inter: ["Inter", "sans-serif"],
+                        },
+                        backdropBlur: {
+                            29: "29px",
+                        },
+                        boxShadow: {
+                            primary: "1px -1px 19.7px 0px #5CC4E5",
+                            "primary-lg": "1px -1px 30px 0px #5CC4E5",
+                        },
+                        maxWidth: {
+                            container: "1440px",
+                        },
                     },
-                    fontFamily: {
-                        'orbitron': ['Orbitron', 'sans-serif'],
-                        'inter': ['Inter', 'sans-serif'],
-                    },
-                    backdropBlur: {
-                        '29': '29px',
-                    },
-                    boxShadow: {
-                        'primary': '1px -1px 19.7px 0px #5CC4E5',
-                        'primary-lg': '1px -1px 30px 0px #5CC4E5',
-                    },
+                },
+            };
+        </script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            body {
+                background-image:
+                    url("assets/images/disto.png"),
+                    url("assets/images/disto.png"),
+                    url("assets/images/disto.png"),
+                    url("assets/images/disto.png");
+                background-size:
+                    clamp(120px, 18vw, 220px), clamp(140px, 22vw, 280px),
+                    clamp(100px, 14vw, 180px), clamp(130px, 20vw, 250px);
+                background-position:
+                    top 8% left clamp(-80px, -6vw, -20px),
+                    top 25% right clamp(-100px, -8vw, -30px),
+                    bottom 15% left clamp(-70px, -5vw, -15px),
+                    bottom 5% right clamp(20px, 8vw, 100px);
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-color: #000000;
+            }
+
+            .logo-img {
+                height: 38px;
+                width: auto;
+            }
+
+            .auth-button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 6px 23px;
+                height: 40px;
+                border-radius: 18px;
+                border: 1px solid transparent;
+                background-image:
+                    linear-gradient(#000, #000),
+                    linear-gradient(135deg, #ffffff, #5cc4e5);
+                background-origin: border-box;
+                background-clip: padding-box, border-box;
+                font-family: "Inter", sans-serif;
+                font-size: 16px;
+                font-weight: 500;
+                letter-spacing: -0.176px;
+                line-height: 24px;
+                color: #ffffff;
+                transition: all 0.3s;
+                text-decoration: none;
+            }
+
+            .auth-button:hover {
+                background-image:
+                    linear-gradient(
+                        rgba(92, 196, 229, 0.1),
+                        rgba(92, 196, 229, 0.1)
+                    ),
+                    linear-gradient(135deg, #5cc4e5, #ffffff);
+            }
+
+            .nav-pill-bar {
+                display: flex;
+                align-items: center;
+                gap: 22px;
+                height: 55px;
+                padding: 0 40px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                border-radius: 28px;
+                backdrop-filter: blur(10px);
+            }
+
+            .nav-pill-link {
+                font-family: "Orbitron", sans-serif;
+                font-size: 20px;
+                color: #ffffff;
+                text-decoration: none;
+                transition: all 0.3s;
+            }
+
+            .nav-pill-link.active {
+                font-weight: 700;
+                color: #5cc4e5;
+            }
+
+            .nav-pill-link:hover {
+                color: #5cc4e5;
+            }
+
+            .nav-corner-panel {
+                background: #000000;
+                padding: 15px 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 80px;
+            }
+
+            .left-panel {
+                border-bottom-right-radius: 40px;
+                padding-left: 100px;
+            }
+
+            .right-panel {
+                border-bottom-left-radius: 40px;
+                padding-right: 100px;
+            }
+
+            .discover-arrow {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 62px;
+                height: 62px;
+                border: 1px solid #ffffff;
+                border-radius: 50%;
+                transition: all 0.3s;
+            }
+
+            .discover-arrow:hover {
+                border-color: #5cc4e5;
+                background: rgba(92, 196, 229, 0.1);
+            }
+
+            .nav-pill {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 116px;
+                height: 36px;
+                border: 1px solid #ffffff;
+                border-radius: 18px;
+                font-family: "Orbitron", sans-serif;
+                font-size: 16px;
+                font-weight: 400;
+                letter-spacing: -0.176px;
+                line-height: 24px;
+                color: #ffffff;
+                transition: all 0.3s;
+                text-decoration: none;
+            }
+
+            .nav-pill.active {
+                font-weight: 700;
+                color: #5cc4e5;
+                border-color: #5cc4e5;
+            }
+
+            .nav-pill:hover {
+                border-color: #5cc4e5;
+                color: #5cc4e5;
+            }
+
+            @media (max-width: 1200px) {
+                .nav-corner-panel {
+                    padding: 15px 60px;
+                }
+                .left-panel {
+                    padding-left: 60px;
+                }
+                .right-panel {
+                    padding-right: 60px;
                 }
             }
-        }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body class="min-h-screen flex flex-col">
-    <!-- Background Pattern -->
-    <div class="auth-bg"></div>
 
-    <!-- Header with Logo -->
-    <header class="auth-header">
-        <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
+            @media (max-width: 1024px) {
+                .nav-corner-panel {
+                    padding: 15px 40px;
+                }
+                .left-panel {
+                    padding-left: 40px;
+                }
+                .right-panel {
+                    padding-right: 40px;
+                }
+                .nav-pill-bar {
+                    display: none;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .nav-corner-panel {
+                    padding: 15px 20px;
+                }
+                .left-panel {
+                    padding-left: 20px;
+                }
+                .right-panel {
+                    padding-right: 20px;
+                }
+            }
+        </style>
+        <link rel="stylesheet" href="assets/css/responsive.css" />
+    </head>
+    <body class="min-h-screen flex flex-col">
+        <!-- Desktop NAVBAR - Fixed at top -->
+        <div
+            class="fixed top-0 left-0 right-0 z-50 hidden lg:flex justify-between items-center px-6 md:px-16 lg:px-24 py-5 bg-black/80 backdrop-blur-md"
+        >
             <a href="index.html" class="logo">
-                <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="logo-img">
+                <img
+                    src="assets/images/Plan de travail 1 1.png"
+                    alt="RDOC"
+                    class="logo-img"
+                />
             </a>
+            <nav class="nav-pill-bar">
+                <a href="index.html" class="nav-pill-link">Accueil</a>
+                <a href="apropos.html" class="nav-pill-link">A propos</a>
+                <a href="categorie.html" class="nav-pill-link">Catégorie</a>
+                <a href="index.html#produit" class="nav-pill-link">Produit</a>
+                <a href="index.html#blog" class="nav-pill-link">Blog</a>
+                <a href="index.html#contact" class="nav-pill-link">Contact</a>
+            </nav>
+            <a href="login.html" class="auth-button">Sign up / Sign in</a>
         </div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="flex-1 flex items-center justify-center py-12 px-4">
-        <div class="auth-card glass">
-            <div class="text-center mb-8">
-                <h1 class="auth-title">Bienvenue</h1>
-                <p class="auth-subtitle">Connectez-vous à votre compte RDOC</p>
-            </div>
+        <!-- Mobile Logo -->
+        <a href="index.html" class="logo lg:hidden absolute top-5 left-6 z-50">
+            <img
+                src="assets/images/Plan de travail 1 1.png"
+                alt="RDOC"
+                class="h-10"
+            />
+        </a>
 
-            <form class="auth-form">
-                <div class="form-group">
-                    <label for="email" class="form-label">Email</label>
-                    <input 
-                        type="email" 
-                        id="email" 
-                        name="email" 
-                        class="form-input" 
-                        placeholder="example@gmail.com" 
-                        required
+        <!-- Mobile Bottom Navigation -->
+        <div
+            class="fixed bottom-0 left-0 right-0 lg:hidden z-50 bg-black/95 backdrop-blur-md border-t border-[rgba(255,255,255,0.1)] px-4 py-3"
+        >
+            <div class="flex justify-around items-center text-white">
+                <a
+                    href="index.html"
+                    class="flex flex-col items-center text-xs text-white/70"
+                >
+                    <svg
+                        class="w-6 h-6 mb-1"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
                     >
-                </div>
-
-                <div class="form-group">
-                    <label for="password" class="form-label">Mot de passe</label>
-                    <input 
-                        type="password" 
-                        id="password" 
-                        name="password" 
-                        class="form-input" 
-                        placeholder="••••••••" 
-                        required
+                        <title>Accueil</title>
+                        <path
+                            d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+                        />
+                    </svg>
+                    Accueil
+                </a>
+                <a
+                    href="apropos.html"
+                    class="flex flex-col items-center text-xs text-white/70"
+                >
+                    <svg
+                        class="w-6 h-6 mb-1"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
                     >
-                </div>
-
-                <div class="form-options">
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="remember" class="checkbox">
-                        <span class="checkbox-text">Se souvenir de moi</span>
-                    </label>
-                    <a href="#" class="forgot-link">Mot de passe oublié ?</a>
-                </div>
-
-                <button type="submit" class="btn-submit">Se connecter</button>
-            </form>
-
-            <div class="auth-footer">
-                <p class="footer-text">
-                    Pas encore de compte ? 
-                    <a href="register.html" class="footer-link">Créer un compte</a>
-                </p>
+                        <title>À propos</title>
+                        <path
+                            fill-rule="evenodd"
+                            d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                            clip-rule="evenodd"
+                        />
+                    </svg>
+                    A propos
+                </a>
+                <a
+                    href="categorie.html"
+                    class="flex flex-col items-center text-xs text-white/70"
+                >
+                    <svg
+                        class="w-6 h-6 mb-1"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                    >
+                        <title>Catégorie</title>
+                        <path
+                            d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"
+                        />
+                    </svg>
+                    Catégorie
+                </a>
+                <a
+                    href="index.html#contact"
+                    class="flex flex-col items-center text-xs text-white/70"
+                >
+                    <svg
+                        class="w-6 h-6 mb-1"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                    >
+                        <title>Contact</title>
+                        <path
+                            d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                        />
+                        <path
+                            d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                        />
+                    </svg>
+                    Contact
+                </a>
+                <a
+                    href="login.html"
+                    class="flex flex-col items-center text-xs text-primary"
+                >
+                    <svg
+                        class="w-6 h-6 mb-1"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <title>Connexion</title>
+                        <path
+                            d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5z"
+                        />
+                    </svg>
+                    Connexion
+                </a>
             </div>
         </div>
-    </main>
 
-    <!-- Footer -->
-    <footer class="auth-footer-bar">
-        <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
-            <p class="copyright">© 2025 RDOC. Tous droits réservés.</p>
-        </div>
-    </footer>
-</body>
+        <!-- Add padding bottom for mobile to account for bottom nav -->
+        <div class="lg:hidden" style="height: 70px"></div>
+
+        <!-- Main Content -->
+        <main
+            class="flex-1 flex items-center justify-center pt-[100px] lg:pt-[150px] pb-[100px] px-6 md:px-16 lg:px-24"
+        >
+            <div class="w-full max-w-md">
+                <div class="text-center mb-[60px]">
+                    <h1
+                        class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-primary uppercase tracking-wide mb-[14px]"
+                    >
+                        Connexion
+                    </h1>
+                    <p
+                        class="font-inter text-xl text-white max-w-[500px] mx-auto leading-relaxed"
+                    >
+                        Accédez à votre compte RDOC
+                    </p>
+                </div>
+
+                <div
+                    class="glass rounded-[34px] p-[40px] md:p-[60px] border border-[rgba(92,196,229,0.3)] shadow-lg"
+                    style="
+                        background: rgba(255, 255, 255, 0.08);
+                        backdrop-filter: blur(20px);
+                        -webkit-backdrop-filter: blur(20px);
+                    "
+                >
+                    <form class="space-y-[30px]">
+                        <!-- Email -->
+                        <div>
+                            <label
+                                for="email"
+                                class="block font-inter text-base font-bold text-white mb-[15px]"
+                            >
+                                Email
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="example@gmail.com"
+                                class="form-input w-full transition-all duration-300 hover:border-primary/50 focus:shadow-lg focus:shadow-primary/20"
+                                required
+                            />
+                        </div>
+
+                        <!-- Password -->
+                        <div>
+                            <label
+                                for="password"
+                                class="block font-inter text-base font-bold text-white mb-[15px]"
+                            >
+                                Mot de passe
+                            </label>
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="••••••••"
+                                class="form-input w-full transition-all duration-300 hover:border-primary/50 focus:shadow-lg focus:shadow-primary/20"
+                                required
+                            />
+                        </div>
+
+                        <!-- Remember & Forgot Password -->
+                        <div class="flex items-center justify-between gap-4">
+                            <label
+                                class="flex items-center gap-2 cursor-pointer group"
+                            >
+                                <input
+                                    type="checkbox"
+                                    name="remember"
+                                    class="w-4 h-4 rounded border-primary/30 bg-white/5 accent-primary cursor-pointer transition-colors duration-300 hover:border-primary"
+                                />
+                                <span
+                                    class="font-inter text-base text-white/70 group-hover:text-white transition-colors duration-300"
+                                    >Se souvenir de moi</span
+                                >
+                            </label>
+                            <a
+                                href="#"
+                                class="font-inter text-base text-primary hover:text-primary/90 transition-all duration-300 relative inline-block"
+                            >
+                                Mot de passe oublié?
+                                <span
+                                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-cyan-400 hover:w-full transition-all duration-300"
+                                ></span>
+                            </a>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button
+                            type="submit"
+                            class="btn-submit w-full mt-[30px] relative overflow-hidden group hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
+                        >
+                            <span class="relative z-10">Se connecter</span>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-r from-primary/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            ></div>
+                        </button>
+                    </form>
+
+                    <!-- Sign Up Link -->
+                    <div
+                        class="mt-[30px] text-center pt-[30px] border-t border-[rgba(92,196,229,0.2)]"
+                    >
+                        <p class="font-inter text-base text-white/70">
+                            Pas encore de compte?
+                            <a
+                                href="register.html"
+                                class="text-primary hover:text-primary/90 font-bold transition-all duration-300 relative inline-block"
+                            >
+                                Créer un compte
+                                <span
+                                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-cyan-400 group-hover:w-full transition-all duration-300"
+                                ></span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer
+            class="py-[80px] pb-10 border-t border-[rgba(255,255,255,0.1)] mt-[100px]"
+        >
+            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] mb-[50px]"
+                >
+                    <div>
+                        <img
+                            src="assets/images/Plan de travail 1 1.png"
+                            alt="RDOC"
+                            class="h-[60px] w-auto mb-4"
+                        />
+                        <p
+                            class="font-inter text-sm text-[rgba(255,255,255,0.5)] leading-relaxed"
+                        >
+                            Notre équipe d'experts passionnés fournit des
+                            solutions robotiques exceptionnelles, conçues pour
+                            répondre aux besoins variés de nos clients.
+                        </p>
+                    </div>
+                    <div>
+                        <h4
+                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                        >
+                            Pages
+                        </h4>
+                        <ul class="flex flex-col gap-2.5">
+                            <li>
+                                <a
+                                    href="index.html#accueil"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                >
+                                    Accueil
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="apropos.html"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                >
+                                    A propos
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="categorie.html"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                >
+                                    Catégorie
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="index.html#produit"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                >
+                                    Produit
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="index.html#blog"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                >
+                                    Blog
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="index.html#contact"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                >
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4
+                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                        >
+                            Aide
+                        </h4>
+                        <ul class="flex flex-col gap-2.5">
+                            <li>
+                                <a
+                                    href="index.html#faq"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                >
+                                    FAQ
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                >
+                                    Politique de confidentialité
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                >
+                                    Conditions d'utilisation
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4
+                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                        >
+                            Contact
+                        </h4>
+                        <ul class="flex flex-col gap-2.5">
+                            <li
+                                class="font-inter text-sm text-[rgba(255,255,255,0.5)]"
+                            >
+                                +213 123 456 789
+                            </li>
+                            <li>
+                                <a
+                                    href="mailto:contact@rdoc.com"
+                                    class="font-inter text-sm text-primary hover:opacity-70 transition-opacity"
+                                >
+                                    contact@rdoc.com
+                                </a>
+                            </li>
+                            <li
+                                class="font-inter text-sm text-[rgba(255,255,255,0.5)]"
+                            >
+                                Alger, Algérie
+                            </li>
+                        </ul>
+                        <div class="flex gap-[15px] mt-4">
+                            <a
+                                href="#"
+                                class="font-inter text-sm font-bold text-white hover:text-primary transition-colors"
+                            >
+                                FB
+                            </a>
+                            <a
+                                href="#"
+                                class="font-inter text-sm font-bold text-white hover:text-primary transition-colors"
+                            >
+                                IG
+                            </a>
+                            <a
+                                href="#"
+                                class="font-inter text-sm font-bold text-white hover:text-primary transition-colors"
+                            >
+                                LI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="text-center pt-[30px] border-t border-[rgba(255,255,255,0.1)]"
+                >
+                    <p class="font-inter text-xs text-[rgba(255,255,255,0.5)]">
+                        © 2025 RDOC. Tous droits réservés.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="assets/js/main.js"></script>
+    </body>
 </html>

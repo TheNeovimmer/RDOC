@@ -1,888 +1,1443 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="RDOC - Solutions robotiques innovantes pour l'éducation, la gestion et l'assistance.">
-    <title>RDOC - Solutions Robotiques</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#5CC4E5',
-                        'bg-dark': '#000000',
-                        'text-white': '#FFFFFF',
-                        'text-muted': 'rgba(255, 255, 255, 0.7)',
-                        'text-dim': 'rgba(255, 255, 255, 0.5)',
-                        'glass-bg': 'rgba(255, 255, 255, 0.21)',
-                        'glass-border': 'rgba(255, 255, 255, 0.1)',
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="RDOC - Solutions robotiques innovantes pour l'éducation, la gestion et l'assistance."
+        />
+        <title>RDOC - Solutions Robotiques</title>
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#5CC4E5",
+                            "bg-dark": "#000000",
+                            "text-white": "#FFFFFF",
+                            "text-muted": "rgba(255, 255, 255, 0.7)",
+                            "text-dim": "rgba(255, 255, 255, 0.5)",
+                            "glass-bg": "rgba(255, 255, 255, 0.21)",
+                            "glass-border": "rgba(255, 255, 255, 0.1)",
+                        },
+                        fontFamily: {
+                            orbitron: ["Orbitron", "sans-serif"],
+                            inter: ["Inter", "sans-serif"],
+                        },
+                        backdropBlur: {
+                            29: "29px",
+                        },
+                        boxShadow: {
+                            primary: "1px -1px 19.7px 0px #5CC4E5",
+                            "primary-lg": "1px -1px 30px 0px #5CC4E5",
+                        },
+                        maxWidth: {
+                            container: "1440px",
+                        },
+                        padding: {
+                            container: "100px",
+                        },
                     },
-                    fontFamily: {
-                        'orbitron': ['Orbitron', 'sans-serif'],
-                        'inter': ['Inter', 'sans-serif'],
-                    },
-                    backdropBlur: {
-                        '29': '29px',
-                    },
-                    boxShadow: {
-                        'primary': '1px -1px 19.7px 0px #5CC4E5',
-                        'primary-lg': '1px -1px 30px 0px #5CC4E5',
-                    },
-                    maxWidth: {
-                        'container': '1440px',
-                    },
-                    padding: {
-                        'container': '100px',
-                    }
-                }
+                },
+            };
+        </script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            body {
+                background-image:
+                    url("assets/images/disto.png"),
+                    url("assets/images/disto.png"),
+                    url("assets/images/disto.png"),
+                    url("assets/images/disto.png"),
+                    url("assets/images/disto.png"),
+                    url("assets/images/disto.png");
+                background-size:
+                    clamp(180px, 28vw, 350px), clamp(220px, 36vw, 450px),
+                    clamp(160px, 24vw, 300px), clamp(200px, 32vw, 400px),
+                    clamp(240px, 40vw, 500px), clamp(180px, 28vw, 350px);
+                background-position:
+                    top 6% left clamp(-120px, -8vw, -40px),
+                    top 18% right clamp(-140px, -10vw, -60px),
+                    top 40% left clamp(-160px, -12vw, -70px),
+                    top 62% right clamp(-120px, -8vw, -40px),
+                    top 84% left clamp(-120px, -8vw, -40px),
+                    bottom 6% right clamp(10px, 6vw, 140px);
+                background-repeat: no-repeat;
+                background-color: #000000;
             }
-        }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-image:
-                url('assets/images/disto.png'),
-                url('assets/images/disto.png'),
-                url('assets/images/disto.png'),
-                url('assets/images/disto.png'),
-                url('assets/images/disto.png'),
-                url('assets/images/disto.png');
-            background-size:
-                clamp(180px, 28vw, 350px),
-                clamp(220px, 36vw, 450px),
-                clamp(160px, 24vw, 300px),
-                clamp(200px, 32vw, 400px),
-                clamp(240px, 40vw, 500px),
-                clamp(180px, 28vw, 350px);
-            background-position:
-                top 6% left clamp(-120px, -8vw, -40px),
-                top 18% right clamp(-140px, -10vw, -60px),
-                top 40% left clamp(-160px, -12vw, -70px),
-                top 62% right clamp(-120px, -8vw, -40px),
-                top 84% left clamp(-120px, -8vw, -40px),
-                bottom 6% right clamp(10px, 6vw, 140px);
-            background-repeat: no-repeat;
-            background-color: #000000;
-        }
-        .glass {
-            background: rgba(255, 255, 255, 0.21);
-            backdrop-filter: blur(29px);
-            -webkit-backdrop-filter: blur(29px);
-        }
-        .btn-outline {
-            display: inline-block;
-            padding: 14px 46px;
-            background: #000;
-            border: none;
-            border-radius: 50px;
-            color: #5CC4E5;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: 2.6px;
-            text-align: center;
-            box-shadow: 1px -1px 19.7px 0px #5CC4E5;
-            opacity: 0.8;
-            transition: all 0.3s;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .btn-outline:hover {
-            opacity: 1;
-            box-shadow: 1px -1px 30px 0px #5CC4E5;
-        }
-        .btn-submit {
-            width: 100%;
-            padding: 16px;
-            border: 1px solid #5CC4E5;
-            border-radius: 30px;
-            background: transparent;
-            color: #5CC4E5;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .btn-submit:hover {
-            background: #5CC4E5;
-            color: #000;
-        }
-        .hero-bg-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: blur(7.6px);
-            border-radius: 0 0 36px 0;
-        }
-        .nav-corner-panel {
-            background: #000000;
-            padding: 15px 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 80px;
-        }
-        .left-panel {
-            border-bottom-right-radius: 40px;
-            padding-left: 100px;
-        }
-        .right-panel {
-            border-bottom-left-radius: 40px;
-            padding-right: 100px;
-        }
-        .logo-img {
-            height: 38px;
-            width: auto;
-        }
-        .auth-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 6px 23px;
-            height: 40px;
-            border-radius: 18px;
-            border: 1px solid transparent;
-            background-image: linear-gradient(#000, #000), linear-gradient(135deg, #FFFFFF, #5CC4E5);
-            background-origin: border-box;
-            background-clip: padding-box, border-box;
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
-            font-weight: 500;
-            letter-spacing: -0.176px;
-            line-height: 24px;
-            color: #FFFFFF;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-        .auth-button:hover {
-            background-image: linear-gradient(rgba(92,196,229,0.1), rgba(92,196,229,0.1)), linear-gradient(135deg, #5CC4E5, #FFFFFF);
-        }
-        .hero-robot-img {
-            width: 100%;
-            filter: drop-shadow(0 0 40px rgba(92,196,229,0.1));
-        }
-        .user-avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: 2px solid #000000;
-            object-fit: cover;
-            margin-left: -10px;
-        }
-        .user-avatar:first-child { margin-left: 0; }
-        .discover-arrow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 62px;
-            height: 62px;
-            border: 1px solid #FFFFFF;
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-        .discover-arrow:hover {
-            border-color: #5CC4E5;
-            background: rgba(92,196,229,0.1);
-        }
-        .nav-pill {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 116px;
-            height: 36px;
-            border: 1px solid #FFFFFF;
-            border-radius: 18px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 16px;
-            font-weight: 400;
-            letter-spacing: -0.176px;
-            line-height: 24px;
-            color: #FFFFFF;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-        .nav-pill.active {
-            font-weight: 700;
-            color: #5CC4E5;
-            border-color: #5CC4E5;
-        }
-        .nav-pill:hover {
-            border-color: #5CC4E5;
-            color: #5CC4E5;
-        }
-        .featured-card {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            aspect-ratio: 387/380;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-        }
-        .featured-card-overlay {
-            position: absolute;
-            inset: 0;
-            z-index: 3;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .group:hover .featured-card-overlay {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .featured-card-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: #5CC4E5;
-            margin-bottom: 15px;
-            text-align: center;
-            letter-spacing: 2px;
-        }
-        .featured-card-text {
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            font-weight: 400;
-            color: #FFFFFF;
-            text-align: center;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            max-width: 280px;
-        }
-        .featured-card-link {
-            display: inline-block;
-            padding: 10px 30px;
-            background: #5CC4E5;
-            color: #000000;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 14px;
-            font-weight: 700;
-            border-radius: 25px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(92, 196, 229, 0.4);
-        }
-        .featured-card-link:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(92, 196, 229, 0.6);
-        }
-        .featured-card-label {
-            position: relative;
-            z-index: 2;
-            display: inline-block;
-            padding: 11px 23px;
-            background: #5CC4E5;
-            border-radius: 50px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: 2.6px;
-            line-height: 33.4px;
-            color: #000000;
-            margin: 20px;
-            width: fit-content;
-        }
-        .featured-card-desc {
-            position: relative;
-            z-index: 2;
-            padding: 20px;
-            font-family: 'Inter', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: 2.6px;
-            line-height: 33.4px;
-            color: #FFFFFF;
-            background: linear-gradient(transparent, rgba(0,0,0,0.7));
-        }
-        .why-us-icon::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: #5CC4E5;
-            border-radius: 50%;
-            filter: blur(27.2px);
-            z-index: 0;
-        }
-        .how-step {
-            width: 496px;
-            height: 144px;
-            border-radius: 72px;
-            display: flex;
-            align-items: center;
-            position: relative;
-            margin-bottom: -15px;
-            box-sizing: border-box;
-        }
-        .step-left {
-            align-self: flex-start;
-            border: 2px solid #FFFFFF;
-            justify-content: flex-end;
-            padding-right: 1px;
-        }
-        .step-right {
-            align-self: flex-end;
-            border: 2px solid #5CC4E5;
-            justify-content: flex-start;
-            padding-left: 1px;
-        }
-        .step-text {
-            font-family: 'Inter', sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: #FFFFFF;
-            line-height: 1.3;
-            flex-grow: 1;
-        }
-        .step-left .step-text {
-            text-align: right;
-            padding-right: 32px;
-            padding-left: 20px;
-        }
-        .step-right .step-text {
-            text-align: left;
-            padding-left: 32px;
-            padding-right: 20px;
-        }
-        .step-circle {
-            width: 138px;
-            height: 138px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            position: relative;
-            z-index: 2;
-        }
-        .step-white {
-            background: #FFFFFF;
-        }
-        .step-cyan {
-            background: #5CC4E5;
-        }
-        .step-num {
-            font-family: 'Inter', sans-serif;
-            font-size: 64px;
-            font-weight: 400;
-            color: #000000;
-        }
-        .faq-icon {
-            width: 70px;
-            height: 95px;
-            min-width: 70px;
-            border-radius: 45px;
-            background: #FFFFFF;
-            color: #000000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Inter', sans-serif;
-            font-size: 36px;
-            font-weight: 700;
-            margin: -14px 0 -14px -33px;
-        }
-        .faq-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            background: #000;
-            border-radius: 52px;
-            padding: 14px 33px;
-            min-height: 95px;
-            font-family: 'Inter', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            color: #FFFFFF;
-            transition: all 0.3s;
-            cursor: pointer;
-            backdrop-filter: blur(142.8px);
-        }
-        .faq-item:hover {
-            background: rgba(92,196,229,0.05);
-        }
-        .form-input {
-            width: 100%;
-            padding: 16px 24px;
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 30px;
-            color: #FFFFFF;
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            transition: border-color 0.3s;
-            outline: none;
-        }
-        .form-input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-        .form-input:focus {
-            border-color: #5CC4E5;
-        }
-        .form-textarea {
-            min-height: 80px;
-            resize: vertical;
-            border-radius: 20px;
-        }
-        @media (max-width: 1200px) {
-            .nav-corner-panel {
-                padding: 15px 60px;
+            .glass {
+                background: rgba(255, 255, 255, 0.21);
+                backdrop-filter: blur(29px);
+                -webkit-backdrop-filter: blur(29px);
             }
-            .left-panel {
-                padding-left: 60px;
+            .btn-outline {
+                display: inline-block;
+                padding: 14px 46px;
+                background: #000;
+                border: none;
+                border-radius: 50px;
+                color: #5cc4e5;
+                font-family: "Orbitron", sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                letter-spacing: 2.6px;
+                text-align: center;
+                box-shadow: 1px -1px 19.7px 0px #5cc4e5;
+                opacity: 0.8;
+                transition: all 0.3s;
+                cursor: pointer;
+                text-decoration: none;
             }
-            .right-panel {
-                padding-right: 60px;
+            .btn-outline:hover {
+                opacity: 1;
+                box-shadow: 1px -1px 30px 0px #5cc4e5;
             }
-        }
-
-        @media (max-width: 1024px) {
-            .nav-corner-panel {
-                padding: 15px 40px;
-            }
-            .left-panel {
-                padding-left: 40px;
-            }
-            .right-panel {
-                padding-right: 40px;
-            }
-            .hero-users {
-                left: 40px !important;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-corner-panel {
-                padding: 15px 20px;
-            }
-            .left-panel {
-                padding-left: 20px;
-            }
-            .right-panel {
-                padding-right: 20px;
-            }
-            .hero-robot {
-                width: 280px !important;
-            }
-            .hero-users {
-                left: 20px !important;
-                bottom: 130px !important;
-            }
-            .hero-bottom-bar {
-                padding: 0 20px 20px !important;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 20px;
-            }
-            .hero-nav {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .how-step {
+            .btn-submit {
                 width: 100%;
-                max-width: 350px;
+                padding: 16px;
+                border: 1px solid #5cc4e5;
+                border-radius: 30px;
+                background: transparent;
+                color: #5cc4e5;
+                font-family: "Orbitron", sans-serif;
+                font-size: 16px;
+                font-weight: 700;
+                cursor: pointer;
+                transition: all 0.3s;
+            }
+            .btn-submit:hover {
+                background: #5cc4e5;
+                color: #000;
+            }
+            .hero-bg-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: blur(7.6px);
+                border-radius: 0 0 36px 0;
+            }
+            .nav-corner-panel {
+                background: #000000;
+                padding: 15px 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 80px;
+            }
+            .left-panel {
+                border-bottom-right-radius: 40px;
+                padding-left: 100px;
+            }
+            .right-panel {
+                border-bottom-left-radius: 40px;
+                padding-right: 100px;
+            }
+            .logo-img {
+                height: 38px;
+                width: auto;
+            }
+            .auth-button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 6px 23px;
+                height: 40px;
+                border-radius: 18px;
+                border: 1px solid transparent;
+                background-image:
+                    linear-gradient(#000, #000),
+                    linear-gradient(135deg, #ffffff, #5cc4e5);
+                background-origin: border-box;
+                background-clip: padding-box, border-box;
+                font-family: "Inter", sans-serif;
+                font-size: 16px;
+                font-weight: 500;
+                letter-spacing: -0.176px;
+                line-height: 24px;
+                color: #ffffff;
+                transition: all 0.3s;
+                text-decoration: none;
+            }
+            .auth-button:hover {
+                background-image:
+                    linear-gradient(
+                        rgba(92, 196, 229, 0.1),
+                        rgba(92, 196, 229, 0.1)
+                    ),
+                    linear-gradient(135deg, #5cc4e5, #ffffff);
+            }
+            .hero-robot-img {
+                width: 100%;
+                filter: drop-shadow(0 0 40px rgba(92, 196, 229, 0.1));
+            }
+            .user-avatar {
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                border: 2px solid #000000;
+                object-fit: cover;
+                margin-left: -10px;
+            }
+            .user-avatar:first-child {
+                margin-left: 0;
+            }
+            .discover-arrow {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 62px;
+                height: 62px;
+                border: 1px solid #ffffff;
+                border-radius: 50%;
+                transition: all 0.3s;
+            }
+            .discover-arrow:hover {
+                border-color: #5cc4e5;
+                background: rgba(92, 196, 229, 0.1);
+            }
+            .nav-pill {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 116px;
+                height: 36px;
+                border: 1px solid #ffffff;
+                border-radius: 18px;
+                font-family: "Orbitron", sans-serif;
+                font-size: 16px;
+                font-weight: 400;
+                letter-spacing: -0.176px;
+                line-height: 24px;
+                color: #ffffff;
+                transition: all 0.3s;
+                text-decoration: none;
+            }
+            .nav-pill.active {
+                font-weight: 700;
+                color: #5cc4e5;
+                border-color: #5cc4e5;
+            }
+            .nav-pill:hover {
+                border-color: #5cc4e5;
+                color: #5cc4e5;
             }
             .featured-card {
-                max-width: 387px;
-                margin: 0 auto;
+                position: relative;
+                border-radius: 20px;
+                overflow: hidden;
+                aspect-ratio: 387/380;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
             }
-        }
-    </style>
-    <style>
-        .sponsor-marquee {
-            width: 100%;
-            overflow: hidden;
-            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-        }
-        .sponsor-track {
-            display: flex;
-            gap: 60px;
-            width: max-content;
-            animation: scroll 25s linear infinite;
-        }
-        .sponsor-track img {
-            flex-shrink: 0;
-        }
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-    </style>
-    <link rel="stylesheet" href="assets/css/responsive.css">
-</head>
-<body>
+            .featured-card-overlay {
+                position: absolute;
+                inset: 0;
+                z-index: 3;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                opacity: 0;
+                transform: translateY(20px);
+                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .group:hover .featured-card-overlay {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .featured-card-title {
+                font-family: "Orbitron", sans-serif;
+                font-size: 24px;
+                font-weight: 700;
+                color: #5cc4e5;
+                margin-bottom: 15px;
+                text-align: center;
+                letter-spacing: 2px;
+            }
+            .featured-card-text {
+                font-family: "Inter", sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+                color: #ffffff;
+                text-align: center;
+                line-height: 1.6;
+                margin-bottom: 20px;
+                max-width: 280px;
+            }
+            .featured-card-link {
+                display: inline-block;
+                padding: 10px 30px;
+                background: #5cc4e5;
+                color: #000000;
+                font-family: "Orbitron", sans-serif;
+                font-size: 14px;
+                font-weight: 700;
+                border-radius: 25px;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                box-shadow: 0 0 20px rgba(92, 196, 229, 0.4);
+            }
+            .featured-card-link:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 30px rgba(92, 196, 229, 0.6);
+            }
+            .featured-card-label {
+                position: relative;
+                z-index: 2;
+                display: inline-block;
+                padding: 11px 23px;
+                background: #5cc4e5;
+                border-radius: 50px;
+                font-family: "Orbitron", sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                letter-spacing: 2.6px;
+                line-height: 33.4px;
+                color: #000000;
+                margin: 20px;
+                width: fit-content;
+            }
+            .featured-card-desc {
+                position: relative;
+                z-index: 2;
+                padding: 20px;
+                font-family: "Inter", sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                letter-spacing: 2.6px;
+                line-height: 33.4px;
+                color: #ffffff;
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            }
+            .why-us-icon::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: #5cc4e5;
+                border-radius: 50%;
+                filter: blur(27.2px);
+                z-index: 0;
+            }
+            .how-step {
+                width: 496px;
+                height: 144px;
+                border-radius: 72px;
+                display: flex;
+                align-items: center;
+                position: relative;
+                margin-bottom: -15px;
+                box-sizing: border-box;
+            }
+            .step-left {
+                align-self: flex-start;
+                border: 2px solid #ffffff;
+                justify-content: flex-end;
+                padding-right: 1px;
+            }
+            .step-right {
+                align-self: flex-end;
+                border: 2px solid #5cc4e5;
+                justify-content: flex-start;
+                padding-left: 1px;
+            }
+            .step-text {
+                font-family: "Inter", sans-serif;
+                font-size: 24px;
+                font-weight: 700;
+                color: #ffffff;
+                line-height: 1.3;
+                flex-grow: 1;
+            }
+            .step-left .step-text {
+                text-align: right;
+                padding-right: 32px;
+                padding-left: 20px;
+            }
+            .step-right .step-text {
+                text-align: left;
+                padding-left: 32px;
+                padding-right: 20px;
+            }
+            .step-circle {
+                width: 138px;
+                height: 138px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                position: relative;
+                z-index: 2;
+            }
+            .step-white {
+                background: #ffffff;
+            }
+            .step-cyan {
+                background: #5cc4e5;
+            }
+            .step-num {
+                font-family: "Inter", sans-serif;
+                font-size: 64px;
+                font-weight: 400;
+                color: #000000;
+            }
+            .faq-icon {
+                width: 70px;
+                height: 95px;
+                min-width: 70px;
+                border-radius: 45px;
+                background: #ffffff;
+                color: #000000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: "Inter", sans-serif;
+                font-size: 36px;
+                font-weight: 700;
+                margin: -14px 0 -14px -33px;
+            }
+            .faq-item {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                background: #000;
+                border-radius: 52px;
+                padding: 14px 33px;
+                min-height: 95px;
+                font-family: "Inter", sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                color: #ffffff;
+                transition: all 0.3s;
+                cursor: pointer;
+                backdrop-filter: blur(142.8px);
+            }
+            .faq-item:hover {
+                background: rgba(92, 196, 229, 0.05);
+            }
+            .form-input {
+                width: 100%;
+                padding: 16px 24px;
+                background: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                color: #ffffff;
+                font-family: "Inter", sans-serif;
+                font-size: 14px;
+                transition: border-color 0.3s;
+                outline: none;
+            }
+            .form-input::placeholder {
+                color: rgba(255, 255, 255, 0.5);
+            }
+            .form-input:focus {
+                border-color: #5cc4e5;
+            }
+            .form-textarea {
+                min-height: 80px;
+                resize: vertical;
+                border-radius: 20px;
+            }
+            @media (max-width: 1200px) {
+                .nav-corner-panel {
+                    padding: 15px 60px;
+                }
+                .left-panel {
+                    padding-left: 60px;
+                }
+                .right-panel {
+                    padding-right: 60px;
+                }
+            }
 
-<!-- ====== HERO ====== -->
-<section class="relative w-full h-screen min-h-[760px] flex flex-col justify-between overflow-hidden" id="accueil">
-    <div class="absolute inset-0 z-0">
-        <img src="assets/images/Gemini_Generated_Image_o0t5jdo0t5jdo0t5 1.png" alt="Robot background" class="hero-bg-img">
-        <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/95"></div>
-    </div>
+            @media (max-width: 1024px) {
+                .nav-corner-panel {
+                    padding: 15px 40px;
+                }
+                .left-panel {
+                    padding-left: 40px;
+                }
+                .right-panel {
+                    padding-right: 40px;
+                }
+                .hero-users {
+                    left: 40px !important;
+                }
+            }
 
-    <div class="relative z-10 flex justify-between items-start">
-        <!-- Desktop: Logo Panel -->
-        <div class="nav-corner-panel left-panel hidden lg:block">
-            <a href="index.html" class="logo">
-                <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="logo-img">
-            </a>
-        </div>
-        
-        <!-- Mobile: Logo only -->
-        <a href="index.html" class="logo lg:hidden">
-            <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="h-10">
-        </a>
+            @media (max-width: 768px) {
+                .nav-corner-panel {
+                    padding: 15px 20px;
+                }
+                .left-panel {
+                    padding-left: 20px;
+                }
+                .right-panel {
+                    padding-right: 20px;
+                }
+                .hero-robot {
+                    width: 280px !important;
+                }
+                .hero-users {
+                    left: 20px !important;
+                    bottom: 130px !important;
+                }
+                .hero-bottom-bar {
+                    padding: 0 20px 20px !important;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 20px;
+                }
+                .hero-nav {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+                .how-step {
+                    width: 100%;
+                    max-width: 350px;
+                }
+                .featured-card {
+                    max-width: 387px;
+                    margin: 0 auto;
+                }
+            }
+        </style>
+        <style>
+            .sponsor-marquee {
+                width: 100%;
+                overflow: hidden;
+                mask-image: linear-gradient(
+                    to right,
+                    transparent,
+                    black 10%,
+                    black 90%,
+                    transparent
+                );
+                -webkit-mask-image: linear-gradient(
+                    to right,
+                    transparent,
+                    black 10%,
+                    black 90%,
+                    transparent
+                );
+            }
+            .sponsor-track {
+                display: flex;
+                gap: 60px;
+                width: max-content;
+                animation: scroll 25s linear infinite;
+            }
+            .sponsor-track img {
+                flex-shrink: 0;
+            }
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+        </style>
+        <link rel="stylesheet" href="assets/css/responsive.css" />
+    </head>
+    <body>
+        <!-- ====== HERO ====== -->
+        <section
+            class="relative w-full h-screen min-h-[760px] flex flex-col justify-between overflow-hidden"
+            id="accueil"
+        >
+            <div class="absolute inset-0 z-0">
+                <img
+                    src="assets/images/Gemini_Generated_Image_o0t5jdo0t5jdo0t5 1.png"
+                    alt="Robot background"
+                    class="hero-bg-img"
+                />
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/95"
+                ></div>
+            </div>
 
-        <!-- Desktop: Auth Button -->
-        <div class="nav-corner-panel right-panel hidden lg:block">
-            <a href="login.html" class="auth-button">Sign up / Sign in</a>
-        </div>
-    </div>
-
-    <!-- Desktop: Hero Navigation -->
-    <div class="relative z-10 hidden lg:flex items-center justify-start gap-[30px] pb-[30px] pl-[100px] flex-col md:flex-row md:items-end">
-        <a href="#" class="discover-link flex items-center gap-5">
-            <span class="font-orbitron font-bold text-2xl tracking-[3.12px] text-white">Découvrir RDOC</span>
-            <span class="discover-arrow">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </span>
-        </a>
-        <nav class="hero-nav flex gap-6">
-            <a href="index.html" class="nav-pill active">Accueil</a>
-            <a href="apropos.html" class="nav-pill">A propos</a>
-            <a href="categorie.html" class="nav-pill">Catégorie</a>
-            <a href="index.html#produit" class="nav-pill">Produit</a>
-            <a href="index.html#blog" class="nav-pill">Blog</a>
-            <a href="index.html#contact" class="nav-pill">Contact</a>
-        </nav>
-    </div>
-
-    <!-- Mobile Bottom Navigation -->
-    <div class="fixed bottom-0 left-0 right-0 lg:hidden z-50 bg-black/95 backdrop-blur-md border-t border-[rgba(255,255,255,0.1)] px-4 py-3">
-        <div class="flex justify-around items-center text-white">
-            <a href="index.html" class="flex flex-col items-center text-xs text-primary">
-                <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
-                Accueil
-            </a>
-            <a href="apropos.html" class="flex flex-col items-center text-xs text-white/70">
-                <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
-                A propos
-            </a>
-            <a href="categorie.html" class="flex flex-col items-center text-xs text-white/70">
-                <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/></svg>
-                Catégorie
-            </a>
-            <a href="index.html#contact" class="flex flex-col items-center text-xs text-white/70">
-                <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
-                Contact
-            </a>
-        </div>
-    </div>
-
-    <!-- Add padding bottom for mobile to account for bottom nav -->
-    <div class="lg:hidden" style="height: 70px;"></div>
-
-    <div class="absolute z-5 top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] max-w-[90vw]">
-        <img src="assets/images/Gemini_Generated_Image_ioe7t9ioe7t9ioe7-removebg-preview (1) 1.png" alt="RDOC Robot" class="hero-robot-img">
-    </div>
-
-    <div class="absolute z-10 bottom-[90px] left-[100px] md:left-[60px] lg:left-[100px] flex items-center gap-3 hidden lg:flex">
-        <div class="flex">
-            <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="User" class="user-avatar">
-            <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="User" class="user-avatar">
-            <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="User" class="user-avatar">
-        </div>
-        <span class="font-orbitron text-sm font-bold tracking-[1.82px] text-white leading-[15.82px]">10k+ Utilisateurs actifs</span>
-    </div>
-</section>
-
-<!-- ====== PARTNERS BAR ====== -->
-<section class="py-[30px] border-b border-[rgba(255,255,255,0.1)] overflow-hidden">
-    <div class="sponsor-marquee">
-        <div class="sponsor-track">
-            <img src="assets/images/Frame 388.png" alt="University Partners" class="h-[138px] w-auto opacity-50">
-            <img src="assets/images/Frame 388.png" alt="University Partners" class="h-[138px] w-auto opacity-50">
-            <img src="assets/images/Frame 388.png" alt="University Partners" class="h-[138px] w-auto opacity-50">
-            <img src="assets/images/Frame 388.png" alt="University Partners" class="h-[138px] w-auto opacity-50">
-            <img src="assets/images/Frame 388.png" alt="University Partners" class="h-[138px] w-auto opacity-50">
-        </div>
-    </div>
-</section>
-
-<!-- ====== FEATURED - Notre Meilleure Vente ====== -->
-<section class="py-[100px] md:py-[80px]" id="produit">
-    <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
-        <div class="text-center mb-[60px]">
-            <h2 class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-primary uppercase tracking-wide mb-[14px]">notre meilleure vente</h2>
-            <p class="font-inter text-xl text-white max-w-[1240px] mx-auto leading-relaxed">Découvrez notre service phare RDOC, alliant éducation, information, analyse et gestion. Profitez d'outils guidés et de fonctionnalités avancées, incluant la localisation et le suivi précis, pour répondre à tous vos besoins professionnels et pédagogiques.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-[30px] mb-[50px]">
-            <div class="featured-card group cursor-pointer">
-                <div class="absolute inset-0 overflow-hidden rounded-[20px]">
-                    <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Informative" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div class="relative z-10 flex justify-between items-start">
+                <!-- Desktop: Logo Panel -->
+                <div class="nav-corner-panel left-panel hidden lg:block">
+                    <a href="index.html" class="logo">
+                        <img
+                            src="assets/images/Plan de travail 1 1.png"
+                            alt="RDOC"
+                            class="logo-img"
+                        />
+                    </a>
                 </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <span class="featured-card-label group-hover:opacity-0 transition-opacity duration-300">Informative</span>
-                <div class="featured-card-overlay">
-                    <h3 class="featured-card-title">Informative</h3>
-                    <p class="featured-card-text">Accédez à des informations en temps réel et des mises à jour instantanées pour rester informé où que vous soyez.</p>
-                    <a href="informative.html" class="featured-card-link">Découvrir</a>
-                </div>
-            </div>
-            <div class="featured-card group cursor-pointer">
-                <span class="featured-card-label mx-auto my-5 group-hover:opacity-0 transition-opacity duration-300">Education</span>
-                <div class="absolute inset-0 overflow-hidden rounded-[20px]">
-                    <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Education" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div class="featured-card-overlay">
-                    <h3 class="featured-card-title">Education</h3>
-                    <p class="featured-card-text">Apprenez de façon ludique avec une technologie interactive qui guide vos pas vers de nouvelles connaissances.</p>
-                    <a href="educative.html" class="featured-card-link">Découvrir</a>
-                </div>
-            </div>
-            <div class="featured-card group cursor-pointer">
-                <div class="absolute inset-0 overflow-hidden rounded-[20px]">
-                    <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Analyse et gestion" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <span class="featured-card-label group-hover:opacity-0 transition-opacity duration-300">Analyse et gestion</span>
-                <div class="featured-card-overlay">
-                    <h3 class="featured-card-title">Analyse et gestion</h3>
-                    <p class="featured-card-text">Optimisez vos opérations avec des outils d'analyse avancés et une gestion centralisée de vos ressources.</p>
-                    <a href="gestion.html" class="featured-card-link">Découvrir</a>
-                </div>
-            </div>
-        </div>
-        <div class="text-center">
-            <a href="#" class="btn-outline">En savoir plus</a>
-        </div>
-    </div>
-</section>
 
-<!-- ====== WHY US ====== -->
-<section class="pb-[100px]" id="categorie">
-    <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
-        <div class="text-center mb-[60px]">
-            <h2 class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-primary uppercase tracking-wide mb-[14px]">Pourquoi nous choisir ?</h2>
-            <p class="font-inter text-xl text-white max-w-[1240px] mx-auto leading-relaxed">Notre équipe d'experts passionnés fournit des solutions robotiques exceptionnelles, elles sont conçues pour répondre aux besoins variés de nos clients.</p>
-        </div>
-        <div class="glass rounded-[34px] p-[60px] md:p-[40px] lg:p-[60px]">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-[40px] mb-[50px]">
-                <div class="text-left">
-                    <div class="why-us-icon relative w-[86px] h-[86px] flex items-center justify-center mb-6">
-                        <img src="assets/images/icon1.png" alt="Innovation" class="w-[67px] h-[67px] object-contain relative z-10">
-                    </div>
-                    <h4 class="font-inter text-xl font-bold text-white mb-2">Innovation & Expertise Technologique</h4>
-                    <p class="font-inter text-xl text-white">Une équipe de 1 500 experts intègre des technologies IA avancées dans vos projets</p>
-                </div>
-                <div class="text-left">
-                    <div class="why-us-icon relative w-[86px] h-[86px] flex items-center justify-center mb-6">
-                        <img src="assets/images/icon2.png" alt="Solutions" class="w-[67px] h-[67px] object-contain relative z-10">
-                    </div>
-                    <h4 class="font-inter text-xl font-bold text-white mb-2">Solutions Robotiques Performantes</h4>
-                    <p class="font-inter text-xl text-white">Des robots polyvalents pour l'éducation, la gestion et l'assistance, garantissant l'excellence</p>
-                </div>
-                <div class="text-left">
-                    <div class="why-us-icon relative w-[86px] h-[86px] flex items-center justify-center mb-6">
-                        <img src="assets/images/icon3.png" alt="Outils" class="w-[67px] h-[67px] object-contain relative z-10">
-                    </div>
-                    <h4 class="font-inter text-xl font-bold text-white mb-2">Outils Innovants</h4>
-                    <p class="font-inter text-xl text-white">Profitez des meilleurs outils du marché : projection interactive et analyse de données en temps réel.</p>
-                </div>
-            </div>
-            <div class="flex flex-col md:flex-row items-center gap-[30px] pt-5 border-t border-[rgba(255,255,255,0.1)]">
-                <a href="#contact" class="btn-outline">Contact</a>
-                <span class="font-inter text-base text-white tracking-[2.08px]">Leader en solutions robotiques et ingénierie....</span>
-            </div>
-        </div>
-    </div>
-</section>
+                <!-- Mobile: Logo only -->
+                <a href="index.html" class="logo lg:hidden">
+                    <img
+                        src="assets/images/Plan de travail 1 1.png"
+                        alt="RDOC"
+                        class="h-10"
+                    />
+                </a>
 
-<!-- ====== HOW IT WORKS ====== -->
-<section class="py-[100px] flex flex-col items-center">
-    <div class="max-w-[1032px] w-full mx-auto px-5">
-        <div class="text-center mb-[80px]">
-            <h2 class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-primary mb-5">Comment ça marche</h2>
-            <p class="font-inter text-2xl text-white max-w-[900px] mx-auto leading-relaxed">Découvrez en quelques étapes simples comment utiliser votre robot RDOC au quotidien</p>
-        </div>
-        <div class="flex flex-col w-full max-w-[992px] mx-auto">
-            <div class="how-step step-left mb-0 self-start">
-                <span class="step-text">Allumez le robot</span>
-                <div class="step-circle step-white"><span class="step-num">1</span></div>
-            </div>
-            <div class="how-step step-right mb-0 self-end">
-                <div class="step-circle step-cyan"><span class="step-num">2</span></div>
-                <span class="step-text">Ouvrez l'application</span>
-            </div>
-            <div class="how-step step-left mb-0 self-start">
-                <span class="step-text">Choisissez la langue et le<br>style de voix</span>
-                <div class="step-circle step-white"><span class="step-num">3</span></div>
-            </div>
-            <div class="how-step step-right mb-0 self-end">
-                <div class="step-circle step-cyan"><span class="step-num">4</span></div>
-                <span class="step-text">Discutez</span>
-            </div>
-            <div class="how-step step-left mb-0 self-start">
-                <span class="step-text">Recevez</span>
-                <div class="step-circle step-white"><span class="step-num">5</span></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ====== ABOUT ====== -->
-<section class="py-[80px] md:py-[60px] lg:py-[80px]" id="apropos">
-    <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-[60px] items-center">
-            <div class="flex justify-center">
-                <img src="assets/images/Gemini_Generated_Image_35m9vc35m9vc35m9-removebg-preview (1) 2.png" alt="RDOC Robot" class="max-w-[414px] w-full">
-            </div>
-            <div>
-                <h2 class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-primary text-left mb-2">À propos de nous</h2>
-                <h3 class="font-inter text-xl font-bold text-white mb-4 tracking-[2.6px]">Qui sommes-nous ?</h3>
-                <p class="font-inter text-xl text-white leading-relaxed text-justify mb-6">Au sein de notre entreprise, nous sommes fiers d'être une équipe dynamique de plus de 1 500 professionnels dévoués. Chaque membre apporte des compétences et des perspectives uniques, contribuant à un environnement collaboratif où l'innovation prospère. Ensemble, nous travaillons vers un objectif commun : fournir des solutions exceptionnelles qui répondent aux besoins diversifiés de nos clients.</p>
-                <div class="flex items-center gap-3 mb-6">
-                    <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Team" class="w-10 h-10 rounded-full object-cover">
-                    <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Team" class="w-10 h-10 rounded-full object-cover -ml-3">
-                    <span class="font-inter text-sm text-white tracking-[1.82px]">Découvrez notre équipe</span>
+                <!-- Desktop: Auth Button -->
+                <div class="nav-corner-panel right-panel hidden lg:block">
+                    <a href="login.html" class="auth-button"
+                        >Sign up / Sign in</a
+                    >
                 </div>
-                <a href="#" class="btn-outline">En savoir plus</a>
             </div>
-        </div>
-    </div>
-</section>
 
-<!-- ====== FAQ ====== -->
-<section class="py-[60px]" id="faq">
-    <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
-        <div class="glass rounded-[20px] p-[60px] md:p-[40px] lg:p-[60px]">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-[60px]">
-                <div>
-                    <h2 class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-white mb-5"><span class="text-primary">Questions</span> Fréquemment Posées</h2>
-                    <p class="font-inter text-base text-white mb-4">Notre équipe est là pour vous ! N'hésitez pas à nous contacter pour toute question ou demande spécifique.</p>
-                    <p class="font-inter text-xl font-light text-white text-justify">Retrouvez ici toutes les réponses aux questions les plus fréquentes sur nos robots, nos services éducatifs, nos solutions robotiques et nos outils innovants pour mieux comprendre comment RDOC peut vous accompagner au quotidien.</p>
+            <!-- Desktop: Hero Navigation -->
+            <div
+                class="relative z-10 hidden lg:flex items-center justify-start gap-[30px] pb-[30px] pl-[100px] flex-col md:flex-row md:items-end"
+            >
+                <a href="#" class="discover-link flex items-center gap-5">
+                    <span
+                        class="font-orbitron font-bold text-2xl tracking-[3.12px] text-white"
+                        >Découvrir RDOC</span
+                    >
+                    <span class="discover-arrow">
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="white"
+                            stroke-width="2"
+                        >
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </span>
+                </a>
+                <nav class="hero-nav flex gap-6">
+                    <a href="index.html" class="nav-pill active">Accueil</a>
+                    <a href="apropos.html" class="nav-pill">A propos</a>
+                    <a href="categorie.html" class="nav-pill">Catégorie</a>
+                    <a href="index.html#produit" class="nav-pill">Produit</a>
+                    <a href="index.html#blog" class="nav-pill">Blog</a>
+                    <a href="index.html#contact" class="nav-pill">Contact</a>
+                </nav>
+            </div>
+
+            <!-- Mobile Bottom Navigation -->
+            <div
+                class="fixed bottom-0 left-0 right-0 lg:hidden z-50 bg-black/95 backdrop-blur-md border-t border-[rgba(255,255,255,0.1)] px-4 py-3"
+            >
+                <div class="flex justify-around items-center text-white">
+                    <a
+                        href="index.html"
+                        class="flex flex-col items-center text-xs text-primary"
+                    >
+                        <svg
+                            class="w-6 h-6 mb-1"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+                            />
+                        </svg>
+                        Accueil
+                    </a>
+                    <a
+                        href="apropos.html"
+                        class="flex flex-col items-center text-xs text-white/70"
+                    >
+                        <svg
+                            class="w-6 h-6 mb-1"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                                clip-rule="evenodd"
+                            />
+                        </svg>
+                        A propos
+                    </a>
+                    <a
+                        href="categorie.html"
+                        class="flex flex-col items-center text-xs text-white/70"
+                    >
+                        <svg
+                            class="w-6 h-6 mb-1"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"
+                            />
+                        </svg>
+                        Catégorie
+                    </a>
+                    <a
+                        href="index.html#contact"
+                        class="flex flex-col items-center text-xs text-white/70"
+                    >
+                        <svg
+                            class="w-6 h-6 mb-1"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                            />
+                            <path
+                                d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                            />
+                        </svg>
+                        Contact
+                    </a>
+                    <a
+                        href="login.html"
+                        class="flex flex-col items-center text-xs text-white/70"
+                    >
+                        <svg
+                            class="w-6 h-6 mb-1"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5z"
+                            />
+                        </svg>
+                        Connexion
+                    </a>
                 </div>
-                <div class="flex flex-col gap-4">
-                    <div class="faq-item">
-                        <div class="faq-icon">+</div>
-                        <div class="faq-content">
-                            <span class="faq-question">Comment le robot fonctionne-t-il sans Internet ?</span>
-                            <p class="faq-answer">Le robot peut fonctionner en mode local grâce à une base de connaissances embarquée et des scénarios préconfigurés, sans connexion permanente.</p>
+            </div>
+
+            <!-- Add padding bottom for mobile to account for bottom nav -->
+            <div class="lg:hidden" style="height: 70px"></div>
+
+            <div
+                class="absolute z-5 top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] max-w-[90vw]"
+            >
+                <img
+                    src="assets/images/Gemini_Generated_Image_ioe7t9ioe7t9ioe7-removebg-preview (1) 1.png"
+                    alt="RDOC Robot"
+                    class="hero-robot-img"
+                />
+            </div>
+
+            <div
+                class="absolute z-10 bottom-[90px] left-[100px] md:left-[60px] lg:left-[100px] flex items-center gap-3 hidden lg:flex"
+            >
+                <div class="flex">
+                    <img
+                        src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png"
+                        alt="User"
+                        class="user-avatar"
+                    />
+                    <img
+                        src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png"
+                        alt="User"
+                        class="user-avatar"
+                    />
+                    <img
+                        src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png"
+                        alt="User"
+                        class="user-avatar"
+                    />
+                </div>
+                <span
+                    class="font-orbitron text-sm font-bold tracking-[1.82px] text-white leading-[15.82px]"
+                    >10k+ Utilisateurs actifs</span
+                >
+            </div>
+        </section>
+
+        <!-- ====== PARTNERS BAR ====== -->
+        <section
+            class="py-[30px] border-b border-[rgba(255,255,255,0.1)] overflow-hidden"
+        >
+            <div class="sponsor-marquee">
+                <div class="sponsor-track">
+                    <img
+                        src="assets/images/Frame 388.png"
+                        alt="University Partners"
+                        class="h-[138px] w-auto opacity-50"
+                    />
+                    <img
+                        src="assets/images/Frame 388.png"
+                        alt="University Partners"
+                        class="h-[138px] w-auto opacity-50"
+                    />
+                    <img
+                        src="assets/images/Frame 388.png"
+                        alt="University Partners"
+                        class="h-[138px] w-auto opacity-50"
+                    />
+                    <img
+                        src="assets/images/Frame 388.png"
+                        alt="University Partners"
+                        class="h-[138px] w-auto opacity-50"
+                    />
+                    <img
+                        src="assets/images/Frame 388.png"
+                        alt="University Partners"
+                        class="h-[138px] w-auto opacity-50"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== FEATURED - Notre Meilleure Vente ====== -->
+        <section class="py-[100px] md:py-[80px]" id="produit">
+            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
+                <div class="text-center mb-[60px]">
+                    <h2
+                        class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-primary uppercase tracking-wide mb-[14px]"
+                    >
+                        notre meilleure vente
+                    </h2>
+                    <p
+                        class="font-inter text-xl text-white max-w-[1240px] mx-auto leading-relaxed"
+                    >
+                        Découvrez notre service phare RDOC, alliant éducation,
+                        information, analyse et gestion. Profitez d'outils
+                        guidés et de fonctionnalités avancées, incluant la
+                        localisation et le suivi précis, pour répondre à tous
+                        vos besoins professionnels et pédagogiques.
+                    </p>
+                </div>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-3 gap-[30px] mb-[50px]"
+                >
+                    <div class="featured-card group cursor-pointer">
+                        <div
+                            class="absolute inset-0 overflow-hidden rounded-[20px]"
+                        >
+                            <img
+                                src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png"
+                                alt="Informative"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        ></div>
+                        <span
+                            class="featured-card-label group-hover:opacity-0 transition-opacity duration-300"
+                            >Informative</span
+                        >
+                        <div class="featured-card-overlay">
+                            <h3 class="featured-card-title">Informative</h3>
+                            <p class="featured-card-text">
+                                Accédez à des informations en temps réel et des
+                                mises à jour instantanées pour rester informé où
+                                que vous soyez.
+                            </p>
+                            <a
+                                href="informative.html"
+                                class="featured-card-link"
+                                >Découvrir</a
+                            >
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-icon">+</div>
-                        <div class="faq-content">
-                            <span class="faq-question">Quels types de robots proposez-vous ?</span>
-                            <p class="faq-answer">Nous proposons des robots éducatifs, informatifs, localisatifs et de gestion, adaptés aux écoles, entreprises et institutions.</p>
+                    <div class="featured-card group cursor-pointer">
+                        <span
+                            class="featured-card-label mx-auto my-5 group-hover:opacity-0 transition-opacity duration-300"
+                            >Education</span
+                        >
+                        <div
+                            class="absolute inset-0 overflow-hidden rounded-[20px]"
+                        >
+                            <img
+                                src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png"
+                                alt="Education"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        ></div>
+                        <div class="featured-card-overlay">
+                            <h3 class="featured-card-title">Education</h3>
+                            <p class="featured-card-text">
+                                Apprenez de façon ludique avec une technologie
+                                interactive qui guide vos pas vers de nouvelles
+                                connaissances.
+                            </p>
+                            <a href="educative.html" class="featured-card-link"
+                                >Découvrir</a
+                            >
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-icon">+</div>
-                        <div class="faq-content">
-                            <span class="faq-question">Proposez-vous des formations ?</span>
-                            <p class="faq-answer">Oui, nous organisons des formations pour enseignants, équipes techniques et utilisateurs finaux afin de garantir une prise en main rapide.</p>
+                    <div class="featured-card group cursor-pointer">
+                        <div
+                            class="absolute inset-0 overflow-hidden rounded-[20px]"
+                        >
+                            <img
+                                src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png"
+                                alt="Analyse et gestion"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        ></div>
+                        <span
+                            class="featured-card-label group-hover:opacity-0 transition-opacity duration-300"
+                            >Analyse et gestion</span
+                        >
+                        <div class="featured-card-overlay">
+                            <h3 class="featured-card-title">
+                                Analyse et gestion
+                            </h3>
+                            <p class="featured-card-text">
+                                Optimisez vos opérations avec des outils
+                                d'analyse avancés et une gestion centralisée de
+                                vos ressources.
+                            </p>
+                            <a href="gestion.html" class="featured-card-link"
+                                >Découvrir</a
+                            >
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-icon">+</div>
-                        <div class="faq-content">
-                            <span class="faq-question">Comment puis-je obtenir un devis ?</span>
-                            <p class="faq-answer">Vous pouvez nous contacter via le formulaire de contact ou par email ; nous vous répondrons avec une proposition personnalisée.</p>
+                </div>
+                <div class="text-center">
+                    <a href="#" class="btn-outline">En savoir plus</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== WHY US ====== -->
+        <section class="pb-[100px]" id="categorie">
+            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
+                <div class="text-center mb-[60px]">
+                    <h2
+                        class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-primary uppercase tracking-wide mb-[14px]"
+                    >
+                        Pourquoi nous choisir ?
+                    </h2>
+                    <p
+                        class="font-inter text-xl text-white max-w-[1240px] mx-auto leading-relaxed"
+                    >
+                        Notre équipe d'experts passionnés fournit des solutions
+                        robotiques exceptionnelles, elles sont conçues pour
+                        répondre aux besoins variés de nos clients.
+                    </p>
+                </div>
+                <div
+                    class="glass rounded-[34px] p-[60px] md:p-[40px] lg:p-[60px]"
+                >
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-3 gap-[40px] mb-[50px]"
+                    >
+                        <div class="text-left">
+                            <div
+                                class="why-us-icon relative w-[86px] h-[86px] flex items-center justify-center mb-6"
+                            >
+                                <img
+                                    src="assets/images/icon1.png"
+                                    alt="Innovation"
+                                    class="w-[67px] h-[67px] object-contain relative z-10"
+                                />
+                            </div>
+                            <h4
+                                class="font-inter text-xl font-bold text-white mb-2"
+                            >
+                                Innovation & Expertise Technologique
+                            </h4>
+                            <p class="font-inter text-xl text-white">
+                                Une équipe de 1 500 experts intègre des
+                                technologies IA avancées dans vos projets
+                            </p>
+                        </div>
+                        <div class="text-left">
+                            <div
+                                class="why-us-icon relative w-[86px] h-[86px] flex items-center justify-center mb-6"
+                            >
+                                <img
+                                    src="assets/images/icon2.png"
+                                    alt="Solutions"
+                                    class="w-[67px] h-[67px] object-contain relative z-10"
+                                />
+                            </div>
+                            <h4
+                                class="font-inter text-xl font-bold text-white mb-2"
+                            >
+                                Solutions Robotiques Performantes
+                            </h4>
+                            <p class="font-inter text-xl text-white">
+                                Des robots polyvalents pour l'éducation, la
+                                gestion et l'assistance, garantissant
+                                l'excellence
+                            </p>
+                        </div>
+                        <div class="text-left">
+                            <div
+                                class="why-us-icon relative w-[86px] h-[86px] flex items-center justify-center mb-6"
+                            >
+                                <img
+                                    src="assets/images/icon3.png"
+                                    alt="Outils"
+                                    class="w-[67px] h-[67px] object-contain relative z-10"
+                                />
+                            </div>
+                            <h4
+                                class="font-inter text-xl font-bold text-white mb-2"
+                            >
+                                Outils Innovants
+                            </h4>
+                            <p class="font-inter text-xl text-white">
+                                Profitez des meilleurs outils du marché :
+                                projection interactive et analyse de données en
+                                temps réel.
+                            </p>
                         </div>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-icon">+</div>
-                        <div class="faq-content">
-                            <span class="faq-question">Offrez-vous un service après-vente ?</span>
-                            <p class="faq-answer">Nous assurons un service après-vente complet : maintenance, mises à jour logicielles et support technique dédié.</p>
+                    <div
+                        class="flex flex-col md:flex-row items-center gap-[30px] pt-5 border-t border-[rgba(255,255,255,0.1)]"
+                    >
+                        <a href="#contact" class="btn-outline">Contact</a>
+                        <span
+                            class="font-inter text-base text-white tracking-[2.08px]"
+                            >Leader en solutions robotiques et
+                            ingénierie....</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== HOW IT WORKS ====== -->
+        <section class="py-[100px] flex flex-col items-center">
+            <div class="max-w-[1032px] w-full mx-auto px-5">
+                <div class="text-center mb-[80px]">
+                    <h2
+                        class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-primary mb-5"
+                    >
+                        Comment ça marche
+                    </h2>
+                    <p
+                        class="font-inter text-2xl text-white max-w-[900px] mx-auto leading-relaxed"
+                    >
+                        Découvrez en quelques étapes simples comment utiliser
+                        votre robot RDOC au quotidien
+                    </p>
+                </div>
+                <div class="flex flex-col w-full max-w-[992px] mx-auto">
+                    <div class="how-step step-left mb-0 self-start">
+                        <span class="step-text">Allumez le robot</span>
+                        <div class="step-circle step-white">
+                            <span class="step-num">1</span>
+                        </div>
+                    </div>
+                    <div class="how-step step-right mb-0 self-end">
+                        <div class="step-circle step-cyan">
+                            <span class="step-num">2</span>
+                        </div>
+                        <span class="step-text">Ouvrez l'application</span>
+                    </div>
+                    <div class="how-step step-left mb-0 self-start">
+                        <span class="step-text"
+                            >Choisissez la langue et le<br />style de voix</span
+                        >
+                        <div class="step-circle step-white">
+                            <span class="step-num">3</span>
+                        </div>
+                    </div>
+                    <div class="how-step step-right mb-0 self-end">
+                        <div class="step-circle step-cyan">
+                            <span class="step-num">4</span>
+                        </div>
+                        <span class="step-text">Discutez</span>
+                    </div>
+                    <div class="how-step step-left mb-0 self-start">
+                        <span class="step-text">Recevez</span>
+                        <div class="step-circle step-white">
+                            <span class="step-num">5</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<!-- ====== CONTACT ====== -->
-<section class="py-[60px] pb-[100px]" id="contact">
-    <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
-        <div class="glass rounded-[24px] p-[60px] md:p-[40px] lg:p-[60px] grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[60px] items-center">
-            <div>
-                <h2 class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-primary mb-4">Besoin d'aide ?</h2>
-                <p class="font-inter text-base text-[rgba(255,255,255,0.7)] leading-relaxed">Retrouvez ici toutes les réponses aux questions les plus fréquentes sur nos robots, nos services éducatifs, nos solutions robotiques et nos outils innovants.</p>
-            </div>
-            <div>
-                <form class="flex flex-col gap-4">
-                    <input type="text" class="form-input" placeholder="Nom et Prénom">
-                    <input type="email" class="form-input" placeholder="example@gmail.com">
-                    <input type="tel" class="form-input" placeholder="Numéro de téléphone">
-                    <textarea class="form-input form-textarea" placeholder="Votre message"></textarea>
-                    <button type="submit" class="btn-submit">Envoyer</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ====== FOOTER ====== -->
-<footer class="py-[80px] pb-10 border-t border-[rgba(255,255,255,0.1)]">
-    <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] mb-[50px]">
-            <div>
-                <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="h-[60px] w-auto mb-4">
-                <p class="font-inter text-sm text-[rgba(255,255,255,0.5)] leading-relaxed">Notre équipe d'experts passionnés fournit des solutions robotiques exceptionnelles, conçues pour répondre aux besoins variés de nos clients.</p>
-            </div>
-            <div>
-                <h4 class="font-orbitron text-base font-bold text-white uppercase mb-5">Pages</h4>
-                <ul class="flex flex-col gap-2.5">
-                    <li><a href="#accueil" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">Accueil</a></li>
-                    <li><a href="apropos.html" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">A propos</a></li>
-                    <li><a href="categorie.html" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">Catégorie</a></li>
-                    <li><a href="#produit" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">Produit</a></li>
-                    <li><a href="#blog" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">Blog</a></li>
-                    <li><a href="#contact" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-orbitron text-base font-bold text-white uppercase mb-5">Aide</h4>
-                <ul class="flex flex-col gap-2.5">
-                    <li><a href="#faq" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">FAQ</a></li>
-                    <li><a href="#" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">Politique de confidentialité</a></li>
-                    <li><a href="#" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">Conditions d'utilisation</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-orbitron text-base font-bold text-white uppercase mb-5">Contact</h4>
-                <ul class="flex flex-col gap-2.5">
-                    <li class="font-inter text-sm text-[rgba(255,255,255,0.5)]">+213 123 456 789</li>
-                    <li><a href="mailto:contact@rdoc.com" class="font-inter text-sm text-primary hover:opacity-70 transition-opacity">contact@rdoc.com</a></li>
-                    <li class="font-inter text-sm text-[rgba(255,255,255,0.5)]">Alger, Algérie</li>
-                </ul>
-                <div class="flex gap-[15px] mt-4">
-                    <a href="#" class="font-inter text-sm font-bold text-white hover:text-primary transition-colors">FB</a>
-                    <a href="#" class="font-inter text-sm font-bold text-white hover:text-primary transition-colors">IG</a>
-                    <a href="#" class="font-inter text-sm font-bold text-white hover:text-primary transition-colors">LI</a>
+        <!-- ====== ABOUT ====== -->
+        <section class="py-[80px] md:py-[60px] lg:py-[80px]" id="apropos">
+            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
+                <div
+                    class="grid grid-cols-1 lg:grid-cols-2 gap-[60px] items-center"
+                >
+                    <div class="flex justify-center">
+                        <img
+                            src="assets/images/Gemini_Generated_Image_35m9vc35m9vc35m9-removebg-preview (1) 2.png"
+                            alt="RDOC Robot"
+                            class="max-w-[414px] w-full"
+                        />
+                    </div>
+                    <div>
+                        <h2
+                            class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-primary text-left mb-2"
+                        >
+                            À propos de nous
+                        </h2>
+                        <h3
+                            class="font-inter text-xl font-bold text-white mb-4 tracking-[2.6px]"
+                        >
+                            Qui sommes-nous ?
+                        </h3>
+                        <p
+                            class="font-inter text-xl text-white leading-relaxed text-justify mb-6"
+                        >
+                            Au sein de notre entreprise, nous sommes fiers
+                            d'être une équipe dynamique de plus de 1 500
+                            professionnels dévoués. Chaque membre apporte des
+                            compétences et des perspectives uniques, contribuant
+                            à un environnement collaboratif où l'innovation
+                            prospère. Ensemble, nous travaillons vers un
+                            objectif commun : fournir des solutions
+                            exceptionnelles qui répondent aux besoins
+                            diversifiés de nos clients.
+                        </p>
+                        <div class="flex items-center gap-3 mb-6">
+                            <img
+                                src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png"
+                                alt="Team"
+                                class="w-10 h-10 rounded-full object-cover"
+                            />
+                            <img
+                                src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png"
+                                alt="Team"
+                                class="w-10 h-10 rounded-full object-cover -ml-3"
+                            />
+                            <span
+                                class="font-inter text-sm text-white tracking-[1.82px]"
+                                >Découvrez notre équipe</span
+                            >
+                        </div>
+                        <a href="#" class="btn-outline">En savoir plus</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="text-center pt-[30px] border-t border-[rgba(255,255,255,0.1)]">
-            <p class="font-inter text-xs text-[rgba(255,255,255,0.5)]">© 2025 RDOC. Tous droits réservés.</p>
-        </div>
-    </div>
-</footer>
+        </section>
 
-    <script src="assets/js/main.js"></script>
-</body>
+        <!-- ====== FAQ ====== -->
+        <section class="py-[60px]" id="faq">
+            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
+                <div
+                    class="glass rounded-[20px] p-[60px] md:p-[40px] lg:p-[60px]"
+                >
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-[60px]">
+                        <div>
+                            <h2
+                                class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-white mb-5"
+                            >
+                                <span class="text-primary">Questions</span>
+                                Fréquemment Posées
+                            </h2>
+                            <p class="font-inter text-base text-white mb-4">
+                                Notre équipe est là pour vous ! N'hésitez pas à
+                                nous contacter pour toute question ou demande
+                                spécifique.
+                            </p>
+                            <p
+                                class="font-inter text-xl font-light text-white text-justify"
+                            >
+                                Retrouvez ici toutes les réponses aux questions
+                                les plus fréquentes sur nos robots, nos services
+                                éducatifs, nos solutions robotiques et nos
+                                outils innovants pour mieux comprendre comment
+                                RDOC peut vous accompagner au quotidien.
+                            </p>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <div class="faq-item">
+                                <div class="faq-icon">+</div>
+                                <div class="faq-content">
+                                    <span class="faq-question"
+                                        >Comment le robot fonctionne-t-il sans
+                                        Internet ?</span
+                                    >
+                                    <p class="faq-answer">
+                                        Le robot peut fonctionner en mode local
+                                        grâce à une base de connaissances
+                                        embarquée et des scénarios
+                                        préconfigurés, sans connexion
+                                        permanente.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-icon">+</div>
+                                <div class="faq-content">
+                                    <span class="faq-question"
+                                        >Quels types de robots proposez-vous
+                                        ?</span
+                                    >
+                                    <p class="faq-answer">
+                                        Nous proposons des robots éducatifs,
+                                        informatifs, localisatifs et de gestion,
+                                        adaptés aux écoles, entreprises et
+                                        institutions.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-icon">+</div>
+                                <div class="faq-content">
+                                    <span class="faq-question"
+                                        >Proposez-vous des formations ?</span
+                                    >
+                                    <p class="faq-answer">
+                                        Oui, nous organisons des formations pour
+                                        enseignants, équipes techniques et
+                                        utilisateurs finaux afin de garantir une
+                                        prise en main rapide.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-icon">+</div>
+                                <div class="faq-content">
+                                    <span class="faq-question"
+                                        >Comment puis-je obtenir un devis
+                                        ?</span
+                                    >
+                                    <p class="faq-answer">
+                                        Vous pouvez nous contacter via le
+                                        formulaire de contact ou par email ;
+                                        nous vous répondrons avec une
+                                        proposition personnalisée.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-icon">+</div>
+                                <div class="faq-content">
+                                    <span class="faq-question"
+                                        >Offrez-vous un service après-vente
+                                        ?</span
+                                    >
+                                    <p class="faq-answer">
+                                        Nous assurons un service après-vente
+                                        complet : maintenance, mises à jour
+                                        logicielles et support technique dédié.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== CONTACT ====== -->
+        <section class="py-[60px] pb-[100px]" id="contact">
+            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
+                <div
+                    class="glass rounded-[24px] p-[60px] md:p-[40px] lg:p-[60px] grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[60px] items-center"
+                >
+                    <div>
+                        <h2
+                            class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-primary mb-4"
+                        >
+                            Besoin d'aide ?
+                        </h2>
+                        <p
+                            class="font-inter text-base text-[rgba(255,255,255,0.7)] leading-relaxed"
+                        >
+                            Retrouvez ici toutes les réponses aux questions les
+                            plus fréquentes sur nos robots, nos services
+                            éducatifs, nos solutions robotiques et nos outils
+                            innovants.
+                        </p>
+                    </div>
+                    <div>
+                        <form class="flex flex-col gap-4">
+                            <input
+                                type="text"
+                                class="form-input"
+                                placeholder="Nom et Prénom"
+                            />
+                            <input
+                                type="email"
+                                class="form-input"
+                                placeholder="example@gmail.com"
+                            />
+                            <input
+                                type="tel"
+                                class="form-input"
+                                placeholder="Numéro de téléphone"
+                            />
+                            <textarea
+                                class="form-input form-textarea"
+                                placeholder="Votre message"
+                            ></textarea>
+                            <button type="submit" class="btn-submit">
+                                Envoyer
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== FOOTER ====== -->
+        <footer class="py-[80px] pb-10 border-t border-[rgba(255,255,255,0.1)]">
+            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] mb-[50px]"
+                >
+                    <div>
+                        <img
+                            src="assets/images/Plan de travail 1 1.png"
+                            alt="RDOC"
+                            class="h-[60px] w-auto mb-4"
+                        />
+                        <p
+                            class="font-inter text-sm text-[rgba(255,255,255,0.5)] leading-relaxed"
+                        >
+                            Notre équipe d'experts passionnés fournit des
+                            solutions robotiques exceptionnelles, conçues pour
+                            répondre aux besoins variés de nos clients.
+                        </p>
+                    </div>
+                    <div>
+                        <h4
+                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                        >
+                            Pages
+                        </h4>
+                        <ul class="flex flex-col gap-2.5">
+                            <li>
+                                <a
+                                    href="#accueil"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Accueil</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="apropos.html"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >A propos</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="categorie.html"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Catégorie</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#produit"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Produit</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#blog"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Blog</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#contact"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Contact</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4
+                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                        >
+                            Aide
+                        </h4>
+                        <ul class="flex flex-col gap-2.5">
+                            <li>
+                                <a
+                                    href="#faq"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >FAQ</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Politique de confidentialité</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Conditions d'utilisation</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4
+                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                        >
+                            Contact
+                        </h4>
+                        <ul class="flex flex-col gap-2.5">
+                            <li
+                                class="font-inter text-sm text-[rgba(255,255,255,0.5)]"
+                            >
+                                +213 123 456 789
+                            </li>
+                            <li>
+                                <a
+                                    href="mailto:contact@rdoc.com"
+                                    class="font-inter text-sm text-primary hover:opacity-70 transition-opacity"
+                                    >contact@rdoc.com</a
+                                >
+                            </li>
+                            <li
+                                class="font-inter text-sm text-[rgba(255,255,255,0.5)]"
+                            >
+                                Alger, Algérie
+                            </li>
+                        </ul>
+                        <div class="flex gap-[15px] mt-4">
+                            <a
+                                href="#"
+                                class="font-inter text-sm font-bold text-white hover:text-primary transition-colors"
+                                >FB</a
+                            >
+                            <a
+                                href="#"
+                                class="font-inter text-sm font-bold text-white hover:text-primary transition-colors"
+                                >IG</a
+                            >
+                            <a
+                                href="#"
+                                class="font-inter text-sm font-bold text-white hover:text-primary transition-colors"
+                                >LI</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="text-center pt-[30px] border-t border-[rgba(255,255,255,0.1)]"
+                >
+                    <p class="font-inter text-xs text-[rgba(255,255,255,0.5)]">
+                        © 2025 RDOC. Tous droits réservés.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="assets/js/main.js"></script>
+    </body>
 </html>
