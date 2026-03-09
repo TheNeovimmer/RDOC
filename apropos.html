@@ -1,573 +1,1584 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="RDOC - Solutions robotiques innovantes pour l'éducation, la gestion et l'assistance." />
-    <title>RDOC - À Propos</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: '#5CC4E5',
-              'bg-dark': '#000000',
-              'text-white': '#FFFFFF',
-              'text-muted': 'rgba(255, 255, 255, 0.7)',
-              'text-dim': 'rgba(255, 255, 255, 0.5)',
-              'glass-bg': 'rgba(255, 255, 255, 0.21)',
-              'glass-border': 'rgba(255, 255, 255, 0.1)',
-            },
-            fontFamily: {
-              'orbitron': ['Orbitron', 'sans-serif'],
-              'inter': ['Inter', 'sans-serif'],
-            },
-            backdropBlur: {
-              '29': '29px',
-            },
-            maxWidth: {
-              'container': '1440px',
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="RDOC - Solutions robotiques innovantes pour l'éducation, la gestion et l'assistance."
+        />
+        <title>RDOC - À Propos</title>
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#5CC4E5",
+                            "bg-dark": "#000000",
+                            "text-white": "#FFFFFF",
+                            "text-muted": "rgba(255, 255, 255, 0.7)",
+                            "text-dim": "rgba(255, 255, 255, 0.5)",
+                            "glass-bg": "rgba(255, 255, 255, 0.21)",
+                            "glass-border": "rgba(255, 255, 255, 0.1)",
+                        },
+                        fontFamily: {
+                            orbitron: ["Orbitron", "sans-serif"],
+                            inter: ["Inter", "sans-serif"],
+                        },
+                        backdropBlur: {
+                            29: "29px",
+                        },
+                        maxWidth: {
+                            container: "1440px",
+                        },
+                    },
+                },
+            };
+        </script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            /* Background is handled globally in `assets/css/style.css` for responsiveness. */
+            .glass {
+                background: rgba(255, 255, 255, 0.21);
+                backdrop-filter: blur(29px);
+                -webkit-backdrop-filter: blur(29px);
             }
-          }
-        }
-      }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-      /* Background is handled globally in `assets/css/style.css` for responsiveness. */
-      .glass {
-        background: rgba(255, 255, 255, 0.21);
-        backdrop-filter: blur(29px);
-        -webkit-backdrop-filter: blur(29px);
-      }
-      .logo-img { height: 38px; width: auto; }
-      .auth-button {
-        display: inline-flex; align-items: center; justify-content: center; padding: 6px 23px;
-        height: 40px; border-radius: 18px; border: 1px solid transparent;
-        background-image: linear-gradient(#000, #000), linear-gradient(135deg, #FFFFFF, #5CC4E5);
-        background-origin: border-box; background-clip: padding-box, border-box;
-        font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 500;
-        letter-spacing: -0.176px; line-height: 24px; color: #FFFFFF;
-        transition: all 0.3s; text-decoration: none;
-      }
-      .auth-button:hover {
-        background-image: linear-gradient(rgba(92,196,229,0.1), rgba(92,196,229,0.1)), linear-gradient(135deg, #5CC4E5, #FFFFFF);
-      }
-      .nav-pill-bar {
-        display: flex; align-items: center; gap: 22px; height: 55px;
-        padding: 0 40px; background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 28px;
-        backdrop-filter: blur(10px);
-      }
-      .nav-pill-link {
-        font-family: 'Orbitron', sans-serif; font-size: 20px;
-        color: #FFFFFF; text-decoration: none; transition: all 0.3s;
-        letter-spacing: -0.22px;
-      }
-      .nav-pill-link.active { font-weight: 700; color: #5CC4E5; }
-      .nav-pill-link:hover { color: #5CC4E5; }
-      .founder-name { font-family: 'Orbitron', sans-serif; font-size: 40px; font-weight: 700; color: #5CC4E5; letter-spacing: -0.44px; margin-bottom: 20px; }
-      .founder-desc { font-family: 'Inter', sans-serif; font-size: 24px; line-height: 1.5; letter-spacing: -0.264px; color: #FFFFFF; margin-bottom: 40px; }
-      .btn-more {
-        display: inline-flex; padding: 15px 30px; border-radius: 40px;
-        border: 1px solid #5CC4E5; color: #5CC4E5;
-        font-family: 'Orbitron', sans-serif; font-size: 20px; font-weight: 700;
-        letter-spacing: 2.6px; background: transparent; transition: all 0.3s;
-        cursor: pointer; box-shadow: 1px -1px 19.7px #5CC4E5; text-decoration: none;
-      }
-      .btn-more:hover { background: #5CC4E5; color: #000; }
-      .founder-img { max-width: 100%; height: auto; object-fit: cover; }
-      .stats-card {
-        display: flex; justify-content: space-around; align-items: center;
-        padding: 30px 50px; border-radius: 20px;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(29px);
-      }
-      .stat-label { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: #FFFFFF; }
-      .stat-value { font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 700; color: #FFFFFF; letter-spacing: 3.12px; }
-      .stat-value.text-cyan { color: #5CC4E5; }
-      .stat-divider { width: 2px; height: 60px; background-color: rgba(255, 255, 255, 0.1); }
-      .stat-avatars { display: flex; align-items: center; }
-      .stat-avatars img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid #000000; margin-left: -15px; }
-      .stat-avatars img:first-child { margin-left: 0; }
-      .service-card {
-        position: absolute; border: 2px solid #FFFFFF; border-radius: 24px;
-        padding: 40px; background: transparent; transition: all 0.3s;
-        display: flex; flex-direction: column; justify-content: flex-end;
-      }
-      .service-card:hover { box-shadow: 0 10px 30px rgba(92, 196, 229, 0.1); border-color: #5CC4E5; }
-      .service-card-1 { top: 0; left: 0; width: 420px; height: 343px; }
-      .service-card-2 { top: 0; left: 428px; width: 816px; height: 219px; }
-      .service-card-3 { top: 228px; left: 428px; width: 301px; height: 354px; }
-      .service-card-4 { top: 228px; left: 735px; width: 505px; height: 354px; }
-      .service-card-5 { top: 348px; left: 0; width: 420px; height: 234px; }
-      .service-number-circle {
-        position: absolute; top: -22px; left: 40px; width: 45px; height: 45px;
-        background: #FFFFFF; border-radius: 50%; display: flex;
-        align-items: center; justify-content: center;
-        color: #000000; font-family: 'Orbitron', sans-serif;
-        font-size: 16px; font-weight: 700;
-      }
-      .service-card h3 { font-family: 'Orbitron', sans-serif; font-size: 24px; color: #5CC4E5; margin-bottom: 15px; }
-      .service-card p { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; color: #FFFFFF; }
-      .btn-choisir {
-        display: inline-flex; align-items: center; gap: 10px; font-size: 20px;
-        letter-spacing: 1.5px; border-radius: 40px; padding: 15px 40px;
-        background: transparent; color: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.1);
-        transition: all 0.3s ease; text-decoration: none;
-      }
-      .btn-choisir:hover { border-color: #5CC4E5; color: #5CC4E5; }
-      .btn-contacter {
-        display: inline-flex; padding: 15px 40px; border-radius: 40px;
-        border: 1px solid rgba(255, 255, 255, 0.1); color: #FFFFFF;
-        font-family: 'Orbitron', sans-serif; font-size: 20px; font-weight: 700;
-        background: transparent; transition: all 0.3s; text-decoration: none;
-        box-shadow: 1px -1px 19.7px #5CC4E5;
-      }
-      .btn-contacter:hover { border-color: #5CC4E5; color: #5CC4E5; }
-      .produit-highlight-title { font-family: 'Orbitron', sans-serif; font-size: 32px; font-weight: 700; color: #5CC4E5; margin: 40px 0; letter-spacing: 2px; }
+            .logo-img {
+                height: 38px;
+                width: auto;
+            }
+            .auth-button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 6px 23px;
+                height: 40px;
+                border-radius: 18px;
+                border: 1px solid transparent;
+                background-image:
+                    linear-gradient(#000, #000),
+                    linear-gradient(135deg, #ffffff, #5cc4e5);
+                background-origin: border-box;
+                background-clip: padding-box, border-box;
+                font-family: "Inter", sans-serif;
+                font-size: 16px;
+                font-weight: 500;
+                letter-spacing: -0.176px;
+                line-height: 24px;
+                color: #ffffff;
+                transition: all 0.3s;
+                text-decoration: none;
+            }
+            .auth-button:hover {
+                background-image:
+                    linear-gradient(
+                        rgba(92, 196, 229, 0.1),
+                        rgba(92, 196, 229, 0.1)
+                    ),
+                    linear-gradient(135deg, #5cc4e5, #ffffff);
+            }
+            .nav-pill-bar {
+                display: flex;
+                align-items: center;
+                gap: 22px;
+                height: 55px;
+                padding: 0 40px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                border-radius: 28px;
+                backdrop-filter: blur(10px);
+            }
+            .nav-pill-link {
+                font-family: "Orbitron", sans-serif;
+                font-size: 20px;
+                color: #ffffff;
+                text-decoration: none;
+                transition: all 0.3s;
+                letter-spacing: -0.22px;
+            }
+            .nav-pill-link.active {
+                font-weight: 700;
+                color: #5cc4e5;
+            }
+            .nav-pill-link:hover {
+                color: #5cc4e5;
+            }
+            .founder-name {
+                font-family: "Orbitron", sans-serif;
+                font-size: 40px;
+                font-weight: 700;
+                color: #5cc4e5;
+                letter-spacing: -0.44px;
+                margin-bottom: 20px;
+            }
+            .founder-desc {
+                font-family: "Inter", sans-serif;
+                font-size: 24px;
+                line-height: 1.5;
+                letter-spacing: -0.264px;
+                color: #ffffff;
+                margin-bottom: 40px;
+            }
+            .btn-more {
+                display: inline-flex;
+                padding: 15px 30px;
+                border-radius: 40px;
+                border: 1px solid #5cc4e5;
+                color: #5cc4e5;
+                font-family: "Orbitron", sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                letter-spacing: 2.6px;
+                background: transparent;
+                transition: all 0.3s;
+                cursor: pointer;
+                box-shadow: 1px -1px 19.7px #5cc4e5;
+                text-decoration: none;
+            }
+            .btn-more:hover {
+                background: #5cc4e5;
+                color: #000;
+            }
+            .founder-img {
+                max-width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+            .stats-card {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding: 30px 50px;
+                border-radius: 20px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(29px);
+            }
+            .stat-label {
+                font-family: "Inter", sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                color: #ffffff;
+            }
+            .stat-value {
+                font-family: "Orbitron", sans-serif;
+                font-size: 24px;
+                font-weight: 700;
+                color: #ffffff;
+                letter-spacing: 3.12px;
+            }
+            .stat-value.text-cyan {
+                color: #5cc4e5;
+            }
+            .stat-divider {
+                width: 2px;
+                height: 60px;
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+            .stat-avatars {
+                display: flex;
+                align-items: center;
+            }
+            .stat-avatars img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 2px solid #000000;
+                margin-left: -15px;
+            }
+            .stat-avatars img:first-child {
+                margin-left: 0;
+            }
+            .service-card {
+                position: absolute;
+                border: 2px solid #ffffff;
+                border-radius: 24px;
+                padding: 40px;
+                background: transparent;
+                transition: all 0.3s;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+            .service-card:hover {
+                box-shadow: 0 10px 30px rgba(92, 196, 229, 0.1);
+                border-color: #5cc4e5;
+            }
+            .service-card-1 {
+                top: 0;
+                left: 0;
+                width: 420px;
+                height: 343px;
+            }
+            .service-card-2 {
+                top: 0;
+                left: 428px;
+                width: 816px;
+                height: 219px;
+            }
+            .service-card-3 {
+                top: 228px;
+                left: 428px;
+                width: 301px;
+                height: 354px;
+            }
+            .service-card-4 {
+                top: 228px;
+                left: 735px;
+                width: 505px;
+                height: 354px;
+            }
+            .service-card-5 {
+                top: 348px;
+                left: 0;
+                width: 420px;
+                height: 234px;
+            }
+            .service-number-circle {
+                position: absolute;
+                top: -22px;
+                left: 40px;
+                width: 45px;
+                height: 45px;
+                background: #ffffff;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #000000;
+                font-family: "Orbitron", sans-serif;
+                font-size: 16px;
+                font-weight: 700;
+            }
+            .service-card h3 {
+                font-family: "Orbitron", sans-serif;
+                font-size: 24px;
+                color: #5cc4e5;
+                margin-bottom: 15px;
+            }
+            .service-card p {
+                font-family: "Inter", sans-serif;
+                font-size: 16px;
+                line-height: 1.6;
+                color: #ffffff;
+            }
+            .btn-choisir {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 20px;
+                letter-spacing: 1.5px;
+                border-radius: 40px;
+                padding: 15px 40px;
+                background: transparent;
+                color: #ffffff;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                transition: all 0.3s ease;
+                text-decoration: none;
+            }
+            .btn-choisir:hover {
+                border-color: #5cc4e5;
+                color: #5cc4e5;
+            }
+            .btn-contacter {
+                display: inline-flex;
+                padding: 15px 40px;
+                border-radius: 40px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                color: #ffffff;
+                font-family: "Orbitron", sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                background: transparent;
+                transition: all 0.3s;
+                text-decoration: none;
+                box-shadow: 1px -1px 19.7px #5cc4e5;
+            }
+            .btn-contacter:hover {
+                border-color: #5cc4e5;
+                color: #5cc4e5;
+            }
+            .produit-highlight-title {
+                font-family: "Orbitron", sans-serif;
+                font-size: 32px;
+                font-weight: 700;
+                color: #5cc4e5;
+                margin: 40px 0;
+                letter-spacing: 2px;
+            }
 
-      /* Responsive products layout (Grid + Flex) */
-      .produits-carousel {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 40px;
-        margin-top: 40px;
-        align-items: center;
-      }
+            /* Coverflow Carousel */
+            .coverflow-container {
+                perspective: 1000px;
+                width: 100%;
+                height: auto;
+                margin-top: 40px;
+                overflow: hidden;
+            }
 
-      @media (min-width: 1024px) {
-        .produits-carousel {
-          grid-template-columns: 1fr auto 1fr;
-          gap: 60px;
-        }
-      }
+            .coverflow-wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 40px;
+                padding: 60px 20px 100px 20px;
+                position: relative;
+            }
 
-      .produit-side {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        opacity: 0.85;
-        transition: opacity 0.3s;
-      }
+            .coverflow-nav-btn {
+                background: rgba(92, 196, 229, 0.1);
+                border: 2px solid rgba(92, 196, 229, 0.3);
+                color: #5cc4e5;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                cursor: pointer;
+                font-size: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+                z-index: 10;
+                flex-shrink: 0;
+            }
 
-      .produit-side-left { justify-content: flex-start; }
-      .produit-side-right { justify-content: flex-end; }
-      .produit-side:hover { opacity: 1; }
-      .produit-nav-label { font-family: 'Inter', sans-serif; font-size: 16px; color: #FFFFFF; text-transform: uppercase; }
-      .nav-arrow { background: transparent; border: none; color: #FFFFFF; font-size: 24px; cursor: pointer; transition: color 0.3s; }
-      .nav-arrow:hover { color: #5CC4E5; }
-      .produit-img-container {
-        position: relative;
-        width: 100%;
-        max-width: 340px;
-        display: grid;
-        place-items: center;
-        margin-inline: auto;
-      }
+            .coverflow-nav-btn:hover {
+                background: rgba(92, 196, 229, 0.2);
+                border-color: #5cc4e5;
+                transform: scale(1.1);
+                box-shadow: 0 0 20px rgba(92, 196, 229, 0.5);
+            }
 
-      .calque-bg {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: clamp(220px, 34vw, 350px);
-        width: auto;
-        z-index: 0;
-        pointer-events: none;
-      }
+            .coverflow-nav-btn:active {
+                transform: scale(0.95);
+            }
 
-      .robot-img {
-        height: clamp(160px, 26vw, 250px);
-        width: auto;
-        object-fit: contain;
-        position: relative;
-        z-index: 1;
-      }
+            .coverflow-track {
+                display: flex;
+                gap: 30px;
+                align-items: center;
+                justify-content: center;
+                flex: 1;
+                position: relative;
+                height: 500px;
+                max-width: 1000px;
+                margin: 0 auto;
+            }
 
-      .product-main-img {
-        width: min(440px, 88vw);
-        height: auto;
-        object-fit: contain;
-        position: relative;
-        z-index: 1;
-      }
-      .carousel-indicators { display: flex; align-items: center; gap: 15px; margin: 30px 0; }
-      .indicator { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: #FFFFFF; }
-      .indicator.active { font-size: 24px; }
-      .indicator-line { width: 100px; height: 2px; background-color: rgba(255, 255, 255, 0.1); }
-      .pourquoi-layout { display: flex; gap: 60px; align-items: stretch; }
-      .pourquoi-text-col { flex: 1; display: flex; flex-direction: column; justify-content: center; }
-      .pourquoi-text-col p { font-family: 'Inter', sans-serif; font-size: 20px; line-height: 1.6; color: #FFFFFF; max-width: 500px; }
-      .pourquoi-visual-col { flex: 1; display: flex; gap: 20px; height: 350px; }
-      .pourquoi-box { width: 350px; height: 383px; border: 2px solid #FFFFFF; border-radius: 35px; padding: 40px; display: flex; flex-direction: column; justify-content: flex-end; }
-      .pourquoi-box h3 { font-family: 'Orbitron', sans-serif; font-size: 24px; color: #5CC4E5; margin-bottom: 20px; }
-      .pourquoi-box p { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.5; color: #FFFFFF; }
-      .pourquoi-tab { width: 73px; height: 383px; border: 2px solid #FFFFFF; border-radius: 35px; display: flex; justify-content: center; align-items: center; transition: all 0.3s; cursor: pointer; }
-      .pourquoi-tab:hover { border-color: #5CC4E5; }
-      .pourquoi-tab span { font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 700; color: #5CC4E5; writing-mode: vertical-rl; transform: rotate(180deg); letter-spacing: 2px; }
-      @media (max-width: 1240px) {
-        .services-grid-exact {
-          position: static !important;
-          height: auto !important;
-          display: grid !important;
-          grid-template-columns: 1fr 1fr;
-          gap: 30px;
-        }
-        .service-card {
-          position: static !important;
-          width: 100% !important;
-          height: auto !important;
-        }
-        .service-number-circle {
-          position: static !important;
-          margin-bottom: 20px;
-        }
-      }
-      @media (max-width: 1024px) {
-        .nav-pill-bar { display: none; }
-        .pourquoi-layout { flex-direction: column; }
-        .pourquoi-visual-col { height: auto; flex-direction: column; }
-        .pourquoi-tab { padding: 20px; }
-        .pourquoi-tab span { writing-mode: horizontal-tb; transform: rotate(0); }
-        .stats-card { flex-wrap: wrap; gap: 20px; padding: 20px; }
-        .stat-divider { display: none; }
-        .apropos-hero-content { flex-direction: column; text-align: center; }
-        .founder-name { font-size: 32px; }
-      }
-      @media (max-width: 768px) {
-        .apropos-text-split { flex-direction: column; gap: 20px; }
-        .apropos-text-divider { width: 100px; height: 2px; }
-        .services-grid-exact { grid-template-columns: 1fr; }
-        .produit-side { flex-direction: column; gap: 12px; opacity: 1; }
-        .produit-nav-label { display: none; }
-        .indicator-line { width: 70px; }
-        .pourquoi-box,
-        .pourquoi-tab {
-          width: 100%;
-          max-width: 420px;
-          height: auto;
-        }
-      }
-    </style>
-    <link rel="stylesheet" href="assets/css/responsive.css" />
-  </head>
-  <body class="apropos-page">
+            .coverflow-item {
+                position: absolute;
+                width: 280px;
+                height: 420px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                opacity: 0.4;
+                transform: translateX(0) rotateY(45deg) scale(0.6);
+                z-index: 1;
+            }
 
-    <!-- Desktop: NAVBAR - Fixed at top -->
-    <div class="fixed top-0 left-0 right-0 z-50 hidden lg:flex justify-between items-center px-6 md:px-16 lg:px-24 py-5 bg-black/80 backdrop-blur-md">
-      <a href="index.html" class="logo">
-        <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="logo-img">
-      </a>
-      <nav class="nav-pill-bar">
-        <a href="index.html" class="nav-pill-link">Accueil</a>
-        <a href="apropos.html" class="nav-pill-link active">A propos</a>
-        <a href="categorie.html" class="nav-pill-link">Catégorie</a>
-        <a href="index.html#produit" class="nav-pill-link">Produit</a>
-        <a href="index.html#blog" class="nav-pill-link">Blog</a>
-        <a href="index.html#contact" class="nav-pill-link">Contact</a>
-      </nav>
-      <a href="login.html" class="auth-button">Sign up / Sign in</a>
-    </div>
+            .coverflow-item.active {
+                opacity: 1;
+                transform: translateX(0) rotateY(0deg) scale(1);
+                z-index: 10;
+            }
 
-    <!-- Mobile Logo -->
-    <a href="index.html" class="logo lg:hidden absolute top-5 left-6 z-50">
-      <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="h-10">
-    </a>
+            .coverflow-item.prev {
+                opacity: 0.5;
+                transform: translateX(-280px) rotateY(-35deg) scale(0.75);
+                z-index: 5;
+            }
 
-    <!-- Mobile Bottom Navigation -->
-    <div class="fixed bottom-0 left-0 right-0 lg:hidden z-50 bg-black/95 backdrop-blur-md border-t border-[rgba(255,255,255,0.1)] px-4 py-3">
-      <div class="flex justify-around items-center text-white">
-          <a href="index.html" class="flex flex-col items-center text-xs text-white/70">
-              <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
-              Accueil
-          </a>
-          <a href="apropos.html" class="flex flex-col items-center text-xs text-primary">
-              <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
-              A propos
-          </a>
-          <a href="categorie.html" class="flex flex-col items-center text-xs text-white/70">
-              <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/></svg>
-              Catégorie
-          </a>
-          <a href="index.html#contact" class="flex flex-col items-center text-xs text-white/70">
-              <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
-              Contact
-          </a>
-      </div>
-    </div>
-    <div class="lg:hidden" style="height: 70px;"></div>
+            .coverflow-item.next {
+                opacity: 0.5;
+                transform: translateX(280px) rotateY(35deg) scale(0.75);
+                z-index: 5;
+            }
 
-    <!-- ====== HERO A PROPOS ====== -->
-    <section class="relative pt-[80px] lg:pt-[150px] pb-[80px] flex flex-col items-center" id="accueil">
-      <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/95"></div>
-      </div>
+            .coverflow-item.prev-prev {
+                opacity: 0.2;
+                transform: translateX(-500px) rotateY(-60deg) scale(0.5);
+                z-index: 2;
+            }
 
-      <div class="relative z-10 container mx-auto px-6 md:px-16 lg:px-24 mt-[60px] flex flex-col lg:flex-row items-center justify-between gap-10">
-        <div class="flex-1 max-w-[600px]">
-          <h1 class="founder-name">Nour Elhouda Khalfa</h1>
-          <p class="founder-desc">
-            Fondatrice passionnée par la technologie et l'innovation, je
-            transforme les idées en projets concrets et inspirants.
-          </p>
-          <a href="#" class="btn-more">plus...</a>
+            .coverflow-item.next-next {
+                opacity: 0.2;
+                transform: translateX(500px) rotateY(60deg) scale(0.5);
+                z-index: 2;
+            }
+
+            .coverflow-item-content {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(92, 196, 229, 0.2);
+                border-radius: 20px;
+                padding: 20px;
+                backdrop-filter: blur(10px);
+                transition: all 0.3s ease;
+            }
+
+            .coverflow-item.active .coverflow-item-content {
+                background: rgba(92, 196, 229, 0.1);
+                border: 2px solid rgba(92, 196, 229, 0.5);
+                box-shadow:
+                    0 0 40px rgba(92, 196, 229, 0.3),
+                    inset 0 0 20px rgba(92, 196, 229, 0.1);
+            }
+
+            .coverflow-item-image {
+                width: 100%;
+                height: 70%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 10px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .coverflow-item-image img {
+                max-width: 90%;
+                max-height: 90%;
+                object-fit: contain;
+                transition: transform 0.3s ease;
+            }
+
+            .coverflow-item.active .coverflow-item-image img {
+                transform: scale(1.05);
+            }
+
+            .coverflow-item-info {
+                text-align: center;
+                width: 100%;
+            }
+
+            .coverflow-item-title {
+                font-family: "Orbitron", sans-serif;
+                font-size: 18px;
+                font-weight: 700;
+                color: #5cc4e5;
+                margin-bottom: 8px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .coverflow-item.active .coverflow-item-title {
+                font-size: 22px;
+            }
+
+            .coverflow-item-desc {
+                font-family: "Inter", sans-serif;
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.7);
+                line-height: 1.4;
+                opacity: 0;
+                max-height: 0;
+                transition: all 0.3s ease;
+            }
+
+            .coverflow-item.active .coverflow-item-desc {
+                opacity: 1;
+                max-height: 60px;
+            }
+
+            .coverflow-indicators {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+                margin-top: 40px;
+                flex-wrap: wrap;
+            }
+
+            .coverflow-dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.2);
+                cursor: pointer;
+                transition: all 0.3s ease;
+                border: 2px solid transparent;
+            }
+
+            .coverflow-dot.active {
+                width: 30px;
+                border-radius: 5px;
+                background: #5cc4e5;
+                box-shadow: 0 0 15px rgba(92, 196, 229, 0.6);
+            }
+
+            .coverflow-dot:hover {
+                background: rgba(92, 196, 229, 0.5);
+            }
+
+            @media (max-width: 1024px) {
+                .coverflow-track {
+                    height: 420px;
+                }
+
+                .coverflow-item {
+                    width: 240px;
+                    height: 360px;
+                }
+
+                .coverflow-item.prev {
+                    transform: translateX(-220px) rotateY(-30deg) scale(0.7);
+                }
+
+                .coverflow-item.next {
+                    transform: translateX(220px) rotateY(30deg) scale(0.7);
+                }
+
+                .coverflow-item-title {
+                    font-size: 16px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .coverflow-wrapper {
+                    gap: 20px;
+                    padding: 40px 10px;
+                }
+
+                .coverflow-track {
+                    height: 360px;
+                }
+
+                .coverflow-item {
+                    width: 200px;
+                    height: 300px;
+                }
+
+                .coverflow-item.prev {
+                    transform: translateX(-180px) rotateY(-25deg) scale(0.65);
+                }
+
+                .coverflow-item.next {
+                    transform: translateX(180px) rotateY(25deg) scale(0.65);
+                }
+
+                .coverflow-nav-btn {
+                    width: 40px;
+                    height: 40px;
+                    font-size: 18px;
+                }
+
+                .coverflow-item-title {
+                    font-size: 14px;
+                }
+
+                .coverflow-item-desc {
+                    display: none;
+                }
+            }
+            .pourquoi-layout {
+                display: flex;
+                gap: 60px;
+                align-items: stretch;
+            }
+            .pourquoi-text-col {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .pourquoi-text-col p {
+                font-family: "Inter", sans-serif;
+                font-size: 20px;
+                line-height: 1.6;
+                color: #ffffff;
+                max-width: 500px;
+            }
+            .pourquoi-visual-col {
+                flex: 1;
+                display: flex;
+                gap: 20px;
+                height: 350px;
+            }
+            .pourquoi-box {
+                width: 350px;
+                height: 383px;
+                border: 2px solid #ffffff;
+                border-radius: 35px;
+                padding: 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+            .pourquoi-box h3 {
+                font-family: "Orbitron", sans-serif;
+                font-size: 24px;
+                color: #5cc4e5;
+                margin-bottom: 20px;
+            }
+            .pourquoi-box p {
+                font-family: "Inter", sans-serif;
+                font-size: 16px;
+                line-height: 1.5;
+                color: #ffffff;
+            }
+            .pourquoi-tab {
+                width: 73px;
+                height: 383px;
+                border: 2px solid #ffffff;
+                border-radius: 35px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.3s;
+                cursor: pointer;
+            }
+            .pourquoi-tab:hover {
+                border-color: #5cc4e5;
+            }
+            .pourquoi-tab span {
+                font-family: "Orbitron", sans-serif;
+                font-size: 24px;
+                font-weight: 700;
+                color: #5cc4e5;
+                writing-mode: vertical-rl;
+                transform: rotate(180deg);
+                letter-spacing: 2px;
+            }
+            @media (max-width: 1240px) {
+                .services-grid-exact {
+                    position: static !important;
+                    height: auto !important;
+                    display: grid !important;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 30px;
+                }
+                .service-card {
+                    position: static !important;
+                    width: 100% !important;
+                    height: auto !important;
+                }
+                .service-number-circle {
+                    position: static !important;
+                    margin-bottom: 20px;
+                }
+            }
+            @media (max-width: 1024px) {
+                .nav-pill-bar {
+                    display: none;
+                }
+                .pourquoi-layout {
+                    flex-direction: column;
+                }
+                .pourquoi-visual-col {
+                    height: auto;
+                    flex-direction: column;
+                }
+                .pourquoi-tab {
+                    padding: 20px;
+                }
+                .pourquoi-tab span {
+                    writing-mode: horizontal-tb;
+                    transform: rotate(0);
+                }
+                .stats-card {
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    padding: 20px;
+                }
+                .stat-divider {
+                    display: none;
+                }
+                .apropos-hero-content {
+                    flex-direction: column;
+                    text-align: center;
+                }
+                .founder-name {
+                    font-size: 32px;
+                }
+            }
+            @media (max-width: 768px) {
+                .apropos-text-split {
+                    flex-direction: column;
+                    gap: 20px;
+                }
+                .apropos-text-divider {
+                    width: 100px;
+                    height: 2px;
+                }
+                .services-grid-exact {
+                    grid-template-columns: 1fr;
+                }
+                .produit-side {
+                    flex-direction: column;
+                    gap: 12px;
+                    opacity: 1;
+                }
+                .produit-nav-label {
+                    display: none;
+                }
+                .indicator-line {
+                    width: 70px;
+                }
+                .pourquoi-box,
+                .pourquoi-tab {
+                    width: 100%;
+                    max-width: 420px;
+                    height: auto;
+                }
+            }
+        </style>
+        <link rel="stylesheet" href="assets/css/responsive.css" />
+    </head>
+    <body class="apropos-page">
+        <!-- Desktop: NAVBAR - Fixed at top -->
+        <div
+            class="fixed top-0 left-0 right-0 z-50 hidden lg:flex justify-between items-center px-6 md:px-16 lg:px-24 py-5 bg-black/80 backdrop-blur-md"
+        >
+            <a href="index.html" class="logo">
+                <img
+                    src="assets/images/Plan de travail 1 1.png"
+                    alt="RDOC"
+                    class="logo-img"
+                />
+            </a>
+            <nav class="nav-pill-bar">
+                <a href="index.html" class="nav-pill-link">Accueil</a>
+                <a href="apropos.html" class="nav-pill-link active">A propos</a>
+                <a href="categorie.html" class="nav-pill-link">Catégorie</a>
+                <a href="index.html#produit" class="nav-pill-link">Produit</a>
+                <a href="index.html#blog" class="nav-pill-link">Blog</a>
+                <a href="index.html#contact" class="nav-pill-link">Contact</a>
+            </nav>
+            <a href="login.html" class="auth-button">Sign up / Sign in</a>
         </div>
-        <div class="flex-1 flex justify-center">
-          <img src="assets/images/me.png" alt="Nour Elhouda Khalfa" class="founder-img max-w-full">
+
+        <!-- Mobile Logo -->
+        <a href="index.html" class="logo lg:hidden absolute top-5 left-6 z-50">
+            <img
+                src="assets/images/Plan de travail 1 1.png"
+                alt="RDOC"
+                class="h-10"
+            />
+        </a>
+
+        <!-- Mobile Bottom Navigation -->
+        <div
+            class="fixed bottom-0 left-0 right-0 lg:hidden z-50 bg-black/95 backdrop-blur-md border-t border-[rgba(255,255,255,0.1)] px-4 py-3"
+        >
+            <div class="flex justify-around items-center text-white">
+                <a
+                    href="index.html"
+                    class="flex flex-col items-center text-xs text-white/70"
+                >
+                    <svg
+                        class="w-6 h-6 mb-1"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                    >
+                        <title>Accueil</title>
+                        <path
+                            d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+                        />
+                    </svg>
+                    Accueil
+                </a>
+                <a
+                    href="apropos.html"
+                    class="flex flex-col items-center text-xs text-primary"
+                >
+                    <svg
+                        class="w-6 h-6 mb-1"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                    >
+                        <title>À propos</title>
+                        <path
+                            fill-rule="evenodd"
+                            d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                            clip-rule="evenodd"
+                        />
+                    </svg>
+                    A propos
+                </a>
+                <a
+                    href="categorie.html"
+                    class="flex flex-col items-center text-xs text-white/70"
+                >
+                    <svg
+                        class="w-6 h-6 mb-1"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                    >
+                        <title>Catégorie</title>
+                        <path
+                            d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"
+                        />
+                    </svg>
+                    Catégorie
+                </a>
+                <a
+                    href="index.html#contact"
+                    class="flex flex-col items-center text-xs text-white/70"
+                >
+                    <svg
+                        class="w-6 h-6 mb-1"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                    >
+                        <title>Contact</title>
+                        <path
+                            d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                        />
+                        <path
+                            d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                        />
+                    </svg>
+                    Contact
+                </a>
+            </div>
         </div>
-      </div>
-    </section>
+        <div class="lg:hidden" style="height: 70px"></div>
 
-    <!-- ====== STATS BAR ====== -->
-    <section class="relative z-10 pb-[80px]">
-      <div class="container mx-auto px-6 md:px-16 lg:px-24 -mt-10">
-        <div class="glass rounded-[20px] p-5 md:p-[30px] lg:p-[30px]">
-          <div class="stats-card flex-col md:flex-row">
-            <div class="stat-item flex flex-col items-center gap-2.5 mx-4">
-              <span class="stat-label">Robots</span>
-              <span class="stat-value">60+</span>
+        <!-- ====== HERO A PROPOS ====== -->
+        <section
+            class="relative pt-[80px] lg:pt-[150px] pb-[80px] flex flex-col items-center"
+            id="accueil"
+        >
+            <div class="absolute inset-0 z-0">
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/95"
+                ></div>
             </div>
-            <div class="stat-divider hidden md:block"></div>
-            <div class="stat-item flex flex-col items-center gap-2.5 mx-4">
-              <span class="stat-label">Logiciels</span>
-              <span class="stat-value text-cyan">123+</span>
-            </div>
-            <div class="stat-divider hidden md:block"></div>
-            <div class="stat-item flex flex-col items-center gap-2.5 mx-4">
-              <span class="stat-label">Utilisateurs</span>
-              <span class="stat-value">8K+</span>
-            </div>
-            <div class="stat-divider hidden md:block"></div>
-            <div class="stat-item flex flex-col items-center gap-2.5 mx-4">
-              <span class="stat-label">Avis certifiés</span>
-              <div class="stat-avatars">
-                <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="User">
-                <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="User">
-                <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="User">
-                <img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="User">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ====== A PROPOS DE NOUS ====== -->
-    <section class="py-[80px] text-center">
-      <div class="container mx-auto px-6 md:px-16 lg:px-24">
-        <h2 class="font-orbitron font-bold text-[40px] text-primary uppercase mb-5">À PROPOS DE NOUS</h2>
-        <p class="font-inter text-2xl text-white mb-[60px]">
-          Innovation, technologie et apprentissage au service de votre réussite
-        </p>
-        <div class="flex flex-col md:flex-row justify-center items-center gap-10 max-w-[1000px] mx-auto">
-          <div class="flex-1 font-inter text-2xl text-white text-left leading-relaxed">
-            <p>
-              Chez RDOC, nous rapprochons technologie et éducation en créant des
-              robots intelligents et interactifs. Nos solutions accompagnent
-              étudiants et professionnels, stimulent la curiosité et facilitent
-              l'apprentissage et la gestion des données.
-            </p>
-          </div>
-          <div class="w-[2px] h-[150px] md:h-[150px] bg-[rgba(255,255,255,0.1)]"></div>
-          <div class="flex-1 font-inter text-2xl text-white text-left leading-relaxed">
-            <p>
-              Notre équipe de passionnés conçoit des solutions adaptées aux
-              écoles, entreprises et institutions, alliant performance technique
-              et facilité d'utilisation pour faire de nos robots des alliés
-              fiables et innovants.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====== NOS SERVICES ====== -->
-    <section class="py-[80px]">
-      <div class="container mx-auto px-6 md:px-16 lg:px-24">
-        <h2 class="font-orbitron font-bold text-[40px] text-primary uppercase mb-5">NOS SERVICES</h2>
-        <p class="font-inter text-2xl text-white mb-[60px]">
-          Des outils robotiques et digitaux conçus sur mesure pour répondre à
-          vos besoins spécifiques.
-        </p>
-
-        <div class="relative h-[582px] mt-[60px] mb-[60px] services-grid-exact">
-          <div class="service-card service-card-1">
-            <div class="service-number-circle">01</div>
-            <h3>Vente de robots personnalisés</h3>
-            <p>Fourniture de robots adaptés aux besoins spécifiques des clients : écoles, entreprises privées ou institutions publiques.</p>
-          </div>
-          <div class="service-card service-card-2">
-            <div class="service-number-circle">02</div>
-            <h3>Service après-vente et maintenance</h3>
-            <p>Assistance technique, mises à jour et dépannage pour assurer la durabilité et performance des robots.</p>
-          </div>
-          <div class="service-card service-card-3">
-            <div class="service-number-circle">03</div>
-            <h3>Intégration et configuration logicielle</h3>
-            <p>Installation et adaptation des logiciels selon le robot et l'usage du client.</p>
-          </div>
-          <div class="service-card service-card-4">
-            <div class="service-number-circle">04</div>
-            <h3>Support et accompagnement</h3>
-            <p>Conseil et suivi pour une utilisation optimale des robots.</p>
-          </div>
-          <div class="service-card service-card-5">
-            <div class="service-number-circle">05</div>
-            <h3>Formations professionnelles</h3>
-            <p>Formations en développement, codage, IA et IT pour professionnels, avec ateliers éducatifs pour enfants.</p>
-          </div>
-        </div>
-        <div class="flex justify-end mt-10">
-          <a href="#" class="btn-outline btn-choisir">
-            CHOISIR
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="arrow-icon">
-              <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====== NOS PRODUITS ====== -->
-    <section class="py-[80px] text-center">
-      <div class="container mx-auto px-6 md:px-16 lg:px-24">
-        <h2 class="font-orbitron font-bold text-[40px] text-primary uppercase mb-5">NOS PRODUITS</h2>
-        <p class="font-inter text-2xl text-white mb-[40px]">
-          Solutions robotiques innovantes pour tous les secteurs
-        </p>
-
-        <h3 class="produit-highlight-title">RDOC MINI</h3>
-
-        <div class="produits-carousel">
-          <div class="produit-side produit-side-left">
-            <span class="produit-nav-label hidden lg:block">Gauche</span>
-            <button class="nav-arrow">&lt;</button>
-            <div class="produit-img-container relative">
-              <img src="assets/images/Calque_1.png" alt="Aura Background" class="calque-bg">
-              <img src="assets/images/gauche.png" alt="Robot Gauche" class="robot-img">
+            <div
+                class="relative z-10 container mx-auto px-6 md:px-16 lg:px-24 mt-[60px] flex flex-col lg:flex-row items-center justify-between gap-10"
+            >
+                <div class="flex-1 max-w-[600px]">
+                    <h1 class="founder-name">Nour Elhouda Khalfa</h1>
+                    <p class="founder-desc">
+                        Fondatrice passionnée par la technologie et
+                        l'innovation, je transforme les idées en projets
+                        concrets et inspirants.
+                    </p>
+                    <a href="#" class="btn-more">plus...</a>
+                </div>
+                <div class="flex-1 flex justify-center">
+                    <img
+                        src="assets/images/me.png"
+                        alt="Nour Elhouda Khalfa"
+                        class="founder-img max-w-full"
+                    />
+                </div>
             </div>
-          </div>
+        </section>
 
-          <div class="produit-center flex flex-col items-center">
-            <div class="produit-img-container relative" style="max-width: 520px;">
-              <img src="assets/images/robot.png" alt="RDOC Mini" class="product-main-img">
+        <!-- ====== STATS BAR ====== -->
+        <section class="relative z-10 pb-[80px]">
+            <div class="container mx-auto px-6 md:px-16 lg:px-24 -mt-10">
+                <div class="glass rounded-[20px] p-5 md:p-[30px] lg:p-[30px]">
+                    <div class="stats-card flex-col md:flex-row">
+                        <div
+                            class="stat-item flex flex-col items-center gap-2.5 mx-4"
+                        >
+                            <span class="stat-label">Robots</span>
+                            <span class="stat-value">60+</span>
+                        </div>
+                        <div class="stat-divider hidden md:block"></div>
+                        <div
+                            class="stat-item flex flex-col items-center gap-2.5 mx-4"
+                        >
+                            <span class="stat-label">Logiciels</span>
+                            <span class="stat-value text-cyan">123+</span>
+                        </div>
+                        <div class="stat-divider hidden md:block"></div>
+                        <div
+                            class="stat-item flex flex-col items-center gap-2.5 mx-4"
+                        >
+                            <span class="stat-label">Utilisateurs</span>
+                            <span class="stat-value">8K+</span>
+                        </div>
+                        <div class="stat-divider hidden md:block"></div>
+                        <div
+                            class="stat-item flex flex-col items-center gap-2.5 mx-4"
+                        >
+                            <span class="stat-label">Avis certifiés</span>
+                            <div class="stat-avatars">
+                                <img
+                                    src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png"
+                                    alt="User avatar"
+                                    title="User avatar"
+                                />
+                                <img
+                                    src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png"
+                                    alt="User avatar"
+                                    title="User avatar"
+                                />
+                                <img
+                                    src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png"
+                                    alt="User avatar"
+                                    title="User avatar"
+                                />
+                                <img
+                                    src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png"
+                                    alt="User avatar"
+                                    title="User avatar"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="carousel-indicators">
-              <span class="indicator active">01</span>
-              <div class="indicator-line"></div>
-              <span class="indicator">02</span>
-              <span class="indicator">03</span>
-            </div>
-            <button class="btn-outline btn-decouvrir mt-5">Découvrir</button>
-          </div>
+        </section>
 
-          <div class="produit-side produit-side-right">
-            <div class="produit-img-container relative">
-              <img src="assets/images/Calque_1 (1).png" alt="Aura Background" class="calque-bg">
-              <img src="assets/images/droit.png" alt="Robot Droit" class="robot-img">
+        <!-- ====== A PROPOS DE NOUS ====== -->
+        <section class="py-[80px] text-center">
+            <div class="container mx-auto px-6 md:px-16 lg:px-24">
+                <h2
+                    class="font-orbitron font-bold text-[40px] text-primary uppercase mb-5"
+                >
+                    À PROPOS DE NOUS
+                </h2>
+                <p class="font-inter text-2xl text-white mb-[60px]">
+                    Innovation, technologie et apprentissage au service de votre
+                    réussite
+                </p>
+                <div
+                    class="flex flex-col md:flex-row justify-center items-center gap-10 max-w-[1000px] mx-auto"
+                >
+                    <div
+                        class="flex-1 font-inter text-2xl text-white text-left leading-relaxed"
+                    >
+                        <p>
+                            Chez RDOC, nous rapprochons technologie et éducation
+                            en créant des robots intelligents et interactifs.
+                            Nos solutions accompagnent étudiants et
+                            professionnels, stimulent la curiosité et facilitent
+                            l'apprentissage et la gestion des données.
+                        </p>
+                    </div>
+                    <div
+                        class="w-[2px] h-[150px] md:h-[150px] bg-[rgba(255,255,255,0.1)]"
+                    ></div>
+                    <div
+                        class="flex-1 font-inter text-2xl text-white text-left leading-relaxed"
+                    >
+                        <p>
+                            Notre équipe de passionnés conçoit des solutions
+                            adaptées aux écoles, entreprises et institutions,
+                            alliant performance technique et facilité
+                            d'utilisation pour faire de nos robots des alliés
+                            fiables et innovants.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <button class="nav-arrow">&gt;</button>
-            <span class="produit-nav-label hidden lg:block">Droite</span>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- ====== POURQUOI RDOC ? ====== -->
-    <section class="py-[80px]">
-      <div class="container mx-auto px-6 md:px-16 lg:px-24">
-        <div class="pourquoi-layout flex-col lg:flex-row">
-          <div class="pourquoi-text-col mb-10 lg:mb-0">
-            <h2 class="font-orbitron font-bold text-[40px] text-primary uppercase mb-5">POURQUOI RDOC ?</h2>
-            <p>
-              Chez RDOC, nous allions innovation, expertise et accompagnement
-              pour offrir des robots et logiciels fiables, performants et
-              adaptés à chaque projet, qu'il soit éducatif, professionnel ou
-              privé.
-            </p>
-          </div>
+        <!-- ====== NOS SERVICES ====== -->
+        <section class="py-[80px]">
+            <div class="container mx-auto px-6 md:px-16 lg:px-24">
+                <h2
+                    class="font-orbitron font-bold text-[40px] text-primary uppercase mb-5"
+                >
+                    NOS SERVICES
+                </h2>
+                <p class="font-inter text-2xl text-white mb-[60px]">
+                    Des outils robotiques et digitaux conçus sur mesure pour
+                    répondre à vos besoins spécifiques.
+                </p>
 
-          <div class="pourquoi-visual-col flex-col lg:flex-row">
-            <div class="pourquoi-box mb-5 lg:mb-0">
-              <h3>Qualité</h3>
-              <p>Chaque robot et logiciel est conçu avec le plus haut niveau de qualité, garantissant fiabilité, performance et durabilité pour tous vos projets.</p>
+                <div
+                    class="relative h-[582px] mt-[60px] mb-[60px] services-grid-exact"
+                >
+                    <div class="service-card service-card-1">
+                        <div class="service-number-circle">01</div>
+                        <h3>Vente de robots personnalisés</h3>
+                        <p>
+                            Fourniture de robots adaptés aux besoins spécifiques
+                            des clients : écoles, entreprises privées ou
+                            institutions publiques.
+                        </p>
+                    </div>
+                    <div class="service-card service-card-2">
+                        <div class="service-number-circle">02</div>
+                        <h3>Service après-vente et maintenance</h3>
+                        <p>
+                            Assistance technique, mises à jour et dépannage pour
+                            assurer la durabilité et performance des robots.
+                        </p>
+                    </div>
+                    <div class="service-card service-card-3">
+                        <div class="service-number-circle">03</div>
+                        <h3>Intégration et configuration logicielle</h3>
+                        <p>
+                            Installation et adaptation des logiciels selon le
+                            robot et l'usage du client.
+                        </p>
+                    </div>
+                    <div class="service-card service-card-4">
+                        <div class="service-number-circle">04</div>
+                        <h3>Support et accompagnement</h3>
+                        <p>
+                            Conseil et suivi pour une utilisation optimale des
+                            robots.
+                        </p>
+                    </div>
+                    <div class="service-card service-card-5">
+                        <div class="service-number-circle">05</div>
+                        <h3>Formations professionnelles</h3>
+                        <p>
+                            Formations en développement, codage, IA et IT pour
+                            professionnels, avec ateliers éducatifs pour
+                            enfants.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex justify-end mt-10">
+                    <a href="#" class="btn-outline btn-choisir">
+                        CHOISIR
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            class="arrow-icon"
+                        >
+                            <title>Arrow icon</title>
+                            <path
+                                d="M7 17L17 7M17 7H7M17 7V17"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </a>
+                </div>
             </div>
-            <div class="pourquoi-tab mb-5 lg:mb-0" data-title="Innovation" data-text="Nous intégrons en continu les dernières avancées en robotique et en IA pour proposer des solutions toujours plus performantes.">
-              <span>Innovation</span>
-            </div>
-            <div class="pourquoi-tab mb-5 lg:mb-0" data-title="Expertise" data-text="Une équipe pluridisciplinaire d’experts accompagne vos projets de la conception à la mise en production.">
-              <span>Expertise</span>
-            </div>
-            <div class="pourquoi-tab" data-title="Accompagnement" data-text="Nous restons à vos côtés après l’installation grâce à un suivi personnalisé, des formations et un support continu.">
-              <span>Accompagnement</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- ====== REJOIGNEZ NOUS ====== -->
-    <section class="py-[100px] text-center">
-      <div class="container mx-auto px-6 md:px-16 lg:px-24">
-        <h2 class="font-orbitron font-bold text-[40px] text-primary uppercase mb-5">REJOIGNEZ NOUS</h2>
-        <p class="font-inter text-2xl text-white mb-[40px]">
-          Découvrez nos solutions et commencez votre projet avec RDOC
-        </p>
-        <a href="index.html#contact" class="btn-contacter">Contacter nous</a>
-      </div>
-    </section>
+        <!-- ====== NOS PRODUITS - COVERFLOW CAROUSEL ====== -->
+        <section class="py-[80px] text-center">
+            <div class="container mx-auto px-6 md:px-16 lg:px-24">
+                <h2
+                    class="font-orbitron font-bold text-[40px] text-primary uppercase mb-5"
+                >
+                    NOS PRODUITS
+                </h2>
+                <p class="font-inter text-2xl text-white mb-[40px]">
+                    Solutions robotiques innovantes pour tous les secteurs
+                </p>
 
-    <!-- ====== FOOTER ====== -->
-    <footer class="py-[80px] pb-10 border-t border-[rgba(255,255,255,0.1)]">
-      <div class="container mx-auto px-6 md:px-16 lg:px-24">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] mb-[50px]">
-          <div>
-            <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="h-[60px] w-auto mb-4">
-            <p class="font-inter text-sm text-[rgba(255,255,255,0.5)] leading-relaxed">Notre équipe d'experts passionnés fournit des solutions robotiques exceptionnelles, conçues pour répondre aux besoins variés de nos clients.</p>
-          </div>
-          <div>
-            <h4 class="font-orbitron text-base font-bold text-white uppercase mb-5">Pages</h4>
-            <ul class="flex flex-col gap-2.5">
-              <li><a href="index.html#accueil" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">Accueil</a></li>
-              <li><a href="apropos.html" class="font-inter text-sm text-primary">A propos</a></li>
-              <li><a href="categorie.html" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">Catégorie</a></li>
-              <li><a href="index.html#produit" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">Produit</a></li>
-              <li><a href="index.html#blog" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">Blog</a></li>
-              <li><a href="index.html#contact" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">Contact</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-orbitron text-base font-bold text-white uppercase mb-5">Aide</h4>
-            <ul class="flex flex-col gap-2.5">
-              <li><a href="index.html#faq" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">FAQ</a></li>
-              <li><a href="#" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">Politique de confidentialité</a></li>
-              <li><a href="#" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">Conditions d'utilisation</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-orbitron text-base font-bold text-white uppercase mb-5">Contact</h4>
-            <ul class="flex flex-col gap-2.5">
-              <li class="font-inter text-sm text-[rgba(255,255,255,0.5)]">+213 123 456 789</li>
-              <li><a href="mailto:contact@rdoc.com" class="font-inter text-sm text-primary hover:opacity-70 transition-opacity">contact@rdoc.com</a></li>
-              <li class="font-inter text-sm text-[rgba(255,255,255,0.5)]">Alger, Algérie</li>
-            </ul>
-            <div class="flex gap-[15px] mt-4">
-              <a href="#" class="font-inter text-sm font-bold text-white hover:text-primary transition-colors">FB</a>
-              <a href="#" class="font-inter text-sm font-bold text-white hover:text-primary transition-colors">IG</a>
-              <a href="#" class="font-inter text-sm font-bold text-white hover:text-primary transition-colors">LI</a>
+                <h3 class="produit-highlight-title">Découvrez Notre Gamme</h3>
+
+                <!-- Coverflow Carousel Container -->
+                <div class="coverflow-container">
+                    <div class="coverflow-wrapper">
+                        <!-- Navigation Buttons -->
+                        <button
+                            type="button"
+                            class="coverflow-nav-btn"
+                            id="coverflow-prev"
+                            aria-label="Previous product"
+                        >
+                            ❮
+                        </button>
+
+                        <!-- Carousel Track -->
+                        <div class="coverflow-track">
+                            <!-- Product Item 1: RDOC MINI -->
+                            <div class="coverflow-item active" data-index="0">
+                                <div class="coverflow-item-content">
+                                    <div class="coverflow-item-image">
+                                        <img
+                                            src="assets/images/robot.png"
+                                            alt="RDOC MINI"
+                                        />
+                                    </div>
+                                    <div class="coverflow-item-info">
+                                        <h3 class="coverflow-item-title">
+                                            RDOC MINI
+                                        </h3>
+                                        <p class="coverflow-item-desc">
+                                            Robot compact pour l'éducation et
+                                            l'apprentissage interactif
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product Item 2: RDOC STANDARD -->
+                            <div class="coverflow-item next" data-index="1">
+                                <div class="coverflow-item-content">
+                                    <div class="coverflow-item-image">
+                                        <img
+                                            src="assets/images/robot.png"
+                                            alt="RDOC STANDARD"
+                                        />
+                                    </div>
+                                    <div class="coverflow-item-info">
+                                        <h3 class="coverflow-item-title">
+                                            RDOC STANDARD
+                                        </h3>
+                                        <p class="coverflow-item-desc">
+                                            Solution polyvalente pour les
+                                            entreprises et institutions
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product Item 3: RDOC PRO -->
+                            <div
+                                class="coverflow-item next-next"
+                                data-index="2"
+                            >
+                                <div class="coverflow-item-content">
+                                    <div class="coverflow-item-image">
+                                        <img
+                                            src="assets/images/robot.png"
+                                            alt="RDOC PRO"
+                                        />
+                                    </div>
+                                    <div class="coverflow-item-info">
+                                        <h3 class="coverflow-item-title">
+                                            RDOC PRO
+                                        </h3>
+                                        <p class="coverflow-item-desc">
+                                            Suite avancée pour la gestion et
+                                            l'analyse de données
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product Item 4: RDOC ENTERPRISE -->
+                            <div class="coverflow-item" data-index="3">
+                                <div class="coverflow-item-content">
+                                    <div class="coverflow-item-image">
+                                        <img
+                                            src="assets/images/robot.png"
+                                            alt="RDOC ENTERPRISE"
+                                        />
+                                    </div>
+                                    <div class="coverflow-item-info">
+                                        <h3 class="coverflow-item-title">
+                                            RDOC ENTERPRISE
+                                        </h3>
+                                        <p class="coverflow-item-desc">
+                                            Solution complète pour les grandes
+                                            organisations
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product Item 5: RDOC CUSTOM -->
+                            <div class="coverflow-item" data-index="4">
+                                <div class="coverflow-item-content">
+                                    <div class="coverflow-item-image">
+                                        <img
+                                            src="assets/images/robot.png"
+                                            alt="RDOC CUSTOM"
+                                        />
+                                    </div>
+                                    <div class="coverflow-item-info">
+                                        <h3 class="coverflow-item-title">
+                                            RDOC CUSTOM
+                                        </h3>
+                                        <p class="coverflow-item-desc">
+                                            Robotique sur mesure adaptée à vos
+                                            besoins spécifiques
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <button
+                            type="button"
+                            class="coverflow-nav-btn"
+                            id="coverflow-next"
+                            aria-label="Next product"
+                        >
+                            ❯
+                        </button>
+                    </div>
+
+                    <!-- Carousel Indicators/Dots -->
+                    <div class="coverflow-indicators">
+                        <span
+                            class="coverflow-dot active"
+                            data-index="0"
+                        ></span>
+                        <span class="coverflow-dot" data-index="1"></span>
+                        <span class="coverflow-dot" data-index="2"></span>
+                        <span class="coverflow-dot" data-index="3"></span>
+                        <span class="coverflow-dot" data-index="4"></span>
+                    </div>
+
+                    <!-- Action Button -->
+                    <div class="mt-[40px]">
+                        <button type="button" class="btn-outline btn-decouvrir">
+                            Découvrir le produit
+                        </button>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="text-center pt-[30px] border-t border-[rgba(255,255,255,0.1)]">
-          <p class="font-inter text-xs text-[rgba(255,255,255,0.5)]">© 2025 RDOC. Tous droits réservés.</p>
-        </div>
-      </div>
-    </footer>
-    <script src="assets/js/main.js"></script>
-  </body>
+        </section>
+
+        <!-- ====== POURQUOI RDOC ? ====== -->
+        <section class="py-[80px]">
+            <div class="container mx-auto px-6 md:px-16 lg:px-24">
+                <div class="pourquoi-layout flex-col lg:flex-row">
+                    <div class="pourquoi-text-col mb-10 lg:mb-0">
+                        <h2
+                            class="font-orbitron font-bold text-[40px] text-primary uppercase mb-5"
+                        >
+                            POURQUOI RDOC ?
+                        </h2>
+                        <p>
+                            Chez RDOC, nous allions innovation, expertise et
+                            accompagnement pour offrir des robots et logiciels
+                            fiables, performants et adaptés à chaque projet,
+                            qu'il soit éducatif, professionnel ou privé.
+                        </p>
+                    </div>
+
+                    <div class="pourquoi-visual-col flex-col lg:flex-row">
+                        <div class="pourquoi-box mb-5 lg:mb-0">
+                            <h3>Qualité</h3>
+                            <p>
+                                Chaque robot et logiciel est conçu avec le plus
+                                haut niveau de qualité, garantissant fiabilité,
+                                performance et durabilité pour tous vos projets.
+                            </p>
+                        </div>
+                        <div
+                            class="pourquoi-tab mb-5 lg:mb-0"
+                            data-title="Innovation"
+                            data-text="Nous intégrons en continu les dernières avancées en robotique et en IA pour proposer des solutions toujours plus performantes."
+                        >
+                            <span>Innovation</span>
+                        </div>
+                        <div
+                            class="pourquoi-tab mb-5 lg:mb-0"
+                            data-title="Expertise"
+                            data-text="Une équipe pluridisciplinaire d’experts accompagne vos projets de la conception à la mise en production."
+                        >
+                            <span>Expertise</span>
+                        </div>
+                        <div
+                            class="pourquoi-tab"
+                            data-title="Accompagnement"
+                            data-text="Nous restons à vos côtés après l’installation grâce à un suivi personnalisé, des formations et un support continu."
+                        >
+                            <span>Accompagnement</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== REJOIGNEZ NOUS ====== -->
+        <section class="py-[100px] text-center">
+            <div class="container mx-auto px-6 md:px-16 lg:px-24">
+                <h2
+                    class="font-orbitron font-bold text-[40px] text-primary uppercase mb-5"
+                >
+                    REJOIGNEZ NOUS
+                </h2>
+                <p class="font-inter text-2xl text-white mb-[40px]">
+                    Découvrez nos solutions et commencez votre projet avec RDOC
+                </p>
+                <a href="index.html#contact" class="btn-contacter"
+                    >Contacter nous</a
+                >
+            </div>
+        </section>
+
+        <!-- ====== FOOTER ====== -->
+        <footer class="py-[80px] pb-10 border-t border-[rgba(255,255,255,0.1)]">
+            <div class="container mx-auto px-6 md:px-16 lg:px-24">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] mb-[50px]"
+                >
+                    <div>
+                        <img
+                            src="assets/images/Plan de travail 1 1.png"
+                            alt="RDOC"
+                            class="h-[60px] w-auto mb-4"
+                        />
+                        <p
+                            class="font-inter text-sm text-[rgba(255,255,255,0.5)] leading-relaxed"
+                        >
+                            Notre équipe d'experts passionnés fournit des
+                            solutions robotiques exceptionnelles, conçues pour
+                            répondre aux besoins variés de nos clients.
+                        </p>
+                    </div>
+                    <div>
+                        <h4
+                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                        >
+                            Pages
+                        </h4>
+                        <ul class="flex flex-col gap-2.5">
+                            <li>
+                                <a
+                                    href="index.html#accueil"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Accueil</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="apropos.html"
+                                    class="font-inter text-sm text-primary"
+                                    >A propos</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="categorie.html"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Catégorie</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="index.html#produit"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Produit</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="index.html#blog"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Blog</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="index.html#contact"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Contact</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4
+                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                        >
+                            Aide
+                        </h4>
+                        <ul class="flex flex-col gap-2.5">
+                            <li>
+                                <a
+                                    href="index.html#faq"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >FAQ</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Politique de confidentialité</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Conditions d'utilisation</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4
+                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                        >
+                            Contact
+                        </h4>
+                        <ul class="flex flex-col gap-2.5">
+                            <li
+                                class="font-inter text-sm text-[rgba(255,255,255,0.5)]"
+                            >
+                                +213 123 456 789
+                            </li>
+                            <li>
+                                <a
+                                    href="mailto:contact@rdoc.com"
+                                    class="font-inter text-sm text-primary hover:opacity-70 transition-opacity"
+                                    >contact@rdoc.com</a
+                                >
+                            </li>
+                            <li
+                                class="font-inter text-sm text-[rgba(255,255,255,0.5)]"
+                            >
+                                Alger, Algérie
+                            </li>
+                        </ul>
+                        <div class="flex gap-[15px] mt-4">
+                            <a
+                                href="#"
+                                class="font-inter text-sm font-bold text-white hover:text-primary transition-colors"
+                                >FB</a
+                            >
+                            <a
+                                href="#"
+                                class="font-inter text-sm font-bold text-white hover:text-primary transition-colors"
+                                >IG</a
+                            >
+                            <a
+                                href="#"
+                                class="font-inter text-sm font-bold text-white hover:text-primary transition-colors"
+                                >LI</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="text-center pt-[30px] border-t border-[rgba(255,255,255,0.1)]"
+                >
+                    <p class="font-inter text-xs text-[rgba(255,255,255,0.5)]">
+                        © 2025 RDOC. Tous droits réservés.
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <script src="assets/js/main.js"></script>
+
+        <!-- Coverflow Carousel JavaScript -->
+        <script>
+            class CoverflowCarousel {
+                constructor() {
+                    this.currentIndex = 0;
+                    this.items = document.querySelectorAll(".coverflow-item");
+                    this.dots = document.querySelectorAll(".coverflow-dot");
+                    this.totalItems = this.items.length;
+                    this.prevBtn = document.getElementById("coverflow-prev");
+                    this.nextBtn = document.getElementById("coverflow-next");
+                    this.autoPlayInterval = null;
+
+                    this.init();
+                }
+
+                init() {
+                    // Event listeners
+                    this.prevBtn.addEventListener("click", () =>
+                        this.previous(),
+                    );
+                    this.nextBtn.addEventListener("click", () => this.next());
+
+                    // Dot click listeners
+                    this.dots.forEach((dot, index) => {
+                        dot.addEventListener("click", () => this.goTo(index));
+                    });
+
+                    // Keyboard navigation
+                    document.addEventListener("keydown", (e) => {
+                        if (e.key === "ArrowLeft") this.previous();
+                        if (e.key === "ArrowRight") this.next();
+                    });
+
+                    // Auto-play (optional, uncomment to enable)
+                    // this.startAutoPlay();
+
+                    // Initial render
+                    this.updateCarousel();
+                }
+
+                next() {
+                    this.currentIndex =
+                        (this.currentIndex + 1) % this.totalItems;
+                    this.updateCarousel();
+                    this.resetAutoPlay();
+                }
+
+                previous() {
+                    this.currentIndex =
+                        (this.currentIndex - 1 + this.totalItems) %
+                        this.totalItems;
+                    this.updateCarousel();
+                    this.resetAutoPlay();
+                }
+
+                goTo(index) {
+                    this.currentIndex = index;
+                    this.updateCarousel();
+                    this.resetAutoPlay();
+                }
+
+                updateCarousel() {
+                    // Update item positions
+                    this.items.forEach((item, index) => {
+                        item.classList.remove(
+                            "active",
+                            "prev",
+                            "next",
+                            "prev-prev",
+                            "next-next",
+                        );
+
+                        const distance =
+                            (index - this.currentIndex + this.totalItems) %
+                            this.totalItems;
+
+                        if (distance === 0) {
+                            item.classList.add("active");
+                        } else if (distance === 1) {
+                            item.classList.add("next");
+                        } else if (distance === 2) {
+                            item.classList.add("next-next");
+                        } else if (distance === this.totalItems - 1) {
+                            item.classList.add("prev");
+                        } else if (distance === this.totalItems - 2) {
+                            item.classList.add("prev-prev");
+                        }
+                    });
+
+                    // Update dots
+                    this.dots.forEach((dot, index) => {
+                        dot.classList.toggle(
+                            "active",
+                            index === this.currentIndex,
+                        );
+                    });
+                }
+
+                startAutoPlay() {
+                    this.autoPlayInterval = setInterval(() => {
+                        this.next();
+                    }, 5000); // Change slide every 5 seconds
+                }
+
+                resetAutoPlay() {
+                    if (this.autoPlayInterval) {
+                        clearInterval(this.autoPlayInterval);
+                        this.startAutoPlay();
+                    }
+                }
+            }
+
+            // Initialize carousel when DOM is ready
+            document.addEventListener("DOMContentLoaded", () => {
+                new CoverflowCarousel();
+            });
+        </script>
+    </body>
 </html>
