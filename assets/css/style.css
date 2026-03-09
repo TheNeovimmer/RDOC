@@ -3,12 +3,15 @@
 /* ===== VARIABLES ===== */
 :root {
     --primary: #5CC4E5;
+    --cyan: #5CC4E5;
     --bg-dark: #000000;
     --text-white: #FFFFFF;
     --text-muted: rgba(255, 255, 255, 0.7);
     --text-dim: rgba(255, 255, 255, 0.5);
+    --text-light: #FFFFFF;
     --glass-bg: rgba(255, 255, 255, 0.21);
     --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-blur: 29px;
     --speed: 0.3s;
 }
 
@@ -23,14 +26,21 @@ body {
         url('../images/disto.png'),
         url('../images/disto.png'),
         url('../images/disto.png');
-    background-size: 350px, 450px, 300px, 400px, 500px, 350px;
-    background-position: 
-        top 5% left -5%, 
-        top 20% right -10%, 
-        top 40% left -10%, 
-        top 60% right -5%,
-        top 80% left -5%,
-        bottom 5% right 10%;
+    /* Fluid background pattern sizing & placement for all screens */
+    background-size:
+        clamp(180px, 28vw, 350px),
+        clamp(220px, 36vw, 450px),
+        clamp(160px, 24vw, 300px),
+        clamp(200px, 32vw, 400px),
+        clamp(240px, 40vw, 500px),
+        clamp(180px, 28vw, 350px);
+    background-position:
+        top 6% left clamp(-120px, -8vw, -40px),
+        top 18% right clamp(-140px, -10vw, -60px),
+        top 40% left clamp(-160px, -12vw, -70px),
+        top 62% right clamp(-120px, -8vw, -40px),
+        top 84% left clamp(-120px, -8vw, -40px),
+        bottom 6% right clamp(10px, 6vw, 140px);
     background-repeat: no-repeat;
     background-color: var(--bg-dark);
     color: var(--text-white);
@@ -838,7 +848,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .faq-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px;
     background: #000;
     border-radius: 52px;
@@ -871,6 +881,38 @@ img { max-width: 100%; height: auto; display: block; }
     font-size: 36px;
     font-weight: 700;
     margin: -14px 0 -14px -33px;
+    transition: background var(--speed), color var(--speed), transform var(--speed);
+}
+
+.faq-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.faq-question {
+    font-weight: 700;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-dim);
+    transition: max-height var(--speed), opacity var(--speed);
+}
+
+.faq-item.open .faq-answer {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.faq-item.open .faq-icon {
+    background: var(--primary);
+    color: #000;
+    transform: rotate(90deg);
 }
 
 /* ============================================================
@@ -1654,7 +1696,8 @@ img { max-width: 100%; height: auto; display: block; }
     cursor: pointer;
 }
 
-.pourquoi-tab:hover {
+.pourquoi-tab:hover,
+.pourquoi-tab.active {
     border-color: var(--cyan);
 }
 
@@ -1666,6 +1709,15 @@ img { max-width: 100%; height: auto; display: block; }
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     letter-spacing: 2px;
+}
+
+.pourquoi-box {
+    transition: transform var(--speed), opacity var(--speed);
+}
+
+.pourquoi-box.updating {
+    transform: translateY(-4px);
+    opacity: 0.92;
 }
 
 @media (max-width: 1024px) {

@@ -56,4 +56,42 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // FAQ accordion on index page
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (faqItems.length) {
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                faqItems.forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+    }
+
+    // "Pourquoi RDOC ?" interactive tabs on apropos page
+    const pourquoiTabs = document.querySelectorAll('.pourquoi-tab');
+    const pourquoiBox = document.querySelector('.pourquoi-box');
+    if (pourquoiTabs.length && pourquoiBox) {
+        const titleEl = pourquoiBox.querySelector('h3');
+        const textEl = pourquoiBox.querySelector('p');
+
+        pourquoiTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const title = tab.dataset.title;
+                const text = tab.dataset.text;
+                if (title && text && titleEl && textEl) {
+                    pourquoiTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    // Simple fade/slide effect via class
+                    pourquoiBox.classList.add('updating');
+                    setTimeout(() => {
+                        titleEl.textContent = title;
+                        textEl.textContent = text;
+                        pourquoiBox.classList.remove('updating');
+                    }, 150);
+                }
+            });
+        });
+    }
 });
