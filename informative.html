@@ -16,8 +16,9 @@
       .logo-img { height: 38px; }
       .auth-button { display: inline-flex; align-items: center; justify-content: center; padding: 6px 23px; height: 40px; border-radius: 18px; border: 1px solid transparent; background-image: linear-gradient(#000, #000), linear-gradient(135deg, #FFFFFF, #5CC4E5); background-origin: border-box; background-clip: padding-box, border-box; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 500; color: #FFFFFF; text-decoration: none; }
       .nav-pill-bar { display: flex; align-items: center; gap: 22px; height: 55px; padding: 0 40px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 28px; backdrop-filter: blur(10px); }
-      .nav-pill-link { font-family: 'Orbitron', sans-serif; font-size: 20px; color: #FFFFFF; text-decoration: none; }
-      .nav-pill-link.active { font-weight:  #5CC4700; color:E5; }
+      .nav-pill-link { font-family: 'Orbitron', sans-serif; font-size: 20px; color: #FFFFFF; text-decoration: none; transition: all 0.3s; }
+      .nav-pill-link:hover { color: #5CC4E5; }
+      .nav-pill-link.active { font-weight: 700; color: #5CC4E5; }
       .informative-hero { position: relative; height: 760px; display: flex; align-items: center; justify-content: center; }
       .hero-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(7.6px); }
       .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.95)); }
@@ -74,9 +75,20 @@
       .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.5); }
       .form-group input:focus, .form-group textarea:focus { border-color: #5CC4E5; }
       .btn-submit { width: 100%; padding: 16px; background: #5CC4E5; border: none; border-radius: 30px; color: #000000; font-family: 'Orbitron', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer; }
-      @media (max-width: 1024px) { .nav-pill-bar { display: none; } .solution-grid, .pricing-grid, .testimonials-grid { grid-template-columns: 1fr; } }
-      @media (max-width: 768px) { .hero-title { font-size: 32px; } .hero-subtitle { font-size: 18px; } }
+      @media (max-width: 1024px) {
+        .nav-pill-bar { display: none; }
+      }
+      @media (max-width: 768px) {
+        .solution-grid,
+        .pricing-grid,
+        .testimonials-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-title { font-size: 32px; }
+        .hero-subtitle { font-size: 18px; }
+      }
     </style>
+    <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
 <body class="informative-page">
     <!-- Mobile Logo -->
@@ -84,10 +96,12 @@
       <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="h-10">
     </a>
 
-    <!-- Desktop NAVBAR -->
-    <div class="absolute top-0 left-0 right-0 z-50 hidden lg:flex justify-between items-center px-6 md:px-16 lg:px-24 py-5">
-      <a href="index.html" class="logo"><img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="logo-img"></a>
-      <nav class="nav-pill-bar hidden md:flex">
+    <!-- Desktop NAVBAR - Fixed at top -->
+    <div class="fixed top-0 left-0 right-0 z-50 hidden lg:flex justify-between items-center px-6 md:px-16 lg:px-24 py-5 bg-black/80 backdrop-blur-md">
+      <a href="index.html" class="logo">
+        <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="logo-img">
+      </a>
+      <nav class="nav-pill-bar">
         <a href="index.html" class="nav-pill-link">Accueil</a>
         <a href="apropos.html" class="nav-pill-link">A propos</a>
         <a href="categorie.html" class="nav-pill-link active">Catégorie</a>
@@ -118,12 +132,12 @@
     <div class="lg:hidden" style="height: 70px;"></div>
 
     <!-- HERO -->
-    <section class="informative-hero">
+    <section class="informative-hero pt-20 lg:pt-0">
         <div class="absolute inset-0 z-0"><img src="assets/images/informative/Gemini_Generated_Image_eb0tv6eb0tv6eb0t 2.png" alt="Mall" class="hero-bg-img"><div class="hero-overlay"></div></div>
-        <div class="relative z-10 container mx-auto px-6 text-center">
-            <h1 class="hero-title">L'intelligence au service de vos besoins</h1>
-            <p class="hero-subtitle">Obtenez des informations en temps réel et partout où vous souhaitez<br>par un robot grâce à son support interactif et sa vaste précision.</p>
-            <a href="#commander" class="btn-primary">Commander</a>
+        <div class="relative z-10 container mx-auto px-4 md:px-6 text-center">
+            <h1 class="hero-title text-3xl md:text-4xl lg:text-5xl">L'intelligence au service de vos besoins</h1>
+            <p class="hero-subtitle text-base md:text-lg lg:text-2xl">Obtenez des informations en temps réel et partout où vous souhaitez<br>par un robot grâce à son support interactif et sa vaste précision.</p>
+            <a href="#commander" class="btn-primary text-sm md:text-base px-8 md:px-12">Commander</a>
         </div>
     </section>
 
@@ -134,9 +148,9 @@
                 <div class="section-badge">Information</div>
                 <h2 class="section-main-title">Une solution informative sans limites</h2>
             </div>
-            <div class="solution-grid">
-                <div class="solution-card"><div class="card-image"><img src="assets/images/informative/Gemini_Generated_Image_eb0tv6eb0tv6eb0t 3.png" alt="Robot"></div><div class="card-info"><h3>ROBOT EN CLIENT</h3><p>Inspiration et ressources</p></div></div>
-                <div class="solution-card"><div class="card-image"><img src="assets/images/informative/Gemini_Generated_Image_y4jrwly4jrwly4jr 1.png" alt="Infos"></div><div class="card-info"><h3>INFOS UTILES</h3><p>Innovation et enseignement</p></div></div>
+            <div class="solution-grid grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
+                <div class="solution-card"><div class="card-image h-40 md:h-60 lg:h-[250px]"><img src="assets/images/informative/Gemini_Generated_Image_eb0tv6eb0tv6eb0t 3.png" alt="Robot"></div><div class="card-info p-4 md:p-6"><h3>ROBOT EN CLIENT</h3><p>Inspiration et ressources</p></div></div>
+                <div class="solution-card"><div class="card-image h-40 md:h-60 lg:h-[250px]"><img src="assets/images/informative/Gemini_Generated_Image_y4jrwly4jrwly4jr 1.png" alt="Infos"></div><div class="card-info p-4 md:p-6"><h3>INFOS UTILES</h3><p>Innovation et enseignement</p></div></div>
             </div>
             <div class="text-center"><a href="#" class="btn-discover-more">Découvrir</a></div>
         </div>
@@ -172,9 +186,9 @@
     <section class="py-[100px]">
         <div class="container mx-auto px-6">
             <h2 class="sensors-title">NOS PACKS</h2>
-            <div class="pricing-grid mt-[60px]">
-                <div class="pricing-card"><h3>ESSAI Gratuit</h3><p class="price">Venez tester notre robot</p><ul class="features text-left"><li>Vérifier le robot</li><li>Découvrir ses fonctionnalités</li><li>Expérience guidée</li><li>Poser vos questions</li><li>Tester l'écran interactif</li></ul><a href="#" class="btn-pack btn-outline">Essai Gratuit</a></div>
-                <div class="pricing-card highlighted"><h3>ACHAT ROBOT</h3><p class="price">Obtenez un robot pour tous vos besoins</p><ul class="features text-left"><li>Propriété de l'acheteur</li><li>Tout accès à vos besoins</li><li>24/7 de maintenance</li><li>Soutien d'experts dédié</li><li>Mises à jour de sécurité</li></ul><a href="#" class="btn-pack btn-solid">Achat Robot</a></div>
+            <div class="pricing-grid grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
+                <div class="pricing-card p-4 md:p-8"><h3>ESSAI Gratuit</h3><p class="price">Venez tester notre robot</p><ul class="features text-left"><li>Vérifier le robot</li><li>Découvrir ses fonctionnalités</li><li>Expérience guidée</li><li>Poser vos questions</li><li>Tester l'écran interactif</li></ul><a href="#" class="btn-pack btn-outline">Essai Gratuit</a></div>
+                <div class="pricing-card highlighted p-4 md:p-8"><h3>ACHAT ROBOT</h3><p class="price">Obtenez un robot pour tous vos besoins</p><ul class="features text-left"><li>Propriété de l'acheteur</li><li>Tout accès à vos besoins</li><li>24/7 de maintenance</li><li>Soutien d'experts dédié</li><li>Mises à jour de sécurité</li></ul><a href="#" class="btn-pack btn-solid">Achat Robot</a></div>
             </div>
         </div>
     </section>
@@ -183,10 +197,10 @@
     <section class="py-[100px]">
         <div class="container mx-auto px-6">
             <h2 class="sensors-title">AVIS CLIENTS</h2>
-            <div class="testimonials-grid mt-[60px]">
-                <div class="testimonial-card"><img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Amira" class="feedback-avatar"><h4>Amira Ben Salah</h4><p>UN ROBOT TRÈS PRÉCIEUX aider énormément pour vous servir mieux.</p></div>
-                <div class="testimonial-card"><img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Lina" class="feedback-avatar"><h4>Lina Mhiri</h4><p>Très pratique et facile à utiliser, je recommande !</p></div>
-                <div class="testimonial-card"><img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Sofien" class="feedback-avatar"><h4>Sofien Trabelsi</h4><p>SERVICE DE HAUTE QUALITÉ.</p></div>
+            <div class="testimonials-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 mt-8 md:mt-12">
+                <div class="testimonial-card p-4 md:p-6"><img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Amira" class="feedback-avatar w-16 h-16 md:w-20 md:h-20"><h4>Amira Ben Salah</h4><p>UN ROBOT TRÈS PRÉCIEUX aider énormément pour vous servir mieux.</p></div>
+                <div class="testimonial-card p-4 md:p-6"><img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Lina" class="feedback-avatar w-16 h-16 md:w-20 md:h-20"><h4>Lina Mhiri</h4><p>Très pratique et facile à utiliser, je recommande !</p></div>
+                <div class="testimonial-card p-4 md:p-6"><img src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png" alt="Sofien" class="feedback-avatar w-16 h-16 md:w-20 md:h-20"><h4>Sofien Trabelsi</h4><p>SERVICE DE HAUTE QUALITÉ.</p></div>
             </div>
             <div class="text-center"><a href="#" class="btn-more-feedback">Lire plus</a></div>
         </div>

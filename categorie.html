@@ -99,19 +99,15 @@
         .cat-hero-subtitle { font-size: 18px; }
       }
     </style>
+    <link rel="stylesheet" href="assets/css/responsive.css" />
   </head>
   <body class="categorie-page">
-    <!-- Mobile Logo -->
-    <a href="index.html" class="logo lg:hidden absolute top-5 left-6 z-50">
-      <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="h-10">
-    </a>
-
-    <!-- Desktop NAVBAR -->
-    <div class="absolute top-0 left-0 right-0 z-50 hidden lg:flex justify-between items-center px-6 md:px-16 lg:px-24 py-5">
+    <!-- Desktop NAVBAR - Fixed at top -->
+    <div class="fixed top-0 left-0 right-0 z-50 hidden lg:flex justify-between items-center px-6 md:px-16 lg:px-24 py-5 bg-black/80 backdrop-blur-md">
       <a href="index.html" class="logo">
         <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="logo-img">
       </a>
-      <nav class="nav-pill-bar hidden md:flex">
+      <nav class="nav-pill-bar">
         <a href="index.html" class="nav-pill-link">Accueil</a>
         <a href="apropos.html" class="nav-pill-link">A propos</a>
         <a href="categorie.html" class="nav-pill-link active">Catégorie</a>
@@ -122,6 +118,11 @@
       <a href="#" class="auth-button">Sign up / Sign in</a>
     </div>
 
+    <!-- Mobile Logo -->
+    <a href="index.html" class="logo lg:hidden absolute top-5 left-6 z-50">
+      <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="h-10">
+    </a>
+
     <!-- Mobile Bottom Navigation -->
     <div class="fixed bottom-0 left-0 right-0 lg:hidden z-50 bg-black/95 backdrop-blur-md border-t border-[rgba(255,255,255,0.1)] px-4 py-3">
       <div class="flex justify-around items-center text-white">
@@ -130,7 +131,7 @@
               Accueil
           </a>
           <a href="apropos.html" class="flex flex-col items-center text-xs text-white/70">
-              <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+              <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
               A propos
           </a>
           <a href="categorie.html" class="flex flex-col items-center text-xs text-primary">
@@ -146,7 +147,7 @@
     <div class="lg:hidden" style="height: 70px;"></div>
 
     <!-- ====== HERO CATEGORIE ====== -->
-    <section class="categorie-hero" id="accueil">
+    <section class="categorie-hero pt-20 lg:pt-0" id="accueil">
       <div class="container mx-auto px-6">
         <div class="categorie-hero-text max-w-[900px] mx-auto">
           <h1 class="cat-hero-title">Apprenez en vous amusant à la maison</h1>
