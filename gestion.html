@@ -60,15 +60,18 @@
       .testimonial-card h4 { font-family: 'Orbitron', sans-serif; font-size: 16px; color: #FFFFFF; margin-bottom: 10px; }
       .testimonial-card p { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255,255,255,0.7); }
       .btn-commander-large { display: inline-flex; padding: 20px 80px; background: #5CC4E5; color: #000000; font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 700; border-radius: 50px; border: none; text-decoration: none; }
-      .hamburger-menu { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-      .hamburger-menu span { width: 25px; height: 3px; background: #FFFFFF; }
-      @media (max-width: 1024px) { .hamburger-menu { display: flex; } .nav-pill-bar { display: none; } .solution-grid, .pricing-grid, .testimonials-grid { grid-template-columns: 1fr; } }
+      @media (max-width: 1024px) { .nav-pill-bar { display: none; } .solution-grid, .pricing-grid, .testimonials-grid { grid-template-columns: 1fr; } }
       @media (max-width: 768px) { .hero-title { font-size: 32px; } .hero-subtitle { font-size: 18px; } }
     </style>
 </head>
 <body class="gestion-page">
-    <!-- NAVBAR -->
-    <div class="absolute top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-16 lg:px-24 py-5">
+    <!-- Mobile Logo -->
+    <a href="index.html" class="logo lg:hidden absolute top-5 left-6 z-50">
+      <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="h-10">
+    </a>
+
+    <!-- Desktop NAVBAR -->
+    <div class="absolute top-0 left-0 right-0 z-50 hidden lg:flex justify-between items-center px-6 md:px-16 lg:px-24 py-5">
       <a href="index.html" class="logo"><img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="logo-img"></a>
       <nav class="nav-pill-bar hidden md:flex">
         <a href="index.html" class="nav-pill-link">Accueil</a>
@@ -78,9 +81,27 @@
         <a href="index.html#blog" class="nav-pill-link">Blog</a>
         <a href="index.html#contact" class="nav-pill-link">Contact</a>
       </nav>
-      <div class="hamburger-menu" onclick="toggleMenu()"><span></span><span></span><span></span></div>
       <a href="#" class="auth-button">Sign up / Sign in</a>
     </div>
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="fixed bottom-0 left-0 right-0 lg:hidden z-50 bg-black/95 backdrop-blur-md border-t border-[rgba(255,255,255,0.1)] px-4 py-3">
+      <div class="flex justify-around items-center text-white">
+          <a href="index.html" class="flex flex-col items-center text-xs text-white/70">
+              <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+              Accueil
+          </a>
+          <a href="categorie.html" class="flex flex-col items-center text-xs text-primary">
+              <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/></svg>
+              Catégorie
+          </a>
+          <a href="index.html#contact" class="flex flex-col items-center text-xs text-white/70">
+              <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+              Contact
+          </a>
+      </div>
+    </div>
+    <div class="lg:hidden" style="height: 70px;"></div>
 
     <!-- HERO -->
     <section class="gestion-hero">
@@ -173,6 +194,5 @@
         </div>
     </footer>
     <script src="assets/js/main.js"></script>
-    <script>function toggleMenu(){const n=document.querySelector('.nav-pill-bar');if(n){n.classList.toggle('hidden');n.classList.toggle('flex');n.classList.toggle('flex-col');n.classList.toggle('absolute');n.classList.toggle('top-20');n.classList.toggle('left-0');n.classList.toggle('right-0');n.classList.toggle('bg-black');n.classList.toggle('p-5');n.classList.toggle('z-50');}}</script>
 </body>
 </html>
