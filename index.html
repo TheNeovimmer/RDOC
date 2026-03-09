@@ -231,7 +231,7 @@
                 position: relative;
                 border-radius: 20px;
                 overflow: hidden;
-                aspect-ratio: 387/380;
+                aspect-ratio: 1;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
@@ -505,8 +505,16 @@
                     max-width: 350px;
                 }
                 .featured-card {
-                    max-width: 387px;
+                    width: 100%;
+                    max-width: 100%;
                     margin: 0 auto;
+                }
+                .auth-button.lg\:hidden {
+                    padding: 4px 16px;
+                    height: 36px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    white-space: nowrap;
                 }
             }
         </style>
@@ -578,12 +586,12 @@
                     </a>
                 </div>
 
-                <!-- Mobile: Logo only -->
+                <!-- Mobile: Logo only (smaller) -->
                 <a href="index.html" class="logo lg:hidden">
                     <img
                         src="assets/images/Plan de travail 1 1.png"
                         alt="RDOC"
-                        class="h-10"
+                        class="h-6"
                     />
                 </a>
 
@@ -593,6 +601,11 @@
                         >Sign up / Sign in</a
                     >
                 </div>
+
+                <!-- Mobile: Auth Button (top right) -->
+                <a href="login.html" class="auth-button lg:hidden"
+                    >Sign up / Sign in</a
+                >
             </div>
 
             <!-- Desktop: Hero Navigation -->
@@ -696,21 +709,6 @@
                             />
                         </svg>
                         Contact
-                    </a>
-                    <a
-                        href="login.html"
-                        class="flex flex-col items-center text-xs text-white/70"
-                    >
-                        <svg
-                            class="w-6 h-6 mb-1"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5z"
-                            />
-                        </svg>
-                        Connexion
                     </a>
                 </div>
             </div>
