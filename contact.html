@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="RDOC - Contactez-nous pour toutes vos questions sur nos solutions robotiques."
+        />
+        <title>Contact - RDOC</title>
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#5CC4E5",
+                            "bg-dark": "#000000",
+                            "text-white": "#FFFFFF",
+                            "text-muted": "rgba(255, 255, 255, 0.7)",
+                            "text-dim": "rgba(255, 255, 255, 0.5)",
+                            "glass-bg": "rgba(255, 255, 255, 0.21)",
+                            "glass-border": "rgba(255, 255, 255, 0.1)",
+                        },
+                        fontFamily: {
+                            orbitron: ["Orbitron", "sans-serif"],
+                            inter: ["Inter", "sans-serif"],
+                        },
+                        backdropBlur: {
+                            29: "29px",
+                        },
+                        maxWidth: {
+                            container: "1440px",
+                        },
+                    },
+                },
+            };
+        </script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            body {
+                background-image:
+                    url("assets/images/disto.png"),
+                    url("assets/images/disto.png"),
+                    url("assets/images/disto.png"),
+                    url("assets/images/disto.png"),
+                    url("assets/images/disto.png"),
+                    url("assets/images/disto.png");
+                background-size:
+                    clamp(180px, 28vw, 350px), clamp(220px, 36vw, 450px),
+                    clamp(160px, 24vw, 300px), clamp(200px, 32vw, 400px),
+                    clamp(240px, 40vw, 500px), clamp(180px, 28vw, 350px);
+                background-position:
+                    top 6% left clamp(-120px, -8vw, -40px),
+                    top 18% right clamp(-140px, -10vw, -60px),
+                    top 40% left clamp(-160px, -12vw, -70px),
+                    top 62% right clamp(-120px, -8vw, -40px),
+                    top 84% left clamp(-120px, -8vw, -40px),
+                    bottom 6% right clamp(10px, 6vw, 140px);
+                background-repeat: no-repeat;
+                background-color: #000000;
+            }
+            .glass {
+                background: rgba(255, 255, 255, 0.21);
+                backdrop-filter: blur(29px);
+                -webkit-backdrop-filter: blur(29px);
+            }
+            .logo-img {
+                height: 38px;
+                width: auto;
+            }
+            .auth-button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 6px 23px;
+                height: 40px;
+                border-radius: 18px;
+                border: 1px solid transparent;
+                background-image:
+                    linear-gradient(#000, #000),
+                    linear-gradient(135deg, #ffffff, #5cc4e5);
+                background-origin: border-box;
+                background-clip: padding-box, border-box;
+                font-family: "Inter", sans-serif;
+                font-size: 16px;
+                font-weight: 500;
+                letter-spacing: -0.176px;
+                line-height: 24px;
+                color: #ffffff;
+                transition: all 0.3s;
+                text-decoration: none;
+            }
+            .auth-button:hover {
+                background-image:
+                    linear-gradient(
+                        rgba(92, 196, 229, 0.1),
+                        rgba(92, 196, 229, 0.1)
+                    ),
+                    linear-gradient(135deg, #5cc4e5, #ffffff);
+            }
+            .nav-pill-bar {
+                display: flex;
+                align-items: center;
+                gap: 22px;
+                height: 55px;
+                padding: 0 40px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                border-radius: 28px;
+                backdrop-filter: blur(10px);
+            }
+            .nav-pill-link {
+                font-family: "Orbitron", sans-serif;
+                font-size: 20px;
+                color: #ffffff;
+                text-decoration: none;
+                transition: all 0.3s;
+                letter-spacing: -0.22px;
+            }
+            .nav-pill-link.active {
+                font-weight: 700;
+                color: #5cc4e5;
+            }
+            .nav-pill-link:hover {
+                color: #5cc4e5;
+            }
+            .form-input {
+                width: 100%;
+                padding: 16px 24px;
+                background: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                color: #ffffff;
+                font-family: "Inter", sans-serif;
+                font-size: 14px;
+                transition: border-color 0.3s;
+                outline: none;
+            }
+            .form-input::placeholder {
+                color: rgba(255, 255, 255, 0.5);
+            }
+            .form-input:focus {
+                border-color: #5cc4e5;
+            }
+            .form-textarea {
+                min-height: 80px;
+                resize: vertical;
+                border-radius: 20px;
+            }
+            .contact-icon-box {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .contact-icon-circle {
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                background: rgba(92, 196, 229, 0.1);
+                border: 1px solid rgba(92, 196, 229, 0.3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 16px;
+                transition: all 0.3s;
+            }
+            .contact-icon-circle:hover {
+                background: rgba(92, 196, 229, 0.2);
+                border-color: #5cc4e5;
+            }
+            .contact-icon-circle svg {
+                width: 40px;
+                height: 40px;
+                color: #5cc4e5;
+            }
+            .contact-icon-label {
+                font-family: "Inter", sans-serif;
+                font-size: 16px;
+                font-weight: 400;
+                color: rgba(255, 255, 255, 0.7);
+                margin-bottom: 4px;
+            }
+            .contact-icon-value {
+                font-family: "Inter", sans-serif;
+                font-size: 14px;
+                font-weight: 600;
+                color: #ffffff;
+            }
+            .contact-icon-value a {
+                color: #ffffff;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+            .contact-icon-value a:hover {
+                color: #5cc4e5;
+            }
+            .contact-form-card {
+                background: rgba(98, 98, 98, 0.4);
+                border-radius: 20px;
+                padding: 40px;
+                backdrop-filter: blur(253px);
+                -webkit-backdrop-filter: blur(253px);
+                border: 2px solid rgba(255, 255, 255, 0.1);
+                position: relative;
+                overflow: hidden;
+            }
+            .contact-form-inner {
+                position: relative;
+                z-index: 2;
+            }
+            .contact-form-decoration {
+                position: absolute;
+                bottom: -20px;
+                right: -30px;
+                opacity: 0.15;
+                z-index: 1;
+            }
+            .map-container {
+                border-radius: 20px;
+                overflow: hidden;
+                border: 2px solid rgba(255, 255, 255, 0.1);
+                background: rgba(0, 0, 0, 0.3);
+            }
+            .map-container iframe {
+                width: 100%;
+                height: 100%;
+                min-height: 400px;
+                border: none;
+            }
+            .ready-banner {
+                position: relative;
+                border-radius: 20px;
+                overflow: hidden;
+            }
+            .ready-banner-overlay {
+                position: absolute;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.7);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 60px 40px;
+            }
+            .ready-banner-text {
+                font-family: "Orbitron", sans-serif;
+                font-size: 40px;
+                font-weight: 700;
+                color: #ffffff;
+                line-height: 1.3;
+                margin-bottom: 10px;
+            }
+            .ready-banner-text span {
+                color: #5cc4e5;
+            }
+            .ready-banner-sub {
+                font-family: "Inter", sans-serif;
+                font-size: 20px;
+                font-weight: 400;
+                color: #ffffff;
+                margin-bottom: 30px;
+            }
+            .btn-primary {
+                display: inline-block;
+                padding: 14px 40px;
+                background: #5cc4e5;
+                border: none;
+                border-radius: 40px;
+                color: #000000;
+                font-family: "Orbitron", sans-serif;
+                font-size: 16px;
+                font-weight: 700;
+                text-decoration: none;
+                transition: all 0.3s;
+                box-shadow: 0 0 20px rgba(92, 196, 229, 0.4);
+            }
+            .btn-primary:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 30px rgba(92, 196, 229, 0.6);
+            }
+            .btn-outline {
+                display: inline-block;
+                padding: 14px 46px;
+                background: #000;
+                border: none;
+                border-radius: 50px;
+                color: #5cc4e5;
+                font-family: "Orbitron", sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                letter-spacing: 2.6px;
+                text-align: center;
+                box-shadow: 1px -1px 19.7px 0px #5cc4e5;
+                opacity: 0.8;
+                transition: all 0.3s;
+                cursor: pointer;
+                text-decoration: none;
+            }
+            .btn-outline:hover {
+                opacity: 1;
+                box-shadow: 1px -1px 30px 0px #5cc4e5;
+            }
+            @media (max-width: 1024px) {
+                .nav-pill-bar {
+                    display: none;
+                }
+                .ready-banner-text {
+                    font-size: 32px;
+                }
+            }
+            @media (max-width: 768px) {
+                .contact-form-card {
+                    padding: 30px 20px;
+                }
+                .ready-banner-text {
+                    font-size: 24px;
+                }
+                .ready-banner-sub {
+                    font-size: 16px;
+                }
+                .ready-banner-overlay {
+                    padding: 40px 20px;
+                }
+            }
+        </style>
+        <link rel="stylesheet" href="assets/css/responsive.css" />
+    </head>
+    <body class="contact-page">
+        <!-- Desktop: NAVBAR - Fixed at top -->
+        <div
+            class="fixed top-0 left-0 right-0 z-50 hidden lg:flex justify-between items-center px-6 md:px-16 lg:px-24 py-5 bg-black/80 backdrop-blur-md"
+        >
+            <a href="index.html" class="logo">
+                <img
+                    src="assets/images/Plan de travail 1 1.png"
+                    alt="RDOC"
+                    class="logo-img"
+                />
+            </a>
+            <nav class="nav-pill-bar">
+                <a href="index.html" class="nav-pill-link">Accueil</a>
+                <a href="apropos.html" class="nav-pill-link">A propos</a>
+                <a href="categorie.html" class="nav-pill-link">Categorie</a>
+                <a href="index.html#produit" class="nav-pill-link">Produit</a>
+                <a href="index.html#blog" class="nav-pill-link">Blog</a>
+                <a href="contact.html" class="nav-pill-link active">Contact</a>
+            </nav>
+            <a href="login.html" class="auth-button">Sign up / Sign in</a>
+        </div>
+
+        <!-- Mobile Logo -->
+        <a href="index.html" class="logo lg:hidden absolute top-5 left-6 z-50">
+            <img
+                src="assets/images/Plan de travail 1 1.png"
+                alt="RDOC"
+                class="h-10"
+            />
+        </a>
+
+        <!-- Mobile Bottom Navigation -->
+        <div
+            class="fixed bottom-0 left-0 right-0 lg:hidden z-50 bg-black/95 backdrop-blur-md border-t border-[rgba(255,255,255,0.1)] px-4 py-3"
+        >
+            <div class="flex justify-around items-center text-white">
+                <a
+                    href="index.html"
+                    class="flex flex-col items-center text-xs text-white/70"
+                >
+                    <svg
+                        class="w-6 h-6 mb-1"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                    >
+                        <title>Accueil</title>
+                        <path
+                            d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+                        />
+                    </svg>
+                    Accueil
+                </a>
+                <a
+                    href="apropos.html"
+                    class="flex flex-col items-center text-xs text-white/70"
+                >
+                    <svg
+                        class="w-6 h-6 mb-1"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                    >
+                        <title>A propos</title>
+                        <path
+                            fill-rule="evenodd"
+                            d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                            clip-rule="evenodd"
+                        />
+                    </svg>
+                    A propos
+                </a>
+                <a
+                    href="categorie.html"
+                    class="flex flex-col items-center text-xs text-white/70"
+                >
+                    <svg
+                        class="w-6 h-6 mb-1"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                    >
+                        <title>Categorie</title>
+                        <path
+                            d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"
+                        />
+                    </svg>
+                    Categorie
+                </a>
+                <a
+                    href="contact.html"
+                    class="flex flex-col items-center text-xs text-primary"
+                >
+                    <svg
+                        class="w-6 h-6 mb-1"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                    >
+                        <title>Contact</title>
+                        <path
+                            d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                        />
+                        <path
+                            d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                        />
+                    </svg>
+                    Contact
+                </a>
+            </div>
+        </div>
+
+        <!-- Add padding top for fixed navbar on desktop -->
+        <div class="hidden lg:block" style="height: 80px"></div>
+
+        <!-- ====== CONTACT PAGE CONTENT ====== -->
+        <section class="py-[60px] lg:py-[80px]">
+            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
+
+                <!-- Header: Title & Subtitle -->
+                <div class="text-center mb-[50px] md:mb-[60px]">
+                    <h1 class="font-orbitron font-bold text-[36px] md:text-[40px] lg:text-[48px] text-white mb-4">
+                        <span class="text-primary">Contactez</span> nous
+                    </h1>
+                    <p class="font-inter text-base md:text-lg text-white max-w-[800px] mx-auto leading-relaxed">
+                        Vous avez des questions ou souhaitez en savoir plus sur nos robots et services RDOC ? Notre equipe est a votre disposition pour vous accompagner et repondre a toutes vos demandes rapidement et efficacement.
+                    </p>
+                </div>
+
+                <!-- Contact Info Cards -->
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-[30px] mb-[50px] md:mb-[60px]">
+                    <!-- Phone -->
+                    <div class="contact-icon-box">
+                        <div class="contact-icon-circle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                            </svg>
+                        </div>
+                        <span class="contact-icon-label">Numero de telephone</span>
+                        <span class="contact-icon-value">
+                            <a href="tel:+21673987296">+216 73 987 296</a>
+                        </span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="contact-icon-box">
+                        <div class="contact-icon-circle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                            </svg>
+                        </div>
+                        <span class="contact-icon-label">Adresse email</span>
+                        <span class="contact-icon-value">
+                            <a href="mailto:RDOC@gmail.com">RDOC@gmail.com</a>
+                        </span>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="contact-icon-box">
+                        <div class="contact-icon-circle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                            </svg>
+                        </div>
+                        <span class="contact-icon-label">Notre adresse</span>
+                        <span class="contact-icon-value">Taieb mhiri, Sousse, Tunis</span>
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div class="contact-icon-box">
+                        <div class="contact-icon-circle">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </div>
+                        <span class="contact-icon-label">Numero de whatsapp</span>
+                        <span class="contact-icon-value">
+                            <a href="https://wa.me/21673987296" target="_blank" rel="noopener noreferrer">+216 73 987 296</a>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Main Content: Form + Map Side by Side -->
+                <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[40px] lg:gap-[60px] items-start">
+
+                    <!-- Contact Form Card -->
+                    <div class="contact-form-card">
+                        <div class="contact-form-inner">
+                            <h2 class="font-inter text-base font-light text-white mb-2">Contactez nous</h2>
+                            <h3 class="font-orbitron font-bold text-xl md:text-2xl text-white mb-8">Entrer en contact</h3>
+
+                            <form class="flex flex-col gap-5">
+                                <div>
+                                    <label class="font-inter text-sm font-light text-white/40 mb-2 block">Nom</label>
+                                    <input
+                                        type="text"
+                                        class="form-input"
+                                        placeholder="Ton Nom...."
+                                    />
+                                </div>
+                                <div>
+                                    <label class="font-inter text-sm font-light text-white/40 mb-2 block">Email</label>
+                                    <input
+                                        type="email"
+                                        class="form-input"
+                                        placeholder="Ton Email...."
+                                    />
+                                </div>
+                                <div>
+                                    <label class="font-inter text-sm font-light text-white/40 mb-2 block">Sujet</label>
+                                    <input
+                                        type="text"
+                                        class="form-input"
+                                        placeholder="Ton Sujet...."
+                                    />
+                                </div>
+                                <div>
+                                    <label class="font-inter text-sm font-light text-white/40 mb-2 block">Message</label>
+                                    <textarea
+                                        class="form-input form-textarea"
+                                        placeholder="Tapez ici...."
+                                    ></textarea>
+                                </div>
+                                <button type="submit" class="btn-outline mt-2 w-full text-center justify-center flex items-center gap-2">
+                                    Envoyer
+                                </button>
+                            </form>
+                        </div>
+                        <!-- Decorative element -->
+                        <svg class="contact-form-decoration" width="213" height="79" viewBox="0 0 213 79" fill="none">
+                            <path d="M1 39.5C1 18.5 18.5 1 39.5 1C60.5 1 78 18.5 78 39.5C78 60.5 60.5 78 39.5 78C18.5 78 1 60.5 1 39.5Z" stroke="#5CC4E5" stroke-width="2"/>
+                            <path d="M79 39.5C79 18.5 96.5 1 117.5 1C138.5 1 156 18.5 156 39.5C156 60.5 138.5 78 117.5 78C96.5 78 79 60.5 79 39.5Z" stroke="#5CC4E5" stroke-width="2"/>
+                            <path d="M157 39.5C157 18.5 174.5 1 195.5 1C216.5 1 234 18.5 234 39.5C234 60.5 216.5 78 195.5 78C174.5 78 157 60.5 157 39.5Z" stroke="#5CC4E5" stroke-width="2"/>
+                        </svg>
+                    </div>
+
+                    <!-- Google Maps -->
+                    <div class="map-container h-full min-h-[400px] lg:min-h-full">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25897.456978687!2d10.5956!3d35.8256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1302754e34c7d99f%3A0x66ffdc4c7a3ad6a1!2sSousse%2C%20Tunisia!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Localisation RDOC - Sousse, Tunisia"
+                        ></iframe>
+                    </div>
+
+                </div>
+
+                <!-- Ready Banner -->
+                <div class="ready-banner mt-[60px]">
+                    <img
+                        src="assets/images/contact/Gemini_Generated_Image_becawgbecawgbeca 1.png"
+                        alt="Ready Banner Background"
+                        class="w-full h-auto object-cover rounded-[20px]"
+                        style="max-height: 400px;"
+                    />
+                    <div class="ready-banner-overlay">
+                        <h2 class="ready-banner-text">
+                            Nous sommes toujours prets<br/>
+                            <span>24h/7</span>
+                        </h2>
+                        <p class="ready-banner-sub">
+                            Decouvrez nos solutions robotiques des maintenant
+                        </p>
+                        <a href="login.html" class="btn-primary">Commencer</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ====== FOOTER ====== -->
+        <footer class="py-[80px] pb-10 border-t border-[rgba(255,255,255,0.1)]">
+            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] mb-[50px]"
+                >
+                    <div>
+                        <img
+                            src="assets/images/Plan de travail 1 1.png"
+                            alt="RDOC"
+                            class="h-[60px] w-auto mb-4"
+                        />
+                        <p
+                            class="font-inter text-sm text-[rgba(255,255,255,0.5)] leading-relaxed"
+                        >
+                            Notre equipe d'experts passionnes fournit des
+                            solutions robotiques exceptionelles, concues pour
+                            repondre aux besoins varies de nos clients.
+                        </p>
+                    </div>
+                    <div>
+                        <h4
+                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                        >
+                            Pages
+                        </h4>
+                        <ul class="flex flex-col gap-2.5">
+                            <li>
+                                <a
+                                    href="index.html"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Accueil</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="apropos.html"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >A propos</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="categorie.html"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Categorie</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="index.html#produit"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Produit</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="index.html#blog"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Blog</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="contact.html"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Contact</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4
+                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                        >
+                            Aide
+                        </h4>
+                        <ul class="flex flex-col gap-2.5">
+                            <li>
+                                <a
+                                    href="index.html#faq"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >FAQ</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Politique de confidentialite</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    >Conditions d'utilisation</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4
+                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                        >
+                            Contact
+                        </h4>
+                        <ul class="flex flex-col gap-2.5">
+                            <li
+                                class="font-inter text-sm text-[rgba(255,255,255,0.5)]"
+                            >
+                                +216 73 987 296
+                            </li>
+                            <li>
+                                <a
+                                    href="mailto:RDOC@gmail.com"
+                                    class="font-inter text-sm text-primary hover:opacity-70 transition-opacity"
+                                    >RDOC@gmail.com</a
+                                >
+                            </li>
+                            <li
+                                class="font-inter text-sm text-[rgba(255,255,255,0.5)]"
+                            >
+                                Taieb mhiri, Sousse, Tunis
+                            </li>
+                        </ul>
+                        <div class="flex gap-[15px] mt-4">
+                            <a
+                                href="#"
+                                class="font-inter text-sm font-bold text-white hover:text-primary transition-colors"
+                                >FB</a
+                            >
+                            <a
+                                href="#"
+                                class="font-inter text-sm font-bold text-white hover:text-primary transition-colors"
+                                >IG</a
+                            >
+                            <a
+                                href="#"
+                                class="font-inter text-sm font-bold text-white hover:text-primary transition-colors"
+                                >LI</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="text-center pt-[30px] border-t border-[rgba(255,255,255,0.1)]"
+                >
+                    <p class="font-inter text-xs text-[rgba(255,255,255,0.5)]">
+                        Copyright 2026 RDOC, tous droits reserves.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
