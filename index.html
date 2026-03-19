@@ -639,11 +639,8 @@
     </head>
     <body>
         <!-- ====== HERO ====== -->
-        <!-- Mobile top padding for fixed logo -->
-        <div class="lg:hidden" style="height: 70px"></div>
-
         <section
-            class="relative w-full h-screen min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[760px] flex flex-col justify-between overflow-hidden"
+            class="relative w-full h-screen min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[760px] flex flex-col justify-between overflow-hidden pt-[60px] lg:pt-0"
             id="accueil"
         >
             <div class="absolute inset-0 z-0">
@@ -657,7 +654,7 @@
                 ></div>
             </div>
 
-            <div class="relative z-10 flex justify-between items-start">
+            <div class="relative z-10 flex justify-between items-center">
                 <!-- Desktop: Logo Panel -->
                 <div class="nav-corner-panel left-panel hidden lg:block">
                     <a href="index.html" class="logo">
@@ -669,14 +666,19 @@
                     </a>
                 </div>
 
-                <!-- Mobile: Logo only (smaller) -->
-                <a href="index.html" class="logo lg:hidden">
-                    <img
-                        src="assets/images/Plan de travail 1 1.png"
-                        alt="RDOC"
-                        class="h-6"
-                    />
-                </a>
+                <!-- Mobile: Logo + Auth Bar (left logo, right auth button) -->
+                <div class="flex w-full lg:hidden justify-between items-center px-4 py-3">
+                    <a href="index.html" class="logo">
+                        <img
+                            src="assets/images/Plan de travail 1 1.png"
+                            alt="RDOC"
+                            class="h-10"
+                        />
+                    </a>
+                    <a href="login.html" class="auth-button text-xs px-3 py-2"
+                        >Sign up / Sign in</a
+                    >
+                </div>
 
                 <!-- Desktop: Auth Button -->
                 <div class="nav-corner-panel right-panel hidden lg:block">
@@ -684,11 +686,6 @@
                         >Sign up / Sign in</a
                     >
                 </div>
-
-                <!-- Mobile: Auth Button (top right) -->
-                <a href="login.html" class="auth-button lg:hidden"
-                    >Sign up / Sign in</a
-                >
             </div>
 
             <!-- Desktop: Hero Navigation -->
