@@ -704,6 +704,12 @@
                 .founder-name {
                     font-size: 32px;
                 }
+                .pourquoi-box,
+                .pourquoi-tab {
+                    width: 100%;
+                    max-width: 420px;
+                    height: auto;
+                }
             }
             @media (max-width: 768px) {
                 .apropos-text-split {
@@ -728,11 +734,14 @@
                 .indicator-line {
                     width: 70px;
                 }
+                .pourquoi-box {
+                    padding: 20px;
+                }
+            }
+            @media (max-width: 480px) {
                 .pourquoi-box,
                 .pourquoi-tab {
-                    width: 100%;
-                    max-width: 420px;
-                    height: auto;
+                    max-width: 100%;
                 }
             }
         </style>
@@ -861,11 +870,17 @@
                 </a>
             </div>
         </div>
+        <!-- Add padding top for fixed navbar on desktop -->
+        <div class="hidden lg:block" style="height: 80px"></div>
+        <!-- Mobile top padding for fixed logo -->
         <div class="lg:hidden" style="height: 70px"></div>
+
+        <!-- Mobile bottom padding for fixed bottom nav -->
+        <div class="lg:hidden" style="height: 80px"></div>
 
         <!-- ====== HERO A PROPOS ====== -->
         <section
-            class="relative pt-[80px] lg:pt-[150px] pb-[80px] flex flex-col items-center"
+            class="relative pt-[60px] sm:pt-[70px] md:pt-[80px] lg:pt-[120px] pb-[60px] sm:pb-[70px] md:pb-[80px] lg:pb-[100px] flex flex-col items-center"
             id="accueil"
         >
             <div class="absolute inset-0 z-0">
@@ -875,31 +890,31 @@
             </div>
 
             <div
-                class="relative z-10 container mx-auto px-6 md:px-16 lg:px-24 mt-[60px] flex flex-col lg:flex-row items-center justify-between gap-10"
+                class="relative z-10 container mx-auto px-6 md:px-16 lg:px-24 mt-[40px] sm:mt-[50px] lg:mt-[60px] flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10 lg:gap-10"
             >
-                <div class="flex-1 max-w-[600px]">
-                    <h1 class="founder-name">Nour Elhouda Khalfa</h1>
-                    <p class="founder-desc">
+                <div class="flex-1 max-w-[600px] text-center lg:text-left">
+                    <h1 class="font-orbitron font-bold text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] text-primary mb-4 sm:mb-5 lg:mb-6">Nour Elhouda Khalfa</h1>
+                    <p class="font-inter text-sm sm:text-base md:text-lg lg:text-xl text-white leading-relaxed mb-6 sm:mb-8 lg:mb-10">
                         Fondatrice passionnée par la technologie et
                         l'innovation, je transforme les idées en projets
                         concrets et inspirants.
                     </p>
-                    <a href="#" class="btn-more">plus...</a>
+                    <a href="#" class="btn-outline text-xs sm:text-sm md:text-base px-5 sm:px-6 lg:px-8 py-2 sm:py-2.5 lg:py-3">plus...</a>
                 </div>
                 <div class="flex-1 flex justify-center">
                     <img
                         src="assets/images/me.png"
                         alt="Nour Elhouda Khalfa"
-                        class="founder-img max-w-full"
+                        class="founder-img max-w-full w-[280px] sm:w-[320px] md:w-[400px] lg:max-w-[500px]"
                     />
                 </div>
             </div>
         </section>
 
         <!-- ====== STATS BAR ====== -->
-        <section class="relative z-10 pb-[80px]">
+        <section class="relative z-10 pb-[60px] sm:pb-[70px] md:pb-[80px]">
             <div class="container mx-auto px-6 md:px-16 lg:px-24 -mt-10">
-                <div class="glass rounded-[20px] p-5 md:p-[30px] lg:p-[30px]">
+                <div class="glass rounded-[16px] sm:rounded-[18px] lg:rounded-[20px] p-4 sm:p-5 md:p-[25px] lg:p-[30px]">
                     <div class="stats-card flex-col md:flex-row">
                         <div
                             class="stat-item flex flex-col items-center gap-2.5 mx-4"
@@ -955,22 +970,22 @@
         </section>
 
         <!-- ====== A PROPOS DE NOUS ====== -->
-        <section class="py-[80px] text-center">
+        <section class="py-[60px] sm:py-[70px] md:py-[80px] text-center">
             <div class="container mx-auto px-6 md:px-16 lg:px-24">
                 <h2
-                    class="font-orbitron font-bold text-[40px] text-primary uppercase mb-5"
+                    class="font-orbitron font-bold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] text-primary uppercase mb-4 sm:mb-5"
                 >
                     À PROPOS DE NOUS
                 </h2>
-                <p class="font-inter text-2xl text-white mb-[60px]">
+                <p class="font-inter text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-[40px] sm:mb-[50px] md:mb-[60px]">
                     Innovation, technologie et apprentissage au service de votre
                     réussite
                 </p>
                 <div
-                    class="flex flex-col md:flex-row justify-center items-center gap-10 max-w-[1000px] mx-auto"
+                    class="flex flex-col md:flex-row justify-center items-center gap-6 sm:gap-8 md:gap-10 max-w-[1000px] mx-auto"
                 >
                     <div
-                        class="flex-1 font-inter text-2xl text-white text-left leading-relaxed"
+                        class="flex-1 font-inter text-sm sm:text-base md:text-lg lg:text-xl text-white text-left leading-relaxed"
                     >
                         <p>
                             Chez RDOC, nous rapprochons technologie et éducation
@@ -981,10 +996,10 @@
                         </p>
                     </div>
                     <div
-                        class="w-[2px] h-[150px] md:h-[150px] bg-[rgba(255,255,255,0.1)]"
+                        class="w-[2px] h-[100px] sm:h-[120px] md:h-[150px] bg-[rgba(255,255,255,0.1)]"
                     ></div>
                     <div
-                        class="flex-1 font-inter text-2xl text-white text-left leading-relaxed"
+                        class="flex-1 font-inter text-sm sm:text-base md:text-lg lg:text-xl text-white text-left leading-relaxed"
                     >
                         <p>
                             Notre équipe de passionnés conçoit des solutions
@@ -999,20 +1014,20 @@
         </section>
 
         <!-- ====== NOS SERVICES ====== -->
-        <section class="py-[80px]">
+        <section class="py-[60px] sm:py-[70px] md:py-[80px]">
             <div class="container mx-auto px-6 md:px-16 lg:px-24">
                 <h2
-                    class="font-orbitron font-bold text-[40px] text-primary uppercase mb-5"
+                    class="font-orbitron font-bold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] text-primary uppercase mb-4 sm:mb-5"
                 >
                     NOS SERVICES
                 </h2>
-                <p class="font-inter text-2xl text-white mb-[60px]">
+                <p class="font-inter text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-[40px] sm:mb-[50px] md:mb-[60px]">
                     Des outils robotiques et digitaux conçus sur mesure pour
                     répondre à vos besoins spécifiques.
                 </p>
 
                 <div
-                    class="relative h-[582px] mt-[60px] mb-[60px] services-grid-exact"
+                    class="relative h-[582px] mt-[40px] sm:mt-[50px] md:mt-[60px] mb-[40px] sm:mb-[50px] md:mb-[60px] services-grid-exact"
                 >
                     <div class="service-card service-card-1">
                         <div class="service-number-circle">01</div>
@@ -1082,18 +1097,18 @@
         </section>
 
         <!-- ====== NOS PRODUITS - COVERFLOW CAROUSEL ====== -->
-        <section class="py-[80px] text-center">
+        <section class="py-[60px] sm:py-[70px] md:py-[80px] text-center">
             <div class="container mx-auto px-6 md:px-16 lg:px-24">
                 <h2
-                    class="font-orbitron font-bold text-[40px] text-primary uppercase mb-5"
+                    class="font-orbitron font-bold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] text-primary uppercase mb-4 sm:mb-5"
                 >
                     NOS PRODUITS
                 </h2>
-                <p class="font-inter text-2xl text-white mb-[40px]">
+                <p class="font-inter text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-[30px] sm:mb-[40px]">
                     Solutions robotiques innovantes pour tous les secteurs
                 </p>
 
-                <h3 class="produit-highlight-title">Découvrez Notre Gamme</h3>
+                <h3 class="font-orbitron font-bold text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] text-primary lg:text-left mb-[30px] sm:mb-[40px] md:mb-[50px] lg:mb-[60px]">Découvrez Notre Gamme</h3>
 
                 <!-- Coverflow Carousel Container -->
                 <div class="coverflow-container">
@@ -1253,16 +1268,16 @@
         </section>
 
         <!-- ====== POURQUOI RDOC ? ====== -->
-        <section class="py-[80px]">
+        <section class="py-[60px] sm:py-[70px] md:py-[80px]">
             <div class="container mx-auto px-6 md:px-16 lg:px-24">
                 <div class="pourquoi-layout flex-col lg:flex-row">
-                    <div class="pourquoi-text-col mb-10 lg:mb-0">
+                    <div class="pourquoi-text-col mb-8 sm:mb-10 lg:mb-0 text-center lg:text-left">
                         <h2
-                            class="font-orbitron font-bold text-[40px] text-primary uppercase mb-5"
+                            class="font-orbitron font-bold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] text-primary uppercase mb-4 sm:mb-5"
                         >
                             POURQUOI RDOC ?
                         </h2>
-                        <p>
+                        <p class="font-inter text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
                             Chez RDOC, nous allions innovation, expertise et
                             accompagnement pour offrir des robots et logiciels
                             fiables, performants et adaptés à chaque projet,
@@ -1306,36 +1321,36 @@
         </section>
 
         <!-- ====== REJOIGNEZ NOUS ====== -->
-        <section class="py-[100px] text-center">
+        <section class="py-[60px] sm:py-[70px] md:py-[80px] lg:py-[100px] text-center">
             <div class="container mx-auto px-6 md:px-16 lg:px-24">
                 <h2
-                    class="font-orbitron font-bold text-[40px] text-primary uppercase mb-5"
+                    class="font-orbitron font-bold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] text-primary uppercase mb-4 sm:mb-5"
                 >
                     REJOIGNEZ NOUS
                 </h2>
-                <p class="font-inter text-2xl text-white mb-[40px]">
+                <p class="font-inter text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-[30px] sm:mb-[40px]">
                     Découvrez nos solutions et commencez votre projet avec RDOC
                 </p>
-                <a href="contact.html" class="btn-contacter"
+                <a href="contact.html" class="btn-outline text-xs sm:text-sm md:text-base px-5 sm:px-6 lg:px-8 py-2 sm:py-2.5 lg:py-3"
                     >Contacter nous</a
                 >
             </div>
         </section>
 
         <!-- ====== FOOTER ====== -->
-        <footer class="py-[80px] pb-10 border-t border-[rgba(255,255,255,0.1)]">
+        <footer class="py-[40px] sm:py-[50px] lg:py-[80px] pb-6 lg:pb-10 border-t border-[rgba(255,255,255,0.1)]">
             <div class="container mx-auto px-6 md:px-16 lg:px-24">
                 <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] mb-[50px]"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] md:gap-[40px] lg:gap-[50px] mb-[30px] md:mb-[40px] lg:mb-[50px]"
                 >
                     <div>
                         <img
                             src="assets/images/Plan de travail 1 1.png"
                             alt="RDOC"
-                            class="h-[60px] w-auto mb-4"
+                            class="h-[40px] sm:h-[50px] lg:h-[60px] w-auto mb-4"
                         />
                         <p
-                            class="font-inter text-sm text-[rgba(255,255,255,0.5)] leading-relaxed"
+                            class="font-inter text-xs sm:text-sm text-[rgba(255,255,255,0.5)] leading-relaxed"
                         >
                             Notre équipe d'experts passionnés fournit des
                             solutions robotiques exceptionnelles, conçues pour
@@ -1344,7 +1359,7 @@
                     </div>
                     <div>
                         <h4
-                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                            class="font-orbitron text-xs sm:text-sm lg:text-base font-bold text-white uppercase mb-3 sm:mb-4 lg:mb-5"
                         >
                             Pages
                         </h4>
@@ -1395,7 +1410,7 @@
                     </div>
                     <div>
                         <h4
-                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                            class="font-orbitron text-xs sm:text-sm lg:text-base font-bold text-white uppercase mb-3 sm:mb-4 lg:mb-5"
                         >
                             Aide
                         </h4>
@@ -1425,7 +1440,7 @@
                     </div>
                     <div>
                         <h4
-                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                            class="font-orbitron text-xs sm:text-sm lg:text-base font-bold text-white uppercase mb-3 sm:mb-4 lg:mb-5"
                         >
                             Contact
                         </h4>
@@ -1433,19 +1448,19 @@
                             <li
                                 class="font-inter text-sm text-[rgba(255,255,255,0.5)]"
                             >
-                                +213 123 456 789
+                                +216 73 987 296
                             </li>
                             <li>
                                 <a
-                                    href="mailto:contact@rdoc.com"
+                                    href="mailto:RDOC@gmail.com"
                                     class="font-inter text-sm text-primary hover:opacity-70 transition-opacity"
-                                    >contact@rdoc.com</a
+                                    >RDOC@gmail.com</a
                                 >
                             </li>
                             <li
                                 class="font-inter text-sm text-[rgba(255,255,255,0.5)]"
                             >
-                                Alger, Algérie
+                                Taieb mhiri, Sousse, Tunis
                             </li>
                         </ul>
                         <div class="flex gap-[15px] mt-4">
@@ -1468,14 +1483,17 @@
                     </div>
                 </div>
                 <div
-                    class="text-center pt-[30px] border-t border-[rgba(255,255,255,0.1)]"
+                    class="text-center pt-[20px] sm:pt-[25px] md:pt-[30px] border-t border-[rgba(255,255,255,0.1)]"
                 >
                     <p class="font-inter text-xs text-[rgba(255,255,255,0.5)]">
-                        © 2025 RDOC. Tous droits réservés.
+                        Copyright 2026 RDOC, tous droits reserves.
                     </p>
                 </div>
             </div>
         </footer>
+
+        <!-- Mobile bottom padding for fixed bottom nav -->
+        <div class="lg:hidden" style="height: 80px"></div>
         <script src="assets/js/main.js"></script>
 
         <!-- Coverflow Carousel JavaScript -->

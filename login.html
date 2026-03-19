@@ -256,6 +256,8 @@
             <a href="login.html" class="auth-button">Sign up / Sign in</a>
         </div>
 
+        <!-- Desktop padding -->
+        <div class="hidden lg:block" style="height: 80px"></div>
         <!-- Mobile Logo -->
         <a href="index.html" class="logo lg:hidden absolute top-5 left-6 z-50">
             <img
@@ -359,39 +361,43 @@
 
         <!-- Add padding bottom for mobile to account for bottom nav -->
         <div class="lg:hidden" style="height: 70px"></div>
+        <!-- Mobile top padding for fixed logo -->
+        <div class="lg:hidden" style="height: 70px"></div>
+        <!-- Extra bottom padding for mobile bottom nav -->
+        <div class="lg:hidden" style="height: 80px"></div>
 
         <!-- Main Content -->
         <main
-            class="flex-1 flex items-center justify-center pt-[100px] lg:pt-[150px] pb-[100px] px-6 md:px-16 lg:px-24"
+            class="flex-1 flex items-center justify-center pt-[100px] lg:pt-[150px] pb-[100px] px-4 sm:px-6 md:px-16 lg:px-24"
         >
             <div class="w-full max-w-md">
-                <div class="text-center mb-[60px]">
+                <div class="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-[60px]">
                     <h1
-                        class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-primary uppercase tracking-wide mb-[14px]"
+                        class="font-orbitron font-bold text-[22px] sm:text-[28px] md:text-3xl lg:text-[40px] text-primary uppercase tracking-wide mb-3 sm:mb-4 lg:mb-[14px]"
                     >
                         Connexion
                     </h1>
                     <p
-                        class="font-inter text-xl text-white max-w-[500px] mx-auto leading-relaxed"
+                        class="font-inter text-sm sm:text-base md:text-lg lg:text-xl text-white max-w-[500px] mx-auto leading-relaxed"
                     >
                         Accédez à votre compte RDOC
                     </p>
                 </div>
 
                 <div
-                    class="glass rounded-[34px] p-[40px] md:p-[60px] border border-[rgba(92,196,229,0.3)] shadow-lg"
+                    class="glass rounded-[34px] p-4 sm:p-6 md:p-8 lg:p-[40px] border border-[rgba(92,196,229,0.3)] shadow-lg"
                     style="
                         background: rgba(255, 255, 255, 0.08);
                         backdrop-filter: blur(20px);
                         -webkit-backdrop-filter: blur(20px);
                     "
                 >
-                    <form class="space-y-[30px]">
+                    <form class="space-y-5 sm:space-y-6 md:space-y-8 lg:space-y-[30px]">
                         <!-- Email -->
                         <div>
                             <label
                                 for="email"
-                                class="block font-inter text-base font-bold text-white mb-[15px]"
+                                class="block font-inter text-xs sm:text-sm lg:text-base font-bold text-white mb-2 sm:mb-3 lg:mb-[15px]"
                             >
                                 Email
                             </label>
@@ -408,7 +414,7 @@
                         <div>
                             <label
                                 for="password"
-                                class="block font-inter text-base font-bold text-white mb-[15px]"
+                                class="block font-inter text-xs sm:text-sm lg:text-base font-bold text-white mb-2 sm:mb-3 lg:mb-[15px]"
                             >
                                 Mot de passe
                             </label>
@@ -432,13 +438,13 @@
                                     class="w-4 h-4 rounded border-primary/30 bg-white/5 accent-primary cursor-pointer transition-colors duration-300 hover:border-primary"
                                 />
                                 <span
-                                    class="font-inter text-base text-white/70 group-hover:text-white transition-colors duration-300"
+                                    class="font-inter text-xs sm:text-sm lg:text-base text-white/70 group-hover:text-white transition-colors duration-300"
                                     >Se souvenir de moi</span
                                 >
                             </label>
                             <a
                                 href="#"
-                                class="font-inter text-base text-primary hover:text-primary/90 transition-all duration-300 relative inline-block"
+                                class="font-inter text-xs sm:text-sm lg:text-base text-primary hover:text-primary/90 transition-all duration-300 relative inline-block"
                             >
                                 Mot de passe oublié?
                                 <span
@@ -450,7 +456,7 @@
                         <!-- Submit Button -->
                         <button
                             type="submit"
-                            class="btn-submit w-full mt-[30px] relative overflow-hidden group hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
+                            class="btn-submit w-full mt-5 sm:mt-6 md:mt-8 lg:mt-[30px] relative overflow-hidden group hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
                         >
                             <span class="relative z-10">Se connecter</span>
                             <div
@@ -461,9 +467,9 @@
 
                     <!-- Sign Up Link -->
                     <div
-                        class="mt-[30px] text-center pt-[30px] border-t border-[rgba(92,196,229,0.2)]"
+                        class="mt-5 sm:mt-6 md:mt-8 lg:mt-[30px] text-center pt-5 sm:pt-6 md:pt-8 lg:pt-[30px] border-t border-[rgba(92,196,229,0.2)]"
                     >
-                        <p class="font-inter text-base text-white/70">
+                        <p class="font-inter text-xs sm:text-sm lg:text-base text-white/70">
                             Pas encore de compte?
                             <a
                                 href="register.html"
@@ -482,20 +488,20 @@
 
         <!-- Footer -->
         <footer
-            class="py-[80px] pb-10 border-t border-[rgba(255,255,255,0.1)] mt-[100px]"
+            class="py-[40px] sm:py-[50px] lg:py-[80px] pb-6 lg:pb-10 border-t border-[rgba(255,255,255,0.1)] mt-10 lg:mt-[100px]"
         >
-            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
+            <div class="max-w-container mx-auto px-4 md:px-8 lg:px-24">
                 <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] mb-[50px]"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] md:gap-[40px] lg:gap-[50px] mb-[30px] md:mb-[40px] lg:mb-[50px]"
                 >
                     <div>
                         <img
                             src="assets/images/Plan de travail 1 1.png"
                             alt="RDOC"
-                            class="h-[60px] w-auto mb-4"
+                            class="h-[40px] sm:h-[50px] lg:h-[60px] w-auto mb-4"
                         />
                         <p
-                            class="font-inter text-sm text-[rgba(255,255,255,0.5)] leading-relaxed"
+                            class="font-inter text-xs sm:text-sm text-[rgba(255,255,255,0.5)] leading-relaxed"
                         >
                             Notre équipe d'experts passionnés fournit des
                             solutions robotiques exceptionnelles, conçues pour
@@ -504,7 +510,7 @@
                     </div>
                     <div>
                         <h4
-                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                            class="font-orbitron text-xs sm:text-sm lg:text-base font-bold text-white uppercase mb-3 sm:mb-4 lg:mb-5"
                         >
                             Pages
                         </h4>
@@ -561,7 +567,7 @@
                     </div>
                     <div>
                         <h4
-                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                            class="font-orbitron text-xs sm:text-sm lg:text-base font-bold text-white uppercase mb-3 sm:mb-4 lg:mb-5"
                         >
                             Aide
                         </h4>
@@ -594,7 +600,7 @@
                     </div>
                     <div>
                         <h4
-                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                            class="font-orbitron text-xs sm:text-sm lg:text-base font-bold text-white uppercase mb-3 sm:mb-4 lg:mb-5"
                         >
                             Contact
                         </h4>
@@ -641,7 +647,7 @@
                     </div>
                 </div>
                 <div
-                    class="text-center pt-[30px] border-t border-[rgba(255,255,255,0.1)]"
+                    class="text-center pt-5 sm:pt-6 md:pt-8 lg:pt-[30px] border-t border-[rgba(255,255,255,0.1)]"
                 >
                     <p class="font-inter text-xs text-[rgba(255,255,255,0.5)]">
                         © 2025 RDOC. Tous droits réservés.

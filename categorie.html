@@ -42,8 +42,8 @@
       .nav-pill-link.active { font-weight: 700; color: #5CC4E5; }
       .nav-pill-link:hover { color: #5CC4E5; }
       .categorie-hero { position: relative; height: 760px; padding-top: 150px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; background: url('assets/images/categories/banner.png') no-repeat center center; background-size: cover; }
-      .cat-hero-title { font-family: 'Orbitron', sans-serif; font-size: 40px; font-weight: 700; color: #5CC4E5; margin-bottom: 20px; letter-spacing: -1.8px; }
-      .cat-hero-subtitle { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 500; color: #FFFFFF; line-height: 1.6; margin-bottom: 40px; }
+      .cat-hero-title { font-family: 'Orbitron', sans-serif; font-size: clamp(28px, 5vw, 40px); font-weight: 700; color: #5CC4E5; margin-bottom: 20px; letter-spacing: -1.8px; }
+      .cat-hero-subtitle { font-family: 'Inter', sans-serif; font-size: clamp(16px, 3vw, 24px); font-weight: 500; color: #FFFFFF; line-height: 1.6; margin-bottom: 40px; }
       .btn-black { display: inline-flex; align-items: center; justify-content: center; padding: 16px 50px; background: #000000; color: #FFFFFF; font-family: 'Orbitron', sans-serif; font-size: 18px; font-weight: 700; border-radius: 40px; border: 1px solid #000000; text-decoration: none; transition: all 0.3s; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); }
       .btn-black:hover { background: #000000; border-color: #5CC4E5; color: #5CC4E5; transform: translateY(-2px); }
       .btn-white { display: inline-flex; align-items: center; justify-content: center; padding: 16px 50px; background: #FFFFFF; color: #000000; font-family: 'Orbitron', sans-serif; font-size: 18px; font-weight: 700; border-radius: 40px; border: 1px solid #FFFFFF; text-decoration: none; transition: all 0.3s; box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1); }
@@ -51,31 +51,31 @@
       .flower-container { position: relative; width: 100%; max-width: 1200px; height: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: center; }
       .cat-grid-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; max-width: 1100px; height: auto; z-index: 1; opacity: 0.6; filter: drop-shadow(0 0 50px rgba(92, 196, 229, 0.2)); }
       .cat-grid { position: relative; z-index: 2; width: 100%; height: 100%; }
-      .cat-card { position: absolute; width: 380px; text-align: center; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+      .cat-card { position: absolute; width: clamp(280px, 40vw, 380px); text-align: center; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
       .cat-card:hover { transform: scale(1.05); }
       .petal-tl { top: 10%; left: 0%; transform: rotate(-5deg); }
       .petal-tr { top: 10%; right: 0%; transform: rotate(5deg); }
       .petal-bl { bottom: 10%; left: 0%; transform: rotate(5deg); }
       .petal-br { bottom: 10%; right: 0%; transform: rotate(-5deg); }
-      .cat-card h2 { font-family: 'Orbitron', sans-serif; font-size: 32px; font-weight: 700; color: #5CC4E5; margin-bottom: 20px; letter-spacing: 2px; }
-      .cat-card p { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; color: #FFFFFF; line-height: 1.6; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+      .cat-card h2 { font-family: 'Orbitron', sans-serif; font-size: clamp(20px, 3vw, 32px); font-weight: 700; color: #5CC4E5; margin-bottom: 20px; letter-spacing: 2px; }
+      .cat-card p { font-family: 'Inter', sans-serif; font-size: clamp(12px, 1.5vw, 14px); font-weight: 600; color: #FFFFFF; line-height: 1.6; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
       .btn-acceder { font-family: 'Orbitron', sans-serif; font-size: 16px; font-weight: 700; color: #FFFFFF; text-decoration: none; background: #000000; padding: 12px 50px; border-radius: 30px; display: inline-block; transition: all 0.3s; border: 1px solid rgba(255, 255, 255, 0.2); }
       .btn-acceder:hover { background: #5CC4E5; color: #000000; border-color: #5CC4E5; }
-      .trust-title { text-align: center; font-family: 'Orbitron', sans-serif; font-size: 32px; font-weight: 700; color: #5CC4E5; margin-bottom: 80px; text-transform: uppercase; letter-spacing: 2px; }
-      .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+      .trust-title { text-align: center; font-family: 'Orbitron', sans-serif; font-size: clamp(24px, 4vw, 32px); font-weight: 700; color: #5CC4E5; margin-bottom: clamp(40px, 8vw, 80px); text-transform: uppercase; letter-spacing: 2px; }
+      .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(20px, 4vw, 40px); }
       .trust-item { text-align: center; display: flex; flex-direction: column; align-items: center; }
-      .trust-item img { height: 50px; width: auto; margin-bottom: 25px; filter: brightness(0) invert(1); }
-      .trust-item h3 { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: #FFFFFF; margin-bottom: 15px; }
+      .trust-item img { height: clamp(40px, 5vw, 50px); width: auto; margin-bottom: 25px; filter: brightness(0) invert(1); }
+      .trust-item h3 { font-family: 'Inter', sans-serif; font-size: clamp(16px, 2vw, 20px); font-weight: 700; color: #FFFFFF; margin-bottom: 15px; }
       .trust-item p { font-family: 'Inter', sans-serif; font-size: 14px; color: #FFFFFF; line-height: 1.6; max-width: 250px; }
-      .steps-title { text-align: center; font-family: 'Orbitron', sans-serif; font-size: 32px; font-weight: 700; color: #5CC4E5; margin-bottom: 60px; letter-spacing: 2px; }
-      .step-intro-cards { display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; }
+      .steps-title { text-align: center; font-family: 'Orbitron', sans-serif; font-size: clamp(24px, 4vw, 32px); font-weight: 700; color: #5CC4E5; margin-bottom: clamp(40px, 6vw, 60px); letter-spacing: 2px; }
+      .step-intro-cards { display: flex; justify-content: center; gap: clamp(20px, 4vw, 40px); margin-bottom: 40px; }
       .step-intro-card { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-      .step-intro-card .step-num { font-family: 'Orbitron', sans-serif; font-size: 48px; font-weight: 700; color: #5CC4E5; }
-      .step-intro-card .step-label { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: #FFFFFF; letter-spacing: 2px; }
-      .steps-main-panel { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 30px; padding: 40px; }
-      .steps-main-container { display: flex; gap: 60px; align-items: center; }
+      .step-intro-card .step-num { font-family: 'Orbitron', sans-serif; font-size: clamp(36px, 5vw, 48px); font-weight: 700; color: #5CC4E5; }
+      .step-intro-card .step-label { font-family: 'Inter', sans-serif; font-size: clamp(14px, 1.5vw, 16px); font-weight: 700; color: #FFFFFF; letter-spacing: 2px; }
+      .steps-main-panel { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 30px; padding: clamp(24px, 4vw, 40px); }
+      .steps-main-container { display: flex; gap: clamp(30px, 5vw, 60px); align-items: center; }
       .steps-left { flex: 1; }
-      .robot-ready-title { font-family: 'Orbitron', sans-serif; font-size: 36px; font-weight: 700; color: #FFFFFF; margin-bottom: 30px; line-height: 1.3; }
+      .robot-ready-title { font-family: 'Orbitron', sans-serif; font-size: clamp(24px, 4vw, 36px); font-weight: 700; color: #FFFFFF; margin-bottom: 30px; line-height: 1.3; }
       .steps-list { display: flex; flex-direction: column; gap: 15px; }
       .step-card { background: #000000; padding: 20px 25px; border-radius: 20px; font-family: 'Inter', sans-serif; font-size: 16px; color: #FFFFFF; line-height: 1.5; border-left: 4px solid #5CC4E5; }
       .steps-right { flex: 1; display: flex; justify-content: center; }
@@ -152,23 +152,23 @@
 
     <!-- ====== HERO CATEGORIE ====== -->
     <section class="categorie-hero pt-20 lg:pt-0" id="accueil">
-      <div class="container mx-auto px-6">
+      <div class="container mx-auto px-4 sm:px-6">
         <div class="categorie-hero-text max-w-[900px] mx-auto">
           <h1 class="cat-hero-title">Apprenez en vous amusant à la maison</h1>
           <p class="cat-hero-subtitle">
             Apprentissage interactif pour développer la créativité et les compétences des enfants.
           </p>
-          <div class="cat-hero-actions flex gap-[30px] justify-center mt-10">
-             <a href="#decouvrir" class="btn-black">Découvrir</a>
-             <a href="#commander" class="btn-white">Commander</a>
+          <div class="cat-hero-actions flex gap-4 sm:gap-[30px] justify-center mt-6 sm:mt-10">
+             <a href="#decouvrir" class="btn-black text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">Découvrir</a>
+             <a href="#commander" class="btn-white text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">Commander</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ====== CATEGORY LIST (4-PETAL FLOWER) ====== -->
-    <section class="py-[120px] bg-black" id="decouvrir">
-      <div class="flower-container px-6">
+    <section class="py-[60px] sm:py-[80px] lg:py-[120px] bg-black" id="decouvrir">
+      <div class="flower-container px-4 sm:px-6">
         <img src="assets/images/categories/Union.png" alt="" class="cat-grid-bg">
         <div class="cat-grid">
            <div class="cat-card petal-tl">
@@ -204,8 +204,8 @@
     </section>
 
     <!-- ====== POURQUOI NOUS FAIRE CONFIANCE ====== -->
-    <section class="py-[100px] bg-black">
-      <div class="container mx-auto px-6 md:px-16 lg:px-24">
+    <section class="py-[60px] sm:py-[80px] lg:py-[100px] bg-black">
+      <div class="container mx-auto px-4 sm:px-6 md:px-16 lg:px-24">
          <h2 class="trust-title">Pourquoi nous faire confiance ?</h2>
          <div class="trust-grid">
             <div class="trust-item">
@@ -233,8 +233,8 @@
     </section>
 
     <!-- ====== 3 STEPS SECTION ====== -->
-    <section class="py-[120px] bg-black" id="etapes">
-       <div class="container mx-auto px-6 md:px-16 lg:px-24">
+    <section class="py-[60px] sm:py-[80px] lg:py-[120px] bg-black" id="etapes">
+       <div class="container mx-auto px-4 sm:px-6 md:px-16 lg:px-24">
           <h2 class="steps-title">VOTRE ROBOT EN 3 ÉTAPES SIMPLES</h2>
           
           <div class="step-intro-cards">
@@ -279,19 +279,19 @@
     </section>
 
     <!-- ====== COMMANDER CTA ====== -->
-    <section class="py-[80px] bg-black text-center" id="commander">
-       <div class="container mx-auto px-6">
+    <section class="py-[60px] sm:py-[80px] bg-black text-center" id="commander">
+       <div class="container mx-auto px-4 sm:px-6">
           <a href="#" class="btn-commander-large inline-block">Commander</a>
        </div>
     </section>
 
     <!-- ====== FOOTER ====== -->
-    <footer class="py-[80px] pb-10 border-t border-[rgba(255,255,255,0.1)] bg-black">
-      <div class="container mx-auto px-6 md:px-16 lg:px-24">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] mb-[50px]">
+    <footer class="py-[40px] sm:py-[50px] lg:py-[80px] pb-6 lg:pb-10 border-t border-[rgba(255,255,255,0.1)] bg-black">
+      <div class="container mx-auto px-4 sm:px-6 md:px-16 lg:px-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-[50px] mb-8 sm:mb-10 lg:mb-[50px]">
           <div class="lg:col-span-2">
-            <div class="mb-8">
-              <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="h-[60px] w-auto mb-4">
+            <div class="mb-6 sm:mb-8">
+              <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="h-[40px] sm:h-[50px] lg:h-[60px] w-auto mb-3 sm:mb-4">
               <p class="font-inter text-sm text-[rgba(255,255,255,0.5)] leading-relaxed">Notre équipe d'experts passionnés fournit des solutions robotiques exceptionnelles.</p>
             </div>
             <div class="footer-newsletter">
@@ -303,8 +303,8 @@
             </div>
           </div>
           <div>
-            <h4 class="font-orbitron text-base font-bold text-white uppercase mb-5">Pages</h4>
-            <ul class="flex flex-col gap-2.5">
+            <h4 class="font-orbitron text-sm sm:text-base font-bold text-white uppercase mb-4 sm:mb-5">Pages</h4>
+            <ul class="flex flex-col gap-2">
               <li><a href="index.html" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">Accueil</a></li>
               <li><a href="apropos.html" class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors">A propos</a></li>
               <li><a href="categorie.html" class="font-inter text-sm text-primary">Catégorie</a></li>
@@ -314,7 +314,7 @@
             </ul>
           </div>
           <div>
-            <h4 class="font-orbitron text-base font-bold text-white uppercase mb-5">Contact</h4>
+            <h4 class="font-orbitron text-sm sm:text-base font-bold text-white uppercase mb-4 sm:mb-5">Contact</h4>
             <ul class="flex flex-col gap-2.5">
               <li><a href="mailto:RDOC@gmail.com" class="font-inter text-sm text-primary hover:opacity-70">Email : RDOC@gmail.com</a></li>
               <li class="font-inter text-sm text-[rgba(255,255,255,0.5)]">téléphone : +216 73957295</li>
@@ -326,11 +326,18 @@
             </div>
           </div>
         </div>
-        <div class="text-center pt-[30px] border-t border-[rgba(255,255,255,0.1)]">
+        <div class="text-center pt-5 sm:pt-6 lg:pt-[30px] border-t border-[rgba(255,255,255,0.1)]">
           <p class="font-inter text-xs text-[rgba(255,255,255,0.5)]">Copyright 2026 RDOC, tous droits réservés.</p>
         </div>
       </div>
     </footer>
+
+    <!-- Mobile bottom padding for fixed bottom nav -->
+    <div class="lg:hidden" style="height: 80px"></div>
+
+    <!-- Add padding top for fixed navbar on desktop -->
+    <div class="hidden lg:block" style="height: 80px"></div>
+
     <script src="assets/js/main.js"></script>
   </body>
 </html>

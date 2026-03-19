@@ -473,28 +473,40 @@
                 }
             }
 
-            @media (max-width: 768px) {
+            @media (max-width: 1024px) {
                 .nav-corner-panel {
-                    padding: 15px 20px;
+                    padding: 12px 30px;
                 }
                 .left-panel {
-                    padding-left: 20px;
+                    padding-left: 30px;
                 }
                 .right-panel {
-                    padding-right: 20px;
+                    padding-right: 30px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .nav-corner-panel {
+                    padding: 10px 16px;
+                }
+                .left-panel {
+                    padding-left: 16px;
+                }
+                .right-panel {
+                    padding-right: 16px;
                 }
                 .hero-robot {
-                    width: 280px !important;
+                    width: 240px !important;
                 }
                 .hero-users {
-                    left: 20px !important;
+                    left: 16px !important;
                     bottom: 130px !important;
                 }
                 .hero-bottom-bar {
-                    padding: 0 20px 20px !important;
+                    padding: 0 16px 16px !important;
                     flex-direction: column;
                     align-items: flex-start;
-                    gap: 20px;
+                    gap: 16px;
                 }
                 .hero-nav {
                     flex-wrap: wrap;
@@ -502,7 +514,21 @@
                 }
                 .how-step {
                     width: 100%;
-                    max-width: 350px;
+                    max-width: 320px;
+                    height: auto;
+                    min-height: 100px;
+                    padding: 16px;
+                }
+                .step-circle {
+                    width: 80px !important;
+                    height: 80px !important;
+                }
+                .step-num {
+                    font-size: 36px !important;
+                }
+                .step-text {
+                    font-size: 14px !important;
+                    padding: 0 12px !important;
                 }
                 .featured-card {
                     width: 100%;
@@ -510,11 +536,65 @@
                     margin: 0 auto;
                 }
                 .auth-button.lg\:hidden {
-                    padding: 4px 16px;
-                    height: 36px;
-                    font-size: 14px;
+                    padding: 4px 12px;
+                    height: 32px;
+                    font-size: 12px;
                     font-weight: 500;
                     white-space: nowrap;
+                }
+                .sponsor-track img {
+                    height: 80px !important;
+                }
+                .featured-card-label {
+                    font-size: 14px !important;
+                    padding: 8px 16px !important;
+                    margin: 12px !important;
+                }
+                .featured-card-title {
+                    font-size: 18px !important;
+                }
+                .featured-card-text {
+                    font-size: 12px !important;
+                    max-width: 200px !important;
+                }
+                .faq-item {
+                    font-size: 14px !important;
+                    padding: 12px 20px !important;
+                }
+                .faq-icon {
+                    width: 50px !important;
+                    height: 65px !important;
+                    min-width: 50px !important;
+                    font-size: 24px !important;
+                    margin: -10px 0 -10px -20px !important;
+                }
+                .footer-grid-item {
+                    text-align: center;
+                }
+                .footer-grid-item h4 {
+                    text-align: center !important;
+                }
+                .footer-grid-item ul {
+                    align-items: center !important;
+                }
+                .footer-grid-item .flex {
+                    justify-content: center !important;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .how-step {
+                    max-width: 280px;
+                }
+                .step-circle {
+                    width: 60px !important;
+                    height: 60px !important;
+                }
+                .step-num {
+                    font-size: 28px !important;
+                }
+                .step-text {
+                    font-size: 12px !important;
                 }
             }
         </style>
@@ -559,8 +639,11 @@
     </head>
     <body>
         <!-- ====== HERO ====== -->
+        <!-- Mobile top padding for fixed logo -->
+        <div class="lg:hidden" style="height: 70px"></div>
+
         <section
-            class="relative w-full h-screen min-h-[760px] flex flex-col justify-between overflow-hidden"
+            class="relative w-full h-screen min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[760px] flex flex-col justify-between overflow-hidden"
             id="accueil"
         >
             <div class="absolute inset-0 z-0">
@@ -728,7 +811,7 @@
             </div>
 
             <!-- Add padding bottom for mobile to account for bottom nav -->
-            <div class="lg:hidden" style="height: 70px"></div>
+            <div class="lg:hidden" style="height: 80px"></div>
 
             <div
                 class="absolute z-5 top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] max-w-[90vw]"
@@ -761,7 +844,7 @@
                     />
                 </div>
                 <span
-                    class="font-orbitron text-sm font-bold tracking-[1.82px] text-white leading-[15.82px]"
+                    class="font-orbitron text-xs sm:text-sm font-bold tracking-[1.82px] text-white leading-[15.82px]"
                     >10k+ Utilisateurs actifs</span
                 >
             </div>
@@ -769,7 +852,7 @@
 
         <!-- ====== PARTNERS BAR ====== -->
         <section
-            class="py-[30px] border-b border-[rgba(255,255,255,0.1)] overflow-hidden"
+            class="py-3 sm:py-4 md:py-[20px] lg:py-[30px] border-b border-[rgba(255,255,255,0.1)] overflow-hidden"
         >
             <div class="sponsor-marquee">
                 <div class="sponsor-track">
@@ -803,16 +886,16 @@
         </section>
 
         <!-- ====== FEATURED - Notre Meilleure Vente ====== -->
-        <section class="py-[100px] md:py-[80px]" id="produit">
-            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
-                <div class="text-center mb-[60px]">
+        <section class="py-[40px] sm:py-[60px] md:py-[80px] lg:py-[100px]" id="produit">
+            <div class="max-w-container mx-auto px-4 sm:px-6 md:px-16 lg:px-24">
+                <div class="text-center mb-[30px] sm:mb-[40px] md:mb-[50px] lg:mb-[60px]">
                     <h2
-                        class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-primary uppercase tracking-wide mb-[14px]"
+                        class="font-orbitron font-bold text-[22px] sm:text-[28px] md:text-[36px] lg:text-[40px] text-primary uppercase tracking-wide mb-[10px] sm:mb-[12px] md:mb-[14px]"
                     >
                         notre meilleure vente
                     </h2>
                     <p
-                        class="font-inter text-xl text-white max-w-[1240px] mx-auto leading-relaxed"
+                        class="font-inter text-sm sm:text-base md:text-lg lg:text-xl text-white max-w-[1240px] mx-auto leading-relaxed"
                     >
                         Découvrez notre service phare RDOC, alliant éducation,
                         information, analyse et gestion. Profitez d'outils
@@ -822,7 +905,7 @@
                     </p>
                 </div>
                 <div
-                    class="grid grid-cols-1 md:grid-cols-3 gap-[30px] mb-[50px]"
+                    class="grid grid-cols-1 md:grid-cols-3 gap-[16px] sm:gap-[24px] md:gap-[30px] mb-[30px] sm:mb-[40px] md:mb-[50px]"
                 >
                     <div class="featured-card group cursor-pointer">
                         <div
@@ -923,16 +1006,16 @@
         </section>
 
         <!-- ====== WHY US ====== -->
-        <section class="pb-[100px]" id="categorie">
-            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
-                <div class="text-center mb-[60px]">
+        <section class="pb-[40px] sm:pb-[60px] md:pb-[80px] lg:pb-[100px]" id="categorie">
+            <div class="max-w-container mx-auto px-4 sm:px-6 md:px-16 lg:px-24">
+                <div class="text-center mb-[30px] sm:mb-[40px] md:mb-[50px] lg:mb-[60px]">
                     <h2
-                        class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-primary uppercase tracking-wide mb-[14px]"
+                        class="font-orbitron font-bold text-[22px] sm:text-[28px] md:text-[36px] lg:text-[40px] text-primary uppercase tracking-wide mb-[10px] sm:mb-[12px] md:mb-[14px]"
                     >
                         Pourquoi nous choisir ?
                     </h2>
                     <p
-                        class="font-inter text-xl text-white max-w-[1240px] mx-auto leading-relaxed"
+                        class="font-inter text-sm sm:text-base md:text-lg lg:text-xl text-white max-w-[1240px] mx-auto leading-relaxed"
                     >
                         Notre équipe d'experts passionnés fournit des solutions
                         robotiques exceptionnelles, elles sont conçues pour
@@ -940,47 +1023,47 @@
                     </p>
                 </div>
                 <div
-                    class="glass rounded-[34px] p-[60px] md:p-[40px] lg:p-[60px]"
+                    class="glass rounded-[20px] sm:rounded-[24px] md:rounded-[28px] lg:rounded-[34px] p-[20px] sm:p-[30px] md:p-[40px] lg:p-[60px]"
                 >
                     <div
-                        class="grid grid-cols-1 md:grid-cols-3 gap-[40px] mb-[50px]"
+                        class="grid grid-cols-1 md:grid-cols-3 gap-[20px] sm:gap-[30px] md:gap-[40px] mb-[30px] sm:mb-[40px] md:mb-[50px]"
                     >
                         <div class="text-left">
                             <div
-                                class="why-us-icon relative w-[86px] h-[86px] flex items-center justify-center mb-6"
+                                class="why-us-icon relative w-[60px] h-[60px] sm:w-[73px] sm:h-[73px] md:w-[86px] md:h-[86px] flex items-center justify-center mb-4 sm:mb-5 md:mb-6"
                             >
                                 <img
                                     src="assets/images/icon1.png"
                                     alt="Innovation"
-                                    class="w-[67px] h-[67px] object-contain relative z-10"
+                                    class="w-[46px] h-[46px] sm:w-[56px] sm:h-[56px] md:w-[67px] md:h-[67px] object-contain relative z-10"
                                 />
                             </div>
                             <h4
-                                class="font-inter text-xl font-bold text-white mb-2"
+                                class="font-inter text-base sm:text-lg md:text-xl font-bold text-white mb-2"
                             >
                                 Innovation & Expertise Technologique
                             </h4>
-                            <p class="font-inter text-xl text-white">
+                            <p class="font-inter text-sm sm:text-base md:text-lg lg:text-xl text-white">
                                 Une équipe de 1 500 experts intègre des
                                 technologies IA avancées dans vos projets
                             </p>
                         </div>
                         <div class="text-left">
                             <div
-                                class="why-us-icon relative w-[86px] h-[86px] flex items-center justify-center mb-6"
+                                class="why-us-icon relative w-[60px] h-[60px] sm:w-[73px] sm:h-[73px] md:w-[86px] md:h-[86px] flex items-center justify-center mb-4 sm:mb-5 md:mb-6"
                             >
                                 <img
                                     src="assets/images/icon2.png"
                                     alt="Solutions"
-                                    class="w-[67px] h-[67px] object-contain relative z-10"
+                                    class="w-[46px] h-[46px] sm:w-[56px] sm:h-[56px] md:w-[67px] md:h-[67px] object-contain relative z-10"
                                 />
                             </div>
                             <h4
-                                class="font-inter text-xl font-bold text-white mb-2"
+                                class="font-inter text-base sm:text-lg md:text-xl font-bold text-white mb-2"
                             >
                                 Solutions Robotiques Performantes
                             </h4>
-                            <p class="font-inter text-xl text-white">
+                            <p class="font-inter text-sm sm:text-base md:text-lg lg:text-xl text-white">
                                 Des robots polyvalents pour l'éducation, la
                                 gestion et l'assistance, garantissant
                                 l'excellence
@@ -988,20 +1071,20 @@
                         </div>
                         <div class="text-left">
                             <div
-                                class="why-us-icon relative w-[86px] h-[86px] flex items-center justify-center mb-6"
+                                class="why-us-icon relative w-[60px] h-[60px] sm:w-[73px] sm:h-[73px] md:w-[86px] md:h-[86px] flex items-center justify-center mb-4 sm:mb-5 md:mb-6"
                             >
                                 <img
                                     src="assets/images/icon3.png"
                                     alt="Outils"
-                                    class="w-[67px] h-[67px] object-contain relative z-10"
+                                    class="w-[46px] h-[46px] sm:w-[56px] sm:h-[56px] md:w-[67px] md:h-[67px] object-contain relative z-10"
                                 />
                             </div>
                             <h4
-                                class="font-inter text-xl font-bold text-white mb-2"
+                                class="font-inter text-base sm:text-lg md:text-xl font-bold text-white mb-2"
                             >
                                 Outils Innovants
                             </h4>
-                            <p class="font-inter text-xl text-white">
+                            <p class="font-inter text-sm sm:text-base md:text-lg lg:text-xl text-white">
                                 Profitez des meilleurs outils du marché :
                                 projection interactive et analyse de données en
                                 temps réel.
@@ -1009,11 +1092,11 @@
                         </div>
                     </div>
                     <div
-                        class="flex flex-col md:flex-row items-center gap-[30px] pt-5 border-t border-[rgba(255,255,255,0.1)]"
+                        class="flex flex-col md:flex-row items-center gap-[16px] sm:gap-[24px] md:gap-[30px] pt-4 sm:pt-5 border-t border-[rgba(255,255,255,0.1)]"
                     >
-                        <a href="#contact" class="btn-outline">Contact</a>
+                        <a href="#contact" class="btn-outline text-sm sm:text-base md:text-lg lg:text-xl px-6 sm:px-8 md:px-10 lg:px-[46px] py-3 sm:py-4 md:py-[14px]">Contact</a>
                         <span
-                            class="font-inter text-base text-white tracking-[2.08px]"
+                            class="font-inter text-xs sm:text-sm md:text-base text-white tracking-[2.08px] text-center md:text-left"
                             >Leader en solutions robotiques et
                             ingénierie....</span
                         >
@@ -1023,16 +1106,16 @@
         </section>
 
         <!-- ====== HOW IT WORKS ====== -->
-        <section class="py-[100px] flex flex-col items-center">
-            <div class="max-w-[1032px] w-full mx-auto px-5">
-                <div class="text-center mb-[80px]">
+        <section class="py-[40px] sm:py-[60px] md:py-[80px] lg:py-[100px] flex flex-col items-center">
+            <div class="max-w-[1032px] w-full mx-auto px-4 sm:px-5">
+                <div class="text-center mb-[40px] sm:mb-[60px] md:mb-[70px] lg:mb-[80px]">
                     <h2
-                        class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-primary mb-5"
+                        class="font-orbitron font-bold text-[22px] sm:text-[28px] md:text-[36px] lg:text-[40px] text-primary mb-4 sm:mb-5"
                     >
                         Comment ça marche
                     </h2>
                     <p
-                        class="font-inter text-2xl text-white max-w-[900px] mx-auto leading-relaxed"
+                        class="font-inter text-sm sm:text-base md:text-lg lg:text-2xl text-white max-w-[900px] mx-auto leading-relaxed"
                     >
                         Découvrez en quelques étapes simples comment utiliser
                         votre robot RDOC au quotidien
@@ -1076,31 +1159,31 @@
         </section>
 
         <!-- ====== ABOUT ====== -->
-        <section class="py-[80px] md:py-[60px] lg:py-[80px]" id="apropos">
-            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
+        <section class="py-[40px] sm:py-[60px] md:py-[60px] lg:py-[80px]" id="apropos">
+            <div class="max-w-container mx-auto px-4 sm:px-6 md:px-16 lg:px-24">
                 <div
-                    class="grid grid-cols-1 lg:grid-cols-2 gap-[60px] items-center"
+                    class="grid grid-cols-1 lg:grid-cols-2 gap-[30px] sm:gap-[40px] md:gap-[50px] lg:gap-[60px] items-center"
                 >
                     <div class="flex justify-center">
                         <img
                             src="assets/images/Gemini_Generated_Image_35m9vc35m9vc35m9-removebg-preview (1) 2.png"
                             alt="RDOC Robot"
-                            class="max-w-[414px] w-full"
+                            class="max-w-[280px] sm:max-w-[340px] md:max-w-[380px] lg:max-w-[414px] w-full"
                         />
                     </div>
                     <div>
                         <h2
-                            class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-primary text-left mb-2"
+                            class="font-orbitron font-bold text-[22px] sm:text-[28px] md:text-[36px] lg:text-[40px] text-primary text-left mb-2"
                         >
                             À propos de nous
                         </h2>
                         <h3
-                            class="font-inter text-xl font-bold text-white mb-4 tracking-[2.6px]"
+                            class="font-inter text-base sm:text-lg md:text-xl font-bold text-white mb-3 sm:mb-4 tracking-[2.6px]"
                         >
                             Qui sommes-nous ?
                         </h3>
                         <p
-                            class="font-inter text-xl text-white leading-relaxed text-justify mb-6"
+                            class="font-inter text-sm sm:text-base md:text-lg lg:text-xl text-white leading-relaxed text-justify mb-4 sm:mb-6"
                         >
                             Au sein de notre entreprise, nous sommes fiers
                             d'être une équipe dynamique de plus de 1 500
@@ -1112,19 +1195,19 @@
                             exceptionnelles qui répondent aux besoins
                             diversifiés de nos clients.
                         </p>
-                        <div class="flex items-center gap-3 mb-6">
+                        <div class="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
                             <img
                                 src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png"
                                 alt="Team"
-                                class="w-10 h-10 rounded-full object-cover"
+                                class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
                             />
                             <img
                                 src="assets/images/Gemini_Generated_Image_1wpa1d1wpa1d1wpa 1.png"
                                 alt="Team"
-                                class="w-10 h-10 rounded-full object-cover -ml-3"
+                                class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover -ml-2 sm:-ml-3"
                             />
                             <span
-                                class="font-inter text-sm text-white tracking-[1.82px]"
+                                class="font-inter text-xs sm:text-sm text-white tracking-[1.82px]"
                                 >Découvrez notre équipe</span
                             >
                         </div>
@@ -1135,26 +1218,26 @@
         </section>
 
         <!-- ====== FAQ ====== -->
-        <section class="py-[60px]" id="faq">
-            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
+        <section class="py-[30px] sm:py-[40px] md:py-[50px] lg:py-[60px]" id="faq">
+            <div class="max-w-container mx-auto px-4 sm:px-6 md:px-16 lg:px-24">
                 <div
-                    class="glass rounded-[20px] p-[60px] md:p-[40px] lg:p-[60px]"
+                    class="glass rounded-[16px] sm:rounded-[20px] p-[20px] sm:p-[30px] md:p-[40px] lg:p-[60px]"
                 >
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-[60px]">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-[30px] sm:gap-[40px] md:gap-[50px] lg:gap-[60px]">
                         <div>
                             <h2
-                                class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-white mb-5"
+                                class="font-orbitron font-bold text-[18px] sm:text-[22px] md:text-[30px] lg:text-[40px] text-white mb-4 sm:mb-5"
                             >
                                 <span class="text-primary">Questions</span>
                                 Fréquemment Posées
                             </h2>
-                            <p class="font-inter text-base text-white mb-4">
+                            <p class="font-inter text-xs sm:text-sm md:text-base text-white mb-3 sm:mb-4">
                                 Notre équipe est là pour vous ! N'hésitez pas à
                                 nous contacter pour toute question ou demande
                                 spécifique.
                             </p>
                             <p
-                                class="font-inter text-xl font-light text-white text-justify"
+                                class="font-inter text-sm sm:text-base md:text-lg lg:text-xl font-light text-white text-justify"
                             >
                                 Retrouvez ici toutes les réponses aux questions
                                 les plus fréquentes sur nos robots, nos services
@@ -1163,7 +1246,7 @@
                                 RDOC peut vous accompagner au quotidien.
                             </p>
                         </div>
-                        <div class="flex flex-col gap-4">
+                        <div class="flex flex-col gap-3 sm:gap-4">
                             <div class="faq-item">
                                 <div class="faq-icon">+</div>
                                 <div class="faq-content">
@@ -1245,19 +1328,19 @@
         </section>
 
         <!-- ====== CONTACT ====== -->
-        <section class="py-[60px] pb-[100px]" id="contact">
-            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
+        <section class="py-[30px] sm:py-[40px] md:py-[50px] lg:py-[60px] pb-[50px] sm:pb-[70px] md:pb-[85px] lg:pb-[100px]" id="contact">
+            <div class="max-w-container mx-auto px-4 sm:px-6 md:px-16 lg:px-24">
                 <div
-                    class="glass rounded-[24px] p-[60px] md:p-[40px] lg:p-[60px] grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[60px] items-center"
+                    class="glass rounded-[16px] sm:rounded-[20px] md:rounded-[24px] p-[20px] sm:p-[30px] md:p-[40px] lg:p-[60px] grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[30px] sm:gap-[40px] md:gap-[50px] lg:gap-[60px] items-center"
                 >
                     <div>
                         <h2
-                            class="font-orbitron font-bold text-[40px] md:text-3xl lg:text-[40px] text-primary mb-4"
+                            class="font-orbitron font-bold text-[22px] sm:text-[28px] md:text-[36px] lg:text-[40px] text-primary mb-3 sm:mb-4"
                         >
                             Besoin d'aide ?
                         </h2>
                         <p
-                            class="font-inter text-base text-[rgba(255,255,255,0.7)] leading-relaxed"
+                            class="font-inter text-xs sm:text-sm md:text-base text-[rgba(255,255,255,0.7)] leading-relaxed"
                         >
                             Retrouvez ici toutes les réponses aux questions les
                             plus fréquentes sur nos robots, nos services
@@ -1266,7 +1349,7 @@
                         </p>
                     </div>
                     <div>
-                        <form class="flex flex-col gap-4">
+                        <form class="flex flex-col gap-3 sm:gap-4">
                             <input
                                 type="text"
                                 class="form-input"
@@ -1296,19 +1379,19 @@
         </section>
 
         <!-- ====== FOOTER ====== -->
-        <footer class="py-[80px] pb-10 border-t border-[rgba(255,255,255,0.1)]">
-            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
+        <footer class="py-[40px] sm:py-[50px] lg:py-[80px] pb-6 sm:pb-8 lg:pb-10 border-t border-[rgba(255,255,255,0.1)]">
+            <div class="max-w-container mx-auto px-4 sm:px-6 md:px-16 lg:px-24">
                 <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] mb-[50px]"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] md:gap-[40px] lg:gap-[50px] mb-[30px] sm:mb-[40px] md:mb-[50px]"
                 >
                     <div>
                         <img
                             src="assets/images/Plan de travail 1 1.png"
                             alt="RDOC"
-                            class="h-[60px] w-auto mb-4"
+                            class="h-[40px] sm:h-[50px] lg:h-[60px] w-auto mb-3 sm:mb-4"
                         />
                         <p
-                            class="font-inter text-sm text-[rgba(255,255,255,0.5)] leading-relaxed"
+                            class="font-inter text-xs sm:text-sm text-[rgba(255,255,255,0.5)] leading-relaxed"
                         >
                             Notre équipe d'experts passionnés fournit des
                             solutions robotiques exceptionnelles, conçues pour
@@ -1317,50 +1400,50 @@
                     </div>
                     <div>
                         <h4
-                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                            class="font-orbitron text-xs sm:text-sm lg:text-base font-bold text-white uppercase mb-4 sm:mb-5"
                         >
                             Pages
                         </h4>
-                        <ul class="flex flex-col gap-2.5">
+                        <ul class="flex flex-col gap-2 sm:gap-2.5">
                             <li>
                                 <a
                                     href="#accueil"
-                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    class="font-inter text-xs sm:text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
                                     >Accueil</a
                                 >
                             </li>
                             <li>
                                 <a
                                     href="apropos.html"
-                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    class="font-inter text-xs sm:text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
                                     >A propos</a
                                 >
                             </li>
                             <li>
                                 <a
                                     href="categorie.html"
-                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    class="font-inter text-xs sm:text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
                                     >Catégorie</a
                                 >
                             </li>
                             <li>
                                 <a
                                     href="#produit"
-                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    class="font-inter text-xs sm:text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
                                     >Produit</a
                                 >
                             </li>
                             <li>
                                 <a
                                     href="#blog"
-                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    class="font-inter text-xs sm:text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
                                     >Blog</a
                                 >
                             </li>
                             <li>
                                 <a
                                     href="#contact"
-                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    class="font-inter text-xs sm:text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
                                     >Contact</a
                                 >
                             </li>
@@ -1368,29 +1451,29 @@
                     </div>
                     <div>
                         <h4
-                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                            class="font-orbitron text-xs sm:text-sm lg:text-base font-bold text-white uppercase mb-4 sm:mb-5"
                         >
                             Aide
                         </h4>
-                        <ul class="flex flex-col gap-2.5">
+                        <ul class="flex flex-col gap-2 sm:gap-2.5">
                             <li>
                                 <a
                                     href="#faq"
-                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    class="font-inter text-xs sm:text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
                                     >FAQ</a
                                 >
                             </li>
                             <li>
                                 <a
                                     href="#"
-                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    class="font-inter text-xs sm:text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
                                     >Politique de confidentialité</a
                                 >
                             </li>
                             <li>
                                 <a
                                     href="#"
-                                    class="font-inter text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
+                                    class="font-inter text-xs sm:text-sm text-[rgba(255,255,255,0.5)] hover:text-primary transition-colors"
                                     >Conditions d'utilisation</a
                                 >
                             </li>
@@ -1398,50 +1481,50 @@
                     </div>
                     <div>
                         <h4
-                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                            class="font-orbitron text-xs sm:text-sm lg:text-base font-bold text-white uppercase mb-4 sm:mb-5"
                         >
                             Contact
                         </h4>
-                        <ul class="flex flex-col gap-2.5">
+                        <ul class="flex flex-col gap-2 sm:gap-2.5">
                             <li
-                                class="font-inter text-sm text-[rgba(255,255,255,0.5)]"
+                                class="font-inter text-xs sm:text-sm text-[rgba(255,255,255,0.5)]"
                             >
                                 +213 123 456 789
                             </li>
                             <li>
                                 <a
                                     href="mailto:contact@rdoc.com"
-                                    class="font-inter text-sm text-primary hover:opacity-70 transition-opacity"
+                                    class="font-inter text-xs sm:text-sm text-primary hover:opacity-70 transition-opacity"
                                     >contact@rdoc.com</a
                                 >
                             </li>
                             <li
-                                class="font-inter text-sm text-[rgba(255,255,255,0.5)]"
+                                class="font-inter text-xs sm:text-sm text-[rgba(255,255,255,0.5)]"
                             >
                                 Alger, Algérie
                             </li>
                         </ul>
-                        <div class="flex gap-[15px] mt-4">
+                        <div class="flex gap-[10px] sm:gap-[15px] mt-3 sm:mt-4">
                             <a
                                 href="#"
-                                class="font-inter text-sm font-bold text-white hover:text-primary transition-colors"
+                                class="font-inter text-xs sm:text-sm font-bold text-white hover:text-primary transition-colors"
                                 >FB</a
                             >
                             <a
                                 href="#"
-                                class="font-inter text-sm font-bold text-white hover:text-primary transition-colors"
+                                class="font-inter text-xs sm:text-sm font-bold text-white hover:text-primary transition-colors"
                                 >IG</a
                             >
                             <a
                                 href="#"
-                                class="font-inter text-sm font-bold text-white hover:text-primary transition-colors"
+                                class="font-inter text-xs sm:text-sm font-bold text-white hover:text-primary transition-colors"
                                 >LI</a
                             >
                         </div>
                     </div>
                 </div>
                 <div
-                    class="text-center pt-[30px] border-t border-[rgba(255,255,255,0.1)]"
+                    class="text-center pt-[20px] sm:pt-[25px] md:pt-[30px] border-t border-[rgba(255,255,255,0.1)]"
                 >
                     <p class="font-inter text-xs text-[rgba(255,255,255,0.5)]">
                         © 2025 RDOC. Tous droits réservés.
