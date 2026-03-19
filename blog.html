@@ -207,27 +207,26 @@
                 color: #ffffff;
             }
             .blog-card {
-                position: relative;
                 border-radius: 20px;
                 overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.21);
+                backdrop-filter: blur(57.9px);
+                -webkit-backdrop-filter: blur(57.9px);
             }
             .blog-card-img {
                 width: 100%;
                 height: 299px;
                 object-fit: cover;
-                border-radius: 20px;
+                border-radius: 20px 20px 0 0;
+                display: block;
             }
             .blog-card-glass {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 223px;
-                background: rgba(255, 255, 255, 0.21);
-                backdrop-filter: blur(57.9px);
-                -webkit-backdrop-filter: blur(57.9px);
-                border-radius: 20px;
-                pointer-events: none;
+                flex: 1;
+                padding: 20px;
+                border-radius: 0 20px 20px 0;
+                border-left: 1px solid rgba(255, 255, 255, 0.15);
             }
             .featured-article-glass {
                 background: rgba(255, 255, 255, 0.22);
@@ -253,7 +252,10 @@
             }
             @media (max-width: 768px) {
                 .blog-card-img {
-                    height: 200px;
+                    height: 220px;
+                }
+                .blog-card-glass {
+                    padding: 16px;
                 }
             }
         </style>
@@ -528,10 +530,9 @@
                             alt="IA et Robots"
                             class="blog-card-img"
                         />
-                        <div class="blog-card-glass"></div>
-                        <div class="relative mt-[-180px] p-4">
+                        <div class="blog-card-glass">
                             <span class="font-inter text-xs text-white/60 mb-2 block">il ya 3 jour</span>
-                            <h4 class="font-orbitron text-lg font-medium text-primary mb-2">
+                            <h4 class="font-orbitron text-lg font-medium text-primary mb-2 leading-tight">
                                 IA et Robots
                             </h4>
                             <p class="font-inter text-sm text-white/70 leading-relaxed mb-3">
@@ -548,10 +549,9 @@
                             alt="Apprendre avec IA"
                             class="blog-card-img"
                         />
-                        <div class="blog-card-glass"></div>
-                        <div class="relative mt-[-180px] p-4">
+                        <div class="blog-card-glass">
                             <span class="font-inter text-xs text-white/60 mb-2 block">il ya 5 jour</span>
-                            <h4 class="font-orbitron text-lg font-medium text-primary mb-2">
+                            <h4 class="font-orbitron text-lg font-medium text-primary mb-2 leading-tight">
                                 Apprendre avec IA
                             </h4>
                             <p class="font-inter text-sm text-white/70 leading-relaxed mb-3">
@@ -568,10 +568,9 @@
                             alt="Education Futur"
                             class="blog-card-img"
                         />
-                        <div class="blog-card-glass"></div>
-                        <div class="relative mt-[-180px] p-4">
+                        <div class="blog-card-glass">
                             <span class="font-inter text-xs text-white/60 mb-2 block">il ya 1 sem</span>
-                            <h4 class="font-orbitron text-lg font-medium text-primary mb-2">
+                            <h4 class="font-orbitron text-lg font-medium text-primary mb-2 leading-tight">
                                 Éducation Futur
                             </h4>
                             <p class="font-inter text-sm text-white/70 leading-relaxed mb-3">
@@ -589,10 +588,9 @@
                             alt="Robotique Intelligente"
                             class="blog-card-img"
                         />
-                        <div class="blog-card-glass"></div>
-                        <div class="relative mt-[-180px] p-4">
+                        <div class="blog-card-glass">
                             <span class="font-inter text-xs text-white/60 mb-2 block">il ya 2 sem</span>
-                            <h4 class="font-orbitron text-lg font-medium text-primary mb-2">
+                            <h4 class="font-orbitron text-lg font-medium text-primary mb-2 leading-tight">
                                 Robotique Intelligente
                             </h4>
                             <p class="font-inter text-sm text-white/70 leading-relaxed mb-3">
@@ -609,10 +607,9 @@
                             alt="Tunisie Innovante"
                             class="blog-card-img"
                         />
-                        <div class="blog-card-glass"></div>
-                        <div class="relative mt-[-180px] p-4">
+                        <div class="blog-card-glass">
                             <span class="font-inter text-xs text-white/60 mb-2 block">il ya 2 sem</span>
-                            <h4 class="font-orbitron text-lg font-medium text-primary mb-2">
+                            <h4 class="font-orbitron text-lg font-medium text-primary mb-2 leading-tight">
                                 Tunisie Innovante
                             </h4>
                             <p class="font-inter text-sm text-white/70 leading-relaxed mb-3">
@@ -629,10 +626,9 @@
                             alt="IA au Service de l'École"
                             class="blog-card-img"
                         />
-                        <div class="blog-card-glass"></div>
-                        <div class="relative mt-[-180px] p-4">
+                        <div class="blog-card-glass">
                             <span class="font-inter text-xs text-white/60 mb-2 block">il ya 3 sem</span>
-                            <h4 class="font-orbitron text-lg font-medium text-primary mb-2">
+                            <h4 class="font-orbitron text-lg font-medium text-primary mb-2 leading-tight">
                                 IA au Service de l'École
                             </h4>
                             <p class="font-inter text-sm text-white/70 leading-relaxed mb-3">
@@ -650,10 +646,9 @@
                             alt="Futur Numérique"
                             class="blog-card-img"
                         />
-                        <div class="blog-card-glass"></div>
-                        <div class="relative mt-[-180px] p-4">
+                        <div class="blog-card-glass">
                             <span class="font-inter text-xs text-white/60 mb-2 block">il ya 1 mois</span>
-                            <h4 class="font-orbitron text-lg font-medium text-primary mb-2">
+                            <h4 class="font-orbitron text-lg font-medium text-primary mb-2 leading-tight">
                                 Futur Numérique
                             </h4>
                             <p class="font-inter text-sm text-white/70 leading-relaxed mb-3">
@@ -670,10 +665,9 @@
                             alt="Tech en Tunisie"
                             class="blog-card-img"
                         />
-                        <div class="blog-card-glass"></div>
-                        <div class="relative mt-[-180px] p-4">
+                        <div class="blog-card-glass">
                             <span class="font-inter text-xs text-white/60 mb-2 block">il ya 1 mois</span>
-                            <h4 class="font-orbitron text-lg font-medium text-primary mb-2">
+                            <h4 class="font-orbitron text-lg font-medium text-primary mb-2 leading-tight">
                                 Tech en Tunisie
                             </h4>
                             <p class="font-inter text-sm text-white/70 leading-relaxed mb-3">
@@ -690,10 +684,9 @@
                             alt="Education Innovante"
                             class="blog-card-img"
                         />
-                        <div class="blog-card-glass"></div>
-                        <div class="relative mt-[-180px] p-4">
+                        <div class="blog-card-glass">
                             <span class="font-inter text-xs text-white/60 mb-2 block">il ya 1 mois</span>
-                            <h4 class="font-orbitron text-lg font-medium text-primary mb-2">
+                            <h4 class="font-orbitron text-lg font-medium text-primary mb-2 leading-tight">
                                 Education Innovante
                             </h4>
                             <p class="font-inter text-sm text-white/70 leading-relaxed mb-3">
