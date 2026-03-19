@@ -252,10 +252,24 @@
             }
             @media (max-width: 768px) {
                 .blog-card-img {
-                    height: 220px;
+                    height: 200px;
                 }
                 .blog-card-glass {
-                    padding: 16px;
+                    padding: 14px;
+                }
+                .blog-card-glass .font-inter.text-sm {
+                    font-size: 12px;
+                }
+                .blog-card-glass .font-orbitron.text-lg {
+                    font-size: 15px;
+                }
+                .blog-card-glass .read-more-link {
+                    font-size: 13px;
+                }
+            }
+            @media (max-width: 480px) {
+                .blog-card-img {
+                    height: 180px;
                 }
             }
         </style>
@@ -349,6 +363,21 @@
                     Catégorie
                 </a>
                 <a
+                    href="blog.html"
+                    class="flex flex-col items-center text-xs text-primary"
+                >
+                    <svg
+                        class="w-6 h-6 mb-1"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                    >
+                        <title>Blog</title>
+                        <path d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
+                        <path d="M7 7h6M7 10h6M7 13h4"/>
+                    </svg>
+                    Blog
+                </a>
+                <a
                     href="contact.html"
                     class="flex flex-col items-center text-xs text-white/70"
                 >
@@ -370,77 +399,82 @@
             </div>
         </div>
 
+        <!-- Mobile bottom padding for fixed bottom nav -->
+        <div class="lg:hidden" style="height: 80px"></div>
+
         <!-- Add padding top for fixed navbar on desktop -->
         <div class="hidden lg:block" style="height: 80px"></div>
+        <!-- Mobile top padding for fixed logo -->
+        <div class="lg:hidden" style="height: 70px"></div>
 
         <!-- ====== HERO SECTION ====== -->
-        <section class="py-[60px] lg:py-[80px]">
-            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
-                <div class="grid grid-cols-1 lg:grid-cols-[611px_1fr] gap-0 overflow-hidden rounded-[20px] border border-white/10">
+        <section class="pb-[40px] lg:py-[80px]">
+            <div class="max-w-container mx-auto px-4 md:px-8 lg:px-24">
+                <div class="grid grid-cols-1 lg:grid-cols-[611px_1fr] gap-0 overflow-hidden rounded-[16px] lg:rounded-[20px] border border-white/10">
                     <!-- Left: Hero Image with Glass Overlay -->
                     <div class="relative overflow-hidden">
                         <img
                             src="assets/images/blog/888396f0b256a57b3091c5afbeaa05f9 1.png"
                             alt="Robot Hero"
-                            class="w-full h-[354px] lg:h-[617px] object-cover block"
+                            class="w-full h-[280px] sm:h-[320px] md:h-[380px] lg:h-[617px] object-cover block"
                         />
-                        <div class="absolute bottom-0 left-0 right-0 h-[259px] bg-white/21 backdrop-blur-[57.9px] flex flex-col justify-end p-[22px]">
-                            <h1 class="font-orbitron font-medium text-[28px] lg:text-[40px] text-white leading-tight mb-3">
+                        <div class="absolute bottom-0 left-0 right-0 bg-white/21 backdrop-blur-[57.9px] flex flex-col justify-end p-4 sm:p-5 md:p-6 lg:p-[22px]">
+                            <h1 class="font-orbitron font-medium text-[22px] sm:text-[26px] md:text-[30px] lg:text-[40px] text-white leading-tight mb-2 lg:mb-3">
                                 <span class="text-primary">Robotique</span> & Innovation
                             </h1>
-                            <p class="font-inter text-base lg:text-[20px] text-white leading-relaxed mb-5 max-w-[495px]">
+                            <p class="font-inter text-sm sm:text-base lg:text-[20px] text-white leading-relaxed mb-3 lg:mb-5 max-w-[495px] hidden sm:block">
                                 Explorer les robots intelligents et leur rôle dans l'éducation et la société.
                             </p>
-                            <a href="#articles" class="btn-outline self-start text-base px-8 py-3">Explorer les articles</a>
+                            <a href="#articles" class="btn-outline self-start text-xs sm:text-sm px-5 sm:px-6 py-2 sm:py-2.5 lg:text-base lg:px-8 lg:py-3">Explorer les articles</a>
                         </div>
                     </div>
 
                     <!-- Right: Search & Categories Glass Panel -->
-                    <div class="bg-white/21 backdrop-blur-[29px] rounded-b-[20px] lg:rounded-bl-none lg:rounded-r-[20px] p-6 lg:p-[30px] flex flex-col gap-6">
+                    <div class="bg-white/21 backdrop-blur-[29px] rounded-b-[16px] lg:rounded-bl-none lg:rounded-r-[16px] rounded-t-[16px] lg:rounded-t-[20px] p-4 sm:p-5 lg:p-[30px] flex flex-col gap-4 sm:gap-5 lg:gap-6">
                         <!-- Search Bar -->
                         <div>
-                            <div class="flex items-center gap-3 mb-4">
-                                <svg class="w-6 h-6 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="#5CC4E5" stroke-width="3.75">
+                            <div class="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="#5CC4E5" stroke-width="3.75">
                                     <circle cx="10" cy="10" r="7"/>
                                     <line x1="15" y1="15" x2="21" y2="21" stroke-linecap="round"/>
                                 </svg>
-                                <span class="font-inter text-xl font-medium text-white">Recherche</span>
+                                <span class="font-inter text-base sm:text-lg lg:text-xl font-medium text-white">Recherche</span>
                             </div>
                             <input
                                 type="text"
-                                class="search-bar"
+                                class="search-bar text-sm sm:text-base"
                                 placeholder="Trouver un article..."
                             />
                         </div>
 
                         <!-- Categories -->
                         <div>
-                            <div class="flex items-center gap-3 mb-4">
-                                <svg class="w-6 h-6 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="#5CC4E5" stroke-width="3">
+                            <div class="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="#5CC4E5" stroke-width="3">
                                     <rect x="3" y="3" width="7" height="7" rx="1"/>
                                     <rect x="14" y="3" width="7" height="7" rx="1"/>
                                     <rect x="3" y="14" width="7" height="7" rx="1"/>
                                     <rect x="14" y="14" width="7" height="7" rx="1"/>
                                 </svg>
-                                <span class="font-inter text-xl font-medium text-white">Categories</span>
+                                <span class="font-inter text-base sm:text-lg lg:text-xl font-medium text-white">Categories</span>
                             </div>
 
-                            <div class="flex flex-col gap-3">
-                                <button class="category-btn">
+                            <div class="flex flex-col gap-2 sm:gap-3">
+                                <button class="category-btn text-sm sm:text-base py-3 px-4 sm:py-3 sm:px-5">
                                     <span>Intelligence Artificielle</span>
-                                    <span class="category-count">12</span>
+                                    <span class="category-count text-xs sm:text-base">12</span>
                                 </button>
-                                <button class="category-btn">
+                                <button class="category-btn text-sm sm:text-base py-3 px-4 sm:py-3 sm:px-5">
                                     <span>Education Tech</span>
-                                    <span class="category-count">16</span>
+                                    <span class="category-count text-xs sm:text-base">16</span>
                                 </button>
-                                <button class="category-btn">
+                                <button class="category-btn text-sm sm:text-base py-3 px-4 sm:py-3 sm:px-5">
                                     <span>Robotique Avancé</span>
-                                    <span class="category-count">07</span>
+                                    <span class="category-count text-xs sm:text-base">07</span>
                                 </button>
-                                <button class="category-btn">
+                                <button class="category-btn text-sm sm:text-base py-3 px-4 sm:py-3 sm:px-5">
                                     <span>Etique et future</span>
-                                    <span class="category-count">23</span>
+                                    <span class="category-count text-xs sm:text-base">23</span>
                                 </button>
                             </div>
                         </div>
@@ -450,43 +484,51 @@
         </section>
 
         <!-- ====== FEATURED ARTICLE ====== -->
-        <section class="pb-[60px] lg:pb-[80px]">
-            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
+        <section class="pb-[40px] lg:pb-[80px]">
+            <div class="max-w-container mx-auto px-4 md:px-8 lg:px-24">
                 <!-- Section Header -->
-                <div class="flex items-center gap-[30px] mb-[40px]">
-                    <div class="w-[85px] h-[3px] bg-primary rounded-full"></div>
-                    <h2 class="font-inter text-2xl md:text-[32px] font-medium text-white">
+                <div class="flex items-center gap-3 sm:gap-4 md:gap-[30px] mb-[24px] sm:mb-[30px] lg:mb-[40px]">
+                    <div class="w-[50px] sm:w-[65px] md:w-[85px] h-[3px] bg-primary rounded-full shrink-0"></div>
+                    <h2 class="font-inter text-lg sm:text-xl md:text-2xl lg:text-[32px] font-medium text-white">
                         Article à la une
                     </h2>
-                    <a href="#" class="font-inter text-base text-primary hover:opacity-70 transition-opacity ml-auto">
+                    <a href="#" class="font-inter text-xs sm:text-sm md:text-base text-primary hover:opacity-70 transition-opacity ml-auto hidden sm:block">
                         Voir tous les articles
                     </a>
                 </div>
 
                 <!-- Featured Article Card -->
-                <div class="featured-article-glass p-[30px] md:p-[40px] lg:p-[50px]">
-                    <div class="grid grid-cols-1 lg:grid-cols-[1fr_630px] gap-[30px] lg:gap-[50px] items-center">
+                <div class="featured-article-glass p-4 sm:p-6 md:p-8 lg:p-[50px]">
+                    <div class="grid grid-cols-1 lg:grid-cols-[1fr_630px] gap-[20px] lg:gap-[50px] items-center">
                         <!-- Left: Content -->
                         <div>
-                            <span class="inline-block font-inter text-base font-bold text-primary mb-4">
+                            <span class="inline-block font-inter text-xs sm:text-sm md:text-base font-bold text-primary mb-2 sm:mb-3 lg:mb-4">
                                 EDUCATION TECH
                             </span>
-                            <h3 class="font-orbitron text-2xl md:text-3xl lg:text-[40px] font-normal text-white leading-tight mb-6">
+                            <h3 class="font-orbitron text-lg sm:text-xl md:text-2xl lg:text-[40px] font-normal text-white leading-tight mb-4 sm:mb-5 lg:mb-6">
                                 Apprentissage intelligent futur brillant.
                             </h3>
-                            <p class="font-inter text-base lg:text-lg text-white/80 leading-relaxed mb-8">
+                            <p class="font-inter text-xs sm:text-sm md:text-base lg:text-lg text-white/80 leading-relaxed mb-5 sm:mb-6 lg:mb-8">
                                 Transformer chaque moment d'apprentissage en une expérience intelligente, interactive et inspirante, où la technologie facilite la compréhension et stimule la créativité des élèves.
                             </p>
-                            <a href="#" class="btn-outline">Lire l'article</a>
+                            <a href="#" class="btn-outline text-xs sm:text-sm md:text-base px-5 sm:px-6 lg:px-8 py-2 sm:py-2.5 lg:py-3">Lire l'article</a>
                         </div>
 
-                        <!-- Right: Image -->
-                        <div>
+                        <!-- Mobile Featured Image (shown on mobile) -->
+                        <div class="sm:hidden">
                             <img
                                 src="assets/images/blog/1798dbbd7adf96c01343ec30f5515579 1.png"
                                 alt="Featured Article"
-                                class="w-full rounded-[20px] object-cover"
-                                style="height: 442px;"
+                                class="w-full rounded-[12px] object-cover h-[180px]"
+                            />
+                        </div>
+
+                        <!-- Right: Image -->
+                        <div class="hidden sm:block">
+                            <img
+                                src="assets/images/blog/1798dbbd7adf96c01343ec30f5515579 1.png"
+                                alt="Featured Article"
+                                class="w-full rounded-[12px] sm:rounded-[16px] lg:rounded-[20px] object-cover h-[220px] md:h-[300px] lg:h-[442px]"
                             />
                         </div>
                     </div>
@@ -495,12 +537,12 @@
         </section>
 
         <!-- ====== BLOG GRID ====== -->
-        <section class="pb-[80px] lg:pb-[100px]" id="articles">
-            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
+        <section class="pb-[60px] lg:pb-[100px]" id="articles">
+            <div class="max-w-container mx-auto px-4 md:px-8 lg:px-24">
                 <!-- Section Header -->
-                <div class="flex items-center gap-[30px] mb-[40px]">
-                    <div class="w-[85px] h-[3px] bg-primary rounded-full"></div>
-                    <h2 class="font-inter text-2xl md:text-[32px] font-medium text-white">
+                <div class="flex items-center gap-3 sm:gap-4 md:gap-[30px] mb-[24px] sm:mb-[30px] lg:mb-[40px]">
+                    <div class="w-[50px] sm:w-[65px] md:w-[85px] h-[3px] bg-primary rounded-full shrink-0"></div>
+                    <h2 class="font-inter text-lg sm:text-xl md:text-2xl lg:text-[32px] font-medium text-white">
                         Dernieres publications
                     </h2>
                 </div>
@@ -685,26 +727,26 @@
                 </div>
 
                 <!-- View All Link -->
-                <div class="text-center mt-[50px]">
-                    <a href="#" class="btn-outline">Voir tous les articles</a>
+                <div class="text-center mt-[30px] sm:mt-[40px] lg:mt-[50px]">
+                    <a href="#" class="btn-outline text-xs sm:text-sm md:text-base px-5 sm:px-6 lg:px-8 py-2 sm:py-2.5 lg:py-3">Voir tous les articles</a>
                 </div>
             </div>
         </section>
 
         <!-- ====== FOOTER ====== -->
-        <footer class="py-[80px] pb-10 border-t border-[rgba(255,255,255,0.1)]">
-            <div class="max-w-container mx-auto px-6 md:px-16 lg:px-24">
+        <footer class="py-[40px] sm:py-[50px] lg:py-[80px] pb-6 lg:pb-10 border-t border-[rgba(255,255,255,0.1)]">
+            <div class="max-w-container mx-auto px-4 md:px-8 lg:px-24">
                 <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] mb-[50px]"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] md:gap-[40px] lg:gap-[50px] mb-[30px] md:mb-[40px] lg:mb-[50px]"
                 >
                     <div>
                         <img
                             src="assets/images/Plan de travail 1 1.png"
                             alt="RDOC"
-                            class="h-[60px] w-auto mb-4"
+                            class="h-[40px] sm:h-[50px] lg:h-[60px] w-auto mb-4"
                         />
                         <p
-                            class="font-inter text-sm text-[rgba(255,255,255,0.5)] leading-relaxed"
+                            class="font-inter text-xs sm:text-sm text-[rgba(255,255,255,0.5)] leading-relaxed"
                         >
                             Notre equipe d'experts passionnes fournit des
                             solutions robotiques exceptionelles, concues pour
@@ -713,7 +755,7 @@
                     </div>
                     <div>
                         <h4
-                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                            class="font-orbitron text-xs sm:text-sm lg:text-base font-bold text-white uppercase mb-3 sm:mb-4 lg:mb-5"
                         >
                             Pages
                         </h4>
@@ -764,7 +806,7 @@
                     </div>
                     <div>
                         <h4
-                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                            class="font-orbitron text-xs sm:text-sm lg:text-base font-bold text-white uppercase mb-3 sm:mb-4 lg:mb-5"
                         >
                             Aide
                         </h4>
@@ -794,7 +836,7 @@
                     </div>
                     <div>
                         <h4
-                            class="font-orbitron text-base font-bold text-white uppercase mb-5"
+                            class="font-orbitron text-xs sm:text-sm lg:text-base font-bold text-white uppercase mb-3 sm:mb-4 lg:mb-5"
                         >
                             Contact
                         </h4>
