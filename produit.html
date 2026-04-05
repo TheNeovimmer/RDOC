@@ -75,6 +75,10 @@
               <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
               Produit
           </a>
+          <a href="blog.html" class="flex flex-col items-center text-xs text-white/70">
+              <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/><path d="M7 7h6M7 10h6M7 13h4"/></svg>
+              Blog
+          </a>
           <a href="contact.html" class="flex flex-col items-center text-xs text-white/70">
               <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
               Contact
@@ -84,13 +88,38 @@
     <div class="lg:hidden" style="height: 80px"></div>
 
     <!-- ====== HERO BANNER ====== -->
-    <section class="relative w-full h-screen min-h-[600px] sm:min-h-[700px] md:min-h-[850px] overflow-hidden flex flex-col bg-no-repeat bg-[#000000]" style="background-image: url('assets/images/product/Gemini_Generated_Image_js7vr5js7vr5js7v%20%281%29%201.png'); background-size: 100% auto; background-position: center bottom;">
-      <!-- Dark overlay to ensure text readability -->
-      <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-transparent z-0 pointer-events-none"></div>
+    <section class="relative w-full h-screen min-h-[550px] sm:min-h-[650px] md:min-h-[850px] overflow-hidden flex flex-col bg-no-repeat bg-[#000000]" style="background-image: url('assets/images/product/Gemini_Generated_Image_js7vr5js7vr5js7v%20%281%29%201.png'); background-size: cover; background-position: center center;">
+      <!-- Dark overlay for text readability -->
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80 z-0 pointer-events-none"></div>
       
-      <div class="max-w-[1440px] w-full mx-auto px-4 sm:px-6 md:px-8 relative z-10 flex flex-col items-start pt-[100px] sm:pt-[120px] lg:pt-[180px]">
-        <!-- Title positioned top left over the content area -->
-        <h1 class="font-orbitron font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[85px] text-white tracking-[0.1em] leading-none drop-shadow-2xl">RDOC MINI</h1>
+      <div class="max-w-[1440px] w-full mx-auto px-4 sm:px-6 md:px-8 relative z-10 flex flex-col items-center text-center pt-[100px] sm:pt-[120px] lg:pt-[180px] lg:items-start lg:text-left flex-1 justify-center">
+        <!-- Subtitle -->
+        <p class="font-inter text-sm sm:text-base md:text-lg text-primary tracking-[0.2em] uppercase mb-2 sm:mb-3">Robot Éducatif Intelligent</p>
+        
+        <!-- Main Title -->
+        <h1 class="font-orbitron font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[85px] text-white tracking-[0.1em] leading-[1.1] drop-shadow-2xl mb-4 sm:mb-6">RDOC MINI</h1>
+        
+        <!-- Description -->
+        <p class="font-inter text-sm sm:text-base md:text-lg text-white/80 max-w-[500px] lg:max-w-[600px] leading-relaxed mb-6 sm:mb-8">
+          Le compagnon éducatif intelligent qui rend l'apprentissage interactif, ludique et accessible partout.
+        </p>
+        
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
+          <a href="#decouvrir" class="inline-flex items-center justify-center bg-primary text-black font-orbitron font-bold text-sm sm:text-base px-8 py-3 rounded-full transition hover:bg-primary/80 shadow-[0_0_20px_rgba(92,196,229,0.3)]">
+            Découvrir
+          </a>
+          <a href="#commander" class="inline-flex items-center justify-center border border-white/50 text-white font-orbitron font-bold text-sm sm:text-base px-8 py-3 rounded-full transition hover:bg-white/10">
+            Commander
+          </a>
+        </div>
+      </div>
+      
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-20 sm:bottom-24 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center text-white/50">
+        <svg class="w-6 h-6 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
       </div>
     </section>
 
