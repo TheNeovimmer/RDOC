@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="RDOC - Robot éducatif intelligent. Solution autonome pour l'éducation et l'assistance." />
+    <title>RDOC MINI - Produit</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/produit.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#5CC4E5',
+              'bg-dark': '#000000',
+              'text-white': '#FFFFFF',
+            },
+            fontFamily: {
+              orbitron: ['Orbitron', 'sans-serif'],
+              inter: ['Inter', 'sans-serif'],
+            },
+            maxWidth: {
+              container: '1200px',
+            },
+            boxShadow: {
+              glow: '0 0 15px rgba(92,196,229,0.5)',
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <body class="bg-black text-white font-inter">
+    <!-- NAVBAR -->
+    <div class="fixed top-0 left-0 right-0 z-50 hidden lg:flex justify-between items-center px-6 md:px-16 lg:px-24 py-5 bg-black/80 backdrop-blur-md">
+      <a href="index.html" class="logo">
+        <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="h-[38px] w-auto">
+      </a>
+      <nav class="flex items-center gap-6 h-[55px] px-8 bg-white/5 border border-white/40 rounded-full backdrop-blur-md">
+        <a href="index.html" class="font-orbitron text-[20px] text-white hover:text-primary transition-colors">Accueil</a>
+        <a href="apropos.html" class="font-orbitron text-[20px] text-white hover:text-primary transition-colors">A propos</a>
+        <a href="categorie.html" class="font-orbitron text-[20px] text-white hover:text-primary transition-colors">Catégorie</a>
+        <a href="produit.html" class="font-orbitron text-[20px] text-primary font-bold transition-colors">Produit</a>
+        <a href="blog.html" class="font-orbitron text-[20px] text-white hover:text-primary transition-colors">Blog</a>
+        <a href="contact.html" class="font-orbitron text-[20px] text-white hover:text-primary transition-colors">Contact</a>
+      </nav>
+      <a href="login.html" class="inline-flex items-center justify-center px-6 h-10 rounded-full border border-transparent font-inter text-base font-medium text-white transition-all hover:opacity-80" style="background-image: linear-gradient(#000, #000), linear-gradient(135deg, #FFFFFF, #5CC4E5); background-origin: border-box; background-clip: padding-box, border-box;">Sign up / Sign in</a>
+    </div>
+
+    <!-- ====== HERO BANNER ====== -->
+    <section class="relative w-full pt-40 pb-20 overflow-hidden flex flex-col items-center">
+      <!-- Glow backdrops -->
+      <div class="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[80%] h-[500px] bg-primary/10 blur-[120px] pointer-events-none rounded-full"></div>
+      
+      <div class="max-w-[1440px] w-full mx-auto px-8 relative z-10 flex flex-col items-center">
+        <!-- Title positioned top left over the content area -->
+        <div class="w-full relative h-[80px]">
+           <h1 class="font-orbitron font-bold text-5xl md:text-[80px] text-white tracking-[0.1em] absolute left-0 top-0 leading-none">RDOC MINI</h1>
+        </div>
+        
+        <!-- Large Hero Robot Banner Image -->
+        <div class="w-full max-w-4xl mt-10 flex justify-center">
+          <img src="assets/images/product/Gemini_Generated_Image_js7vr5js7vr5js7v (1) 1.png" alt="RDOC MINI Banner" class="w-full h-auto object-contain max-h-[700px]">
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== FEATURE 1 ====== -->
+    <section class="max-w-container mx-auto px-6 py-24">
+       <div class="flex flex-col md:flex-row items-center gap-16">
+          <div class="w-full md:w-5/12 flex justify-center relative">
+             <!-- Soft glow behind the side robot -->
+             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3 h-2/3 bg-primary/20 blur-[80px] rounded-full"></div>
+             <img src="assets/images/product/Gemini_Generated_Image_ewxq1eewxq1eewxq-removebg-preview (1) 1.png" alt="RDOC Mini Profile" class="w-[85%] h-auto relative z-10">
+          </div>
+          
+          <div class="w-full md:w-7/12 flex flex-col items-start gap-8">
+             <h2 class="font-orbitron font-bold text-[40px] md:text-[46px] text-primary leading-[1.1] tracking-wider">Le Robot Éducatif<br>Intelligent</h2>
+             <p class="font-inter font-bold text-lg md:text-xl text-white leading-[1.6] tracking-wide mb-4 max-w-[500px]">
+               Conçu pour accompagner élèves et enseignants, le RDOC MINI capte le son, projette des supports pédagogiques interactifs et facilite un apprentissage personnalisé, sans besoin d'internet.
+             </p>
+             <div class="flex items-center gap-6">
+                <a href="#" class="inline-flex items-center justify-center bg-white text-black font-orbitron font-bold text-lg px-10 py-4 rounded-full transition hover:bg-gray-200">Commander</a>
+                <!-- Decorative Blue Orb -->
+                <div class="w-12 h-12 rounded-full border border-primary/40 flex items-center justify-center shadow-glow" style="background: radial-gradient(circle at 30% 30%, #5CC4E5, #001f3f);">
+                   <div class="w-4 h-4 rounded-full bg-white blur-[2px] self-start ml-2 mt-2 opacity-80"></div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- ====== FEATURE 2 (3-COLUMN POINTERS) ====== -->
+    <section class="max-w-[1300px] mx-auto px-6 py-24 relative overflow-hidden">
+        <div class="flex flex-col md:flex-row items-center justify-center w-full">
+            
+            <!-- Left Column: Pointers -->
+            <div class="w-full md:w-[35%] flex flex-col justify-center gap-20 py-10 relative z-20">
+                <!-- Pointer 1 -->
+                <div class="flex items-center justify-end w-full group">
+                   <h3 class="font-orbitron font-bold text-primary tracking-widest text-sm whitespace-nowrap">CAPTEUR DE SON</h3>
+                   <div class="flex-grow h-[1px] bg-primary/60 ml-4 mr-0 hidden md:block group-hover:bg-primary transition-colors"></div>
+                   <div class="w-3 h-3 border border-primary rounded-full relative hidden md:block shadow-glow bg-black">
+                      <div class="w-[4px] h-[4px] bg-primary rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                   </div>
+                </div>
+                <!-- Pointer 2 -->
+                <div class="flex items-center justify-end w-full group">
+                   <h3 class="font-orbitron font-bold text-primary tracking-widest text-sm whitespace-nowrap">PROJECTEUR</h3>
+                   <div class="flex-grow h-[1px] bg-primary/60 ml-4 mr-0 hidden md:block group-hover:bg-primary transition-colors"></div>
+                   <div class="w-3 h-3 border border-primary rounded-full relative hidden md:block shadow-glow bg-black">
+                      <div class="w-[4px] h-[4px] bg-primary rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                   </div>
+                </div>
+                <!-- Pointer 3 -->
+                <div class="flex items-center justify-end w-full group">
+                   <h3 class="font-orbitron font-bold text-primary tracking-widest text-sm whitespace-nowrap">ROTATION 360°</h3>
+                   <div class="flex-grow h-[1px] bg-primary/60 ml-4 mr-0 hidden md:block group-hover:bg-primary transition-colors"></div>
+                   <div class="w-3 h-3 border border-primary rounded-full relative hidden md:block shadow-glow bg-black">
+                      <div class="w-[4px] h-[4px] bg-primary rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                   </div>
+                </div>
+            </div>
+
+            <!-- Center Column: Robot -->
+            <div class="w-full md:w-[30%] flex justify-center relative mt-10 md:mt-0 z-10">
+               <!-- To make the pointers overlap slightly behind the robot or precisely touch it, we use negative margins on desktop -->
+               <img src="assets/images/product/Gemini_Generated_Image_ioe7t9ioe7t9ioe7-removebg-preview (1) 4.png" alt="Robot Pointers Core" class="w-[120%] max-w-[400px] h-auto object-contain md:-ml-8 relative z-10 scale-110 drop-shadow-[0_0_20px_rgba(92,196,229,0.15)]">
+            </div>
+
+            <!-- Right Column: Text & CTA -->
+            <div class="w-full md:w-[35%] flex flex-col justify-center items-start pl-0 md:pl-10 mt-12 md:mt-0 relative z-20">
+               <h2 class="font-orbitron font-bold text-[34px] md:text-[42px] text-primary leading-[1.1] tracking-wider mb-6">RDOC MINI<br>L'Innovation à<br>Portée de Main</h2>
+               <p class="font-inter font-bold text-base md:text-[17px] text-white leading-relaxed tracking-wide max-w-[320px] mb-8">
+                 Un petit robot conçu pour simplifier l'apprentissage, stimuler la créativité et rendre chaque interaction plus intelligente et ludique.
+               </p>
+               <a href="#" class="inline-flex items-center justify-center bg-white text-black font-orbitron font-bold text-base px-8 py-3 rounded-full transition hover:bg-gray-200">Découvrir</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FONCTIONNALITÉS PREMIUM ====== -->
+    <section class="max-w-[1300px] mx-auto px-6 py-24 text-center">
+      <h2 class="font-orbitron font-bold text-3xl md:text-[40px] text-primary tracking-[0.15em] mb-20 uppercase">FONCTIONNALITÉS PREMIUM</h2>
+      
+      <div class="flex flex-col lg:flex-row items-center justify-center gap-12 w-full">
+        <!-- Left Column -->
+        <div class="w-full lg:w-[35%] flex flex-col gap-14 items-end">
+          <div class="flex items-center gap-5">
+            <div class="text-right">
+              <h4 class="font-orbitron font-bold text-white text-[15px] tracking-widest mb-1">AUTONOMIE</h4>
+              <p class="font-inter text-[13px] text-white/70 italic tracking-wider">batterie longue durée</p>
+            </div>
+            <div class="w-[50px] h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg">
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 10v4a2 2 0 002 2h1a2 2 0 002-2v-4a2 2 0 00-2-2H6a2 2 0 00-2 2zm10 0v4a2 2 0 002 2h1a2 2 0 002-2v-4a2 2 0 00-2-2h-1a2 2 0 00-2 2z"/></svg>
+            </div>
+          </div>
+          <div class="flex items-center gap-5">
+            <div class="text-right">
+               <h4 class="font-orbitron font-bold text-white text-[15px] tracking-widest mb-1">SÉCURISÉ</h4>
+               <p class="font-inter text-[13px] text-white/70 italic tracking-wider">protection des données</p>
+            </div>
+            <div class="w-[50px] h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg">
+               <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            </div>
+          </div>
+          <div class="flex items-center gap-5">
+            <div class="text-right">
+               <h4 class="font-orbitron font-bold text-white text-[15px] tracking-widest mb-1">ROBUSTE</h4>
+               <p class="font-inter text-[13px] text-white/70 italic tracking-wider">résistant aux chocs</p>
+            </div>
+            <div class="w-[50px] h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg">
+               <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+          </div>
+          <div class="flex items-center gap-5">
+            <div class="text-right">
+               <h4 class="font-orbitron font-bold text-white text-[15px] tracking-widest mb-1">CONNECTÉ</h4>
+               <p class="font-inter text-[13px] text-white/70 italic tracking-wider">compatible appareils</p>
+            </div>
+            <div class="w-[50px] h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg">
+               <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Robot -->
+        <div class="w-full lg:w-[30%] flex justify-center py-10 lg:py-0">
+          <img src="assets/images/product/Whisk_7d418a1b21bd99e92b44217c8a23f37adr-removebg-preview (1) 1.png" alt="Premium Center Robot" class="w-full max-w-[320px] drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)] scale-110">
+        </div>
+
+        <!-- Right Column -->
+        <div class="w-full lg:w-[35%] flex flex-col gap-14 items-start">
+          <div class="flex items-center gap-5">
+            <div class="w-[50px] h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg">
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243-4.243a5 5 0 000 7.072m0 0L3 3m3.273 15.536a9 9 0 0012.728 0"/></svg>
+            </div>
+            <div class="text-left">
+              <h4 class="font-orbitron font-bold text-white text-[15px] tracking-widest mb-1">OFFLINE</h4>
+              <p class="font-inter text-[13px] text-white/70 italic tracking-wider">fonctionne sans internet</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-5">
+            <div class="w-[50px] h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg">
+               <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            </div>
+            <div class="text-left">
+               <h4 class="font-orbitron font-bold text-white text-[15px] tracking-widest mb-1">ASSISTANT IA</h4>
+               <p class="font-inter text-[13px] text-white/70 italic tracking-wider">interaction intelligente</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-5">
+             <div class="w-[50px] h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg">
+               <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v18m0-18l5 5-10 10m10-10l-5 5"/></svg>
+            </div>
+            <div class="text-left">
+               <h4 class="font-orbitron font-bold text-white text-[15px] tracking-widest mb-1">BLUETOOTH</h4>
+               <p class="font-inter text-[13px] text-white/70 italic tracking-wider">connexion facile</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-5">
+            <div class="w-[50px] h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg">
+               <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <div class="text-left">
+               <h4 class="font-orbitron font-bold text-white text-[15px] tracking-widest mb-1">RAPIDE</h4>
+               <p class="font-inter text-[13px] text-white/70 italic tracking-wider">exécution fluide</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== VIDEO PREVIEW ====== -->
+    <section class="max-w-[1440px] mx-auto w-full mt-10 mb-20 px-4">
+      <div class="w-full aspect-video bg-cover bg-center flex items-center justify-center relative cursor-pointer group rounded-lg overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-white/10" style="background-image: url('assets/images/product/Capture\ d\'écran\ 2026-02-17\ 212130\ 1.png');">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-500"></div>
+        <!-- Play Button -->
+        <div class="w-20 h-20 bg-white shadow-glow rounded-full flex items-center justify-center z-10 hover:scale-105 transition-transform duration-300">
+          <svg class="w-8 h-8 text-black ml-2" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== ACCESSOIRES ====== -->
+    <section class="py-20 relative w-full mb-10 overflow-hidden">
+      <!-- Deep dark wave base -->
+      <div class="absolute inset-0 z-0">
+          <div class="absolute inset-0 bg-[#061219]/60" style="clip-path: ellipse(80% 50% at 50% 50%);"></div>
+          <div class="absolute bottom-0 left-[-10%] right-[-10%] h-[60%] bg-[#081a24] blur-[40px] opacity-60"></div>
+          
+          <!-- Distinct decorative left and right blobs -->
+          <div class="absolute left-[-150px] top-[20%] w-[500px] h-[300px] bg-cyan-900/40 rounded-full blur-[80px]" style="clip-path: ellipse(50% 50% at 50% 50%);"></div>
+          <div class="absolute right-[-150px] top-[20%] w-[500px] h-[300px] bg-cyan-900/40 rounded-full blur-[80px]" style="clip-path: ellipse(50% 50% at 50% 50%);"></div>
+      </div>
+
+      <div class="text-center mb-16 px-4 relative z-10">
+        <h2 class="font-orbitron font-bold text-3xl md:text-[38px] text-primary tracking-widest mb-4">ACCESSOIRES INCLUS</h2>
+        <p class="font-inter font-bold text-white text-lg tracking-wide">Tout ce qui accompagne RDOC MINI</p>
+      </div>
+
+      <div class="relative max-w-5xl mx-auto flex flex-col md:flex-row items-end justify-between px-6 z-10 mt-10">
+        <!-- Accessory 1 -->
+        <div class="flex-1 flex justify-center z-10 relative mb-6 md:mb-0">
+          <img src="assets/images/product/69427fad3984e11c6c6071b5494df301-removebg-preview 1.png" alt="Boîte de transport" class="w-[180px] object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.9)] hover:translate-y-[-10px] transition-transform duration-500">
+        </div>
+        <!-- Accessory Center -->
+        <div class="flex-1 flex justify-center text-center flex-col items-center z-20" style="transform: translateY(-20px);">
+          <img src="assets/images/product/Whisk_1e50aef894199c48f604cace61973e8ddr-removebg-preview (1) 1.png" alt="Support de charge" class="w-[280px] object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.9)] hover:translate-y-[-10px] transition-transform duration-500">
+          <h4 class="font-inter font-extrabold text-white text-[19px] mt-6 tracking-wide uppercase">Support de charge</h4>
+        </div>
+        <!-- Accessory 3 -->
+        <div class="flex-1 flex justify-center z-10 relative mt-6 md:mt-0">
+           <img src="assets/images/product/Whisk_1e50aef894199c48f604cace61973e8ddr-removebg-preview (1) 1.png" alt="Câble et chargeur" class="w-[180px] object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.9)] hover:translate-y-[-10px] transition-transform duration-500">
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SERVICES ====== -->
+    <section class="max-w-[1200px] mx-auto px-6 py-16 text-center pb-24">
+      <h2 class="font-orbitron font-bold text-3xl md:text-[38px] text-primary tracking-[0.1em] mb-20 uppercase">GARANTIE ET SERVICES</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-center lg:px-10 mb-24">
+        <!-- Service 1 -->
+        <div class="flex flex-col items-center justify-start">
+          <div class="h-32 flex items-center justify-center mb-8">
+             <img src="assets/images/product/Whisk_7d418a1b21bd99e92b44217c8a23f37adr-removebg-preview (1) 1.png" alt="Support Robot" class="h-28 filter grayscale brightness-125 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+          </div>
+          <h3 class="font-orbitron font-bold text-xl md:text-2xl text-white mb-4 tracking-wide">Support client 24/7</h3>
+          <p class="font-inter font-medium text-[15px] text-white max-w-[250px] leading-relaxed mx-auto">Assistance rapide pour toutes vos questions</p>
+        </div>
+        <!-- Service 2 -->
+        <div class="flex flex-col items-center justify-start">
+          <div class="h-32 flex items-center justify-center mb-8">
+             <div class="w-28 h-28 rounded-full border-[3px] border-green-500 bg-green-500/10 flex items-center justify-center relative shadow-[0_0_30px_rgba(34,197,94,0.4)]">
+               <!-- Checkmark cluster representing security/certification -->
+               <div class="flex gap-1 relative z-10">
+                  <svg class="w-12 h-12 text-green-500 drop-shadow-[0_0_10px_rgba(34,197,94,1)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+               </div>
+               <!-- Decorative text along path in real design -->
+               <div class="absolute inset-2 border-2 border-dashed border-green-500/50 rounded-full animate-[spin_10s_linear_infinite]"></div>
+             </div>
+          </div>
+          <h3 class="font-orbitron font-bold text-xl md:text-2xl text-white mb-4 tracking-wide">Garantie 3 ans</h3>
+          <p class="font-inter font-medium text-[15px] text-white max-w-[250px] leading-relaxed mx-auto">Couverture complète du robot pour toute panne</p>
+        </div>
+        <!-- Service 3 -->
+        <div class="flex flex-col items-center justify-start">
+          <div class="h-32 flex items-center justify-center mb-8">
+             <svg class="w-28 h-28 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M8 17a2 2 0 11-4 0 2 2 0 014 0zM20 17a2 2 0 11-4 0 2 2 0 014 0z" fill="currentColor"/>
+                <path d="M14 16V6a1 1 0 00-1-1H3a1 1 0 00-1 1v10h2m4 0h6m4 0h2v-4.505c0-.493-.16-.973-.454-1.365L18.5 8H14V16v0z"/>
+                <!-- Speed lines -->
+                <path d="M25 8H20M26 5H21M24 2H18" stroke-width="1.5"/>
+             </svg>
+          </div>
+          <h3 class="font-orbitron font-bold text-xl md:text-2xl text-white mb-4 tracking-wide">Livraison/installation</h3>
+          <p class="font-inter font-medium text-[15px] text-white max-w-[250px] leading-relaxed mx-auto">Robot livré et prêt à l'emploi directement</p>
+        </div>
+      </div>
+
+       <a href="#" class="inline-flex items-center justify-center border-[2px] border-primary/50 bg-[#020a10] text-primary font-orbitron font-bold text-lg px-20 py-4 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(92,196,229,0.2)] hover:shadow-[0_0_30px_rgba(92,196,229,0.5)] hover:bg-[#041525] uppercase tracking-widest mt-6">
+         Commander
+       </a>
+    </section>
+
+    <!-- ====== FOOTER MAP & LAYOUT ====== -->
+    <footer class="pt-16 pb-8 border-t border-[rgba(255,255,255,0.1)] relative">
+      <div class="max-w-[1300px] mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between gap-12 lg:gap-20 mb-16">
+          
+          <!-- Logo & Description column -->
+          <div class="max-w-xs flex flex-col">
+            <div class="flex items-center gap-2 mb-6">
+               <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="h-10">
+               <span class="font-orbitron font-bold text-white text-3xl">RDOC<span class="text-primary">X</span></span>
+            </div>
+            <p class="font-inter text-[15px] text-white font-medium leading-[1.6] mb-8">Solutions autonomes pour l'apprentissage moderne et la gestion intelligente.</p>
+            <div class="flex items-center">
+               <input type="email" placeholder="Adresse e-mail" class="bg-[#1a2530] border-none text-white text-[15px] px-5 py-3 rounded-l-md focus:outline-none w-full placeholder-white/50">
+               <button class="bg-white text-black text-[15px] font-bold px-6 py-3 rounded-r-md whitespace-nowrap hover:bg-gray-200 transition">S'abonner</button>
+            </div>
+          </div>
+          
+          <!-- Links Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-12 lg:gap-20 w-full max-w-3xl">
+             <div>
+                <h4 class="font-orbitron font-bold text-white text-xl mb-6 tracking-wide">Pages</h4>
+                <ul class="flex flex-col gap-3 font-inter font-medium text-white/90">
+                   <li><a href="index.html" class="hover:text-primary transition-colors text-[15px]">Accueil</a></li>
+                   <li><a href="apropos.html" class="hover:text-primary transition-colors text-[15px]">A propos</a></li>
+                   <li><a href="categorie.html" class="hover:text-primary transition-colors text-[15px]">Catégorie</a></li>
+                   <li><a href="chatbot.html" class="hover:text-primary transition-colors text-[15px]">chatbot</a></li>
+                   <li><a href="blog.html" class="hover:text-primary transition-colors text-[15px]">Blog</a></li>
+                   <li><a href="contact.html" class="hover:text-primary transition-colors text-[15px]">Contact</a></li>
+                </ul>
+             </div>
+             <div>
+                <h4 class="font-orbitron font-bold text-white text-xl mb-6 tracking-wide">Aide</h4>
+                <ul class="flex flex-col gap-3 font-inter font-medium text-white/90">
+                   <li><a href="#" class="hover:text-primary transition-colors text-[15px]">Confidentialité</a></li>
+                   <li><a href="#" class="hover:text-primary transition-colors text-[15px]">Support client</a></li>
+                   <li><a href="#" class="text-primary text-[15px]">Conditions générales</a></li>
+                </ul>
+             </div>
+             <div>
+                <h4 class="font-orbitron font-bold text-white text-xl mb-6 tracking-wide">Contact</h4>
+                <ul class="flex flex-col gap-3 font-inter font-medium text-white/90">
+                   <li><span class="text-[15px]">Email : <a href="mailto:RDOC@gmail.com" class="text-primary">RDOC@gmail.com</a></span></li>
+                   <li><span class="text-[15px]">téléphone : +216 73987296</span></li>
+                </ul>
+                <div class="flex gap-4 mt-6 text-white text-lg">
+                   <!-- Simple social links representation -->
+                   <a href="#" class="hover:text-primary transition-colors">f</a>
+                   <a href="#" class="hover:text-primary transition-colors">i</a>
+                   <a href="#" class="hover:text-primary transition-colors">l</a>
+                   <a href="#" class="hover:text-primary transition-colors">m</a>
+                </div>
+             </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center pt-8 border-t border-[rgba(255,255,255,0.1)]">
+          <p class="font-inter text-sm text-white/60">Copyright 2026 RDOC, tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
