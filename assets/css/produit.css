@@ -664,3 +664,141 @@
         display: none;
     }
 }
+
+@media (max-width: 480px) {
+    .coverflow-wrapper {
+        gap: 10px;
+        padding: 30px 5px;
+    }
+
+    .coverflow-track {
+        height: 280px;
+        max-width: 100%;
+    }
+
+    .coverflow-item {
+        width: 180px;
+        height: 260px;
+    }
+
+    .coverflow-item.prev {
+        transform: translateX(-150px) rotateY(-20deg) scale(0.6);
+    }
+
+    .coverflow-item.next {
+        transform: translateX(150px) rotateY(20deg) scale(0.6);
+    }
+
+    .coverflow-item.prev-prev,
+    .coverflow-item.next-next {
+        opacity: 0;
+        transform: translateX(0) scale(0);
+    }
+
+    .coverflow-nav-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .coverflow-item-title {
+        font-size: 13px;
+    }
+
+    .coverflow-item-desc {
+        display: none;
+    }
+
+    .coverflow-item-content {
+        padding: 15px;
+    }
+
+    .coverflow-item-image {
+        height: 65%;
+    }
+
+    .coverflow-indicators {
+        margin-top: 20px;
+    }
+}
+
+/* Mobile bottom nav padding */
+@media (max-width: 1023px) {
+    body {
+        padding-bottom: 70px;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        padding-bottom: 0;
+    }
+}
+
+/* Prevent horizontal overflow */
+.produit-page {
+    overflow-x: hidden;
+}
+
+/* Ensure images don't overflow */
+.produit-page img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 480px) {
+    .coverflow-wrapper {
+        gap: 10px;
+        padding: 30px 5px;
+    }
+
+    .coverflow-track {
+        height: 280px;
+        max-width: 100%;
+    }
+
+    .coverflow-item {
+        width: 180px;
+        height: 260px;
+    }
+
+    .coverflow-item.prev {
+        transform: translateX(-150px) rotateY(-20deg) scale(0.6);
+    }
+
+    .coverflow-item.next {
+        transform: translateX(150px) rotateY(20deg) scale(0.6);
+    }
+
+    .coverflow-item.prev-prev,
+    .coverflow-item.next-next {
+        opacity: 0;
+        transform: translateX(0) scale(0);
+    }
+
+    .coverflow-nav-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .coverflow-item-title {
+        font-size: 13px;
+    }
+
+    .coverflow-item-desc {
+        display: none;
+    }
+
+    .coverflow-item-content {
+        padding: 15px;
+    }
+
+    .coverflow-item-image {
+        height: 65%;
+    }
+
+    .coverflow-indicators {
+        margin-top: 20px;
+    }
+}

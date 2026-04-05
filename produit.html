@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="assets/css/responsive.css" />
   </head>
   <body class="bg-black text-white font-inter">
-    <!-- NAVBAR -->
+    <!-- Desktop NAVBAR -->
     <div class="fixed top-0 left-0 right-0 z-50 hidden lg:flex justify-between items-center px-6 md:px-16 lg:px-24 py-5 bg-black/80 backdrop-blur-md">
       <a href="index.html" class="logo">
         <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="h-[38px] w-auto">
@@ -51,35 +51,67 @@
       <a href="login.html" class="inline-flex items-center justify-center px-6 h-10 rounded-full border border-transparent font-inter text-base font-medium text-white transition-all hover:opacity-80" style="background-image: linear-gradient(#000, #000), linear-gradient(135deg, #FFFFFF, #5CC4E5); background-origin: border-box; background-clip: padding-box, border-box;">Sign up / Sign in</a>
     </div>
 
+    <!-- Mobile Top Logo -->
+    <a href="index.html" class="logo lg:hidden absolute top-5 left-6 z-50">
+      <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="h-10">
+    </a>
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="fixed bottom-0 left-0 right-0 lg:hidden z-50 bg-black/95 backdrop-blur-md border-t border-[rgba(255,255,255,0.1)] px-4 py-3">
+      <div class="flex justify-around items-center text-white">
+          <a href="index.html" class="flex flex-col items-center text-xs text-white/70">
+              <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+              Accueil
+          </a>
+          <a href="apropos.html" class="flex flex-col items-center text-xs text-white/70">
+              <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+              A propos
+          </a>
+          <a href="categorie.html" class="flex flex-col items-center text-xs text-white/70">
+              <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/></svg>
+              Catégorie
+          </a>
+          <a href="produit.html" class="flex flex-col items-center text-xs text-primary">
+              <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+              Produit
+          </a>
+          <a href="contact.html" class="flex flex-col items-center text-xs text-white/70">
+              <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+              Contact
+          </a>
+      </div>
+    </div>
+    <div class="lg:hidden" style="height: 80px"></div>
+
     <!-- ====== HERO BANNER ====== -->
-    <section class="relative w-full h-screen min-h-[850px] overflow-hidden flex flex-col bg-no-repeat bg-[#000000]" style="background-image: url('assets/images/product/Gemini_Generated_Image_js7vr5js7vr5js7v%20%281%29%201.png'); background-size: 100% auto; background-position: center bottom;">
+    <section class="relative w-full h-screen min-h-[600px] sm:min-h-[700px] md:min-h-[850px] overflow-hidden flex flex-col bg-no-repeat bg-[#000000]" style="background-image: url('assets/images/product/Gemini_Generated_Image_js7vr5js7vr5js7v%20%281%29%201.png'); background-size: 100% auto; background-position: center bottom;">
       <!-- Dark overlay to ensure text readability -->
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-transparent z-0 pointer-events-none"></div>
       
-      <div class="max-w-[1440px] w-full mx-auto px-8 relative z-10 flex flex-col items-start pt-[140px] lg:pt-[180px]">
+      <div class="max-w-[1440px] w-full mx-auto px-4 sm:px-6 md:px-8 relative z-10 flex flex-col items-start pt-[100px] sm:pt-[120px] lg:pt-[180px]">
         <!-- Title positioned top left over the content area -->
-        <h1 class="font-orbitron font-bold text-5xl md:text-[85px] text-white tracking-[0.1em] leading-none drop-shadow-2xl">RDOC MINI</h1>
+        <h1 class="font-orbitron font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[85px] text-white tracking-[0.1em] leading-none drop-shadow-2xl">RDOC MINI</h1>
       </div>
     </section>
 
     <!-- ====== FEATURE 1 ====== -->
-    <section class="max-w-container mx-auto px-6 py-24">
-       <div class="flex flex-col md:flex-row items-center gap-16">
+    <section class="max-w-container mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-24">
+       <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-16">
           <div class="w-full md:w-5/12 flex justify-center relative">
              <!-- Soft glow behind the side robot -->
              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3 h-2/3 bg-primary/20 blur-[80px] rounded-full"></div>
-             <img src="assets/images/product/Gemini_Generated_Image_ewxq1eewxq1eewxq-removebg-preview (1) 1.png" alt="RDOC Mini Profile" class="w-[85%] h-auto relative z-10">
+             <img src="assets/images/product/Gemini_Generated_Image_ewxq1eewxq1eewxq-removebg-preview (1) 1.png" alt="RDOC Mini Profile" class="w-full max-w-[320px] sm:max-w-[400px] md:w-[85%] h-auto relative z-10">
           </div>
           
-          <div class="w-full md:w-7/12 flex flex-col items-start gap-8">
-             <h2 class="font-orbitron font-bold text-[40px] md:text-[46px] text-primary leading-[1.1] tracking-wider">Le Robot Éducatif<br>Intelligent</h2>
-             <p class="font-inter font-bold text-lg md:text-xl text-white leading-[1.6] tracking-wide mb-4 max-w-[500px]">
+          <div class="w-full md:w-7/12 flex flex-col items-start gap-6 md:gap-8">
+             <h2 class="font-orbitron font-bold text-[28px] sm:text-[34px] md:text-[40px] lg:text-[46px] text-primary leading-[1.1] tracking-wider">Le Robot Éducatif<br>Intelligent</h2>
+             <p class="font-inter font-bold text-base sm:text-lg md:text-xl text-white leading-[1.6] tracking-wide mb-4 max-w-[100%] md:max-w-[500px]">
                Conçu pour accompagner élèves et enseignants, le RDOC MINI capte le son, projette des supports pédagogiques interactifs et facilite un apprentissage personnalisé, sans besoin d'internet.
              </p>
-             <div class="flex items-center gap-6">
-                <a href="#" class="inline-flex items-center justify-center bg-white text-black font-orbitron font-bold text-lg px-10 py-4 rounded-full transition hover:bg-gray-200">Commander</a>
+             <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                <a href="#" class="inline-flex items-center justify-center bg-white text-black font-orbitron font-bold text-base sm:text-lg px-6 sm:px-8 md:px-10 py-3 md:py-4 rounded-full transition hover:bg-gray-200 w-full sm:w-auto">Commander</a>
                 <!-- Decorative Blue Orb -->
-                <div class="w-12 h-12 rounded-full border border-primary/40 flex items-center justify-center shadow-glow" style="background: radial-gradient(circle at 30% 30%, #5CC4E5, #001f3f);">
+                <div class="w-12 h-12 rounded-full border border-primary/40 flex items-center justify-center shadow-glow flex-shrink-0" style="background: radial-gradient(circle at 30% 30%, #5CC4E5, #001f3f);">
                    <div class="w-4 h-4 rounded-full bg-white blur-[2px] self-start ml-2 mt-2 opacity-80"></div>
                 </div>
              </div>
@@ -88,31 +120,31 @@
     </section>
 
     <!-- ====== FEATURE 2 (3-COLUMN POINTERS) ====== -->
-    <section class="max-w-[1300px] mx-auto px-6 py-24 relative overflow-hidden">
-        <div class="flex flex-col md:flex-row items-center justify-center w-full">
+    <section class="max-w-[1300px] mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-24 relative overflow-hidden">
+        <div class="flex flex-col md:flex-row items-center justify-center w-full gap-4 md:gap-0">
             
             <!-- Left Column: Pointers -->
-            <div class="w-full md:w-[35%] flex flex-col justify-center gap-20 py-10 relative z-20">
+            <div class="w-full md:w-[35%] flex flex-col justify-center gap-6 md:gap-12 lg:gap-20 py-4 md:py-10 relative z-20">
                 <!-- Pointer 1 -->
                 <div class="flex items-center justify-end w-full group">
-                   <h3 class="font-orbitron font-bold text-primary tracking-widest text-sm whitespace-nowrap">CAPTEUR DE SON</h3>
-                   <div class="flex-grow h-[1px] bg-primary/60 ml-4 mr-0 hidden md:block group-hover:bg-primary transition-colors"></div>
+                   <h3 class="font-orbitron font-bold text-primary tracking-widest text-xs sm:text-sm whitespace-nowrap">CAPTEUR DE SON</h3>
+                   <div class="flex-grow h-[1px] bg-primary/60 ml-2 mr-0 hidden md:block group-hover:bg-primary transition-colors"></div>
                    <div class="w-3 h-3 border border-primary rounded-full relative hidden md:block shadow-glow bg-black">
                       <div class="w-[4px] h-[4px] bg-primary rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
                    </div>
                 </div>
                 <!-- Pointer 2 -->
                 <div class="flex items-center justify-end w-full group">
-                   <h3 class="font-orbitron font-bold text-primary tracking-widest text-sm whitespace-nowrap">PROJECTEUR</h3>
-                   <div class="flex-grow h-[1px] bg-primary/60 ml-4 mr-0 hidden md:block group-hover:bg-primary transition-colors"></div>
+                   <h3 class="font-orbitron font-bold text-primary tracking-widest text-xs sm:text-sm whitespace-nowrap">PROJECTEUR</h3>
+                   <div class="flex-grow h-[1px] bg-primary/60 ml-2 mr-0 hidden md:block group-hover:bg-primary transition-colors"></div>
                    <div class="w-3 h-3 border border-primary rounded-full relative hidden md:block shadow-glow bg-black">
                       <div class="w-[4px] h-[4px] bg-primary rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
                    </div>
                 </div>
                 <!-- Pointer 3 -->
                 <div class="flex items-center justify-end w-full group">
-                   <h3 class="font-orbitron font-bold text-primary tracking-widest text-sm whitespace-nowrap">ROTATION 360°</h3>
-                   <div class="flex-grow h-[1px] bg-primary/60 ml-4 mr-0 hidden md:block group-hover:bg-primary transition-colors"></div>
+                   <h3 class="font-orbitron font-bold text-primary tracking-widest text-xs sm:text-sm whitespace-nowrap">ROTATION 360°</h3>
+                   <div class="flex-grow h-[1px] bg-primary/60 ml-2 mr-0 hidden md:block group-hover:bg-primary transition-colors"></div>
                    <div class="w-3 h-3 border border-primary rounded-full relative hidden md:block shadow-glow bg-black">
                       <div class="w-[4px] h-[4px] bg-primary rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
                    </div>
@@ -120,108 +152,107 @@
             </div>
 
             <!-- Center Column: Robot -->
-            <div class="w-full md:w-[30%] flex justify-center relative mt-10 md:mt-0 z-10">
-               <!-- To make the pointers overlap slightly behind the robot or precisely touch it, we use negative margins on desktop -->
-               <img src="assets/images/product/Gemini_Generated_Image_ioe7t9ioe7t9ioe7-removebg-preview (1) 4.png" alt="Robot Pointers Core" class="w-[120%] max-w-[400px] h-auto object-contain md:-ml-8 relative z-10 scale-110 drop-shadow-[0_0_20px_rgba(92,196,229,0.15)]">
+            <div class="w-full md:w-[30%] flex justify-center relative mt-4 md:mt-0 z-10">
+               <img src="assets/images/product/Gemini_Generated_Image_ioe7t9ioe7t9ioe7-removebg-preview (1) 4.png" alt="Robot Pointers Core" class="w-full max-w-[280px] sm:max-w-[340px] md:max-w-[400px] h-auto object-contain md:-ml-4 relative z-10 scale-95 sm:scale-100 md:scale-110 drop-shadow-[0_0_20px_rgba(92,196,229,0.15)]">
             </div>
 
             <!-- Right Column: Text & CTA -->
-            <div class="w-full md:w-[35%] flex flex-col justify-center items-start pl-0 md:pl-10 mt-12 md:mt-0 relative z-20">
-               <h2 class="font-orbitron font-bold text-[34px] md:text-[42px] text-primary leading-[1.1] tracking-wider mb-6">RDOC MINI<br>L'Innovation à<br>Portée de Main</h2>
-               <p class="font-inter font-bold text-base md:text-[17px] text-white leading-relaxed tracking-wide max-w-[320px] mb-8">
+            <div class="w-full md:w-[35%] flex flex-col justify-center items-start pl-0 sm:pl-2 md:pl-10 mt-4 md:mt-0 relative z-20">
+               <h2 class="font-orbitron font-bold text-[24px] sm:text-[28px] md:text-[36px] lg:text-[42px] text-primary leading-[1.1] tracking-wider mb-3 md:mb-6">RDOC MINI<br>L'Innovation à<br>Portée de Main</h2>
+               <p class="font-inter font-bold text-[14px] sm:text-[16px] md:text-[17px] text-white leading-relaxed tracking-wide max-w-[100%] md:max-w-[320px] mb-4 md:mb-8">
                  Un petit robot conçu pour simplifier l'apprentissage, stimuler la créativité et rendre chaque interaction plus intelligente et ludique.
                </p>
-               <a href="#" class="inline-flex items-center justify-center bg-white text-black font-orbitron font-bold text-base px-8 py-3 rounded-full transition hover:bg-gray-200">Découvrir</a>
+               <a href="#" class="inline-flex items-center justify-center bg-white text-black font-orbitron font-bold text-[14px] sm:text-base px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition hover:bg-gray-200 w-full sm:w-auto">Découvrir</a>
             </div>
         </div>
     </section>
 
     <!-- ====== FONCTIONNALITÉS PREMIUM ====== -->
-    <section class="max-w-[1300px] mx-auto px-6 py-16 lg:py-24 text-center">
-      <h2 class="font-orbitron font-bold text-3xl md:text-[40px] text-primary tracking-[0.15em] mb-12 lg:mb-20 uppercase">FONCTIONNALITÉS PREMIUM</h2>
+    <section class="max-w-[1300px] mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-24 text-center">
+      <h2 class="font-orbitron font-bold text-[24px] sm:text-[28px] md:text-[36px] lg:text-[40px] text-primary tracking-[0.15em] mb-8 md:mb-12 lg:mb-20 uppercase">FONCTIONNALITÉS PREMIUM</h2>
       
-      <div class="flex flex-col lg:flex-row items-center justify-center gap-12 w-full">
+      <div class="flex flex-col lg:flex-row items-center justify-center gap-6 md:gap-8 lg:gap-12 w-full">
         <!-- Center Robot (Order 1 on mobile) -->
-        <div class="w-[80%] lg:w-[30%] flex justify-center py-6 lg:py-0 order-1 lg:order-2 mx-auto">
-          <img src="assets/images/product/Whisk_7d418a1b21bd99e92b44217c8a23f37adr-removebg-preview (1) 1.png" alt="Premium Center Robot" class="w-full max-w-[320px] drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)] scale-110">
+        <div class="w-[90%] sm:w-[80%] lg:w-[30%] flex justify-center py-4 sm:py-6 lg:py-0 order-1 lg:order-2 mx-auto">
+          <img src="assets/images/product/Whisk_7d418a1b21bd99e92b44217c8a23f37adr-removebg-preview (1) 1.png" alt="Premium Center Robot" class="w-full max-w-[280px] sm:max-w-[320px] drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)] scale-100 sm:scale-110">
         </div>
 
         <!-- Left Column -->
-        <div class="w-full lg:w-[35%] flex flex-col gap-10 lg:gap-14 items-center lg:items-end order-2 lg:order-1">
-          <div class="flex items-center gap-5">
-            <div class="text-left lg:text-right w-[150px] lg:w-auto">
-              <h4 class="font-orbitron font-bold text-white text-[15px] tracking-widest mb-1">AUTONOMIE</h4>
-              <p class="font-inter text-[13px] text-white/70 italic tracking-wider">batterie longue durée</p>
+        <div class="w-full lg:w-[35%] flex flex-col gap-6 md:gap-10 lg:gap-14 items-center lg:items-end order-2 lg:order-1">
+          <div class="flex items-center gap-3 sm:gap-5">
+            <div class="text-left lg:text-right w-[130px] sm:w-[150px] lg:w-auto">
+              <h4 class="font-orbitron font-bold text-white text-[13px] sm:text-[15px] tracking-widest mb-1">AUTONOMIE</h4>
+              <p class="font-inter text-[11px] sm:text-[13px] text-white/70 italic tracking-wider">batterie longue durée</p>
             </div>
-            <div class="w-[50px] h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg order-first lg:order-last">
-              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 10v4a2 2 0 002 2h1a2 2 0 002-2v-4a2 2 0 00-2-2H6a2 2 0 00-2 2zm10 0v4a2 2 0 002 2h1a2 2 0 002-2v-4a2 2 0 00-2-2h-1a2 2 0 00-2 2z"/></svg>
-            </div>
-          </div>
-          <div class="flex items-center gap-5">
-            <div class="text-left lg:text-right w-[150px] lg:w-auto">
-               <h4 class="font-orbitron font-bold text-white text-[15px] tracking-widest mb-1">SÉCURISÉ</h4>
-               <p class="font-inter text-[13px] text-white/70 italic tracking-wider">protection données</p>
-            </div>
-            <div class="w-[50px] h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg order-first lg:order-last">
-               <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            <div class="w-[44px] sm:w-[50px] h-[60px] sm:h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg order-first lg:order-last">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 10v4a2 2 0 002 2h1a2 2 0 002-2v-4a2 2 0 00-2-2H6a2 2 0 00-2 2zm10 0v4a2 2 0 002 2h1a2 2 0 002-2v-4a2 2 0 00-2-2h-1a2 2 0 00-2 2z"/></svg>
             </div>
           </div>
-          <div class="flex items-center gap-5">
-            <div class="text-left lg:text-right w-[150px] lg:w-auto">
-               <h4 class="font-orbitron font-bold text-white text-[15px] tracking-widest mb-1">ROBUSTE</h4>
-               <p class="font-inter text-[13px] text-white/70 italic tracking-wider">résistant aux chocs</p>
+          <div class="flex items-center gap-3 sm:gap-5">
+            <div class="text-left lg:text-right w-[130px] sm:w-[150px] lg:w-auto">
+               <h4 class="font-orbitron font-bold text-white text-[13px] sm:text-[15px] tracking-widest mb-1">SÉCURISÉ</h4>
+               <p class="font-inter text-[11px] sm:text-[13px] text-white/70 italic tracking-wider">protection données</p>
             </div>
-            <div class="w-[50px] h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg order-first lg:order-last">
-               <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            <div class="w-[44px] sm:w-[50px] h-[60px] sm:h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg order-first lg:order-last">
+               <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
             </div>
           </div>
-          <div class="flex items-center gap-5">
-            <div class="text-left lg:text-right w-[150px] lg:w-auto">
-               <h4 class="font-orbitron font-bold text-white text-[15px] tracking-widest mb-1">CONNECTÉ</h4>
-               <p class="font-inter text-[13px] text-white/70 italic tracking-wider">compatible appareils</p>
+          <div class="flex items-center gap-3 sm:gap-5">
+            <div class="text-left lg:text-right w-[130px] sm:w-[150px] lg:w-auto">
+               <h4 class="font-orbitron font-bold text-white text-[13px] sm:text-[15px] tracking-widest mb-1">ROBUSTE</h4>
+               <p class="font-inter text-[11px] sm:text-[13px] text-white/70 italic tracking-wider">résistant aux chocs</p>
             </div>
-            <div class="w-[50px] h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg order-first lg:order-last">
-               <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+            <div class="w-[44px] sm:w-[50px] h-[60px] sm:h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg order-first lg:order-last">
+               <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 sm:gap-5">
+            <div class="text-left lg:text-right w-[130px] sm:w-[150px] lg:w-auto">
+               <h4 class="font-orbitron font-bold text-white text-[13px] sm:text-[15px] tracking-widest mb-1">CONNECTÉ</h4>
+               <p class="font-inter text-[11px] sm:text-[13px] text-white/70 italic tracking-wider">compatible appareils</p>
+            </div>
+            <div class="w-[44px] sm:w-[50px] h-[60px] sm:h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg order-first lg:order-last">
+               <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
             </div>
           </div>
         </div>
 
         <!-- Right Column -->
-        <div class="w-full lg:w-[35%] flex flex-col gap-10 lg:gap-14 items-center lg:items-start order-3 lg:order-3">
-          <div class="flex items-center gap-5">
-            <div class="w-[50px] h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg">
-              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243-4.243a5 5 0 000 7.072m0 0L3 3m3.273 15.536a9 9 0 0012.728 0"/></svg>
+        <div class="w-full lg:w-[35%] flex flex-col gap-6 md:gap-10 lg:gap-14 items-center lg:items-start order-3 lg:order-3">
+          <div class="flex items-center gap-3 sm:gap-5">
+            <div class="w-[44px] sm:w-[50px] h-[60px] sm:h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243-4.243a5 5 0 000 7.072m0 0L3 3m3.273 15.536a9 9 0 0012.728 0"/></svg>
             </div>
-            <div class="text-left w-[150px] lg:w-auto">
-              <h4 class="font-orbitron font-bold text-white text-[15px] tracking-widest mb-1">OFFLINE</h4>
-              <p class="font-inter text-[13px] text-white/70 italic tracking-wider">sans internet</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-5">
-            <div class="w-[50px] h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg">
-               <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-            </div>
-            <div class="text-left w-[150px] lg:w-auto">
-               <h4 class="font-orbitron font-bold text-white text-[15px] tracking-widest mb-1">ASSISTANT IA</h4>
-               <p class="font-inter text-[13px] text-white/70 italic tracking-wider">intelligente</p>
+            <div class="text-left w-[130px] sm:w-[150px] lg:w-auto">
+              <h4 class="font-orbitron font-bold text-white text-[13px] sm:text-[15px] tracking-widest mb-1">OFFLINE</h4>
+              <p class="font-inter text-[11px] sm:text-[13px] text-white/70 italic tracking-wider">sans internet</p>
             </div>
           </div>
-          <div class="flex items-center gap-5">
-             <div class="w-[50px] h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg">
-               <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v18m0-18l5 5-10 10m10-10l-5 5"/></svg>
+          <div class="flex items-center gap-3 sm:gap-5">
+            <div class="w-[44px] sm:w-[50px] h-[60px] sm:h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg">
+               <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
             </div>
-            <div class="text-left w-[150px] lg:w-auto">
-               <h4 class="font-orbitron font-bold text-white text-[15px] tracking-widest mb-1">BLUETOOTH</h4>
-               <p class="font-inter text-[13px] text-white/70 italic tracking-wider">connexion facile</p>
+            <div class="text-left w-[130px] sm:w-[150px] lg:w-auto">
+               <h4 class="font-orbitron font-bold text-white text-[13px] sm:text-[15px] tracking-widest mb-1">ASSISTANT IA</h4>
+               <p class="font-inter text-[11px] sm:text-[13px] text-white/70 italic tracking-wider">intelligente</p>
             </div>
           </div>
-          <div class="flex items-center gap-5">
-            <div class="w-[50px] h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg">
-               <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          <div class="flex items-center gap-3 sm:gap-5">
+             <div class="w-[44px] sm:w-[50px] h-[60px] sm:h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg">
+               <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v18m0-18l5 5-10 10m10-10l-5 5"/></svg>
             </div>
-            <div class="text-left w-[150px] lg:w-auto">
-               <h4 class="font-orbitron font-bold text-white text-[15px] tracking-widest mb-1">RAPIDE</h4>
-               <p class="font-inter text-[13px] text-white/70 italic tracking-wider">exécution fluide</p>
+            <div class="text-left w-[130px] sm:w-[150px] lg:w-auto">
+               <h4 class="font-orbitron font-bold text-white text-[13px] sm:text-[15px] tracking-widest mb-1">BLUETOOTH</h4>
+               <p class="font-inter text-[11px] sm:text-[13px] text-white/70 italic tracking-wider">connexion facile</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 sm:gap-5">
+            <div class="w-[44px] sm:w-[50px] h-[60px] sm:h-[70px] border border-white/20 rounded-md flex items-center justify-center bg-white/5 backdrop-blur shadow-lg">
+               <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <div class="text-left w-[130px] sm:w-[150px] lg:w-auto">
+               <h4 class="font-orbitron font-bold text-white text-[13px] sm:text-[15px] tracking-widest mb-1">RAPIDE</h4>
+               <p class="font-inter text-[11px] sm:text-[13px] text-white/70 italic tracking-wider">exécution fluide</p>
             </div>
           </div>
         </div>
@@ -229,13 +260,13 @@
     </section>
 
     <!-- ====== VIDEO PREVIEW ====== -->
-    <section class="max-w-[1440px] mx-auto w-full mt-10 mb-20 px-4">
+    <section class="max-w-[1440px] mx-auto w-full mt-8 sm:mt-10 mb-10 sm:mb-16 md:mb-20 px-4">
       <div class="w-full aspect-video bg-cover bg-center flex items-center justify-center relative cursor-pointer group rounded-lg overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-white/10" style="background-image: url('assets/images/product/Capture\ d\'écran\ 2026-02-17\ 212130\ 1.png');">
         <!-- Overlay -->
         <div class="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-500"></div>
         <!-- Play Button -->
-        <div class="w-20 h-20 bg-white shadow-glow rounded-full flex items-center justify-center z-10 hover:scale-105 transition-transform duration-300">
-          <svg class="w-8 h-8 text-black ml-2" fill="currentColor" viewBox="0 0 24 24">
+        <div class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-white shadow-glow rounded-full flex items-center justify-center z-10 hover:scale-105 transition-transform duration-300">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-black ml-1 sm:ml-2" fill="currentColor" viewBox="0 0 24 24">
             <path d="M8 5v14l11-7z"/>
           </svg>
         </div>
@@ -243,20 +274,20 @@
     </section>
 
     <!-- ====== ACCESSOIRES ====== -->
-    <section class="py-20 relative w-full mb-10 overflow-hidden">
+    <section class="py-12 sm:py-16 md:py-20 relative w-full mb-6 sm:mb-10 overflow-hidden">
       <!-- Deep dark wave base -->
       <div class="absolute inset-0 z-0">
           <div class="absolute inset-0 bg-[#061219]/60" style="clip-path: ellipse(80% 50% at 50% 50%);"></div>
           <div class="absolute bottom-0 left-[-10%] right-[-10%] h-[60%] bg-[#081a24] blur-[40px] opacity-60"></div>
           
           <!-- Distinct decorative left and right blobs -->
-          <div class="absolute left-[-150px] top-[20%] w-[500px] h-[300px] bg-cyan-900/40 rounded-full blur-[80px]" style="clip-path: ellipse(50% 50% at 50% 50%);"></div>
-          <div class="absolute right-[-150px] top-[20%] w-[500px] h-[300px] bg-cyan-900/40 rounded-full blur-[80px]" style="clip-path: ellipse(50% 50% at 50% 50%);"></div>
+          <div class="absolute left-[-150px] top-[20%] w-[300px] sm:w-[400px] md:w-[500px] h-[200px] sm:h-[250px] md:h-[300px] bg-cyan-900/40 rounded-full blur-[60px] md:blur-[80px]" style="clip-path: ellipse(50% 50% at 50% 50%);"></div>
+          <div class="absolute right-[-150px] top-[20%] w-[300px] sm:w-[400px] md:w-[500px] h-[200px] sm:h-[250px] md:h-[300px] bg-cyan-900/40 rounded-full blur-[60px] md:blur-[80px]" style="clip-path: ellipse(50% 50% at 50% 50%);"></div>
       </div>
 
       <div class="text-center mb-0 px-4 relative z-10">
-        <h2 class="font-orbitron font-bold text-3xl md:text-[38px] text-primary tracking-widest mb-4">ACCESSOIRES INCLUS</h2>
-        <p class="font-inter font-bold text-white text-lg tracking-wide mb-[30px] sm:mb-[40px]">Tout ce qui accompagne RDOC MINI</p>
+        <h2 class="font-orbitron font-bold text-[24px] sm:text-[28px] md:text-[36px] lg:text-[38px] text-primary tracking-widest mb-2 sm:mb-3 md:mb-4">ACCESSOIRES INCLUS</h2>
+        <p class="font-inter font-bold text-white text-base sm:text-lg tracking-wide mb-[30px] sm:mb-[40px]">Tout ce qui accompagne RDOC MINI</p>
       </div>
 
       <!-- Coverflow Carousel Container for Accessories -->
@@ -321,99 +352,99 @@
     </section>
 
     <!-- ====== SERVICES ====== -->
-    <section class="max-w-[1200px] mx-auto px-6 py-16 text-center pb-24">
-      <h2 class="font-orbitron font-bold text-3xl md:text-[38px] text-primary tracking-[0.1em] mb-20 uppercase">GARANTIE ET SERVICES</h2>
+    <section class="max-w-[1200px] mx-auto px-4 sm:px-6 py-12 sm:py-16 text-center pb-16 sm:pb-24">
+      <h2 class="font-orbitron font-bold text-[24px] sm:text-[28px] md:text-[36px] lg:text-[38px] text-primary tracking-[0.1em] mb-8 sm:mb-12 md:mb-20 uppercase">GARANTIE ET SERVICES</h2>
       
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-center lg:px-10 mb-24">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 text-center lg:px-10 mb-8 sm:mb-16 md:mb-24">
         <!-- Service 1 -->
         <div class="flex flex-col items-center justify-start">
-          <div class="h-32 flex items-center justify-center mb-8">
-             <img src="assets/images/product/Whisk_7d418a1b21bd99e92b44217c8a23f37adr-removebg-preview (1) 1.png" alt="Support Robot" class="h-28 filter grayscale brightness-125 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+          <div class="h-24 sm:h-28 md:h-32 flex items-center justify-center mb-6 md:mb-8">
+             <img src="assets/images/product/Whisk_7d418a1b21bd99e92b44217c8a23f37adr-removebg-preview (1) 1.png" alt="Support Robot" class="h-20 sm:h-24 md:h-28 filter grayscale brightness-125 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
           </div>
-          <h3 class="font-orbitron font-bold text-xl md:text-2xl text-white mb-4 tracking-wide">Support client 24/7</h3>
-          <p class="font-inter font-medium text-[15px] text-white max-w-[250px] leading-relaxed mx-auto">Assistance rapide pour toutes vos questions</p>
+          <h3 class="font-orbitron font-bold text-[18px] sm:text-xl md:text-2xl text-white mb-3 md:mb-4 tracking-wide">Support client 24/7</h3>
+          <p class="font-inter font-medium text-[13px] sm:text-[15px] text-white max-w-[100%] md:max-w-[250px] leading-relaxed mx-auto">Assistance rapide pour toutes vos questions</p>
         </div>
         <!-- Service 2 -->
         <div class="flex flex-col items-center justify-start">
-          <div class="h-32 flex items-center justify-center mb-8">
-             <div class="w-28 h-28 rounded-full border-[3px] border-green-500 bg-green-500/10 flex items-center justify-center relative shadow-[0_0_30px_rgba(34,197,94,0.4)]">
-               <!-- Checkmark cluster representing security/certification -->
-               <div class="flex gap-1 relative z-10">
-                  <svg class="w-12 h-12 text-green-500 drop-shadow-[0_0_10px_rgba(34,197,94,1)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
-               </div>
-               <!-- Decorative text along path in real design -->
-               <div class="absolute inset-2 border-2 border-dashed border-green-500/50 rounded-full animate-[spin_10s_linear_infinite]"></div>
+          <div class="h-24 sm:h-28 md:h-32 flex items-center justify-center mb-6 md:mb-8">
+             <div class="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-[3px] border-green-500 bg-green-500/10 flex items-center justify-center relative shadow-[0_0_30px_rgba(34,197,94,0.4)]">
+                <!-- Checkmark cluster representing security/certification -->
+                <div class="flex gap-1 relative z-10">
+                   <svg class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-green-500 drop-shadow-[0_0_10px_rgba(34,197,94,1)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                </div>
+                <!-- Decorative text along path in real design -->
+                <div class="absolute inset-2 border-2 border-dashed border-green-500/50 rounded-full animate-[spin_10s_linear_infinite]"></div>
              </div>
           </div>
-          <h3 class="font-orbitron font-bold text-xl md:text-2xl text-white mb-4 tracking-wide">Garantie 3 ans</h3>
-          <p class="font-inter font-medium text-[15px] text-white max-w-[250px] leading-relaxed mx-auto">Couverture complète du robot pour toute panne</p>
+          <h3 class="font-orbitron font-bold text-[18px] sm:text-xl md:text-2xl text-white mb-3 md:mb-4 tracking-wide">Garantie 3 ans</h3>
+          <p class="font-inter font-medium text-[13px] sm:text-[15px] text-white max-w-[100%] md:max-w-[250px] leading-relaxed mx-auto">Couverture complète du robot pour toute panne</p>
         </div>
         <!-- Service 3 -->
         <div class="flex flex-col items-center justify-start">
-          <div class="h-32 flex items-center justify-center mb-8">
-             <svg class="w-28 h-28 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <div class="h-24 sm:h-28 md:h-32 flex items-center justify-center mb-6 md:mb-8">
+             <svg class="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M8 17a2 2 0 11-4 0 2 2 0 014 0zM20 17a2 2 0 11-4 0 2 2 0 014 0z" fill="currentColor"/>
                 <path d="M14 16V6a1 1 0 00-1-1H3a1 1 0 00-1 1v10h2m4 0h6m4 0h2v-4.505c0-.493-.16-.973-.454-1.365L18.5 8H14V16v0z"/>
                 <!-- Speed lines -->
                 <path d="M25 8H20M26 5H21M24 2H18" stroke-width="1.5"/>
              </svg>
           </div>
-          <h3 class="font-orbitron font-bold text-xl md:text-2xl text-white mb-4 tracking-wide">Livraison/installation</h3>
-          <p class="font-inter font-medium text-[15px] text-white max-w-[250px] leading-relaxed mx-auto">Robot livré et prêt à l'emploi directement</p>
+          <h3 class="font-orbitron font-bold text-[18px] sm:text-xl md:text-2xl text-white mb-3 md:mb-4 tracking-wide">Livraison/installation</h3>
+          <p class="font-inter font-medium text-[13px] sm:text-[15px] text-white max-w-[100%] md:max-w-[250px] leading-relaxed mx-auto">Robot livré et prêt à l'emploi directement</p>
         </div>
       </div>
 
-       <a href="#" class="inline-flex items-center justify-center border-[2px] border-primary/50 bg-[#020a10] text-primary font-orbitron font-bold text-lg px-20 py-4 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(92,196,229,0.2)] hover:shadow-[0_0_30px_rgba(92,196,229,0.5)] hover:bg-[#041525] uppercase tracking-widest mt-6">
+       <a href="#" class="inline-flex items-center justify-center border-[2px] border-primary/50 bg-[#020a10] text-primary font-orbitron font-bold text-base sm:text-lg px-10 sm:px-16 md:px-20 py-3 sm:py-4 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(92,196,229,0.2)] hover:shadow-[0_0_30px_rgba(92,196,229,0.5)] hover:bg-[#041525] uppercase tracking-widest mt-4 sm:mt-6 w-full sm:w-auto">
          Commander
        </a>
     </section>
 
     <!-- ====== FOOTER MAP & LAYOUT ====== -->
-    <footer class="pt-16 pb-8 border-t border-[rgba(255,255,255,0.1)] relative">
-      <div class="max-w-[1300px] mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between gap-12 lg:gap-20 mb-16">
+    <footer class="pt-10 sm:pt-12 md:pt-16 pb-8 border-t border-[rgba(255,255,255,0.1)] relative">
+      <div class="max-w-[1300px] mx-auto px-4 sm:px-6">
+        <div class="flex flex-col md:flex-row justify-between gap-8 sm:gap-10 lg:gap-20 mb-12 md:mb-16">
           
           <!-- Logo & Description column -->
-          <div class="max-w-xs flex flex-col">
-            <div class="flex items-center gap-2 mb-6">
-               <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="h-10">
-               <span class="font-orbitron font-bold text-white text-3xl">RDOC<span class="text-primary">X</span></span>
+          <div class="max-w-[100%] sm:max-w-xs flex flex-col">
+            <div class="flex items-center gap-2 mb-4 sm:mb-6">
+               <img src="assets/images/Plan de travail 1 1.png" alt="RDOC" class="h-8 sm:h-10">
+               <span class="font-orbitron font-bold text-white text-2xl sm:text-3xl">RDOC<span class="text-primary">X</span></span>
             </div>
-            <p class="font-inter text-[15px] text-white font-medium leading-[1.6] mb-8">Solutions autonomes pour l'apprentissage moderne et la gestion intelligente.</p>
-            <div class="flex items-center">
-               <input type="email" placeholder="Adresse e-mail" class="bg-[#1a2530] border-none text-white text-[15px] px-5 py-3 rounded-l-md focus:outline-none w-full placeholder-white/50">
-               <button class="bg-white text-black text-[15px] font-bold px-6 py-3 rounded-r-md whitespace-nowrap hover:bg-gray-200 transition">S'abonner</button>
+            <p class="font-inter text-[13px] sm:text-[15px] text-white font-medium leading-[1.6] mb-6 sm:mb-8">Solutions autonomes pour l'apprentissage moderne et la gestion intelligente.</p>
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-0">
+               <input type="email" placeholder="Adresse e-mail" class="bg-[#1a2530] border-none text-white text-[13px] sm:text-[15px] px-4 sm:px-5 py-3 rounded-t-md sm:rounded-l-md sm:rounded-tr-none focus:outline-none w-full placeholder-white/50">
+               <button class="bg-white text-black text-[13px] sm:text-[15px] font-bold px-4 sm:px-6 py-3 rounded-b-md sm:rounded-r-md sm:rounded-bl-none whitespace-nowrap hover:bg-gray-200 transition w-full sm:w-auto">S'abonner</button>
             </div>
           </div>
           
           <!-- Links Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-12 lg:gap-20 w-full max-w-3xl">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 lg:gap-20 w-full max-w-3xl">
              <div>
-                <h4 class="font-orbitron font-bold text-white text-xl mb-6 tracking-wide">Pages</h4>
-                <ul class="flex flex-col gap-3 font-inter font-medium text-white/90">
-                   <li><a href="index.html" class="hover:text-primary transition-colors text-[15px]">Accueil</a></li>
-                   <li><a href="apropos.html" class="hover:text-primary transition-colors text-[15px]">A propos</a></li>
-                   <li><a href="categorie.html" class="hover:text-primary transition-colors text-[15px]">Catégorie</a></li>
-                   <li><a href="chatbot.html" class="hover:text-primary transition-colors text-[15px]">chatbot</a></li>
-                   <li><a href="blog.html" class="hover:text-primary transition-colors text-[15px]">Blog</a></li>
-                   <li><a href="contact.html" class="hover:text-primary transition-colors text-[15px]">Contact</a></li>
+                <h4 class="font-orbitron font-bold text-white text-lg sm:text-xl mb-4 sm:mb-6 tracking-wide">Pages</h4>
+                <ul class="flex flex-col gap-2 sm:gap-3 font-inter font-medium text-white/90">
+                   <li><a href="index.html" class="hover:text-primary transition-colors text-[13px] sm:text-[15px]">Accueil</a></li>
+                   <li><a href="apropos.html" class="hover:text-primary transition-colors text-[13px] sm:text-[15px]">A propos</a></li>
+                   <li><a href="categorie.html" class="hover:text-primary transition-colors text-[13px] sm:text-[15px]">Catégorie</a></li>
+                   <li><a href="chatbot.html" class="hover:text-primary transition-colors text-[13px] sm:text-[15px]">chatbot</a></li>
+                   <li><a href="blog.html" class="hover:text-primary transition-colors text-[13px] sm:text-[15px]">Blog</a></li>
+                   <li><a href="contact.html" class="hover:text-primary transition-colors text-[13px] sm:text-[15px]">Contact</a></li>
                 </ul>
              </div>
              <div>
-                <h4 class="font-orbitron font-bold text-white text-xl mb-6 tracking-wide">Aide</h4>
-                <ul class="flex flex-col gap-3 font-inter font-medium text-white/90">
-                   <li><a href="#" class="hover:text-primary transition-colors text-[15px]">Confidentialité</a></li>
-                   <li><a href="#" class="hover:text-primary transition-colors text-[15px]">Support client</a></li>
-                   <li><a href="#" class="text-primary text-[15px]">Conditions générales</a></li>
+                <h4 class="font-orbitron font-bold text-white text-lg sm:text-xl mb-4 sm:mb-6 tracking-wide">Aide</h4>
+                <ul class="flex flex-col gap-2 sm:gap-3 font-inter font-medium text-white/90">
+                   <li><a href="#" class="hover:text-primary transition-colors text-[13px] sm:text-[15px]">Confidentialité</a></li>
+                   <li><a href="#" class="hover:text-primary transition-colors text-[13px] sm:text-[15px]">Support client</a></li>
+                   <li><a href="#" class="text-primary text-[13px] sm:text-[15px]">Conditions générales</a></li>
                 </ul>
              </div>
              <div>
-                <h4 class="font-orbitron font-bold text-white text-xl mb-6 tracking-wide">Contact</h4>
-                <ul class="flex flex-col gap-3 font-inter font-medium text-white/90">
-                   <li><span class="text-[15px]">Email : <a href="mailto:RDOC@gmail.com" class="text-primary">RDOC@gmail.com</a></span></li>
-                   <li><span class="text-[15px]">téléphone : +216 73987296</span></li>
+                <h4 class="font-orbitron font-bold text-white text-lg sm:text-xl mb-4 sm:mb-6 tracking-wide">Contact</h4>
+                <ul class="flex flex-col gap-2 sm:gap-3 font-inter font-medium text-white/90">
+                   <li><span class="text-[13px] sm:text-[15px]">Email : <a href="mailto:RDOC@gmail.com" class="text-primary">RDOC@gmail.com</a></span></li>
+                   <li><span class="text-[13px] sm:text-[15px]">téléphone : +216 73987296</span></li>
                 </ul>
-                <div class="flex gap-4 mt-6 text-white text-lg">
+                <div class="flex gap-3 sm:gap-4 mt-4 sm:mt-6 text-white text-lg">
                    <!-- Simple social links representation -->
                    <a href="#" class="hover:text-primary transition-colors">f</a>
                    <a href="#" class="hover:text-primary transition-colors">i</a>
@@ -424,8 +455,8 @@
           </div>
         </div>
 
-        <div class="flex justify-center pt-8 border-t border-[rgba(255,255,255,0.1)]">
-          <p class="font-inter text-sm text-white/60">Copyright 2026 RDOC, tous droits réservés.</p>
+        <div class="flex justify-center pt-6 sm:pt-8 border-t border-[rgba(255,255,255,0.1)]">
+          <p class="font-inter text-xs sm:text-sm text-white/60">Copyright 2026 RDOC, tous droits réservés.</p>
         </div>
       </div>
     </footer>
