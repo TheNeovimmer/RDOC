@@ -52,19 +52,14 @@
     </div>
 
     <!-- ====== HERO BANNER ====== -->
-    <section class="relative w-full pt-40 pb-20 overflow-hidden flex flex-col items-center">
-      <!-- Glow backdrops -->
-      <div class="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[80%] h-[500px] bg-primary/10 blur-[120px] pointer-events-none rounded-full"></div>
+    <section class="relative w-full h-[85vh] min-h-[800px] pt-[120px] pb-20 overflow-hidden flex flex-col bg-center bg-no-repeat bg-contain" style="background-image: url('assets/images/product/Gemini_Generated_Image_js7vr5js7vr5js7v%20%281%29%201.png');">
+      <!-- Dark overlay to ensure text readability -->
+      <div class="absolute inset-0 bg-black/20 z-0 pointer-events-none"></div>
       
       <div class="max-w-[1440px] w-full mx-auto px-8 relative z-10 flex flex-col items-center">
         <!-- Title positioned top left over the content area -->
         <div class="w-full relative h-[80px]">
-           <h1 class="font-orbitron font-bold text-5xl md:text-[80px] text-white tracking-[0.1em] absolute left-0 top-0 leading-none">RDOC MINI</h1>
-        </div>
-        
-        <!-- Large Hero Robot Banner Image -->
-        <div class="w-full max-w-4xl mt-10 flex justify-center">
-          <img src="assets/images/product/Gemini_Generated_Image_js7vr5js7vr5js7v (1) 1.png" alt="RDOC MINI Banner" class="w-full h-auto object-contain max-h-[700px]">
+           <h1 class="font-orbitron font-bold text-5xl md:text-[80px] text-white tracking-[0.1em] absolute left-0 top-0 leading-none drop-shadow-2xl">RDOC MINI</h1>
         </div>
       </div>
     </section>
@@ -261,25 +256,69 @@
           <div class="absolute right-[-150px] top-[20%] w-[500px] h-[300px] bg-cyan-900/40 rounded-full blur-[80px]" style="clip-path: ellipse(50% 50% at 50% 50%);"></div>
       </div>
 
-      <div class="text-center mb-16 px-4 relative z-10">
+      <div class="text-center mb-0 px-4 relative z-10">
         <h2 class="font-orbitron font-bold text-3xl md:text-[38px] text-primary tracking-widest mb-4">ACCESSOIRES INCLUS</h2>
-        <p class="font-inter font-bold text-white text-lg tracking-wide">Tout ce qui accompagne RDOC MINI</p>
+        <p class="font-inter font-bold text-white text-lg tracking-wide mb-[30px] sm:mb-[40px]">Tout ce qui accompagne RDOC MINI</p>
       </div>
 
-      <div class="relative max-w-5xl mx-auto flex flex-col md:flex-row items-end justify-between px-6 z-10 mt-10">
-        <!-- Accessory 1 -->
-        <div class="flex-1 flex justify-center z-10 relative mb-6 md:mb-0">
-          <img src="assets/images/product/69427fad3984e11c6c6071b5494df301-removebg-preview 1.png" alt="Boîte de transport" class="w-[180px] object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.9)] hover:translate-y-[-10px] transition-transform duration-500">
-        </div>
-        <!-- Accessory Center -->
-        <div class="flex-1 flex justify-center text-center flex-col items-center z-20" style="transform: translateY(-20px);">
-          <img src="assets/images/product/Whisk_1e50aef894199c48f604cace61973e8ddr-removebg-preview (1) 1.png" alt="Support de charge" class="w-[280px] object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.9)] hover:translate-y-[-10px] transition-transform duration-500">
-          <h4 class="font-inter font-extrabold text-white text-[19px] mt-6 tracking-wide uppercase">Support de charge</h4>
-        </div>
-        <!-- Accessory 3 -->
-        <div class="flex-1 flex justify-center z-10 relative mt-6 md:mt-0">
-           <img src="assets/images/product/Whisk_1e50aef894199c48f604cace61973e8ddr-removebg-preview (1) 1.png" alt="Câble et chargeur" class="w-[180px] object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.9)] hover:translate-y-[-10px] transition-transform duration-500">
-        </div>
+      <!-- Coverflow Carousel Container for Accessories -->
+      <div class="coverflow-container relative z-10">
+          <div class="coverflow-wrapper">
+              <!-- Navigation Buttons -->
+              <button type="button" class="coverflow-nav-btn" id="coverflow-prev" aria-label="Previous product">❮</button>
+
+              <!-- Carousel Track -->
+              <div class="coverflow-track">
+                  <!-- Accessory 1 -->
+                  <div class="coverflow-item active" data-index="0">
+                      <div class="coverflow-item-content">
+                          <div class="coverflow-item-image">
+                              <img src="assets/images/product/69427fad3984e11c6c6071b5494df301-removebg-preview 1.png" alt="Boîte de transport" />
+                          </div>
+                          <div class="coverflow-item-info">
+                              <h3 class="coverflow-item-title">Boîte de transport</h3>
+                              <p class="coverflow-item-desc">Sécurisée et pratique</p>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Accessory 2 -->
+                  <div class="coverflow-item next" data-index="1">
+                      <div class="coverflow-item-content">
+                          <div class="coverflow-item-image">
+                              <img src="assets/images/product/Whisk_1e50aef894199c48f604cace61973e8ddr-removebg-preview (1) 1.png" alt="Support de charge" />
+                          </div>
+                          <div class="coverflow-item-info">
+                              <h3 class="coverflow-item-title">Support de charge</h3>
+                              <p class="coverflow-item-desc">Charge rapide et socle élégant</p>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Accessory 3 -->
+                  <div class="coverflow-item next-next" data-index="2">
+                      <div class="coverflow-item-content">
+                          <div class="coverflow-item-image">
+                              <img src="assets/images/product/Gemini_Generated_Image_ioe7t9ioe7t9ioe7-removebg-preview (1) 4.png" alt="Câble et chargeur" />
+                          </div>
+                          <div class="coverflow-item-info">
+                              <h3 class="coverflow-item-title">Câble / USB</h3>
+                              <p class="coverflow-item-desc">Alimentation et transfert de données</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Navigation Buttons -->
+              <button type="button" class="coverflow-nav-btn" id="coverflow-next" aria-label="Next product">❯</button>
+          </div>
+
+          <!-- Carousel Indicators/Dots -->
+          <div class="coverflow-indicators">
+              <span class="coverflow-dot active" data-index="0"></span>
+              <span class="coverflow-dot" data-index="1"></span>
+              <span class="coverflow-dot" data-index="2"></span>
+          </div>
       </div>
     </section>
 
@@ -393,5 +432,119 @@
       </div>
     </footer>
     <script src="assets/js/main.js"></script>
+
+    <!-- Coverflow Carousel JavaScript -->
+    <script>
+        class CoverflowCarousel {
+            constructor() {
+                this.currentIndex = 0;
+                this.items = document.querySelectorAll(".coverflow-item");
+                this.dots = document.querySelectorAll(".coverflow-dot");
+                this.totalItems = this.items.length;
+                this.prevBtn = document.getElementById("coverflow-prev");
+                this.nextBtn = document.getElementById("coverflow-next");
+                this.autoPlayInterval = null;
+
+                if(this.totalItems > 0) {
+                   this.init();
+                }
+            }
+
+            init() {
+                // Event listeners
+                this.prevBtn.addEventListener("click", () => this.previous());
+                this.nextBtn.addEventListener("click", () => this.next());
+
+                // Dot click listeners
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener("click", () => this.goTo(index));
+                });
+
+                // Auto play
+                this.startAutoPlay();
+
+                // Pause on hover
+                const container = document.querySelector(".coverflow-container");
+                if (container) {
+                    container.addEventListener("mouseenter", () => this.stopAutoPlay());
+                    container.addEventListener("mouseleave", () => this.startAutoPlay());
+                }
+
+                // Initial update
+                this.updateFocus();
+            }
+
+            updateFocus() {
+                // Remove all classes first
+                this.items.forEach((item) => {
+                    item.className = "coverflow-item";
+                });
+
+                // Set active item
+                this.items[this.currentIndex].classList.add("active");
+
+                // Calculate relative positions
+                this.items.forEach((item, i) => {
+                    if (i === this.currentIndex) return;
+
+                    let diff = i - this.currentIndex;
+                    
+                    // Handle wrap around
+                    if (diff > this.totalItems / 2) diff -= this.totalItems;
+                    if (diff < -this.totalItems / 2) diff += this.totalItems;
+
+                    if (diff === -1 || (this.currentIndex === 0 && i === this.totalItems - 1 && this.totalItems > 2)) {
+                        item.classList.add("prev");
+                    } else if (diff === 1 || (this.currentIndex === this.totalItems - 1 && i === 0 && this.totalItems > 2)) {
+                        item.classList.add("next");
+                    } else if (diff < -1) {
+                        item.classList.add("prev-prev");
+                    } else if (diff > 1) {
+                        item.classList.add("next-next");
+                    }
+                });
+
+                // Update dots
+                this.dots.forEach((dot, index) => {
+                    dot.classList.toggle("active", index === this.currentIndex);
+                });
+            }
+
+            goTo(index) {
+                if (index >= 0 && index < this.totalItems) {
+                    this.currentIndex = index;
+                    this.updateFocus();
+                }
+            }
+
+            next() {
+                this.currentIndex = (this.currentIndex + 1) % this.totalItems;
+                this.updateFocus();
+            }
+
+            previous() {
+                this.currentIndex = (this.currentIndex - 1 + this.totalItems) % this.totalItems;
+                this.updateFocus();
+            }
+
+            startAutoPlay() {
+                this.stopAutoPlay();
+                this.autoPlayInterval = setInterval(() => {
+                    this.next();
+                }, 4000);
+            }
+
+            stopAutoPlay() {
+                if (this.autoPlayInterval) {
+                    clearInterval(this.autoPlayInterval);
+                }
+            }
+        }
+
+        // Initialize carousel when DOM is loaded
+        document.addEventListener("DOMContentLoaded", () => {
+            new CoverflowCarousel();
+        });
+    </script>
   </body>
 </html>
